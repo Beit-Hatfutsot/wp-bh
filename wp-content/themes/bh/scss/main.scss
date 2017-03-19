@@ -451,12 +451,6 @@
 				margin-bottom: 0;
 			}
 
-			ul,
-			ol {
-				padding-left: 25px;
-				list-style-type: circle;
-			}
-	
 			/*******/
 			/* map */
 			/*******/
@@ -475,7 +469,19 @@
 					background-position: 50% 50%;
 				}
 			}
-	
+
+			/************/
+			/* text box */
+			/************/
+
+			&.contact-details-layout-text-box {
+				ul,
+				ol {
+					padding-left: 25px;
+					list-style-type: circle;
+				}
+			}
+
 			/***************/
 			/* single link */
 			/***************/

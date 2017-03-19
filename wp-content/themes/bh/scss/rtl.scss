@@ -745,12 +745,6 @@ body > header {
 		.contact-details-layout {
 			padding: 0 28px 15px 0;
 			
-			ul,
-			ol {
-				padding-left: 0;
-				padding-right: 25px;
-			}
-
 			/*******/
 			/* map */
 			/*******/
@@ -760,6 +754,18 @@ body > header {
 				margin-right: 0;
 			}
 	
+			/************/
+			/* text box */
+			/************/
+
+			&.contact-details-layout-text-box {
+				ul,
+				ol {
+					padding-left: 0;
+					padding-right: 25px;
+				}
+			}
+
 			/***************/
 			/* single link */
 			/***************/
