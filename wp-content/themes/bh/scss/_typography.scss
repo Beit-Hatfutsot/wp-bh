@@ -274,4 +274,17 @@ blockquote {}
 			background-color: $green-btn-bg-active;
 		}
 	}
+
+	&.orange-btn {
+		color: $orange-btn-color;
+		background-color: $orange-btn-bg-bormal;
+
+		&:hover {
+			background-color: $orange-btn-bg-hover;
+		}
+
+		&:active {
+			background-color: $orange-btn-bg-active;
+		}
+	}
 }
