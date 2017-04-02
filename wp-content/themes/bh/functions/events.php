@@ -93,14 +93,14 @@
 
 		// get event start date
 		if ($start_date) { 
-			$s_date			= strftime( '%B %d', strtotime($start_date) );
-			$past_s_date	= strftime( '%B, \'%y', strtotime($start_date) );
+			$s_date			= strftime( '%d.%m.%Y', strtotime($start_date) );
+			$past_s_date	= strftime( '%d.%m.%Y', strtotime($start_date) );
 		}
 		
 		// get event end date
 		// assumption: end date must exists since the queries contains only events with future end date
-		$e_date			= strftime( '%B %d', strtotime($end_date) );
-		$past_e_date	= strftime( '%B, \'%y', strtotime($end_date) );
+		$e_date			= strftime( '%d.%m.%Y', strtotime($end_date) );
+		$past_e_date	= strftime( '%d.%m.%Y', strtotime($end_date) );
 		
 		$date_html =
 			"<div class='event-date'>" .
