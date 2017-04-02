@@ -139,12 +139,12 @@
 			height: 100%;
 			
 			.event-excerpt {
-				height: 165px;
+				height: 100%;
 				overflow: hidden;
 				
 				.event-desc {
-					margin-top: 15px;
 					line-height: normal;
+					@include calc(width, "100% - 175px");
 				}
 			}
 			
@@ -152,15 +152,19 @@
 				position: absolute;
 				bottom: 15px;
 				right: 15px;
+				width: 170px;
 				
 				.btn {
 					float: right;
-					font-size: 12px;
-					
+
 					&.event-ticket-net-link,
-					&.event-reservation-form-link {
-						margin-left: 10px;
-						padding: 4px 12px;
+					&.event-reservation-form-link,
+					&.event-more {
+						border: none;
+						box-shadow: none;
+						border-radius: 0;
+						width: 100%;
+						margin-top: 10px;
 					}
 				}
 				

@@ -39,7 +39,7 @@ $event_element =
 			"<div class='event-btn'>" .
 				// display purchase button only for current/future events
 				( ($when != 'past') ? BH_get_event_purchase_btn($event->ID) : '' ) .
-				"<a href='" . get_permalink($event->ID) . "'><div class='btn white-btn small event-more'>" . $read_more_btn . "</div></a>" .
+				"<a class='btn orange-btn event-more' href='" . get_permalink($event->ID) . "'>" . $read_more_btn . "</a>" .
 			"</div>" .
 		"</div>" .
 		

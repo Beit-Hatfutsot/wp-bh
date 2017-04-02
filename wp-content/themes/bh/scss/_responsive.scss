@@ -856,6 +856,10 @@
 				.event-btn {
 					display: none;
 				}
+
+				.event-desc {
+					width: 100% !important;
+				}
 			}
 		}
 	}
@@ -2582,6 +2586,10 @@
 				.event-excerpt {
 					height: 175px;
 				}
+			}
+
+			h2.event-name {
+				font-size: 20px !important;
 			}
 
 			.event-meta {
