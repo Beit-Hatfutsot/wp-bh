@@ -542,6 +542,7 @@
 	 * zip uploaded gedcom file and save it in a dedicated folder
 	 */
 	function save_file($wpcf7_data) {
+
 		$submission		= WPCF7_Submission::get_instance();
 		$uploaded_files	= $submission->uploaded_files();
 		
@@ -556,47 +557,66 @@
 		
 		// create the archive based on the first uploaded file name
 		$zip = new ZipArchive();
-		if ( $zip->open($zip_path, ZIPARCHIVE::CREATE) ) :
-		
+		$res = $zip->open( $zip_path, ZIPARCHIVE::CREATE );
+
+		if ( $res === true ) {
+
 			// add uploaded file to zip file
 			foreach ($uploaded_files as $file) :
 				$path	= $file;
 				$name	= substr( $path, strrpos($path, '/') + 1 );
 				$zip->addFile($path, $name);
 			endforeach;
-			
-			@chmod($zip_path, 0664);
-			
+
+			// close and save zip file
+			$res = $zip->close();
+
+			if ( $res ) {
+				@chmod($zip_path, 0664);
+			}
+
 			// skip contact form 7 mail in order to manually send it with gedcom url
 			$wpcf7_data->skip_mail = true;
 			add_filter('wpcf7_ajax_json_echo', 'kill_form', 10, 3);
 			
 			// manually send mail with gedcom url
 			$posted_data				= $submission->get_posted_data();
-			$posted_data['gedcom-url']	= $upload_dir['url'] . '/' . $folder . '/' . $zip_filename;
+			$posted_data['gedcom-url']	= ( $res ) ? $upload_dir['url'] . '/' . $folder . '/' . $zip_filename : 'Error creating file (gedcom file cannot be added)';
+
+		}
+		else {
+
+			// skip contact form 7 mail in order to manually send it
+			$wpcf7_data->skip_mail = true;
+			add_filter('wpcf7_ajax_json_echo', 'kill_form', 10, 3);
 			
-			$mail	= $wpcf7_data->prop('mail');
-			$mail_2	= $wpcf7_data->prop('mail_2');
-			
-			$mail	= BH_build_message($mail, $posted_data);
-			$mail_2	= BH_build_message($mail_2, $posted_data);
-			
-			// send mail messages
-			$result = WPCF7_Mail::send($mail, 'mail');
-			
-			if ($result) {
-				if ( $mail_2 && $mail_2['active'] ) {
-					WPCF7_Mail::send( $mail_2, 'mail_2' );
-				}
+			// manually send mail with gedcom url
+			$posted_data				= $submission->get_posted_data();
+			$posted_data['gedcom-url']	= 'Error creating file (' . $res . ')';
+
+		}
+
+		$mail	= $wpcf7_data->prop('mail');
+		$mail_2	= $wpcf7_data->prop('mail_2');
+		
+		$mail	= BH_build_message($mail, $posted_data);
+		$mail_2	= BH_build_message($mail_2, $posted_data);
+		
+		// send mail messages
+		$result = WPCF7_Mail::send($mail, 'mail');
+		
+		if ($result) {
+			if ( $mail_2 && $mail_2['active'] ) {
+				WPCF7_Mail::send( $mail_2, 'mail_2' );
 			}
-			
-			// document the completed request
-			$cfdb_data = (object) array (
-				'title'				=> $wpcf7_data->title(),
-				'posted_data'		=> $posted_data,
-				'uploaded_files'	=> $uploaded_files
-			);
-			do_action_ref_array( 'cfdb_submit', array(&$cfdb_data) );
-			
-		endif;
+		}
+		
+		// document the completed request
+		$cfdb_data = (object) array (
+			'title'				=> $wpcf7_data->title(),
+			'posted_data'		=> $posted_data,
+			'uploaded_files'	=> $uploaded_files
+		);
+		do_action_ref_array( 'cfdb_submit', array(&$cfdb_data) );
+
 	}
