@@ -543,12 +543,23 @@
 	 */
 	function save_file($wpcf7_data) {
 
+		$log = fopen( THEME_ROOT . '/functions/forms/save_file_log.txt', 'a+' );
+
+		if ( $log ) {
+			fwrite( $log, date( 'Y-m-d H:i:s') . ' [Info] Save file process initialized' . PHP_EOL );
+		}
+
 		$submission		= WPCF7_Submission::get_instance();
 		$uploaded_files	= $submission->uploaded_files();
-		
-		if ( ! $uploaded_files )
+
+		if ( ! $uploaded_files ) {
+			if ( $log ) {
+				fwrite( $log, date( 'Y-m-d H:i:s') . ' [Error] No uploaded files detected' . PHP_EOL );
+			}
+
 			return;
-			
+		}
+
 		$upload_dir				= wp_upload_dir();
 		$folder					= 'gedcom';
 		$first_uploaded_file	= reset($uploaded_files);
@@ -561,15 +572,39 @@
 
 		if ( $res === true ) {
 
+			if ( $log ) {
+				fwrite( $log, date( 'Y-m-d H:i:s') . ' [Info] Zip file created successfully: ' . $zip_path . PHP_EOL );
+			}
+
 			// add uploaded file to zip file
-			foreach ($uploaded_files as $file) :
+			foreach ($uploaded_files as $file) {
+
 				$path	= $file;
 				$name	= substr( $path, strrpos($path, '/') + 1 );
-				$zip->addFile($path, $name);
-			endforeach;
+				$res	= $zip->addFile($path, $name);
+
+				if ( $log ) {
+					if ( $res ) {
+						fwrite( $log, date( 'Y-m-d H:i:s') . ' [Info] File added to zip successfully: ' . $file . PHP_EOL );
+					}
+					else {
+						fwrite( $log, date( 'Y-m-d H:i:s') . ' [Error] Failed to add file to zip: ' . $file . PHP_EOL );
+					}
+				}
+
+			}
 
 			// close and save zip file
 			$res = $zip->close();
+
+			if ( $log ) {
+				if ( $res ) {
+					fwrite( $log, date( 'Y-m-d H:i:s') . ' [Info] Zip file closed successfully' . PHP_EOL );
+				}
+				else {
+					fwrite( $log, date( 'Y-m-d H:i:s') . ' [Error] Failed to close zip file: ' . $file . PHP_EOL );
+				}
+			}
 
 			if ( $res ) {
 				@chmod($zip_path, 0664);
@@ -585,6 +620,10 @@
 
 		}
 		else {
+
+			if ( $log ) {
+				fwrite( $log, date( 'Y-m-d H:i:s') . ' [Error] Failed to create zip file: ' . $zip_path . PHP_EOL );
+			}
 
 			// skip contact form 7 mail in order to manually send it
 			$wpcf7_data->skip_mail = true;
@@ -618,5 +657,9 @@
 			'uploaded_files'	=> $uploaded_files
 		);
 		do_action_ref_array( 'cfdb_submit', array(&$cfdb_data) );
+
+		if ( $log ) {
+			fclose( $log );
+		}
 
 	}
