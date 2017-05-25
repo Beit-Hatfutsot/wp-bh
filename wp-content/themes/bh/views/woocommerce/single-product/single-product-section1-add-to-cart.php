@@ -13,10 +13,10 @@ global $product;
 
 // Enhanced Ecommerce - "add to cart" event tracking
 // collect product info and submit it on form submission
-$p_id		= $product->id;
-$p_sku		= esc_js( $product->sku );
+$p_id		= $product->get_id();
+$p_sku		= esc_js( $product->get_sku() );
 $p_name		= esc_js( $product->get_title() );
-$p_price	= number_format((float)$product->price, 2, '.', '');
+$p_price	= number_format((float)$product->get_price(), 2, '.', '');
 $p_currency	= get_woocommerce_currency();
 
 $category = '';
@@ -43,11 +43,11 @@ if ( $product_cats && ! is_wp_error ($product_cats) ) {
 		<?php
 			echo sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="button %s product_type_%s ajax_add_to_cart" onclick="BH_EC_onUpdateCart(\'' . $p_sku . '\', \'' . $p_name . '\', \'' . $category . '\', \'' . $p_price . '\', \'' . $p_currency . '\', this.getAttribute(\'data-quantity\'), \'add\'); BH_FB_onAddToCart(\'' . $p_sku . '\', \'' . $p_name . '\', \'' . $category . '\', \'' . $p_price . '\', \'' . $p_currency . '\'); return true;">%s</a>',
 				esc_url( $product->add_to_cart_url() ),
-				esc_attr( $product->id ),
+				esc_attr( $product->get_id() ),
 				esc_attr( $product->get_sku() ),
 				esc_attr( isset( $quantity ) ? $quantity : 1 ),
 				$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
-				esc_attr( $product->product_type ),
+				esc_attr( $product->get_type() ),
 				__('Add to cart', 'BH')
 			);
 		?>

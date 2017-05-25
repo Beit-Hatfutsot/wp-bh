@@ -33,7 +33,7 @@ if ( ! $weight && ! $dimensions )
 		</div>
 
 		<?php
-			echo $product->weight	? '<meta itemprop="weight"	value="' . $product->weight . '"	unitCode="GRM" />'	: '';
+			echo $product->get_weight()	? '<meta itemprop="weight"	value="' . $product->get_weight() . '"	unitCode="GRM" />'	: '';
 		?>
 
 	<?php } ?>
@@ -47,17 +47,17 @@ if ( ! $weight && ! $dimensions )
 		</div>
 
 		<?php
-			echo $product->length	? '<meta itemprop="depth"	value="' . $product->length . '"	unitCode="CMT" />'	: '';
-			echo $product->width	? '<meta itemprop="width"	value="' . $product->width . '"		unitCode="CMT" />'	: '';
-			echo $product->height	? '<meta itemprop="height"	value="' . $product->height . '"	unitCode="CMT" />'	: '';
+			echo $product->get_length()	? '<meta itemprop="depth"	value="' . $product->get_length() . '" unitCode="CMT" />'	: '';
+			echo $product->get_width()	? '<meta itemprop="width"	value="' . $product->get_width()  . '" unitCode="CMT" />'	: '';
+			echo $product->get_height()	? '<meta itemprop="height"	value="' . $product->get_height() . '" unitCode="CMT" />'	: '';
 		?>
 
 	<?php } ?>
 
 	<?php
-		echo '<meta itemprop="sku"		content="' . $product->sku . '" />';
-		echo '<meta itemprop="mpn"		content="' . $product->sku . '" />';
-		echo '<meta itemprop="gtin12"	content="' . gtin_12($product->sku) . '" />';
+		echo '<meta itemprop="sku"		content="' . $product->get_sku() . '" />';
+		echo '<meta itemprop="mpn"		content="' . $product->get_sku() . '" />';
+		echo '<meta itemprop="gtin12"	content="' . gtin_12($product->get_sku()) . '" />';
 	?>
 
 </div>

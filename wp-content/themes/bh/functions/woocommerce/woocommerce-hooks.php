@@ -59,7 +59,7 @@ add_action('widgets_init', 'override_woocommerce_widgets', 15);
  * 
  * @see		BH_woocommerce_shopping_cart_indicator_fragment()
  */
-add_filter('add_to_cart_fragments', 'BH_woocommerce_shopping_cart_indicator_fragment');
+add_filter('woocommerce_add_to_cart_fragments', 'BH_woocommerce_shopping_cart_indicator_fragment');
 
 /**
  * Remove action wc_track_product_view which handles "woocommerce_recently_viewed" cookie update
@@ -207,10 +207,8 @@ add_action('woocommerce_refund_created',			'BH_shop_order_refund', 10, 2);
 /**
  * @see		BH_shop_price_html()
  * @see		BH_shop_sale_price_html()
- * @see		BH_shop_set_related_products_limit()
  * @see		BH_shop_catalog_orderby_options()
  */
 add_filter('woocommerce_price_html', 'BH_shop_price_html', 10, 2);
 add_filter('woocommerce_sale_price_html', 'BH_shop_sale_price_html', 10, 2);
-add_filter('woocommerce_product_related_posts_query', 'BH_shop_set_related_products_limit');
 add_filter('woocommerce_catalog_orderby', 'BH_shop_catalog_orderby_options');

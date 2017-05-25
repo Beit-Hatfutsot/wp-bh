@@ -14,7 +14,7 @@ global $post, $product;
 $product_image_disclaimer = get_field( 'acf-options_product_image_disclaimer', 'option' );
 
 $attachment_ids = array();
-$attachment_ids = $product->get_gallery_attachment_ids();
+$attachment_ids = $product->get_gallery_image_ids();
 
 if ( has_post_thumbnail() )
 	array_unshift( $attachment_ids, get_post_thumbnail_id() );

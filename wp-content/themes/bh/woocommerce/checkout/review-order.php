@@ -35,9 +35,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				
 				// for Google Analytics Enhanced Ecommerce - define event attributes
 				$product	= wc_get_product($product_id);
-				$p_sku		= esc_js( $product->sku );
+				$p_sku		= esc_js( $product->get_sku() );
 				$p_name		= esc_js( $product->get_title() );
-				$p_price	= number_format((float)$product->price, 2, '.', '');
+				$p_price	= number_format((float)$product->get_price(), 2, '.', '');
 				$p_currency	= get_woocommerce_currency();
 				$p_page		= esc_url( get_permalink($product_id) );
 				
