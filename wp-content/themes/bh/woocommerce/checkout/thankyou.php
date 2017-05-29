@@ -86,10 +86,10 @@ if ( $order ) : ?>
 						$category	= esc_js( $single_cat->name );
 					endif;
 					
-					$cart[$index]['sku']		= $items_ids[] = $product->sku;
+					$cart[$index]['sku']		= $items_ids[] = $product->get_sku();
 					$cart[$index]['name']		= $product->get_title();
 					$cart[$index]['category']	= $category;
-					$cart[$index]['price']		= number_format((float)$product->price, 2, '.', '');
+					$cart[$index]['price']		= number_format((float)$product->get_price(), 2, '.', '');
 					$cart[$index]['quantity']	= (int)$item['qty'];
 					
 					$index++;

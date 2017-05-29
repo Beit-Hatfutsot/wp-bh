@@ -1,8 +1,8 @@
 <?php
 	global $product, $list, $ec_products, $featured_product;
 	
-	$p_id			= $product->id;
-	$p_sku			= esc_js( $product->sku );
+	$p_id			= $product->get_id();
+	$p_sku			= esc_js( $product->get_sku() );
 	$p_name			= esc_js( $product->get_title() );
 	$p_currency		= get_woocommerce_currency();
 	$p_list			= esc_js( $list );
@@ -11,11 +11,11 @@
 	if ( defined('DOING_AJAX') && DOING_AJAX && class_exists('woocommerce_wpml') ) {
 		// filter product price and currency
 		// used in case of an AJAX call and active woocommerce wpml
-		$p_price = number_format((float)apply_filters('wcml_raw_price_amount', $product->price), 2, '.', '');
+		$p_price = number_format((float)apply_filters('wcml_raw_price_amount', $product->get_price()), 2, '.', '');
 		$p_currency = apply_filters('wcml_price_currency', $p_currency);
 	}
 	else {
-		$p_price = number_format((float)$product->price, 2, '.', '');
+		$p_price = number_format((float)$product->get_price(), 2, '.', '');
 	}
 
 	$category = '';

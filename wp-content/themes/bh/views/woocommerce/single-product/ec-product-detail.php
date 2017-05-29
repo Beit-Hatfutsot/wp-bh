@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 global $post;
 
 $_product = wc_get_product($post->ID);
-$p_sku		= esc_js( $_product->sku );
+$p_sku		= esc_js( $_product->get_sku() );
 $p_name		= esc_js( $_product->get_title() );
-$p_price	= number_format((float)$_product->price, 2, '.', '');
+$p_price	= number_format((float)$_product->get_price(), 2, '.', '');
 $p_currency	= get_woocommerce_currency();
 
 $category = '';

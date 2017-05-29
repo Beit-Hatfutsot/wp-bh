@@ -40,9 +40,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				// for Google Analytics Enhanced Ecommerce - define event attributes
-				$p_sku		= esc_js( $_product->sku );
+				$p_sku		= esc_js( $_product->get_sku() );
 				$p_name		= esc_js( $_product->get_title() );
-				$p_price	= number_format((float)$_product->price, 2, '.', '');
+				$p_price	= number_format((float)$_product->get_price(), 2, '.', '');
 				$p_currency	= get_woocommerce_currency();
 				$p_page		= esc_url( get_permalink($product_id) );
 				

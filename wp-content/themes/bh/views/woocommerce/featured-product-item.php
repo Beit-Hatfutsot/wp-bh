@@ -1,10 +1,10 @@
 <?php
 	global $list, $ec_products;
 
-	$p_id			= $product->id;
-	$p_sku			= esc_js( $product->sku );
+	$p_id			= $product->get_id();
+	$p_sku			= esc_js( $product->get_sku() );
 	$p_name			= esc_js( $product->get_title() );
-	$p_price		= number_format((float)$product->price, 2, '.', '');
+	$p_price		= number_format((float)$product->get_price(), 2, '.', '');
 	$p_currency		= get_woocommerce_currency();
 	$p_list			= esc_js( $list );
 	$p_page			= esc_url( get_permalink($p_id) );
@@ -17,7 +17,7 @@
 	endif;
 
 	$attachment_ids = array();
-	$attachment_ids = $product->get_gallery_attachment_ids();
+	$attachment_ids = $product->get_gallery_image_ids();
 
 	if ( has_post_thumbnail() )
 		array_unshift( $attachment_ids, get_post_thumbnail_id($p_id) );
