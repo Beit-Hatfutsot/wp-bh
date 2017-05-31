@@ -56,7 +56,6 @@ function BH_wp_scripts_n_styles() {
 				break;
 			case 'donate-lobby.php' :
 			case 'donate-process.php' :
-				wp_enqueue_style('jquery-ui');
 				wp_enqueue_style('donate');
 				break;
 			case 'blog.php' :

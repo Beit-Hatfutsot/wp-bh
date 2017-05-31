@@ -4,7 +4,7 @@
  */?>
 <?php get_header(); ?>
 
-<section class="page-content">
+<section class="donations-content">
 
     <?php
 

@@ -11,8 +11,106 @@
 /* donations lobby */
 /*******************/
 
-#donate-layout-content {
+#donate-layout-lobby {
 
+  text-align: center;
+  padding-bottom: 50px;
+
+  h1 {
+    display: block;
+    font-size: 48px;
+    padding: 20px 0;
+    background-color: $red-color2;
+    font-weight: $font-normal;
+    color: $white;
+  }
+
+  h2 {
+    display: block;
+    font-size: 36px;
+    font-weight: $font-normal;
+    color: $red-color2;
+    margin: 0;
+  }
+
+  p {
+    font-size: 140%;
+    line-height: 140%;
+    padding: 0 5%;
+  }
+
+  .hero {
+    position: relative;
+    margin-bottom: 15px;
+  }
+
+  .btn-wrapper {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .btn {
+    background-color: #47c3d3;
+    border-radius: 0;
+    border: none;
+    text-align: center;
+    color: $white;
+    width: 100%;
+    font-size: 20px;
+    height: 60px;
+    line-height: 60px;
+
+    a {
+      vertical-align: middle;
+      color: $white;
+      text-decoration: none;
+      font-weight: $font-bold;
+    }
+
+    &.big {
+      font-size: 36px;
+      width: 25%;
+    }
+  }
+
+  #lobby-links.row {
+    margin-left: -4px;
+    margin-right: -4px;
+
+    .article-box {
+      padding: 0 4px;
+
+      figure {
+        height: 180px;
+        overflow: hidden;
+      }
+
+      .flex-center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 60px;
+
+        h3 {
+          margin: 0;
+          font-size: 20px;
+
+          span {
+            color: $white;
+            font-weight: $font-bold;
+            font-size: 16px;
+          }
+
+          span::before {
+            content: '\A';
+            white-space: pre;
+          }
+        }
+      }
+    }
+  }
 }
 
 /**************/
