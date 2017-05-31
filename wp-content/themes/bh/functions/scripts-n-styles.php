@@ -40,6 +40,7 @@ function BH_wp_scripts_n_styles() {
 	wp_register_style( 'main',						CSS_DIR . '/main.css',								array('bootstrap'),											VERSION );
 	wp_register_style( 'event',						CSS_DIR . '/event.css',								array('bootstrap'),											VERSION );
 	wp_register_style( 'blog',						CSS_DIR . '/blog.css',								array('bootstrap'),											VERSION );
+    wp_register_style( 'donate',				    CSS_DIR . '/donate.css',							array('bootstrap'),											VERSION );
 	wp_register_style( 'rtl',						CSS_DIR . '/rtl.css',								array('bootstrap-rtl'),										VERSION );
 	
 	if ( is_page() ) :
@@ -52,6 +53,11 @@ function BH_wp_scripts_n_styles() {
 			case 'past-events.php' :
 				wp_enqueue_style('jquery-ui');
 				wp_enqueue_style('event');
+				break;
+			case 'donate-lobby.php' :
+			case 'donate-process.php' :
+				wp_enqueue_style('jquery-ui');
+				wp_enqueue_style('donate');
 				break;
 			case 'blog.php' :
 				wp_enqueue_style('blog');
