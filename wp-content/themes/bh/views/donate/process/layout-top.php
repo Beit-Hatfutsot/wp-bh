@@ -3,7 +3,7 @@
 	<div class="container">
 
         <div class="back-link">
-            Back link
+            <a href="#">Back to support page</a>
         </div>
         <div class="title">
             Thank You for Your Support
