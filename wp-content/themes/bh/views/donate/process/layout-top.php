@@ -1,22 +1,25 @@
-<section class="donate-process-layout donate-process-layout-top">
+<section id="donate-process-top" class="donate-process-layout">
 
 	<div class="container">
 
-        <div class="back-link">
-            <a href="#">Back to support page</a>
-        </div>
-        <div class="title">
-            Thank You for Your Support
-        </div>
-        <div class="passage">
-            "Something from the Bible" <small>and its' reference</small>
+        <div id="back-link">
+            <a href="/donate/">Back to support page</a>
         </div>
 
 	</div>
 
+    <div class="title">
+        <h1 id="process-title">Thank You for Your Support</h1>
+    </div>
+
+    <div id="passage">
+        <p>"Something from the Bible" <small>and reference</small></p>
+    </div>
+
+
     <div class="hero">
-        <img src="http://test.bh.org.il/wp-content/uploads/JEWISH-LENS-790.jpg">
-        <h1>Donate/Payment Method</h1>
+        <img src="http://test.bh.org.il/wp-content/uploads/photo-by-Nir-Shaanani-400a.jpg">
+        <h2 class="hero-label text-uppercase black-overlay-bg">Donate/Payment Method</h2>
     </div>
 	
 </section>

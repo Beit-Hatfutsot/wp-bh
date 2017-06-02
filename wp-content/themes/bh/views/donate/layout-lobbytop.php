@@ -2,10 +2,10 @@
 	
 		<?php
 			if (have_posts()) : the_post();
-				echo '<h1>';
+				echo '<h1 id="lobby-title">';
 					the_title();
 				echo '</h1>';
-				echo '<div class="content">';
+				echo '<div id="lobby-subtitle">';
 					the_content();
 				echo '</div>';
 			endif;
