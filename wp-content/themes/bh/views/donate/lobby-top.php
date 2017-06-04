@@ -6,7 +6,8 @@
 					the_title();
 				echo '</h1>';
 				echo '<div id="lobby-subtitle">';
-					the_content();
+					_e('Testung', 'BH');
+				    the_content();
 				echo '</div>';
 			endif;
 		?>
@@ -29,3 +30,9 @@
 	?>
 	
 </section>
+
+<nav>
+    <ul>
+        <li></li>
+    </ul>
+</nav>

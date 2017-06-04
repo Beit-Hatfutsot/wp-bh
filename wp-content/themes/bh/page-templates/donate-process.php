@@ -4,7 +4,7 @@
  */?>
 <?php get_header(); ?>
 
-<section class="donations-content">
+<section role="main" id="donate-layout-process" class="donations-content">
 
     <?php
 
@@ -12,19 +12,25 @@
     /* process header  */
     /*******************/
 
-    get_template_part('views/donate/process/layout', 'top');
+    get_template_part('views/donate/process', 'top');
+
+    /****************/
+    /* process flow */
+    /****************/
+
+    get_template_part('views/donate/process', 'flow');
 
     /****************/
     /* process view */
     /****************/
 
-    get_template_part('views/donate/process/layout', 'options');
+    get_template_part('views/donate/process', 'options');
 
     /******************/
     /* process footer */
     /******************/
 
-    get_template_part('views/donate/process/layout', 'bottom');
+    get_template_part('views/donate/process', 'bottom');
 
     ?>
 

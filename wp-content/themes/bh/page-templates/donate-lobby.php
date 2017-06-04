@@ -4,7 +4,7 @@
  */?>
 <?php get_header(); ?>
 
-<section id="donate-layout-lobby" class="donations-content">
+<section role="main" id="donate-layout-lobby" class="donations-content">
 
     <?php
 
@@ -12,13 +12,13 @@
     /* title & content */
     /*******************/
 
-    get_template_part('views/donate/layout', 'lobbytop');
+    get_template_part('views/donate/lobby', 'top');
 
     /***************/
     /* lobby links */
     /***************/
 
-    get_template_part('views/donate/layout', 'lobbybottom');
+    get_template_part('views/donate/lobby', 'bottom');
 
     ?>
 
