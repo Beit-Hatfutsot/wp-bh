@@ -177,6 +177,30 @@ h1 {
   }
 }
 
+#donate-process-flow {
+  nav {
+    margin: 0;
+    overflow: hidden;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        list-style-type: none;
+
+        a {
+          font-size: 130%;
+          text-decoration: none;
+          line-height: 40px;
+          color: $font-color;
+        }
+      }
+    }
+  }
+}
+
 #donate-process-options {
   ul {
     height: 55px;
@@ -192,7 +216,7 @@ h1 {
 
       a {
         background-color: $gray-color7;
-        font-size: 26px;
+        font-size: 24px;
         color: #646464;
         text-decoration: none;
       }
@@ -214,6 +238,23 @@ h1 {
 
   .tab-content {
     text-align: start;
+    margin-top: 50px;
+    min-height: 300px;
+
+    strong {
+      font-weight: $font-normal;
+      font-size: 24px;
+    }
+
+    #online {
+      p {
+        text-align: center;
+
+        strong {
+          font-weight: $font-bold;
+        }
+      }
+    }
   }
 }
 
