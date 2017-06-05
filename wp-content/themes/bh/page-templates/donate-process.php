@@ -1,8 +1,9 @@
 <?php
 /**
  * Template Name: Donate - Process
- */?>
-<?php get_header(); ?>
+ */
+
+get_header(); ?>
 
 <section role="main" id="donate-layout-process" class="donations-content">
 

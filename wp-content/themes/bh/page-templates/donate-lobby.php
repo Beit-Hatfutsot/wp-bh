@@ -1,8 +1,8 @@
 <?php
 /**
  * Template Name: Donate - Lobby
- */?>
-<?php get_header(); ?>
+ */
+get_header(); ?>
 
 <section role="main" id="donate-layout-lobby" class="donations-content">
 
