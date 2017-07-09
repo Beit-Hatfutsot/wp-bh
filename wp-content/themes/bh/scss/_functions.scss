@@ -174,3 +174,10 @@
 	text-decoration: underline !important;
 	border: 0 !important;
 }
+
+@mixin placeholder-style() {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+}
