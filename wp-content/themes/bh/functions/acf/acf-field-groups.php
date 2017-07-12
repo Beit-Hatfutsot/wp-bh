@@ -6171,4 +6171,83 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
+acf_add_local_field_group(array (
+    'key' => 'group_5964f45346eaf',
+    'title' => 'Donations Settings',
+    'fields' => array (
+        array (
+            'key' => 'field_5964f47d788f2',
+            'label' => 'Donations Main Page',
+            'name' => 'acf-options_donations_page',
+            'type' => 'post_object',
+            'instructions' => '',
+            'required' => 1,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'post_type' => array (
+                0 => 'page',
+            ),
+            'taxonomy' => array (
+            ),
+            'allow_null' => 0,
+            'multiple' => 0,
+            'return_format' => 'object',
+            'ui' => 1,
+        ),
+        array (
+            'key' => 'field_5964f8c6d25d5',
+            'label' => 'One Time Donation Form URL',
+            'name' => 'acf-options_one-time_d_form',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 1,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
+        array (
+            'key' => 'field_5964f95e1514b',
+            'label' => 'Annual Donation Form URL',
+            'name' => 'acf-options_annual_d_form',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 1,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
+    ),
+    'location' => array (
+        array (
+            array (
+                'param' => 'options_page',
+                'operator' => '==',
+                'value' => 'acf-options-donations',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
+));
+
 endif;

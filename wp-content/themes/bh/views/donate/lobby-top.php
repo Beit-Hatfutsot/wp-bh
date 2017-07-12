@@ -18,8 +18,8 @@
         echo '<div id="donate-lobby" class="hero">';
             the_post_thumbnail();
             echo '<div class="btn-wrapper">';
-                echo '<div class="btn inline-btn cyan-btn big">';
-                    echo '<h2><a href="'. $target->guid . '" title="'. $target->post_title . '" class="">';
+                echo '<div class="btn inline-btn cyan-btn big lobby-main">';
+                    echo '<h2><a href="'. $target->post_name . '" title="'. $target->post_title . '" class="">';
                         echo $cta;
                     echo '</a></h2>';
                 echo '</div>';

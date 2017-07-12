@@ -3,38 +3,48 @@
  * Template Name: Donate - Process
  */
 
-get_header(); ?>
+$slug = get_queried_object()->post_name;
 
-<section role="main" id="donate-layout-process" class="donations-content">
+if ('thank-you' !== $slug) {
+    get_header();
+}
+
+?>
+
+
+<main role="main" id="donate-layout-<?php echo $slug; ?>" class="donations-content donations-content-<?php echo $slug; ?>">
 
     <?php
 
-    /*******************/
-    /* process header  */
-    /*******************/
+    if ('thank-you' !== $slug) {
+        get_template_part('views/donate/process', 'top');       // Shared visual header for the process views
+    }
 
-    get_template_part('views/donate/process', 'top');
-
-    /****************/
-    /* process flow */
-    /****************/
-
-    get_template_part('views/donate/process', 'flow');
-
-    /****************/
-    /* process view */
-    /****************/
-
-    get_template_part('views/donate/process', 'options');
-
-    /******************/
-    /* process footer */
-    /******************/
-
-    get_template_part('views/donate/process', 'bottom');
+    switch ($slug) {
+        case "options":
+            get_template_part('views/donate/process', 'flow');      // Process stage indicator
+            get_template_part('views/donate/process', 'options');   // Tabbed layout for donation options
+            get_template_part('views/donate/process', 'bottom');    // Additional info for the process sections
+            break;
+        case "secured-payment":
+            get_template_part('views/donate/process', 'flow');      // Process stage indicator
+            get_template_part('views/donate/secured-payment');      // iCount iFrame
+            break;
+        case "thank-you":
+            get_template_part('views/donate/process', 'flow');      // Process stage indicator
+            get_template_part('views/donate/thank-you');            // Naked Thank You message for redirection from iCount after success.
+            break;
+    }
 
     ?>
 
-</section>
+</main>
 
-<?php get_footer(); ?>
+<?php
+
+if ('thank-you' !== $slug) {
+    get_footer();
+}
+
+?>
+

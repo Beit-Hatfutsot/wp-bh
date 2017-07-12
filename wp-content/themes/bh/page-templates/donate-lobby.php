@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<section role="main" id="donate-layout-lobby" class="donations-content">
+<main role="main" id="donate-layout-lobby" class="donations-content">
 
     <?php
 
@@ -22,6 +22,6 @@ get_header(); ?>
 
     ?>
 
-</section>
+</main>
 
 <?php get_footer(); ?>

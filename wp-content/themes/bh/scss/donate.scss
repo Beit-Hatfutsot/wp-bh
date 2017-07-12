@@ -3,6 +3,8 @@
 
 @charset "utf-8";
 
+
+
 .donations-content {
   margin-top: 120px;
   margin-bottom: 50px;
@@ -11,7 +13,7 @@
 
 h1 {
   &#lobby-title {
-    font-size: 48px;
+    font-size: 50px;
     padding: 0;
     margin: 0;
     background-color: $red-color2;
@@ -30,26 +32,39 @@ h1 {
     padding: 0;
     margin: 0;
   }
+
+  &#thank-you-title{
+    background-color: $blue-color6;
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: $font-normal;
+  }
 }
 
-#back-link {
+.back-link {
   text-align: start;
   height: 45px;
   line-height: 45px;
+
+  a {
+    color: $black-color2;
+  }
 }
 
 #lobby-subtitle {
   h2 {
-    font-size: 36px;
+    font-size: 35px;
+    line-height: 56px;
     font-weight: $font-normal;
     color: $red-color2;
     margin: 0;
   }
 
   p {
-    font-size: 140%;
-    line-height: 140%;
+    font-size: 22px;
+    line-height: 36px;
     padding: 0 5%;
+    margin-top: 10px;
   }
 }
 
@@ -62,10 +77,10 @@ h1 {
     color: $white;
     background-color: $red-color4;
     font-weight: $font-bold;
-    font-size: 28px;
+    font-size: 26px;
 
     small {
-      font-size: 70%;
+      font-size: 18px;
       font-weight: $font-normal;
     }
 
@@ -113,10 +128,11 @@ h1 {
   border: none;
   text-align: center;
   color: $white;
-  width: 100%;
-  font-size: 20px;
-  height: 60px;
-  line-height: 60px;
+  width: auto;
+  font-size: 30px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10%;
 
   a {
     vertical-align: middle;
@@ -135,6 +151,19 @@ h1 {
     h2 {
       font-size: 36px;
       margin: 0;
+    }
+  }
+
+  &.lobby-main {
+    padding: 0;
+    height: 60px;
+
+    h2 {
+      a {
+        display: inline-block;
+        line-height: 60px;
+
+      }
     }
   }
 }
@@ -160,7 +189,7 @@ h1 {
 
       h3 {
         margin: 0;
-        font-size: 20px;
+        font-size: 22px;
 
         span {
           color: $white;
@@ -201,6 +230,20 @@ h1 {
   }
 }
 
+.donation-flow {
+  height: 50px;
+  font-size: 24px;
+  line-height: 50px;
+
+  .donation-step {
+    color: $gray-color5;
+
+    &.current-step {
+      color: $black-color2
+    }
+  }
+}
+
 #donate-process-options {
   ul {
     height: 55px;
@@ -216,8 +259,8 @@ h1 {
 
       a {
         background-color: $gray-color7;
-        font-size: 24px;
-        color: #646464;
+        font-size: 26px;
+        color: $black-color2;
         text-decoration: none;
       }
 
@@ -248,11 +291,31 @@ h1 {
 
     #online {
       p {
-        text-align: center;
+        text-align: start;
+
+        &.tax-deduct,
+        &.amount-indicator,
+        &.secure-connection {
+          text-align: center;
+        }
 
         strong {
           font-weight: $font-bold;
         }
+      }
+
+      .amount-indicator {
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+
+      .the-amount {
+        font-size: 50px;
+        font-style: normal;
+      }
+
+      .us-donation {
+        font-size: 18px;
       }
     }
   }
@@ -262,12 +325,119 @@ h1 {
   border-top:  5px solid $gray-color5;
 
   h4 {
-    color: #696969;
+    color: $black-color2;
     font-weight: $font-normal;
-    font-size: 26px;
+    font-size: 28px;
+    line-height: 36px;
     margin-top: 40px;
   }
+
+  a {
+    color: $black-color2;
+  }
 }
+
+.donate-form {
+  fieldset {
+    margin-top: 30px;
+
+    em {
+      font-weight: $font-bold;
+      font-style: normal;
+
+      &::after {
+        content: " ";
+      }
+    }
+  }
+
+  legend {
+    font-size: 22px;
+    background-color: $blue-color6;
+    border: none;
+    width: 280px;
+    padding: 10px 20px;
+    color: $black-color2;
+
+    &.your-details,
+    &.billing-details {
+      text-align: center;
+    }
+  }
+
+  .form-group {
+    &.flow-amount .btn,
+    &.submit .btn {
+      margin-top: 24px;
+      margin-bottom: 48px;
+    }
+  }
+
+  .form-control {
+    border: 3px solid $orange-color6;
+    border-radius: 0;
+  }
+
+  label {
+    font-weight: $font-normal;
+
+    &.required::before {
+      content: "* ";
+    }
+  }
+
+
+  input {
+    @include placeholder-style() {
+      color: $gray-color5;
+      font-style: italic;
+      font-size: 16px;
+    }
+  }
+
+  select{
+    &.in-tribute {
+      width: auto;
+    }
+  }
+
+  .radio  {
+    line-height: 34px;
+
+    &.other {
+      width: 300px;
+    }
+  }
+
+  input[type="radio"] {
+    margin-top: 0;
+    height: 34px;
+  }
+
+  .large-donations {
+    font-size: 14px;
+    margin-top: 28px;
+  }
+}
+
+#donate-process-thank-you {
+  p {
+    font-size: 22px;
+    line-height: 46px;
+  }
+}
+/*****************/
+/* Form Elements */
+/*****************/
+
+/*input[type=checkbox]:not(old),
+input[type=radio   ]:not(old){
+  // width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+}*/
+
 
 /**************/
 /* responsive */

@@ -105,6 +105,7 @@ function BH_wp_scripts_n_styles() {
 	wp_register_script( 'banner',					JS_DIR . '/min/bh-slideshow.min.js',								array('jquery', 'bootstrap'),								VERSION,	true );
 	wp_register_script( 'event',					JS_DIR . '/min/event.min.js',										array('jquery', 'bootstrap'),								VERSION,	true );
 	wp_register_script( 'blog',						JS_DIR . '/min/blog.min.js',										array('jquery', 'bootstrap'),								VERSION,	true );
+    wp_register_script( 'donate',				    JS_DIR . '/min/donate.min.js',										array('jquery', 'bootstrap'),								VERSION,	true );
 	wp_register_script( 'forms',					JS_DIR . '/forms/forms.js',											array('jquery'),						                    VERSION,	true );       
 	wp_register_script( 'microfilm',				JS_DIR . '/forms/microfilm.js',										array('jquery'),						                    VERSION,	true );       
 	wp_register_script( 'item-handler',				JS_DIR . '/forms/item-handler.js',									array('jquery'),						                    VERSION,	true );        

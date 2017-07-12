@@ -17,7 +17,12 @@
             <div class="article-box col-sm-3">
                 <article>
                     <figure>
-                        <?php echo '<img src="' . $thumb['sizes']['thumbnail'] . '" alt="' . $thumb['title'] . '">'; ?>
+                        <?php
+                        if ($thumb) {
+                            echo '<img src="' . $thumb['sizes']['thumbnail'] . '" alt="' . $thumb['title'] . '">';
+                        }
+
+                        ?>
                     </figure>
                     <div class="btn inline-btn cyan-btn flex-center">
                         <h3>

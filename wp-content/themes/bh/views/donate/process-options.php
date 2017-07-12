@@ -12,17 +12,21 @@
 
         <!-- Option panes -->
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane container active" id="online">
-                <p>
-                    <?php
-                        $url = 'https://co.clickandpledge.com/sp/d1/default.aspx?wid=39977';
-                        $link = sprintf( wp_kses( __( '<strong>Your gift is tax deductible in Israel.</strong> To make a tax deductible gift in the United States <a href="%s" target="_blank" rel="nofollow">click here</a>.', 'BH' ), array(  'a' => array( 'href' => array() ) , 'strong' => array()) ), esc_url( $url ) );
-                        echo $link;
-
-                        get_template_part('views/donate/form', 'amount');
-                        get_template_part('views/donate/form', 'details');
-                    ?>
+            <div role="tabpanel" class="tab-pane active" id="online">
+                <p class="tax-deduct">
+                    <strong><?php echo esc_html__('Your gift is tax deductible in Israel.', 'BH') . ' '; ?></strong>
+                    <a href="https://co.clickandpledge.com/sp/d1/default.aspx?wid=39977" role="link" target="_blank" rel="nofollow" class="us-donation">Make a tax deductible gift in the United States instead</a>
                 </p>
+
+                <form id="donate-form" class="donate-form container" method="post" action="<?php echo site_url() . '/donate/secured-payment/'; ?>">
+
+                    <?php
+                    get_template_part('views/donate/form', 'amount');
+                    get_template_part('views/donate/form', 'details');
+                    ?>
+
+                </form>
+
             </div>
             <div role="tabpanel" class="tab-pane container" id="check">
                 <p>
@@ -47,7 +51,7 @@
                     <?php
                     $email = 'racheli@bh.org.il';
                     $email_link = '<a href="' . $email . '">' . $email . '</a>';
-                    $address = sprintf( __('Bank Mizrachi-Tefahot<br/>Branch: %1$s<br/>Account: %2$s' , 'BH'), '493' , '387660' );
+                    $address = sprintf( __('Bank Mizrahi-Tefahot<br/>Branch: %1$s<br/>Account: %2$s' , 'BH'), '493' , '387660' );
                     echo $address;
                     ?>
                 </p>
@@ -58,7 +62,7 @@
             <div role="tabpanel" class="tab-pane container" id="phone">
                 <div class="container">
                     <p>
-                        <strong><?php _e('Please call us on this number:<br/>+972 3 7457841', 'BH'); ?></strong>
+                        <strong><?php esc_html_e('Please call us on this number:<br/>+972 3 7457841', 'BH'); ?></strong>
                     </p>
                 </div>
             </div>

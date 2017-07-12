@@ -85,6 +85,9 @@ require_once('functions/pelecard/pelecard-api.php');
 // Forms
 require_once('functions/forms.php');
 
+// Donations
+require_once('functions/donations.php');
+
 // Contact Form 7 hooks
 if ( is_cf7_installed() ) {
 	require_once('functions/forms/wpcf7-hooks.php');
