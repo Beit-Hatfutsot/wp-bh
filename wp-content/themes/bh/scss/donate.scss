@@ -381,6 +381,10 @@ h1 {
   label {
     font-weight: $font-normal;
 
+    &.cs-hotspot {
+      width: 100%;
+    }
+
     &.required::before {
       content: "* ";
     }
@@ -405,7 +409,7 @@ h1 {
     line-height: 34px;
 
     &.other {
-      width: 300px;
+      width: 440px;
     }
   }
 
@@ -430,13 +434,53 @@ h1 {
 /* Form Elements */
 /*****************/
 
-/*input[type=checkbox]:not(old),
-input[type=radio   ]:not(old){
-  // width   : 28px;
+input[type=checkbox],
+input[type=radio   ] {
+  width   : 16px;
   margin  : 0;
   padding : 0;
-  opacity : 0;
-}*/
+  appearance:none;
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+}
+
+input[type=checkbox] + label,
+input[type=radio   ] + label {
+  display      : inline-block;
+  margin-left  : -20px;
+  padding-left : 28px;
+  line-height  : 16px;
+  height: 34px;
+}
+
+input[type=radio   ] + label {
+  @include image("general/radio.svg", 16px);
+
+  .other & {
+    background-position: left center;
+  }
+
+  &:hover {
+    background-image: url("../images/general/radio-hover.svg");
+  }
+}
+
+input[type=radio   ]:checked  + label {
+  background-image: url("../images/general/radio-checked.svg");
+}
+
+input[type=checkbox] + label {
+  @include image("general/checkbox.svg", 16px);
+
+  &:hover {
+    @include image("general/checkbox-hover.svg", 16px);
+  }
+}
+
+input[type=checkbox]:checked + label {
+  @include image("general/checkbox-checked.svg", 16px);
+}
+
 
 
 /**************/

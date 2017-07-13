@@ -41,14 +41,14 @@
 
     <div class="form-group">
         <label for="country" class="required"><?php esc_html_e('Country', 'BH'); ?></label>
-        <select class="form-control" id="country" name="country" required="required">
+        <select class="form-control" id="country" name="customer_country" required="required">
             <?php $c_list = file_get_contents(dirname(dirname(__FILE__)) . '/components/country-list.html'); echo $c_list; ?>
         </select>
     </div>
 
     <div class="form-group">
         <label for="address-line-1" class="required"><?php esc_html_e('Address', 'BH'); ?></label>
-        <input type="text" class="form-control" name="street" id="address-line-1" required="required">
+        <input type="text" class="form-control" name="customer_street" id="address-line-1" required="required">
     </div>
 
     <div class="form-group">
@@ -61,14 +61,14 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="city" class="required"><?php esc_html_e('City', 'BH'); ?></label>
-                <input type="text" class="form-control" id="city" name="city" required="required">
+                <input type="text" class="form-control" id="city" name="customer_city" required="required">
             </div>
         </div>
 
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="zip" class="required"><?php esc_html_e('Postal/Zip Code', 'BH'); ?></label>
-                <input type="text" class="form-control" id="zip" name="zip" required="required">
+                <input type="text" class="form-control" id="zip" name="customer_zip" required="required">
             </div>
         </div>
 
@@ -89,15 +89,11 @@
 <fieldset id="acceptance" class="flow-details col-sm-offset-3 col-sm-6">
 
     <div class="checkbox">
-        <label>
-            <input type="checkbox" value="terms-accepted" name="terms-acceptance" required><?php esc_html_e('I\'ve read and accept the ', 'BH'); ?><a href="#" role="link" target="_blank"><?php esc_html_e('terms & conditions', 'BH') ?></a>
-        </label>
+        <input type="checkbox" value="terms-accepted" name="terms-acceptance" id="terms-acceptance" required><label for="terms-acceptance"><?php esc_html_e('I\'ve read and accept the ', 'BH'); ?><a href="#" role="link" target="_blank"><?php esc_html_e('terms & conditions', 'BH') ?></a></label>
     </div>
 
     <div class="checkbox">
-        <label>
-            <input type="checkbox" value="updates-accepted" name="m__updates-acceptance" checked><?php esc_html_e('Yes, I want to receive news and updates from the Museum', 'BH'); ?>
-        </label>
+        <input type="checkbox" value="updates-accepted" name="m__updates-acceptance" id="updates-acceptance" checked><label for="updates-acceptance"><?php esc_html_e('Yes, I want to receive news and updates from the Museum', 'BH'); ?></label>
     </div>
 
 </fieldset>

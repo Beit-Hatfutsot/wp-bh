@@ -3,6 +3,7 @@
 
     var $flowStrip = $('#donate-process-flow'),
         $csRadio = $('#custom-amount-radio'),
+        $csHotspot = $('.cs-hotspot'),
         $csField = $('#custom-amount-field');
 
     $(document).ready(function () {
@@ -49,6 +50,10 @@
     });
 
     $csField.click(function () {
+        $csRadio.prop("checked", true);
+    });
+
+    $csHotspot.click(function () {
         $csRadio.prop("checked", true);
     });
 
