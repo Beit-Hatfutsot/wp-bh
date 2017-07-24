@@ -48,8 +48,8 @@ var $ = jQuery,
 			}
 
 			// woocommerce shop homepage / single product page
-			if (BH_general.params.page == 'woocommerce-shop-home' || BH_general.params.page == 'woocommerce-single-product') {
-				if (BH_general.params.page == 'woocommerce-shop-home') {
+			if (BH_general.params.page == 'woocommerce-shop-home' || BH_general.params.page == 'woocommerce' || BH_general.params.page == 'woocommerce-single-product') {
+				if (BH_general.params.page == 'woocommerce-shop-home' || BH_general.params.page == 'woocommerce') {
 					// woocommerce shop homepage
 
 					// shop featured products
@@ -1045,7 +1045,7 @@ var $ = jQuery,
 			}
 
 			// reinit products slider
-			if (BH_general.params.page == 'woocommerce-shop-home' || BH_general.params.page == 'woocommerce-single-product') {
+			if (BH_general.params.page == 'woocommerce-shop-home' || BH_general.params.page == 'woocommerce' || BH_general.params.page == 'woocommerce-single-product') {
 				if (BH_general.params.prev_breakpoint && (BH_general.params.prev_breakpoint <= 991 && BH_general.params.breakpoint >= 1199 || BH_general.params.prev_breakpoint >= 1199 && BH_general.params.breakpoint <= 991)) {
 					$('.products-slider-carousel').cycle('reinit');
 				}
