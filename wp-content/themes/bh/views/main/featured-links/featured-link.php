@@ -12,7 +12,7 @@
 	$link_image =
 		'<div class="link-image">' .
 			( ($link_value) ? '<a href="' . $link_value . '" target="' . $link_target . '">' : '' ) .
-				'<img src="' . $image['url'] . '" alt="' . ( ($image['alt']) ? $image['alt'] : $title ) . '" />' .
+				'<img src="' . $image['url'] . '" alt="' . ( ($image['alt']) ? $image['alt'] : $title ) . '" title="' . ( ($image['title']) ? $image['title'] : $title ) . '" />' .
 			( ($link_value) ? '</a>' : '' ) .
 		'</div>';
 		
