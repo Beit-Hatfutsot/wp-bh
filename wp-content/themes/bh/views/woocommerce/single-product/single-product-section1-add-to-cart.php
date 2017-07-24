@@ -4,7 +4,7 @@
  *
  * @author 		Beit Hatfutsot
  * @package 	bh/views/woocommerce/single-product
- * @version     2.0
+ * @version     2.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly

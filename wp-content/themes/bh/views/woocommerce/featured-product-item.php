@@ -1,37 +1,48 @@
 <?php
-	global $list, $ec_products;
+/**
+ * The Template for displaying shop homepage featured product item
+ *
+ * @author 		Beit Hatfutsot
+ * @package 	bh/views/woocommerce
+ * @version     2.1
+ */
 
-	$p_id			= $product->get_id();
-	$p_sku			= esc_js( $product->get_sku() );
-	$p_name			= esc_js( $product->get_title() );
-	$p_price		= number_format((float)$product->get_price(), 2, '.', '');
-	$p_currency		= get_woocommerce_currency();
-	$p_list			= esc_js( $list );
-	$p_page			= esc_url( get_permalink($p_id) );
-	
-	$category = '';
-	$product_cats = wp_get_post_terms($p_id, 'product_cat');
-	if ( $product_cats && ! is_wp_error ($product_cats) ) :
-		$single_cat	= array_shift($product_cats);
-		$category	= esc_js( $single_cat->name );
-	endif;
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-	$attachment_ids = array();
-	$attachment_ids = $product->get_gallery_image_ids();
+global $list, $ec_products;
 
-	if ( has_post_thumbnail() )
-		array_unshift( $attachment_ids, get_post_thumbnail_id($p_id) );
+$p_id			= $product->get_id();
+$p_sku			= esc_js( $product->get_sku() );
+$p_name			= esc_js( $product->get_title() );
+$p_price		= number_format((float)$product->get_price(), 2, '.', '');
+$p_currency		= get_woocommerce_currency();
+$p_list			= esc_js( $list );
+$p_page			= esc_url( get_permalink($p_id) );
 
-	$image			= ($attachment_ids)				? wp_get_attachment_image_src($attachment_ids[0], 'shop_catalog') : '';
-	$image_hover	= (count($attachment_ids) > 1)	? wp_get_attachment_image_src($attachment_ids[1], 'shop_catalog') : '';
+$category = '';
+$product_cats = wp_get_post_terms($p_id, 'product_cat');
+if ( $product_cats && ! is_wp_error ($product_cats) ) :
+	$single_cat	= array_shift($product_cats);
+	$category	= esc_js( $single_cat->name );
+endif;
 
-	$ec_products[] = array(
-		'sku'		=> $p_sku,
-		'name'		=> $p_name,
-		'list'		=> $p_list,
-		'category'	=> $category,
-		'price'		=> $p_price
-	);
+$attachment_ids = array();
+$attachment_ids = $product->get_gallery_image_ids();
+
+if ( has_post_thumbnail($p_id) )
+	array_unshift( $attachment_ids, get_post_thumbnail_id($p_id) );
+
+$image			= ($attachment_ids)				? wp_get_attachment_image_src($attachment_ids[0], 'shop_catalog') : '';
+$image_hover	= (count($attachment_ids) > 1)	? wp_get_attachment_image_src($attachment_ids[1], 'shop_catalog') : '';
+
+$ec_products[] = array(
+	'sku'		=> $p_sku,
+	'name'		=> $p_name,
+	'list'		=> $p_list,
+	'category'	=> $category,
+	'price'		=> $p_price
+);
+
 ?>
 
 <div class="featured-product-item">
