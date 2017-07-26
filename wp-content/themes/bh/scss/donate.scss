@@ -334,6 +334,10 @@ h1 {
 
   a {
     color: $black-color2;
+
+    &.file-na {
+      color: $gray-color5;
+    }
   }
 }
 
