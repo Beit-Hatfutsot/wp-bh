@@ -434,6 +434,16 @@ h1 {
     line-height: 46px;
   }
 }
+
+.certificate-example-box {
+  padding: 30px 0;
+  margin: 0 40px;
+
+  img {
+    outline: $gray-color6 solid 2px;
+  }
+}
+
 /*****************/
 /* Form Elements */
 /*****************/

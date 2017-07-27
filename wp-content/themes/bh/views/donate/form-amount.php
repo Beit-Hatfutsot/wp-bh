@@ -37,23 +37,93 @@
 
     <div class="form-group">
         <div class="checkbox">
-            <input id="show-tribute" name="show-tribute" type="checkbox" value="show-tribute"><label for="show-tribute" ><em><?php esc_html_e('Print your certificate in honor, memory or support of someone', 'BH'); ?></em></label>
+            <input id="show-tribute" name="show-tribute" type="checkbox" value="show-tribute"><label for="show-tribute" ><em><?php esc_html_e('Print your certificate in honor, memory or support of your loved one', 'BH'); ?></em></label>
         </div>
     </div>
 
     <div class="form-group on-demand hide" aria-expanded="false">
         <label for="tribute-type"><?php esc_html_e('Tribute Type', 'BH'); ?></label>
         <select id="tribute-type" name="tribute_type" class="form-control in-tribute">
-            <option><?php esc_html_e('In honor', 'BH'); ?></option>
-            <option><?php esc_html_e('In memory', 'BH'); ?></option>
-            <option><?php esc_html_e('In support of someone', 'BH'); ?></option>
+            <?php
+
+            $cert_types = array(
+                'appreciation'  => esc_html__('Certificate of Appreciation', 'BH'),
+                'memory'        => esc_html__('In Loving memory of', 'BH'),
+                'thankyou'      => esc_html__('Thank You', 'BH'),
+            );
+
+            $certificate_examples = array();
+            $cert_language_codes = array( ICL_LANGUAGE_CODE, ); // Assuming we must have certificate in our interface languages (HE/EN).
+
+            foreach ( $cert_types as $cert_type => $cert_title ) {
+                $cert_type_versions = get_field( $cert_type, 'option');
+
+                echo '<option value="' . $cert_type . '">' . $cert_title . '</option>';
+
+                foreach ( $cert_type_versions as $cert_type_version ) {
+
+                    $certificate_examples[$cert_type][$cert_type_version['language']]['src'] = $cert_type_version['example']['sizes']['medium'];
+                    $certificate_examples[$cert_type][$cert_type_version['language']]['class'] = 'certificate-example  ' . $cert_type . '  ' . $cert_type_version['language'];
+
+                    if ( !in_array( $cert_type_version['language'], $cert_language_codes )) {
+                        $cert_language_codes[] = $cert_type_version['language'];
+                    }
+                }
+            }
+
+
+            ?>
+
         </select>
     </div>
 
     <div class="form-group on-demand hide" aria-expanded="false">
-        <label for="tribute-to"><?php esc_html_e('Full Name', 'BH'); ?></label>
-        <input type="text" class="form-control" id="tribute-to" name="tribute_to" aria-describedby="certificateHelp">
-        <span id="certificateHelp" class="help-block"><?php esc_html_e('A Printable certificate will be sent to you', 'BH'); ?></span>
+        <label for="certificate-language"><?php esc_html_e('Certificate Language', 'BH'); ?></label>
+        <select id="certificate-language" name="certificate_language" class="form-control">
+            <?php
+
+                foreach ($cert_language_codes as $code) {
+                    $t_name = apply_filters( 'wpml_translated_language_name', NULL, $code, $code );
+                    echo '<option value="' . $code . '">' . $t_name . '</option>';
+                }
+
+            ?>
+
+        </select>
+    </div>
+
+    <div class="form-group on-demand hide" aria-expanded="false">
+        <label for="tribute-text"><?php esc_html_e('Your Text', 'BH'); ?> <small><?php esc_html_e('(Up to 50 characters)', 'BH'); ?></small></label>
+        <textarea class="form-control" id="tribute-text" name="tribute_text" aria-describedby="certificateHelp" placeholder="<?php esc_html_e('Bar Mitzvah boy Mordechai ben Ester', 'BH'); ?>"></textarea>
+        <div class="certificate-example-box">
+
+            <?php
+
+            $example_alts = array(
+                'appreciation'  => esc_html__('Certificate of Appreciation example', 'BH'),
+                'memory'        => esc_html__('In Loving Memory Certificate example', 'BH'),
+                'thankyou'      => esc_html__('Thank You Certificate example', 'BH'),
+            );
+
+            foreach ( $example_alts as $slug => $alt ) {
+                $certificate_examples[$slug]['alt'] = $alt;
+            }
+
+            $default_cert = $certificate_examples['appreciation'][ICL_LANGUAGE_CODE];
+
+            echo '<img id="certificate-example" src="' . $default_cert['src'] . '" class="' . $default_cert['class'] . '" alt="' . $example_alts[$slug] . '">';
+
+            ?>
+
+        </div>
+
+        <script type="text/javascript">
+            var examplesUrls = <?php echo json_encode( $certificate_examples ); ?>,
+                activeLang = "<?php echo ICL_LANGUAGE_CODE; ?>",
+                activeType = "appreciation";
+        </script>
+
+        <span id="certificateHelp" class="help-block"><?php esc_html_e('A Print version of the certificate will be sent to you, your name and date will be automatically updated.', 'BH'); ?></span>
     </div>
 
 

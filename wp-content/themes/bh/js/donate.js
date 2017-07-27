@@ -6,6 +6,13 @@
         $csHotspot = $('.cs-hotspot'),
         $csField = $('#custom-amount-field');
 
+    function updateExampleImage() {
+        $('#certificate-example').attr({
+            'src': examplesUrls[activeType][activeLang]['src'],
+            'alt': examplesUrls[activeType][activeLang]['alt']
+        });
+    }
+
     $(document).ready(function () {
         $('.flow-details').hide();
         $('#donate-layout-options').find($flowStrip).hide();
@@ -22,6 +29,17 @@
             return newState.toString();
         } );
 
+    });
+
+    $('#tribute-type').change(function () {
+        activeType = $(this).val();
+        $('#tribute-text').attr( 'placeholder', tribute_text_placehoder[activeType] );
+        updateExampleImage();
+    });
+
+    $('#certificate-language').change(function () {
+        activeLang = $(this).val();
+        updateExampleImage();
     });
 
     $('#cont-to-details').click(function (event) {
