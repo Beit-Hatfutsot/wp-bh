@@ -6,21 +6,7 @@ get_header(); ?>
 
 <main role="main" id="donate-layout-lobby" class="donations-content">
 
-    <?php
-
-    /*******************/
-    /* title & content */
-    /*******************/
-
-    get_template_part('views/donate/lobby', 'top');
-
-    /***************/
-    /* lobby links */
-    /***************/
-
-    get_template_part('views/donate/lobby', 'bottom');
-
-    ?>
+    <?php get_template_part('views/donate/lobby'); ?>
 
 </main>
 

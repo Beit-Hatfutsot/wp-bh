@@ -1,4 +1,4 @@
-<fieldset class="flow-amount col-sm-offset-2 col-sm-8">
+<fieldset class="flow-amount col-md-offset-2 col-md-10 col-sm-12">
     <legend><?php esc_html_e('Amount', 'BH'); ?></legend>
 
     <div class="radio other">
@@ -32,7 +32,7 @@
 
 </fieldset>
 
-<fieldset id="tribute-gift" class="flow-amount col-sm-offset-2 col-sm-6">
+<fieldset id="tribute-gift" class="flow-amount col-md-offset-2 col-md-10 col-sm-12">
     <legend><?php esc_html_e('Tribute Gift', 'BH'); ?></legend>
 
     <div class="form-group">
@@ -79,7 +79,7 @@
 
     <div class="form-group on-demand hide" aria-expanded="false">
         <label for="certificate-language"><?php esc_html_e('Certificate Language', 'BH'); ?></label>
-        <select id="certificate-language" name="m__certificate_language" class="form-control">
+        <select id="certificate-language" name="m__certificate_language" class="form-control in-tribute">
             <?php
 
                 foreach ($cert_language_codes as $code) {

@@ -114,56 +114,54 @@ h1 {
       background: linear-gradient(rgba(255,0,0,0), rgba(0,0,0,1)); /* Standard syntax (must be last) */
     }
   }
-}
 
-.btn-wrapper {
-  width: 100%;
-  height: 60px;
-  position: absolute;
-  bottom: 0;
-}
-
-.btn {
-  border-radius: 0;
-  border: none;
-  text-align: center;
-  color: $white;
-  width: auto;
-  font-size: 30px;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 10%;
-
-  a {
-    vertical-align: middle;
-    color: $white;
-    text-decoration: none;
+  h2 {
+    font-size: 36px;
+    margin: 0 37.5%;
     font-weight: $font-bold;
   }
+}
 
-  &.cyan-btn {
-    background-color: $blue-color3;
+
+
+.lobby-label--wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.lobby-link {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.lobby-label {
+  background-color: $blue-color3;
+  height: 60px;
+  line-height: 60px;
+  margin: 0;
+  font-size: 22px;
+
+  &.has-sub {
+    line-height: 22px;
+    padding-top: 5px;
   }
 
-  &.big {
-    width: 25%;
+  a, a:hover {
+    color: #fff;
+    text-decoration: none;
 
-    h2 {
-      font-size: 36px;
-      margin: 0;
+    .lobby-link & {
+      white-space:pre;
     }
   }
 
-  &.lobby-main {
-    padding: 0;
-    height: 60px;
+  .subtitle {
+    font-size: 16px;
+    line-height: 16px;
 
-    h2 {
-      a {
-        display: inline-block;
-        line-height: 60px;
-
-      }
+    &:before {
+      content: '\A';
     }
   }
 }
@@ -175,34 +173,6 @@ h1 {
 
   .article-box {
     padding: 0 4px;
-
-    figure {
-      height: 180px;
-      overflow: hidden;
-    }
-
-    .flex-center {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 60px;
-
-      h3 {
-        margin: 0;
-        font-size: 22px;
-
-        span {
-          color: $white;
-          font-weight: $font-bold;
-          font-size: 16px;
-        }
-
-        span::before {
-          content: '\A';
-          white-space: pre;
-        }
-      }
-    }
   }
 }
 
@@ -317,6 +287,10 @@ h1 {
       .us-donation {
         font-size: 18px;
       }
+    }
+
+    .phone-link {
+      display: inline-block;
     }
   }
 }
@@ -496,6 +470,18 @@ input[type=checkbox]:checked + label {
 }
 
 
+.btn {
+  border-radius: 0;
+  border: none;
+  text-align: center;
+  color: $white;
+  width: auto;
+  font-size: 30px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10%;
+}
+
 .icount-iframe {
   height: 620px;
 }
@@ -505,3 +491,136 @@ input[type=checkbox]:checked + label {
 /**************/
 
 @import "responsive";
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+  h1#lobby-title {
+    font-size: 26px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  #lobby-subtitle {
+    h2 {
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .lobby-link {
+    padding-bottom: 40px;
+  }
+
+  .lobby-label {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+
+    &.has-sub {
+      padding-top: 3px;
+      line-height: 16px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: $font-normal;
+    }
+  }
+
+  #passage {
+    p {
+      font-size: 18px;
+    }
+  }
+
+  #donate-process-options {
+
+    .us-donation {
+      display: inline-block;
+    }
+
+    ul {
+      li {
+        a {
+          font-size: initial;
+        }
+      }
+    }
+
+    .certificate-example-box {
+      margin: 0 25%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 480px) {
+
+  h1#process-title {
+    font-size: 20px;
+  }
+
+  #lobby-subtitle {
+    p {
+      text-align: left;
+    }
+  }
+
+  #passage {
+    height: auto;
+    line-height: normal;
+    p {
+      font-size: 16px;
+      margin-bottom: 0;
+
+      small {
+        display: inline-block;
+        font-size: 85%;
+      }
+    }
+  }
+
+  .hero h2 {
+    font-size: 18px;
+    margin: 0 25%;
+  }
+
+  .lobby-label--wrapper {
+    bottom: 20px;
+  }
+
+  .lobby-link {
+    padding-bottom: 10px;
+  }
+
+  .lobby-label {
+    margin: 0 25%;
+
+    &.has-sub {
+      padding-top: 5px;
+    }
+  }
+
+  #donate-process-options {
+
+    .certificate-example-box {
+      margin: 0 10px;
+    }
+  }
+}

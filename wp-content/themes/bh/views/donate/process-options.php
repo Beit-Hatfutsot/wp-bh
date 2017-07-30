@@ -1,13 +1,29 @@
+<?php
+$tab_labels = array(
+    'online'    => esc_html_x('Online', 'donation-tabs-default', 'BH'),
+    'check'     => esc_html_x('By Check', 'donation-tabs-default', 'BH'),
+    'bank'      => esc_html_x('Bank Transfer', 'donation-tabs-default', 'BH'),
+    'phone'     => esc_html_x('By Phone', 'donation-tabs-default', 'BH'),
+);
+
+if ( wp_is_mobile() ) {
+    $tab_labels['check']    = esc_html_x('Check', 'donation-tabs-mobile', 'BH');
+    $tab_labels['bank']     = esc_html_x('Bank', 'donation-tabs-mobile', 'BH');
+    $tab_labels['phone']    = esc_html_x('Phone', 'donation-tabs-mobile', 'BH');
+}
+
+?>
+
 <section id="donate-process-options" class="donate-process-layout">
 
     <div>
 
         <!-- Option tabs -->
         <ul id="donate-option-tabs" class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#online" aria-controls="online" role="tab" data-toggle="tab"><span>Online</span></a></li>
-            <li role="presentation"><a href="#check" aria-controls="check" role="tab" data-toggle="tab"><span>By Check</span></a></li>
-            <li role="presentation"><a href="#transfer" aria-controls="transfer" role="tab" data-toggle="tab"><span>Bank Transfer</span></a></li>
-            <li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><span>By Phone</span></a></li>
+            <li role="presentation" class="active"><a href="#online" aria-controls="online" role="tab" data-toggle="tab"><span><?php echo $tab_labels['online']; ?></span></a></li>
+            <li role="presentation"><a href="#check" aria-controls="check" role="tab" data-toggle="tab"><span><?php echo $tab_labels['check']; ?></span></a></li>
+            <li role="presentation"><a href="#transfer" aria-controls="transfer" role="tab" data-toggle="tab"><span><?php echo $tab_labels['bank']; ?></span></a></li>
+            <li role="presentation"><a href="#telephone" aria-controls="telephone" role="tab" data-toggle="tab"><span><?php echo $tab_labels['phone']; ?></span></a></li>
         </ul>
 
         <!-- Option panes -->
@@ -59,12 +75,10 @@
                     <?php echo __('For more information please contact us at', 'BH') . ' ' . $email_link; ?>
                 </p>
             </div>
-            <div role="tabpanel" class="tab-pane container" id="phone">
-                <div class="container">
-                    <p>
-                        <strong><?php esc_html_e('Please call us on this number:<br/>+972 3 7457841', 'BH'); ?></strong>
-                    </p>
-                </div>
+            <div role="tabpanel" class="tab-pane container" id="telephone">
+                <p>
+                    <strong><?php esc_html_e('Please call us on this number:', 'BH'); ?><a href="tel:+97237457841" role="link" class="phone-link">+972 3 7457841</a> </strong>
+                </p>
             </div>
         </div>
 
