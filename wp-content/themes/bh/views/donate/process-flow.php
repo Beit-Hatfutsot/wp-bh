@@ -14,7 +14,7 @@ switch ($slug) {
 
 $steps = array(
     'amount'            => __('Amount', 'BH'),
-    'your-details'      => __('Your Details', 'BH'),
+    'your-details'      => __('Details', 'BH'),
     'payment'           => __('Payment', 'BH'),
     'complete'          => __('Complete', 'BH'),
 );

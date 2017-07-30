@@ -596,9 +596,15 @@ input[type=checkbox]:checked + label {
     }
   }
 
-  .hero h2 {
-    font-size: 18px;
-    margin: 0 25%;
+  .hero {
+    h2 {
+      font-size: 18px;
+      margin: 0 25%;
+    }
+
+    .hero-label {
+      font-size: initial;
+    }
   }
 
   .lobby-label--wrapper {
@@ -622,5 +628,17 @@ input[type=checkbox]:checked + label {
     .certificate-example-box {
       margin: 0 10px;
     }
+  }
+
+  .donate-form {
+    legend {
+      width: 100%;
+    }
+
+
+  }
+
+  .donation-flow {
+    font-size: 14px;
   }
 }

@@ -19,7 +19,8 @@
 #page-totalwithvat-title,
 #flags,
 #client_box,
-#product-price-section-one {
+#product-price-section-one,
+#second_ttl{
     display:none;
 }
 
@@ -114,5 +115,24 @@ input#cccardnumber {
     background: -webkit-gradient(linear, left top, left bottom, from(#fbb034), to(#fbb034));
     background: -moz-linear-gradient(top, #fbb034, #fbb034);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fbb034, endColorstr=#fbb034);
+}
+
+@media (max-width: 480px) {
+   .box {
+      width:100%;
+   }
+
+   .box_title {
+      margin: 15px;
+   }
+
+   .box_contents {
+      padding: 0 15px;
+   }
+
+   .greenBTN {
+      margin: 0 15px;
+      font-size: initial;
+   }
 }
 ~~~~
