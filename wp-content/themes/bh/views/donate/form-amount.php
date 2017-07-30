@@ -79,7 +79,7 @@
 
     <div class="form-group on-demand hide" aria-expanded="false">
         <label for="certificate-language"><?php esc_html_e('Certificate Language', 'BH'); ?></label>
-        <select id="certificate-language" name="certificate_language" class="form-control">
+        <select id="certificate-language" name="m__certificate_language" class="form-control">
             <?php
 
                 foreach ($cert_language_codes as $code) {
@@ -94,7 +94,7 @@
 
     <div class="form-group on-demand hide" aria-expanded="false">
         <label for="tribute-text"><?php esc_html_e('Your Text', 'BH'); ?> <small><?php esc_html_e('(Up to 50 characters)', 'BH'); ?></small></label>
-        <textarea class="form-control" id="tribute-text" name="tribute_text" aria-describedby="certificateHelp" placeholder="<?php esc_html_e('Bar Mitzvah boy Mordechai ben Ester', 'BH'); ?>"></textarea>
+        <textarea class="form-control" id="tribute-text" name="m__tribute_text" aria-describedby="certificateHelp" placeholder="<?php esc_html_e('Bar Mitzvah boy Mordechai ben Ester', 'BH'); ?>"></textarea>
         <div class="certificate-example-box">
 
             <?php

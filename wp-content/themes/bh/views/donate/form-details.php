@@ -46,9 +46,22 @@
         </select>
     </div>
 
-    <div class="form-group">
-        <label for="address-line-1" class="required"><?php esc_html_e('Address', 'BH'); ?></label>
-        <input type="text" class="form-control" name="customer_street" id="address-line-1" required="required">
+    <div class="row">
+
+        <div class="col-sm-9">
+            <div class="form-group">
+                <label for="street" class="required"><?php esc_html_e('Street', 'BH'); ?></label>
+                <input type="text" class="form-control" id="street" name="customer_street" required="required">
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="street_num"><?php esc_html_e('House No.', 'BH'); ?></label>
+                <input type="text" class="form-control" id="street_num" name="customer_street_num">
+            </div>
+        </div>
+
     </div>
 
     <div class="form-group">
