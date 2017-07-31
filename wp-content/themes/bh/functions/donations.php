@@ -102,3 +102,179 @@ function BH_donation_form_url($formdata) {
 
         return http_build_query($params);
     };
+
+/**
+ * BH_get_donor_certificate_templates
+ *
+ * Returns the required data about certificate template images from the ACF repeater fields.
+ *
+ * @return	array $certificate_templates        The URL with all the relevant parameters
+ */
+
+function BH_get_donor_certificate_templates() {
+
+    $cert_types = BH_get_donor_certificate_types();
+    $certificate_templates = array();
+
+    foreach ( $cert_types as $cert_slug => $cert_type ) {
+
+        $cert_type_versions = get_field( $cert_slug, 'option');
+
+        foreach ( $cert_type_versions as $cert_type_version ) {
+            $certificate_templates[$cert_slug][$cert_type_version['language']] = $cert_type_version['template']['sizes']['medium'];
+        }
+    }
+
+    return $certificate_templates;
+};
+
+
+/**
+ * BH_get_donor_certificate_examples
+ *
+ * Returns the required data about certificate example images from the ACF repeater fields.
+ *
+ * @return	array $certificate_examples        The URL with all the relevant parameters
+ */
+
+function BH_get_donor_certificate_examples() {
+
+    $cert_types = BH_get_donor_certificate_types();
+
+    $certificate_examples = array();
+
+    foreach ( $cert_types as $cert_slug => $cert_type ) {
+
+        $cert_type_versions = get_field( $cert_slug, 'option');
+
+        foreach ( $cert_type_versions as $cert_type_version ) {
+            $certificate_examples[$cert_slug][$cert_type_version['language']]['src'] = $cert_type_version['example']['sizes']['medium'];
+            $certificate_examples[$cert_slug][$cert_type_version['language']]['class'] = 'certificate-example  ' . $cert_slug . '  ' . $cert_type_version['language'];
+        }
+    }
+
+    $example_alts = array(
+        'appreciation'  => esc_html__('Certificate of Appreciation example', 'BH'),
+        'memory'        => esc_html__('In Loving Memory Certificate example', 'BH'),
+        'thankyou'      => esc_html__('Thank You Certificate example', 'BH'),
+    );
+
+    foreach ( $example_alts as $cert_slug => $alt ) {
+        $certificate_examples[$cert_slug]['alt'] = $alt;
+    }
+
+    return $certificate_examples;
+};
+
+
+/**
+ * BH_get_donor_certificate_languages
+ *
+ * Returns an array with the 2-letter codes of languages available for certificates.
+ *
+ * @return	array $cert_language_codes
+ */
+
+function BH_get_donor_certificate_languages() {
+
+    $cert_types = BH_get_donor_certificate_types();
+    $cert_language_codes = array( ICL_LANGUAGE_CODE, ); // Assuming we must have certificate in our interface languages (HE/EN).
+
+    foreach ( $cert_types as $cert_slug => $cert_type ) {
+
+        $cert_type_versions = get_field( $cert_slug, 'option');
+
+        foreach ( $cert_type_versions as $cert_type_version ) {
+
+            if ( !in_array( $cert_type_version['language'], $cert_language_codes )) {
+                $cert_language_codes[] = $cert_type_version['language'];
+            }
+        }
+    }
+
+    return $cert_language_codes;
+};
+
+
+/**
+ * BH_get_donor_certificate_data
+ *
+ * @return	array $certificate_data
+ */
+
+function BH_get_donor_certificate_data() {
+
+    $cert_types = BH_get_donor_certificate_types();
+    $certificate_data = array();
+
+    foreach ( $cert_types as $key => $cert_type ) {
+        $certificate_data[] = get_field( $key, 'option');
+    }
+
+    return $certificate_data;
+};
+
+
+/**
+ * BH_get_donor_certificate_types
+ *
+ * Returns the currently supported certificate types (with their labels).
+ *
+ * @return	array $cert_types
+ */
+
+function BH_get_donor_certificate_types() {
+
+    $cert_types = array(
+        'appreciation'  => esc_html__('Certificate of Appreciation', 'BH'),
+        'memory'        => esc_html__('In Loving memory of', 'BH'),
+        'thankyou'      => esc_html__('Thank You', 'BH'),
+    );
+
+    return $cert_types;
+};
+
+/**
+ * BH_get_donation_page_url
+ *
+ * Gets the URL for a specific donation page, as set in the options page.
+ *
+ * @return	string $url
+ */
+
+function BH_get_donation_page_url($page) {
+
+    $err = 'No page is set for this language yet (' . $page . ')';
+
+    $option_name = 'acf-options_donations_' . $page . '_page';
+    $option_val = get_field($option_name, 'option');
+    $url = $option_val ? get_the_permalink( $option_val ) : $err;
+
+    return $url;
+};
+
+/**
+ * BH_get_donation_pages
+ *
+ * Gets all the pages set in the options page into a single array
+ *
+ * @return	array $donation_pages
+ */
+
+function BH_get_donation_pages() {
+
+    // identifiers for the required pages
+    $donation_pages = array(
+        'main'      =>  '',
+        'options'      =>  '',
+        'iframe'    =>  '',
+        'thankyou'  =>  '',
+    );
+
+    // put the permalinks in a array
+    foreach ( $donation_pages as $s => $p ) {
+        $donation_pages[$s] = BH_get_donation_page_url($s);
+    }
+
+    return $donation_pages;
+};

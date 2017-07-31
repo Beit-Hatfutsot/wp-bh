@@ -6179,7 +6179,7 @@ acf_add_local_field_group(array (
     'fields' => array (
         array (
             'key' => 'tab_general',
-            'label' => 'General',
+            'label' => 'Donation Pages',
             'name' => '',
             'type' => 'tab',
             'instructions' => '',
@@ -6194,9 +6194,9 @@ acf_add_local_field_group(array (
             'endpoint' => 0,
         ),
         array (
-            'key' => 'field_5964f47d788f2',
+            'key' => 'acf-options_donations_main_page',
             'label' => 'Donations Main Page',
-            'name' => 'acf-options_donations_page',
+            'name' => 'acf-options_donations_main_page',
             'type' => 'post_object',
             'instructions' => '',
             'required' => 1,
@@ -6213,7 +6213,76 @@ acf_add_local_field_group(array (
             ),
             'allow_null' => 0,
             'multiple' => 0,
-            'return_format' => 'object',
+            'return_format' => 'id',
+            'ui' => 1,
+        ),
+        array (
+            'key' => 'acf-options_donations_options_page',
+            'label' => 'Donation Options Page',
+            'name' => 'acf-options_donations_options_page',
+            'type' => 'post_object',
+            'instructions' => '',
+            'required' => 1,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'post_type' => array (
+                0 => 'page',
+            ),
+            'taxonomy' => array (
+            ),
+            'allow_null' => 0,
+            'multiple' => 0,
+            'return_format' => 'id',
+            'ui' => 1,
+        ),
+        array (
+            'key' => 'acf-options_donations_iframe_page',
+            'label' => 'Donations iFrame Page',
+            'name' => 'acf-options_donations_iframe_page',
+            'type' => 'post_object',
+            'instructions' => 'This page will hold the iFrame for the billing form',
+            'required' => 1,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'post_type' => array (
+                0 => 'page',
+            ),
+            'taxonomy' => array (
+            ),
+            'allow_null' => 0,
+            'multiple' => 0,
+            'return_format' => 'id',
+            'ui' => 1,
+        ),
+        array (
+            'key' => 'acf-options_donations_thankyou_page',
+            'label' => 'Donations Thank-You Page',
+            'name' => 'acf-options_donations_thankyou_page',
+            'type' => 'post_object',
+            'instructions' => '',
+            'required' => 1,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'post_type' => array (
+                0 => 'page',
+            ),
+            'taxonomy' => array (
+            ),
+            'allow_null' => 0,
+            'multiple' => 0,
+            'return_format' => 'id',
             'ui' => 1,
         ),
         array (

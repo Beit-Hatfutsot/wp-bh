@@ -1,4 +1,6 @@
 <?php
+$form_target = BH_get_donation_page_url('iframe');
+
 $tab_labels = array(
     'online'    => esc_html_x('Online', 'donation-tabs-default', 'BH'),
     'check'     => esc_html_x('By Check', 'donation-tabs-default', 'BH'),
@@ -31,10 +33,10 @@ if ( wp_is_mobile() ) {
             <div role="tabpanel" class="tab-pane active" id="online">
                 <p class="tax-deduct">
                     <strong><?php echo esc_html__('Your gift is tax deductible in Israel.', 'BH') . ' '; ?></strong>
-                    <a href="https://co.clickandpledge.com/sp/d1/default.aspx?wid=39977" role="link" target="_blank" rel="nofollow" class="us-donation">Make a tax deductible gift in the United States instead</a>
+                    <a href="https://co.clickandpledge.com/sp/d1/default.aspx?wid=39977" role="link" target="_blank" rel="nofollow" class="us-donation"><?php esc_html_e('Make a tax deductible gift in the United States instead', 'BH') ?></a>
                 </p>
 
-                <form id="donate-form" class="donate-form container" method="post" action="<?php echo site_url() . '/donate/secured-payment/'; ?>">
+                <form id="donate-form" class="donate-form container" method="post" action="<?php echo $form_target; ?>">
 
                     <?php
                     get_template_part('views/donate/form', 'amount');

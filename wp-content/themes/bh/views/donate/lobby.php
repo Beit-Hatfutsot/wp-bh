@@ -1,9 +1,9 @@
 <?php
-$cta = get_field("donate_cta_text");
-$target = get_field("acf-options_donations_page", "option");
-$hero_desktop = get_field('hero_img_desktop', 'option');
-$hero_mobile = get_field('hero_img_mobile', 'option');
-$lobby_links = get_field('donate_lobby_links');
+$cta            = get_field("donate_cta_text");
+$target         = BH_get_donation_page_url('options');
+$hero_desktop   = get_field('hero_img_desktop', 'option');
+$hero_mobile    = get_field('hero_img_mobile', 'option');
+$lobby_links    = get_field('donate_lobby_links');
 ?>
 
 <section id="lobby-top" class="donate-layout">
@@ -27,9 +27,7 @@ $lobby_links = get_field('donate_lobby_links');
         <div class="lobby-label--wrapper">
 
             <h2 class="lobby-label">
-                <a href="<?php echo $target->post_name; ?>" title="<?php echo $target->post_title; ?>">
-                    <?php echo esc_html__('Donate', 'BH') ?>
-                </a>
+                <a href="<?php echo $target; ?>" role="link"><?php esc_html_e('Donate', 'BH') ?></a>
             </h2>
 
         </div>
