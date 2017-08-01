@@ -1,9 +1,8 @@
 <?php
-$cta            = get_field("donate_cta_text");
 $target         = BH_get_donation_page_url('options');
 $hero_desktop   = get_field('hero_img_desktop', 'option');
 $hero_mobile    = get_field('hero_img_mobile', 'option');
-$lobby_links    = get_field('donate_lobby_links');
+$lobby_links    = get_field('donate_main_page_links', 'option');
 ?>
 
 <section id="lobby-top" class="donate-layout">
