@@ -278,3 +278,62 @@ function BH_get_donation_pages() {
 
     return $donation_pages;
 };
+
+/**
+ * BH_subscribe_donor
+ *
+ * Extracts the relevant data from the donation form, and to subscribe the donor to the relevant mailing list
+ *
+ * @param array $postdata
+ *
+ * @return string $res
+ */
+
+function BH_subscribe_donor($postdata) {
+
+    define('TEST_MODE', true);
+
+    $groupId    = ''; //TODO Add group ID
+    $authId     = ''; //TODO Add AuthID (Token)
+    $url        = 'http://webapi.mymarketing.co.il/api/groups/' . $groupId . '/members';
+
+    //open connection
+    $ch = curl_init();
+
+    //Preprate headers
+    $header = array();
+    $header[] = 'Content-type: application/json';
+    $header[] = 'Authorization: ' . $authId;
+
+    //Prepare POST body
+    $params = array(
+        'email'         => $postdata['contact_email'],
+        'first_name'    => $postdata['fname'],
+        'last_name'     => $postdata['lname'],
+    );
+
+    //set the url, number of POST vars, POST data
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+
+    // TODO uncomment this when things are clearer
+    //execute post
+    //$result = curl_exec($ch);
+
+    //close connection
+    //curl_close($ch);
+
+    // check request results
+
+    $res = TEST_MODE ? 'Test Mode hypothetical success' : '0';
+
+    // TODO uncomment this when things are clearer
+    /*
+    if (!$result) :
+        $res = '1';	// error 1 => at least one process has failed
+    endif;
+    */
+    return $res;
+
+};

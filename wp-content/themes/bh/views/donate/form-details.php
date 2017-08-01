@@ -102,11 +102,11 @@
 <fieldset id="acceptance" class="flow-details col-sm-offset-3 col-sm-6">
 
     <div class="checkbox">
-        <input type="checkbox" value="terms-accepted" name="terms-acceptance" id="terms-acceptance" required><label for="terms-acceptance"><?php esc_html_e('I\'ve read and accept the ', 'BH'); ?><a href="#" role="link" target="_blank"><?php esc_html_e('terms & conditions', 'BH') ?></a></label>
+        <input type="checkbox" name="terms-acceptance" id="terms-acceptance" required><label for="terms-acceptance"><?php esc_html_e('I\'ve read and accept the ', 'BH'); ?><a href="#" role="link" target="_blank"><?php esc_html_e('terms & conditions', 'BH') ?></a></label>
     </div>
 
     <div class="checkbox">
-        <input type="checkbox" value="updates-accepted" name="m__updates-acceptance" id="updates-acceptance" checked><label for="updates-acceptance"><?php esc_html_e('Yes, I want to receive news and updates from the Museum', 'BH'); ?></label>
+        <input type="checkbox" name="updates-acceptance" id="updates-acceptance" checked><label for="updates-acceptance"><?php esc_html_e('Yes, I want to receive news and updates from the Museum', 'BH'); ?></label>
     </div>
 
 </fieldset>
