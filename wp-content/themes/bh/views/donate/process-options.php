@@ -74,7 +74,7 @@ if ( wp_is_mobile() ) {
                     ?>
                 </p>
                 <p>
-                    <?php echo __('For more information please contact us at', 'BH') . ' ' . $email_link; ?>
+                    <?php echo esc_html__('For more information please contact us at', 'BH') . ' ' . $email_link; ?>
                 </p>
             </div>
             <div role="tabpanel" class="tab-pane container" id="telephone">
