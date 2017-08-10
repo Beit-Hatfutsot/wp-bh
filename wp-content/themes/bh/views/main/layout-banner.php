@@ -4,7 +4,7 @@
  *
  * @author 		Beit Hatfutsot
  * @package 	bh/views/main
- * @version     2.0
+ * @version     2.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -107,11 +107,11 @@ foreach ($slides as $s) {
 			</div>
 			<div id="slides" class="slides-reset">
 			<?php
-				echo '<img src="' . $items[count($items)-1]['image']['sizes']['large'] . '" class="slide" />';
+				echo '<img src="' . $items[count($items)-1]['image']['sizes']['large'] . '" alt="' . $items[count($items)-1]['image']['alt'] . '" class="slide" />';
 				foreach($items as $index => $item) {
-					echo '<a href="' . $item['link'] . '" ' . ( $item['target'] == 'blank' ? 'target="_blank"' : '' ) . '><img src="' . $item['image']['sizes']['large'] . '" class="slide" /></a>';
+					echo '<a href="' . $item['link'] . '" ' . ( $item['target'] == 'blank' ? 'target="_blank"' : '' ) . '><img src="' . $item['image']['sizes']['large'] . '" alt="' . $item['image']['alt'] . '" class="slide" /></a>';
 				}
-				echo '<img src="' . $items[0]['image']['sizes']['large'] . '" class="slide" />';
+				echo '<img src="' . $items[0]['image']['sizes']['large'] . '" alt="' . $items[0]['image']['alt'] . '" class="slide" />';
 			?>
 			</div>
 			<div id="mini-gallery">

@@ -4,7 +4,7 @@
  *
  * @author 		Beit Hatfutsot
  * @package 	bh/functions
- * @version     2.0
+ * @version     2.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -282,19 +282,19 @@ function BH_loop_add_to_cart_link() {
 
 	// Enhanced Ecommerce - "add to cart" event tracking
 	// collect product info and submit it on form submission
-	$p_id		= $product->id;
-	$p_sku		= esc_js( $product->sku );
+	$p_id		= $product->get_id();
+	$p_sku		= esc_js( $product->get_sku() );
 	$p_name		= esc_js( $product->get_title() );
 	$p_currency	= get_woocommerce_currency();
 	
 	if ( defined('DOING_AJAX') && DOING_AJAX && class_exists('woocommerce_wpml') ) {
 		// filter product price and currency
 		// used in case of an AJAX call and active woocommerce wpml
-		$p_price = number_format((float)apply_filters('wcml_raw_price_amount', $product->price), 2, '.', '');
+		$p_price = number_format((float)apply_filters('wcml_raw_price_amount', $product->get_price()), 2, '.', '');
 		$p_currency = apply_filters('wcml_price_currency', $p_currency);
 	}
 	else {
-		$p_price = number_format((float)$product->price, 2, '.', '');
+		$p_price = number_format((float)$product->get_price(), 2, '.', '');
 	}
 
 	$category = '';
@@ -304,13 +304,12 @@ function BH_loop_add_to_cart_link() {
 		$category	= esc_js( $single_cat->name );
 	endif;
 
-	echo sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="button %s product_type_%s ajax_add_to_cart" onclick="BH_EC_onUpdateCart(\'' . $p_sku . '\', \'' . $p_name . '\', \'' . $category . '\', \'' . $p_price . '\', \'' . $p_currency . '\', 1, \'add\'); BH_FB_onAddToCart(\'' . $p_sku . '\', \'' . $p_name . '\', \'' . $category . '\', \'' . $p_price . '\', \'' . $p_currency . '\'); return true;"></a>',
-		esc_url( $product->add_to_cart_url() ),
-		esc_attr( $product->id ),
+	echo sprintf( '<a href="#" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="button %s product_type_%s ajax_add_to_cart" onclick="BH_EC_onUpdateCart(\'' . $p_sku . '\', \'' . $p_name . '\', \'' . $category . '\', \'' . $p_price . '\', \'' . $p_currency . '\', 1, \'add\'); BH_FB_onAddToCart(\'' . $p_sku . '\', \'' . $p_name . '\', \'' . $category . '\', \'' . $p_price . '\', \'' . $p_currency . '\'); return true;"></a>',
+		esc_attr( $product->get_id() ),
 		esc_attr( $product->get_sku() ),
 		esc_attr( isset( $quantity ) ? $quantity : 1 ),
 		$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
-		esc_attr( $product->product_type )
+		esc_attr( $product->get_type() )
 	);
 }
 
@@ -1051,7 +1050,7 @@ function BH_shop_price_html($price, $product) {
 			'currency' => apply_filters( 'wcml_price_currency', get_woocommerce_currency_symbol() ),
 		);
 
-		$price = '<span class="amount">' . wc_price( apply_filters('wcml_raw_price_amount', $product->price), $args ) . '</span>';
+		$price = '<span class="amount">' . wc_price( apply_filters('wcml_raw_price_amount', $product->get_price()), $args ) . '</span>';
 	}
 
 	// return
@@ -1080,27 +1079,13 @@ function BH_shop_sale_price_html($price, $product) {
 			'currency' => apply_filters( 'wcml_price_currency', get_woocommerce_currency_symbol() ),
 		);
 
-		$del = '<del><span class="amount">' . wc_price( apply_filters('wcml_raw_price_amount', $product->regular_price), $args ) . '</span></del>';
-		$ins = '<ins><span class="amount">' . wc_price( apply_filters('wcml_raw_price_amount', $product->price), $args ) . '</span></ins>';
+		$del = '<del><span class="amount">' . wc_price( apply_filters('wcml_raw_price_amount', $product->get_regular_price()), $args ) . '</span></del>';
+		$ins = '<ins><span class="amount">' . wc_price( apply_filters('wcml_raw_price_amount', $product->get_price()), $args ) . '</span></ins>';
 	}
 
 	// return
 	return $del . $ins;
 
-}
-
-/**
- * BH_shop_set_related_products_limit
- * 
- * Unlimit related products
- *
- * @param	$query (array) related products query arguments
- * @return	(array)
- */
-function BH_shop_set_related_products_limit($query) {
-	$query['limits'] = -1;
-	
-	return $query;
 }
 
 /**

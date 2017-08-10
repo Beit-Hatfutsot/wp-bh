@@ -12,14 +12,15 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 global $product, $woocommerce;
 
 // get upsells
-$upsells = $product->get_upsells();
+$upsells = $product->get_upsell_ids();
 
 if ( ! $upsells ) {
 	// get related products
-	$related = $product->get_related();
+	$related = wc_get_related_products( $product->get_id() );
+}
 
-	if ( ! $related )
-		return;
+if ( ! $upsells && ! $related ) {
+	return;
 }
 
 $slider_products = array();
@@ -39,7 +40,7 @@ $args = array (
 	'posts_per_page'		=> -1,
 	'orderby'				=> 'rand',
 	'post__in'				=> $upsells ? $upsells : $related,
-	'post__not_in'			=> array($product->id),
+	'post__not_in'			=> array($product->get_id()),
 	'meta_query'			=> $meta_query
 );
 $slider_products_query = new WP_Query($args);
