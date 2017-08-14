@@ -2590,12 +2590,6 @@
 		.row {
 			height: 233px;
 			
-			.col-3 {
-				.event-excerpt {
-					height: 175px;
-				}
-			}
-
 			h2.event-name {
 				font-size: 20px !important;
 			}
@@ -2611,6 +2605,12 @@
 
 				.event-date {
 					display: inline-block;
+				}
+			}
+
+			.col-3 {
+				.event-excerpt {
+					height: 175px;
 				}
 			}
 
