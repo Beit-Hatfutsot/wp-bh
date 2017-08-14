@@ -1,5 +1,66 @@
 <?php
 
+/**
+ * Event - event functions
+ *
+ * @author 		Beit Hatfutsot
+ * @package 	bh/views/event
+ * @version     2.2
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+/**
+ * BH_set_event_element
+ *
+ * set event element markup
+ *
+ * @param	array		$args
+ * @return	string      HTML markup for a single element
+ */
+
+function BH_set_event_element($event_data) {
+
+    $read_more_btn = get_field('acf-options_event_btn_read_more',		'option');
+
+    return "<div class='row'>" .
+        // first column - event name and date
+        "<div class='col-1 col-xs-12 visible-xs'>" .
+        "<h2 class='event-name'><a href='" . $event_data['permalink'] . "'>" . $event_data['title'] . "</a></h2>" .
+        $event_data['date'] .
+        "</div>" .
+
+        // second column - event image
+        "<div class='col-2 col-xs-6 col-sm-4 col-md-3'>" .
+        (($event_data['image']) ? "<a href='" . $event_data['permalink'] . "'><img src='" . $event_data['image']['sizes']['thumbnail'] . "' alt='" . (($event_data['image']['alt']) ? $event_data['image']['alt'] : '') . "' /></a>" : "") .
+        "</div>" .
+
+        // third column - event description and buttons
+        "<div class='col-3 col-xs-6 col-sm-8 col-md-9'>" .
+        "<div class='event-excerpt'>" .
+        // event name and date only for small screen size
+        "<div class='event-name-wrap'>" .
+        "<h2 class='event-name'><a href='" . $event_data['permalink'] . "'>" . $event_data['title'] . "</a></h2>" .
+        "</div>" .
+
+        // event description
+        "<div class='event-desc'>" . "<div class='event-meta'>" . $event_data['type'] . $event_data['date'] . "</div>" . $event_data['description'] . "</div>" .
+        "</div>" .
+
+        // event buttons
+        "<div class='event-btn'>" .
+        // display purchase button only for current/future events
+        ($event_data['show_purchase'] ? BH_get_event_purchase_btn($event_data['ID']) : '') .
+        "<a class='btn orange-btn event-more' href='" . $event_data['permalink'] . "'>" . $read_more_btn . "</a>" .
+        "</div>" .
+        "</div>" .
+
+        // event type
+        $event_data['type'] .
+        "</div>";
+}
+
+
 	/**
 	 * check if an event category is empty - only current and future events are counted
 	 * 
