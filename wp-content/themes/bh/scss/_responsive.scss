@@ -842,6 +842,7 @@
 	/***************/
 	
 	.events-list {
+
 		.row {
 
 			.event-name-wrap {
@@ -853,12 +854,17 @@
 			}
 
 			.col-3 {
-				.event-btn {
-					display: none;
+
+				.event-excerpt {
+
+					.event-desc {
+						width: 100% !important;
+					}
+
 				}
 
-				.event-desc {
-					width: 100% !important;
+				.event-btn {
+					display: none;
 				}
 			}
 		}
@@ -2107,23 +2113,25 @@
 	/* events list     */
 	/*******************/
 
-	.event-meta {
-		// position: absolute;
+	.events-list {
+		.row {
+			.event-meta {
+				.event-type {
+					left: 0;
+					right: auto;
+					display: inline-block;
+					position: static !important;
+				}
 
-		.event-type {
-			left: 0;
-			right: auto;
-			display: inline-block;
-			position: static !important;
+				.event-date {
+					display: inline-block;
+				}
+			}
+
+			.event-type {
+				display: none;
+			}
 		}
-
-		.event-date {
-			display: inline-block;
-		}
-	}
-
-	.event-type {
-		display: none;
 	}
 }
 
@@ -2593,7 +2601,6 @@
 			}
 
 			.event-meta {
-				// position: absolute;
 
 				.event-type {
 					left: 0;
@@ -2875,8 +2882,12 @@
 	/* events list */
 	/***************/
 
-	.col-1.visible-xs {
-		display: none !important;
+	.events-list {
+		.row {
+			.col-1.visible-xs {
+				display: none !important;
+			}
+		}
 	}
 
 
@@ -3410,6 +3421,10 @@
 	.events-list {
 		.row {
 			height: 230px;
+
+			h2.event-name {
+				font-weight: $font-semi-bold;
+			}
 			
 			.col-2 {
 				width: 230px;
@@ -3422,10 +3437,6 @@
 				.event-excerpt {
 					height: 200px;
 				}
-			}
-
-			h2.event-name {
-				font-weight: $font-semi-bold;
 			}
 			
 			.event-type {

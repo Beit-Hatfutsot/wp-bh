@@ -123,11 +123,16 @@
 				text-decoration: none;
 			}
 		}
-		
-		.event-date {
-			font-size: 14px;
-			padding: 0 5px;
-			color: #999;
+
+		.event-meta {
+			.event-type {
+			}
+
+			.event-date {
+				font-size: 14px;
+				padding: 0 5px;
+				color: $gray-color4;
+			}
 		}
 		
 		.col-2 {
