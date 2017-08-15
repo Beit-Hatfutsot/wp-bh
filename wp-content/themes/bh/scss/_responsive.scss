@@ -842,8 +842,27 @@
 	/***************/
 	
 	.events-list {
+
 		.row {
+
+			.event-name-wrap {
+				min-height: initial;
+			}
+
+			h2.event-name {
+				font-weight: $font-semi-bold;
+			}
+
 			.col-3 {
+
+				.event-excerpt {
+
+					.event-desc {
+						width: 100% !important;
+					}
+
+				}
+
 				.event-btn {
 					display: none;
 				}
@@ -1926,10 +1945,6 @@
 				margin-bottom: 5px;
 			}
 			
-			.col-1 {
-				display: block !important;
-			}
-			
 			.col-2 {
 				width: 100% !important;
 				text-align: center !important;
@@ -1940,8 +1955,9 @@
 			}
 			
 			.event-type {
-				left: 40px !important;
+				left: 15px !important;
 				right: auto !important;
+				font-size: 12px;
 			}
 		}
 	}
@@ -2089,6 +2105,31 @@
 		.contact-details-wrapper {
 			.contact-details-layout {
 				height: auto !important;
+			}
+		}
+	}
+
+	/*******************/
+	/* events list     */
+	/*******************/
+
+	.events-list {
+		.row {
+			.event-meta {
+				.event-type {
+					left: 0;
+					right: auto;
+					display: inline-block;
+					position: static !important;
+				}
+
+				.event-date {
+					display: inline-block;
+				}
+			}
+
+			.event-type {
+				display: none;
 			}
 		}
 	}
@@ -2549,15 +2590,32 @@
 		.row {
 			height: 233px;
 			
+			h2.event-name {
+				font-size: 20px !important;
+			}
+
+			.event-meta {
+
+				.event-type {
+					left: 0;
+					right: auto;
+					display: inline-block;
+					position: static;
+				}
+
+				.event-date {
+					display: inline-block;
+				}
+			}
+
 			.col-3 {
 				.event-excerpt {
 					height: 175px;
 				}
 			}
-			
+
 			.event-type {
-				left: 248px;
-				right: auto;
+				display: none;
 			}
 		}
 	}
@@ -2819,6 +2877,19 @@
 }
 
 @media (min-width: 481px) and (max-width: 1199px) {
+
+	/***************/
+	/* events list */
+	/***************/
+
+	.events-list {
+		.row {
+			.col-1.visible-xs {
+				display: none !important;
+			}
+		}
+	}
+
 
 	/*************************/
 	/* shop - single product */
@@ -3350,6 +3421,10 @@
 	.events-list {
 		.row {
 			height: 230px;
+
+			h2.event-name {
+				font-weight: $font-semi-bold;
+			}
 			
 			.col-2 {
 				width: 230px;
@@ -3366,6 +3441,7 @@
 			
 			.event-type {
 				right: 15px;
+				font-size: 12px;
 			}
 		}
 	}

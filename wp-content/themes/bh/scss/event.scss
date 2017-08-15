@@ -108,20 +108,31 @@
 		background-color: $white;
 		@include border-radius(6px);
 		overflow: hidden;
+
+		.event-name-wrap {
+			min-height: 40%;
+		}
 		
 		h2.event-name {
 			margin: 15px 0 0;
 			font-size: 24px;
-			font-weight: $font-normal;
+			font-weight: $font-bold;
 
 			a {
 				color: $black-color2;
 				text-decoration: none;
 			}
 		}
-		
-		.event-date {
-			font-size: 14px;
+
+		.event-meta {
+			.event-type {
+			}
+
+			.event-date {
+				font-size: 14px;
+				padding: 0 5px;
+				color: $gray-color4;
+			}
 		}
 		
 		.col-2 {
@@ -133,12 +144,12 @@
 			height: 100%;
 			
 			.event-excerpt {
-				height: 165px;
+				height: 100%;
 				overflow: hidden;
 				
 				.event-desc {
-					margin-top: 15px;
 					line-height: normal;
+					@include calc(width, "100% - 175px");
 				}
 			}
 			
@@ -146,15 +157,19 @@
 				position: absolute;
 				bottom: 15px;
 				right: 15px;
+				width: 170px;
 				
 				.btn {
 					float: right;
-					font-size: 12px;
-					
+
 					&.event-ticket-net-link,
-					&.event-reservation-form-link {
-						margin-left: 10px;
-						padding: 4px 12px;
+					&.event-reservation-form-link,
+					&.event-more {
+						border: none;
+						box-shadow: none;
+						border-radius: 0;
+						width: 100%;
+						margin-top: 10px;
 					}
 				}
 				
@@ -169,10 +184,9 @@
 		
 		.event-type {
 			position: absolute;
-			padding: 0px 5px;
+			padding: 0 5px;
 			bottom: 0;
 			right: 671px;
-			font-size: 12px;
 			color: #333;
 			background-color: $events-list-bg;
 		}
