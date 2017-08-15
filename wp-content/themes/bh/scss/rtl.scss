@@ -844,30 +844,29 @@ body > header {
 .events-list {
 	.row {
 		.col-3 {
+			.event-excerpt {
+				.event-desc {
+					.event-meta {
+						.event-type {
+							margin-left: 5px;
+							margin-right: 0;
+						}
+					}
+				}
+			}
+
 			.event-btn {
 				left: 15px;
 				right: auto;
-				
-				.btn {
-					float: left;
-					
-					&.event-ticket-net-link,
-					&.event-reservation-form-link {
-						margin-left: 0;
-						margin-right: 10px;
-					}
-				}
-				
+
 				.free_admittance {
 					float: left;
-					margin-left: 0;
-					margin-right: 10px;
 				}
 			}
 		}
-		
+
 		.event-type {
-			left: 671px;
+			left: 15px;
 			right: auto;
 		}
 	}

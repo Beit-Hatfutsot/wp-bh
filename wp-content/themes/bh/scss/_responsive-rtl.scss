@@ -420,16 +420,16 @@
 }
 
 @media (max-width: 446px) {
-	
+
 	/***************/
 	/* events list */
 	/***************/
-	
+
 	.events-list {
 		.row {
 			.event-type {
-				left: auto !important;
-				right: 40px !important;
+				left: auto;
+				right: 15px;
 			}
 		}
 	}
@@ -516,19 +516,6 @@
 		right: 620px;
 	}
 
-	/***************/
-	/* events list */
-	/***************/
-	
-	.events-list {
-		.row {
-			.event-type {
-				left: 705px;
-				right: auto;
-			}
-		}
-	}
-
 	/*************************/
 	/* shop - single product */
 	/*************************/
@@ -588,6 +575,8 @@
 	}
 }
 
+@media (min-width: 768px) and (max-width: 1199px) {}
+
 @media (min-width: 768px) and (max-width: 991px) {
 	
 	/**********/
@@ -636,19 +625,6 @@
 		}
 	}
 
-	/***************/
-	/* events list */
-	/***************/
-	
-	.events-list {
-		.row {
-			.event-type {
-				left: auto;
-				right: 248px;
-			}
-		}
-	}
-
 	/*******/
 	/* 404 */
 	/*******/
@@ -665,6 +641,8 @@
 		}
 	}
 }
+
+@media (min-width: 481px) and (max-width: 1199px) {}
 
 @media (min-width: 481px) and (max-width: 991px) {}
 
@@ -816,17 +794,18 @@
 	}
 }
 
-@media (min-width: 351px) and (max-width: 767px) {
-	
+@media (min-width: 447px) and (max-width: 991px) {}
+
+@media (min-width: 447px) and (max-width: 767px) {
+
 	/***************/
 	/* events list */
 	/***************/
-	
+
 	.events-list {
 		.row {
-			.event-type {
-				left: 15px;
-				right: auto;
+			.col-2 {
+				text-align: right;
 			}
 		}
 	}
