@@ -106,27 +106,21 @@ small {}
 /* images */
 /**********/
 
-.alignleft {
-	&.img,
-	&.wp-caption {
+img,
+.wp-caption {
+	&.alignleft {
 		float: left !important;
 		margin: 0 50px 20px 0;
 		max-width: 50%;
 	}
-}
 
-.alignright {
-	&.img,
-	&.wp-caption {
+	&.alignright {
 		float: right !important;
 		margin: 0 0 20px 50px;
 		max-width: 50%;
 	}
-}
 
-.aligncenter {
-	&.img,
-	&.wp-caption {
+	&.aligncenter {
 		margin: 0 auto 20px;
 		display: block;
 	}
