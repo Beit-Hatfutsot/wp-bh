@@ -1106,25 +1106,6 @@ acf_add_local_field_group(array (
 	'title' => 'Page Attributes',
 	'fields' => array (
 		array (
-			'key' => 'field_53c1c4074a2f8',
-			'label' => 'HTTPS',
-			'name' => 'acf-https',
-			'type' => 'true_false',
-			'instructions' => 'Secure Post',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 0,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
-		),
-		array (
 			'key' => 'field_54b6b18685fc4',
 			'label' => 'Shop Page',
 			'name' => 'acf-shop_page',

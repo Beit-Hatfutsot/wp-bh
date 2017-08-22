@@ -3,30 +3,6 @@
     "title": "Page Attributes",
     "fields": [
         {
-            "default_value": 0,
-            "message": "",
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "key": "field_53c1c4074a2f8",
-            "label": "HTTPS",
-            "name": "acf-https",
-            "type": "true_false",
-            "instructions": "Secure Post",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": 0,
-            "message": "",
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
             "key": "field_54b6b18685fc4",
             "label": "Shop Page",
             "name": "acf-shop_page",
@@ -38,7 +14,12 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -72,5 +53,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483958121
+    "modified": 1503416287
 }
