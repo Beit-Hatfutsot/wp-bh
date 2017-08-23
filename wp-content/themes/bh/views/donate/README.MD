@@ -1,5 +1,4 @@
 # Donation Pages
-## Installation
 ## iCount Documentation
 ### CSS
 ~~~~

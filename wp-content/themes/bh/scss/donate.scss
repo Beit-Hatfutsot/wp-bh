@@ -215,6 +215,7 @@ h1 {
 }
 
 #donate-process-options {
+
   ul {
     height: 55px;
     line-height: 55px;
@@ -293,6 +294,15 @@ h1 {
       display: inline-block;
     }
   }
+
+  .certificate-example-box {
+    padding: 30px 0;
+    margin: 0 40px;
+
+    img {
+      outline: $gray-color6 solid 2px;
+    }
+  }
 }
 
 #donate-process-bottom {
@@ -314,6 +324,11 @@ h1 {
     }
   }
 }
+
+/*****************/
+/* Form Elements */
+/*****************/
+
 
 .donate-form {
   fieldset {
@@ -400,6 +415,66 @@ h1 {
     font-size: 14px;
     margin-top: 28px;
   }
+
+  input[type=checkbox],
+  input[type=radio   ] {
+    width   : 16px;
+    margin  : 0;
+    padding : 0;
+    appearance:none;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+  }
+
+  input[type=checkbox] + label,
+  input[type=radio   ] + label {
+    display      : inline-block;
+    margin-left  : -20px;
+    padding-left : 28px;
+    line-height  : 16px;
+    height: 34px;
+  }
+
+  input[type=radio   ] + label {
+    @include image("general/radio.svg", 16px);
+
+    .other & {
+      background-position: left center;
+    }
+
+    &:hover {
+      background-image: url("../images/general/radio-hover.svg");
+    }
+  }
+
+  input[type=radio   ]:checked  + label {
+    background-image: url("../images/general/radio-checked.svg");
+  }
+
+  input[type=checkbox] + label {
+    @include image("general/checkbox.svg", 16px);
+
+    &:hover {
+      @include image("general/checkbox-hover.svg", 16px);
+    }
+  }
+
+  input[type=checkbox]:checked + label {
+    @include image("general/checkbox-checked.svg", 16px);
+  }
+
+
+  .btn {
+    border-radius: 0;
+    border: none;
+    text-align: center;
+    color: $white;
+    width: auto;
+    font-size: 30px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10%;
+  }
 }
 
 #donate-process-thank-you {
@@ -409,95 +484,14 @@ h1 {
   }
 }
 
-.certificate-example-box {
-  padding: 30px 0;
-  margin: 0 40px;
-
-  img {
-    outline: $gray-color6 solid 2px;
-  }
-}
-
-/*****************/
-/* Form Elements */
-/*****************/
-
-input[type=checkbox],
-input[type=radio   ] {
-  width   : 16px;
-  margin  : 0;
-  padding : 0;
-  appearance:none;
-  -moz-appearance:none; /* Firefox */
-  -webkit-appearance:none; /* Safari and Chrome */
-}
-
-input[type=checkbox] + label,
-input[type=radio   ] + label {
-  display      : inline-block;
-  margin-left  : -20px;
-  padding-left : 28px;
-  line-height  : 16px;
-  height: 34px;
-}
-
-input[type=radio   ] + label {
-  @include image("general/radio.svg", 16px);
-
-  .other & {
-    background-position: left center;
-  }
-
-  &:hover {
-    background-image: url("../images/general/radio-hover.svg");
-  }
-}
-
-input[type=radio   ]:checked  + label {
-  background-image: url("../images/general/radio-checked.svg");
-}
-
-input[type=checkbox] + label {
-  @include image("general/checkbox.svg", 16px);
-
-  &:hover {
-    @include image("general/checkbox-hover.svg", 16px);
-  }
-}
-
-input[type=checkbox]:checked + label {
-  @include image("general/checkbox-checked.svg", 16px);
-}
-
-
-.btn {
-  border-radius: 0;
-  border: none;
-  text-align: center;
-  color: $white;
-  width: auto;
-  font-size: 30px;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 10%;
-}
-
-.icount-iframe {
-  height: 620px;
-}
-
 /**************/
 /* responsive */
 /**************/
 
-@import "responsive";
-
-@media (max-width: 1199px) {
-
-}
+// @import "responsive";
 
 @media (max-width: 991px) {
-  h1#lobby-title {
+  /*h1#lobby-title {
     font-size: 26px;
     height: 50px;
     line-height: 50px;
@@ -563,7 +557,7 @@ input[type=checkbox]:checked + label {
     .certificate-example-box {
       margin: 0 25%;
     }
-  }
+  }*/
 }
 
 @media (max-width: 767px) {
@@ -572,7 +566,7 @@ input[type=checkbox]:checked + label {
 
 @media (max-width: 480px) {
 
-  h1#process-title {
+  /*h1#process-title {
     font-size: 20px;
   }
 
@@ -640,5 +634,5 @@ input[type=checkbox]:checked + label {
 
   .donation-flow {
     font-size: 14px;
-  }
+  }*/
 }
