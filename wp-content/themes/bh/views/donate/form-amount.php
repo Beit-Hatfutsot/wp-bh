@@ -46,13 +46,13 @@ $default_alt            = $certificate_examples['appreciation']['alt'];
 
     <div class="form-group">
         <div class="checkbox">
-            <input id="show-tribute" name="show-tribute" type="checkbox" value="show-tribute"><label for="show-tribute" ><em><?php esc_html_e('Print your certificate in honor, memory or support of your loved one', 'BH'); ?></em></label>
+            <input id="show-tribute" name="m__show-tribute" type="checkbox" value="1"><label for="show-tribute" ><em><?php esc_html_e('Print your certificate in honor, memory or support of your loved one', 'BH'); ?></em></label>
         </div>
     </div>
 
     <div class="form-group on-demand hide" aria-expanded="false">
         <label for="tribute-type"><?php esc_html_e('Tribute Type', 'BH'); ?></label>
-        <select id="tribute-type" name="tribute_type" class="form-control in-tribute">
+        <select id="tribute-type" name="m__tribute_type" class="form-control in-tribute">
 
             <?php foreach ( $cert_types as $cert_type => $cert_title ) {
                 echo '<option value="' . $cert_type . '">' . $cert_title . '</option>';

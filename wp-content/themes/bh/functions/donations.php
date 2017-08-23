@@ -337,3 +337,45 @@ function BH_subscribe_donor($postdata) {
     return $res;
 
 };
+
+/**
+ * BH_donation_email_certificate_task
+ *
+ * When a donation is made in tribute, this function is triggered to send the necessary details to the relevant team member
+ *
+ * @param array $args
+ *
+ * @return string $res
+ */
+
+function BH_donation_email_certificate_task($args) {
+
+    $message_head =
+    '<head>'.
+        '<style>'.
+        // @TODO add styling (optional)
+        '</style>'.
+    '</head>';
+
+    $title = 'Donation certificate task';
+    $subject = $title . ' (' . $args['code'] . ')';
+
+    $message_body = '<h2>' . $title .'</h2>' .
+    '<ul>';
+
+    foreach ($args as $label => $value) {
+        $message_body .= '<li><strong>' . $label . ':</strong> ' . $value . '</li>';
+    }
+
+    $message_body .= '<ul>';
+
+    $message = '<html>' . $message_head . '<body>' . $message_body . '</body>' . '</html>';
+
+    $to = 'itay@ibanner.co.il';
+
+    $headers  = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
+    $headers .= "From: donate@bh.org.il" . "\r\n"; //@TODO setup this mailbox, or perhaps use a different address?
+
+    return @wp_mail($to, $subject, $message, $headers);
+};

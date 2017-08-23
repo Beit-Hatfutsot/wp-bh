@@ -5,6 +5,21 @@
     <?php
     get_template_part('views/header/header', 'meta');
     wp_head();
+
+    if ( isset($_GET['show-tribute']) && 1 ==  $_GET['show-tribute'] ) {
+        $args = array(
+            'code'          => $_GET['confirmation_code'],
+            'name'          => $_GET['customer_name'],
+            'email'         => $_GET['customer_email'],
+            'phone'         => $_GET['customer_phone'],
+            'type'          => $_GET['tribute_type'],
+            'lang'          => $_GET['certificate_language'],
+            'text'          => $_GET['tribute_text'],
+            'date'          => current_time('d/m/Y'),
+        );
+
+        $tribute_task = BH_donation_email_certificate_task($args);
+    }
     ?>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
