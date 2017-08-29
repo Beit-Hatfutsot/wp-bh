@@ -170,6 +170,16 @@ img {
 	}
 }
 
+.fb-share-wrap {
+	position: relative;
+
+	.fb-share-button {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+}
+
 /**********/
 /* tables */
 /**********/
