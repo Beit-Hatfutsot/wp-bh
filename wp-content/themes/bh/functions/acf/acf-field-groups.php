@@ -6798,7 +6798,9 @@ acf_add_local_field_group(array(
     'description' => '',
 ));
 
-    acf_add_local_field_group(array(
+// DONATIONS - Certificates
+
+acf_add_local_field_group(array(
         'key' => 'donation_certificates',
         'title' => 'Donation Certificates',
         'fields' => array(
