@@ -38,10 +38,23 @@
             width: 100%;
         }
 
+        #wpadminbar {
+            display: none;
+        }
+
         .donations-content {
             margin-top: 0;
         }
     </style>
+
+    <script>
+        var paymentLabel    = parent.document.getElementById('step--payment');
+        var completeLabel   = parent.document.getElementById('step--complete');
+
+        paymentLabel.className = paymentLabel.className.replace( ' current-step', '' );
+        completeLabel.className += ' current-step';
+
+    </script>
 
 </head>
 

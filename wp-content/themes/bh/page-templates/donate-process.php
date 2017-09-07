@@ -31,7 +31,6 @@ if ('thank-you' !== $slug) {
             get_template_part('views/donate/secured-payment');      // iCount iFrame
             break;
         case "thank-you":
-            get_template_part('views/donate/process', 'flow');      // Process stage indicator
             get_template_part('views/donate/thank-you');            // Naked Thank You message for redirection from iCount after success.
             break;
     }

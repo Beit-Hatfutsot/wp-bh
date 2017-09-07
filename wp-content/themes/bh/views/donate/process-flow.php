@@ -32,7 +32,7 @@ $steps = array(
                     if ($current_step === $step_slug) {
                         $step_class .= ' current-step';
                     }
-                    echo '<li class="' . $step_class . '">' . $step_title . '</li>';
+                    echo '<li id="step--' . $step_slug . '" class="' . $step_class . '">' . $step_title . '</li>';
                     if ('complete' !== $step_slug) {
                         echo ' ' . esc_html__('&gt;', 'BH') . ' ';
                     }
