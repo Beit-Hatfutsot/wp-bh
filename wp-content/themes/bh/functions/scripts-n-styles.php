@@ -40,6 +40,7 @@ function BH_wp_scripts_n_styles() {
 	wp_register_style( 'main',						CSS_DIR . '/main.css',								array('bootstrap'),											VERSION );
 	wp_register_style( 'event',						CSS_DIR . '/event.css',								array('bootstrap'),											VERSION );
 	wp_register_style( 'blog',						CSS_DIR . '/blog.css',								array('bootstrap'),											VERSION );
+    wp_register_style( 'donate',				    CSS_DIR . '/donate.css',							array('bootstrap'),											VERSION );
 	wp_register_style( 'rtl',						CSS_DIR . '/rtl.css',								array('bootstrap-rtl'),										VERSION );
 	
 	if ( is_page() ) :
@@ -52,6 +53,10 @@ function BH_wp_scripts_n_styles() {
 			case 'past-events.php' :
 				wp_enqueue_style('jquery-ui');
 				wp_enqueue_style('event');
+				break;
+			case 'donate-lobby.php' :
+			case 'donate-process.php' :
+				wp_enqueue_style('donate');
 				break;
 			case 'blog.php' :
 				wp_enqueue_style('blog');
@@ -100,6 +105,12 @@ function BH_wp_scripts_n_styles() {
 	wp_register_script( 'banner',					JS_DIR . '/min/bh-slideshow.min.js',								array('jquery', 'bootstrap'),								VERSION,	true );
 	wp_register_script( 'event',					JS_DIR . '/min/event.min.js',										array('jquery', 'bootstrap'),								VERSION,	true );
 	wp_register_script( 'blog',						JS_DIR . '/min/blog.min.js',										array('jquery', 'bootstrap'),								VERSION,	true );
+    wp_register_script( 'donate',				    JS_DIR . '/min/donate.min.js',										array('jquery', 'bootstrap'),								VERSION,	true );
+    wp_localize_script( 'donate' , 'tribute_text_placehoder', array(
+                            'appreciation'  => esc_html__('Bar Mitzvah boy Mordechai ben Ester', 'BH'),
+                            'memory'        => esc_html__('Our beloved grandmother Bracha Cohen', 'BH'),
+                            'thankyou'      => esc_html__('To Barak Aharoni with appreciation of your good work', 'BH'),
+    ));
 	wp_register_script( 'forms',					JS_DIR . '/forms/forms.js',											array('jquery'),						                    VERSION,	true );       
 	wp_register_script( 'microfilm',				JS_DIR . '/forms/microfilm.js',										array('jquery'),						                    VERSION,	true );       
 	wp_register_script( 'item-handler',				JS_DIR . '/forms/item-handler.js',									array('jquery'),						                    VERSION,	true );        

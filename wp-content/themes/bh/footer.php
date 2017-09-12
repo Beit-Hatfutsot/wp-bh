@@ -79,6 +79,10 @@ global $globals;
 
 			case 'blog.php' :
 				wp_enqueue_script( 'blog' );
+				break;
+
+            case 'donate-process.php' :
+                wp_enqueue_script( 'donate' );
 
 		endswitch;
 

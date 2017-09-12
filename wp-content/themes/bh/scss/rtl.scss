@@ -1614,6 +1614,63 @@ ul.order_details {
 	}
 }
 
+/***************/
+/* donations   */
+/***************/
+
+.donate-form {
+	.radio, .checkbox {
+		padding: 0 20px;
+	}
+
+	.radio {
+		input[type=radio] {
+			margin-right  : -20px;
+			float: right;
+		}
+	}
+
+	.checkbox {
+		input[type=checkbox] {
+			margin-right  : -20px;
+			float: right;
+		}
+	}
+
+	input[type=checkbox] + label,
+	input[type=radio   ] + label,
+	input[type=checkbox] + label:hover,
+	input[type=radio   ] + label:hover,
+	input[type=checkbox]:checked + label,
+	input[type=radio   ]:checked + label {
+		margin-right  : -20px;
+		padding-right : 28px;
+		background-position: right top;
+	}
+
+	input[type=radio   ] + label {
+		.other & {
+			background-position: right center;
+		}
+	}
+
+	.btn {
+		border-radius: 0;
+		border: none;
+		text-align: center;
+		color: $white;
+		width: auto;
+		font-size: 30px;
+		height: 50px;
+		line-height: 50px;
+		padding: 0 10%;
+	}
+}
+
+
+
+
+
 /**********/
 /* footer */
 /**********/

@@ -21,6 +21,7 @@ if ( function_exists('acf_add_options_sub_page') ) {
 	acf_add_options_sub_page('Exhibitions and Events');
 	acf_add_options_sub_page('General');
 	acf_add_options_sub_page('Shop');
+    acf_add_options_sub_page('Donations');
 
 }
 
