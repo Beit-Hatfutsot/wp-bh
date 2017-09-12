@@ -43,7 +43,7 @@ $lobby_links    = get_field('donate_main_page_links', 'option');
 
             <?php foreach ($lobby_links as $lobby_link):
 
-                $target_href = get_permalink($lobby_link['target_page']);
+                $target_href = $lobby_link['target_page'] ? get_permalink($lobby_link['target_page']) : '#';
                 $target_title = get_the_title($lobby_link['target_page']);
                 $thumb = $lobby_link['image'];
                 $target_cta = $lobby_link['link_title'];
