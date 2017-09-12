@@ -1,6 +1,5 @@
 @import "functions";
 @import "typography";
-//@import "responsive";
 @import "modules/sprites";
 
 @charset "utf-8";
@@ -114,9 +113,33 @@ article.post {
 	.post-content {
 		color: $font-color;
 	}
-	
-	.read-more {
-		margin-top: 35px;
+
+	&.loop-post {
+		cursor: pointer;
+
+		.featured-image {
+			overflow: hidden;
+
+			img {
+				@include transition(all);
+			}
+
+			&:hover {
+				img {
+					@include transform(scale(1.1));
+				}
+			}
+		}
+
+		&:hover {
+			.post-title {
+				color: $gray-color3;
+
+				a {
+					color: $gray-color3;
+				}
+			}
+		}
 	}
 }
 
