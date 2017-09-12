@@ -463,6 +463,10 @@ h1 {
     @include image("general/checkbox-checked.svg", 16px);
   }
 
+  input[type="radio" i]:focus {
+    outline: none;
+  }
+
 
   .btn {
     border-radius: 0;
