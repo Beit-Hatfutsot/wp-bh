@@ -15,7 +15,7 @@ article.post {
 	border-bottom: 5px solid $cyan-color1;
 	
 	&.single-post {
-		margin-bottom: 0;
+		margin-bottom: 30px;
 		padding: 0;
 		border-bottom: 0;
 	}
@@ -49,9 +49,9 @@ article.post {
 		border-bottom: 1px solid $black-color3;
 		
 		a {
-			font-size: 16px;
+			font-size: 18px;
 			font-weight: $font-bold;
-			color: #444;
+			color: $gray-color2;
 			text-decoration: none;
 		}
 	}
@@ -143,13 +143,50 @@ article.post {
 	}
 }
 
+/***************/
+/* author meta */
+/***************/
+
+.author-meta {
+	margin-bottom: 30px;
+	padding: 15px;
+	border: 1px solid $black-color3;
+
+	.avatar {
+		float: left;
+		width: 96px;
+		height: 96px;
+	}
+
+	.info {
+		margin-left: 111px;
+
+		.name {
+			margin-bottom: 10px;
+			font-size: 18px;
+
+			a {
+				font-weight: $font-bold;
+				color: $gray-color2;
+				text-decoration: none;
+			}
+		}
+
+		.bio {
+			font-size: 15px;
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+}
+
 /*********************/
 /* facebook comments */
 /*********************/
 
 .fb-comments-wrapper {
-	margin-top: 30px;
-	
 	.fb_iframe_widget_fluid span,
 	.fb_iframe_widget iframe {
 		width: 100% !important;

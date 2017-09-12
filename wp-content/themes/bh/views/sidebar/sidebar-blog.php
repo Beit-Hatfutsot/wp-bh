@@ -105,7 +105,7 @@ if ( $archives ) {
 
 ?>
 
-<div class="col-lg-2 visible-lg side-menu-wrapper">
+<div class="side-menu-wrapper col-lg-2 visible-lg">
 
 	<nav>
 
@@ -169,4 +169,4 @@ if ( $archives ) {
 		get_template_part( 'views/sidebar/sidebar', 'newsletter' );
 	?>
 
-</div>
+</div><!-- .side-menu-wrapper -->

@@ -52,4 +52,4 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<?php the_excerpt(); ?>
 	</div>
 
-</article>
+</article><!-- #post-## -->
