@@ -685,6 +685,78 @@
 	}
 
 	/**********/
+	/* donate */
+	/**********/
+
+	h1#lobby-title {
+		font-size: 26px;
+		height: 50px;
+		line-height: 50px;
+	}
+
+	#lobby-subtitle {
+		h2 {
+			font-size: 18px;
+			line-height: 26px;
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 30px;
+		}
+	}
+
+	#passage {
+		p {
+			font-size: 18px;
+		}
+	}
+
+	.hero h2 {
+		font-size: 26px;
+	}
+
+	.lobby-link {
+		padding-bottom: 40px;
+	}
+
+	.lobby-label {
+		height: 40px;
+		line-height: 40px;
+		font-size: 16px;
+
+		&.has-sub {
+			padding-top: 3px;
+			line-height: 16px;
+		}
+
+		.subtitle {
+			font-size: 12px;
+			line-height: 12px;
+			font-weight: $font-normal;
+		}
+	}
+
+	#donate-process-options {
+
+		.us-donation {
+			display: inline-block;
+		}
+
+		ul {
+			li {
+				a {
+					font-size: initial;
+				}
+			}
+		}
+
+		.certificate-example-box {
+			margin: 0 25%;
+		}
+	}
+
+	/**********/
 	/* footer */
 	/**********/
 
@@ -1847,6 +1919,77 @@
 				max-width: 139px;
 				height: 139px;
 			}
+		}
+	}
+
+	/**********/
+	/* donate */
+	/**********/
+
+	h1#process-title {
+		font-size: 20px;
+	}
+
+	#lobby-subtitle {
+		p {
+			text-align: left;
+		}
+	}
+
+	#passage {
+		height: auto;
+		line-height: normal;
+		p {
+			font-size: 16px;
+			margin-bottom: 0;
+
+			small {
+				display: inline-block;
+				font-size: 85%;
+			}
+		}
+	}
+
+	.hero {
+		.hero-label {
+			font-size: initial;
+		}
+
+		h2 {
+			font-size: 18px;
+			margin: 0 25%;
+		}
+	}
+
+	.lobby-label--wrapper {
+		bottom: 20px;
+	}
+
+	.lobby-link {
+		padding-bottom: 10px;
+	}
+
+	.lobby-label {
+		margin: 0 25%;
+
+		&.has-sub {
+			padding-top: 5px;
+		}
+	}
+
+	.donation-flow {
+		font-size: 14px;
+	}
+
+	#donate-process-options {
+		.certificate-example-box {
+			margin: 0 10px;
+		}
+	}
+
+	.donate-form {
+		legend {
+			width: 100%;
 		}
 	}
 

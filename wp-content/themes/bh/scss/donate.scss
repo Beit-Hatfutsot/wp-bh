@@ -1,0 +1,495 @@
+@import "functions";
+@import "typography";
+
+@charset "utf-8";
+
+
+
+.donations-content {
+  margin-top: 120px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h1 {
+  &#lobby-title {
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+    background-color: $red-color2;
+    font-weight: $font-normal;
+    color: $white;
+    height: 80px;
+    line-height: 80px;
+  }
+
+  &#process-title {
+    font-size: 36px;
+    color: $black-color2;
+    background-color: $gray-color7;
+    height: 65px;
+    line-height: 65px;
+    padding: 0;
+    margin: 0;
+  }
+
+  &#thank-you-title{
+    background-color: $blue-color6;
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: $font-normal;
+  }
+}
+
+.back-link {
+  text-align: start;
+  height: 45px;
+  line-height: 45px;
+
+  a {
+    color: $black-color2;
+  }
+}
+
+#lobby-subtitle {
+  h2 {
+    font-size: 35px;
+    line-height: 56px;
+    font-weight: $font-normal;
+    color: $red-color2;
+    margin: 0;
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 36px;
+    padding: 0 5%;
+    margin-top: 10px;
+  }
+}
+
+#passage {
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+
+  p {
+    color: $white;
+    background-color: $red-color4;
+    font-weight: $font-bold;
+    font-size: 26px;
+
+    small {
+      font-size: 18px;
+      font-weight: $font-normal;
+    }
+
+    small::before {
+      content: '   ';
+    }
+  }
+}
+
+.hero {
+  position: relative;
+
+  .hero-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: $font-bold;
+    font-size: 26px;
+
+    &.black-overlay-bg {
+      color: $white;
+      background: $black;
+      background: -webkit-linear-gradient(rgba(255,0,0,0), rgba(0,0,0,1)); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(rgba(255,0,0,0), rgba(0,0,0,1)); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(rgba(255,0,0,0), rgba(0,0,0,1)); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(rgba(255,0,0,0), rgba(0,0,0,1)); /* Standard syntax (must be last) */
+    }
+  }
+
+  h2 {
+    font-size: 36px;
+    margin: 0 37.5%;
+    font-weight: $font-bold;
+  }
+}
+
+
+
+.lobby-label--wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.lobby-link {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.lobby-label {
+  background-color: $blue-color3;
+  height: 60px;
+  line-height: 60px;
+  margin: 0;
+  font-size: 22px;
+
+  &.has-sub {
+    line-height: 22px;
+    padding-top: 5px;
+  }
+
+  a, a:hover {
+    color: #fff;
+    text-decoration: none;
+
+    .lobby-link & {
+      white-space:pre;
+    }
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 16px;
+
+    &:before {
+      content: '\A';
+    }
+  }
+}
+
+#lobby-links.row {
+  margin-left: -4px;
+  margin-right: -4px;
+  margin-top: 15px;
+
+  .article-box {
+    padding: 0 4px;
+  }
+}
+
+#donate-process-flow {
+  nav {
+    margin: 0;
+    overflow: hidden;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        list-style-type: none;
+
+        a {
+          font-size: 130%;
+          text-decoration: none;
+          line-height: 40px;
+          color: $font-color;
+        }
+      }
+    }
+  }
+}
+
+.donation-flow {
+  height: 50px;
+  font-size: 24px;
+  line-height: 50px;
+
+  .donation-step {
+    color: $gray-color5;
+
+    &.current-step {
+      color: $black-color2
+    }
+  }
+}
+
+#donate-process-options {
+
+  ul {
+    height: 55px;
+    line-height: 55px;
+    margin-left: -4px;
+    margin-right: -4px;
+    border: 0;
+
+    li {
+      width: 25%;
+      padding: 0 4px;
+      border: 0;
+
+      a {
+        background-color: $gray-color7;
+        font-size: 26px;
+        color: $black-color2;
+        text-decoration: none;
+      }
+
+      &.active {
+        a {
+          font-weight: $font-bold;
+          border-radius: 0;
+          background-color: $white;
+          border: 0;
+
+          span {
+            border-bottom: 4px solid #cf5746;
+          }
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    text-align: start;
+    margin-top: 50px;
+    min-height: 300px;
+
+    strong {
+      font-weight: $font-normal;
+      font-size: 24px;
+    }
+
+    #online {
+      p {
+        text-align: start;
+
+        &.tax-deduct,
+        &.amount-indicator,
+        &.secure-connection {
+          text-align: center;
+        }
+
+        strong {
+          font-weight: $font-bold;
+        }
+      }
+
+      .amount-indicator {
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+
+      .the-amount {
+        font-size: 50px;
+        font-style: normal;
+      }
+
+      .us-donation {
+        font-size: 18px;
+      }
+    }
+
+    .phone-link {
+      display: inline-block;
+    }
+  }
+
+  .certificate-example-box {
+    padding: 30px 0;
+    margin: 0 40px;
+
+    img {
+      outline: $gray-color6 solid 2px;
+    }
+  }
+}
+
+#donate-process-bottom {
+  border-top:  5px solid $gray-color5;
+
+  h4 {
+    color: $black-color2;
+    font-weight: $font-normal;
+    font-size: 28px;
+    line-height: 36px;
+    margin-top: 40px;
+  }
+
+  a {
+    color: $black-color2;
+
+    &.file-na {
+      color: $gray-color5;
+    }
+  }
+}
+
+/*****************/
+/* Form Elements */
+/*****************/
+
+
+.donate-form {
+  fieldset {
+    margin-top: 30px;
+
+    em {
+      font-weight: $font-bold;
+      font-style: normal;
+
+      &::after {
+        content: " ";
+      }
+    }
+  }
+
+  legend {
+    font-size: 22px;
+    background-color: $blue-color6;
+    border: none;
+    width: 280px;
+    padding: 10px 20px;
+    color: $black-color2;
+
+    &.your-details,
+    &.billing-details {
+      text-align: center;
+    }
+  }
+
+  .form-group {
+    &.flow-amount .btn,
+    &.submit .btn {
+      margin-top: 24px;
+      margin-bottom: 48px;
+    }
+  }
+
+  .form-control {
+    border: 3px solid $orange-color6;
+    border-radius: 0;
+  }
+
+  label {
+    font-weight: $font-normal;
+
+    &.cs-hotspot {
+      width: 100%;
+    }
+
+    &.required::before {
+      content: "* ";
+    }
+  }
+
+
+  input {
+    @include placeholder-style() {
+      color: $gray-color5;
+      font-style: italic;
+      font-size: 16px;
+    }
+  }
+
+  select{
+    &.in-tribute {
+      width: auto;
+    }
+  }
+
+  .radio  {
+    line-height: 34px;
+
+    &.other {
+      width: 440px;
+    }
+  }
+
+  input[type="radio"] {
+    margin-top: 0;
+    height: 34px;
+  }
+
+  .large-donations {
+    font-size: 14px;
+    margin-top: 28px;
+  }
+
+  input[type=checkbox],
+  input[type=radio   ] {
+    width   : 16px;
+    margin  : 0;
+    padding : 0;
+    appearance:none;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+  }
+
+  input[type=checkbox] + label,
+  input[type=radio   ] + label {
+    display      : inline-block;
+    margin-left  : -20px;
+    padding-left : 28px;
+    line-height  : 16px;
+    height: 34px;
+  }
+
+  input[type=radio   ] + label {
+    @include image("general/radio.svg", 16px);
+
+    .other & {
+      background-position: left center;
+    }
+
+    &:hover {
+      background-image: url("../images/general/radio-hover.svg");
+    }
+  }
+
+  input[type=radio   ]:checked  + label {
+    background-image: url("../images/general/radio-checked.svg");
+  }
+
+  input[type=checkbox] + label {
+    @include image("general/checkbox.svg", 16px);
+
+    &:hover {
+      @include image("general/checkbox-hover.svg", 16px);
+    }
+  }
+
+  input[type=checkbox]:checked + label {
+    @include image("general/checkbox-checked.svg", 16px);
+  }
+
+  input[type="radio" i]:focus {
+    outline: none;
+  }
+
+
+  .btn {
+    border-radius: 0;
+    border: none;
+    text-align: center;
+    color: $white;
+    width: auto;
+    font-size: 30px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10%;
+  }
+}
+
+#donate-process-thank-you {
+  p {
+    font-size: 22px;
+    line-height: 46px;
+  }
+}
+
+/**************/
+/* responsive */
+/**************/
+
+@import "responsive";
