@@ -105,9 +105,10 @@
         <input type="checkbox" name="terms-acceptance" id="terms-acceptance" required><label for="terms-acceptance"><?php esc_html_e('I\'ve read and accept the ', 'BH'); ?><a href="#" role="link" target="_blank"><?php esc_html_e('terms & conditions', 'BH') ?></a></label>
     </div>
 
+    <!-- @TODO Subscribe donors to the newsletter - issue #54
     <div class="checkbox">
-        <input type="checkbox" name="updates-acceptance" id="updates-acceptance" checked><label for="updates-acceptance"><?php esc_html_e('Yes, I want to receive news and updates from the Museum', 'BH'); ?></label>
-    </div>
+        <input type="checkbox" name="updates-acceptance" id="updates-acceptance" checked><label for="updates-acceptance"><?php /*esc_html_e('Yes, I want to receive news and updates from the Museum', 'BH'); */?></label>
+    </div>-->
 
 </fieldset>
 
