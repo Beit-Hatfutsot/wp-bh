@@ -79,7 +79,7 @@ if ( wp_is_mobile() ) {
             </div>
             <div role="tabpanel" class="tab-pane container" id="telephone">
                 <p>
-                    <strong><?php esc_html_e('Please call us on this number:', 'BH'); ?><a href="tel:+97237457841" role="link" class="phone-link">+972 3 7457841</a> </strong>
+                    <strong><?php esc_html_e('Please call us on this number:', 'BH'); ?> <a href="tel:+97237457841" role="link" class="phone-link">+972 3 7457841</a> </strong>
                 </p>
             </div>
         </div>
