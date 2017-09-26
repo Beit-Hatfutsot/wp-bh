@@ -47,40 +47,31 @@ if ( wp_is_mobile() ) {
 
             </div>
             <div role="tabpanel" class="tab-pane container" id="check">
-                <p>
-                    <strong><?php esc_html_e('Please make check payable to Beit Hatfutsot and send to:', 'BH'); ?></strong>
-                </p>
-                <address>
-                    <?php
-                    $email = 'racheli@bh.org.il';
-                    $email_link = '<a href="' . $email . '">' . $email . '</a>';
-                    $address = sprintf(
-                            __('P.O.B %1$s Tel-Aviv<br/>%2$s Israel<br/>For more information please contact us at %3$s' , 'BH'),
-                            '39359' , '6139202', $email_link );
-                    echo $address;
-                    ?>
-                </address>
+
+                <?php if( get_field('donate_by_check', 'option') ):
+
+                    the_field('donate_by_check', 'option');
+
+                endif; ?>
+
             </div>
             <div role="tabpanel" class="tab-pane container" id="transfer">
-                <p>
-                    <strong><?php esc_html_e('If you wish to make a bank transfer from within Israel:', 'BH'); ?></strong>
-                </p>
-                <p>
-                    <?php
-                    $email = 'racheli@bh.org.il';
-                    $email_link = '<a href="' . $email . '">' . $email . '</a>';
-                    $address = sprintf( __('Bank Mizrahi-Tefahot<br/>Branch: %1$s<br/>Account: %2$s' , 'BH'), '493' , '387660' );
-                    echo $address;
-                    ?>
-                </p>
-                <p>
-                    <?php echo esc_html__('For more information please contact us at', 'BH') . ' ' . $email_link; ?>
-                </p>
+
+                <?php if( get_field('donate_by_bank_transfer', 'option') ):
+
+                    the_field('donate_by_bank_transfer', 'option');
+
+                endif; ?>
+
             </div>
             <div role="tabpanel" class="tab-pane container" id="telephone">
-                <p>
-                    <strong><?php esc_html_e('Please call us on this number:', 'BH'); ?> <a href="tel:+97237457841" role="link" class="phone-link">+972 3 7457841</a> </strong>
-                </p>
+
+                <?php if( get_field('donate_by_phone', 'option') ):
+
+                    the_field('donate_by_phone', 'option');
+
+                endif; ?>
+
             </div>
         </div>
 
