@@ -19,18 +19,19 @@ $lobby_links    = get_field('donate_main_page_links', 'option');
 		?>
 
     <div id="donate-lobby" class="hero">
-        <picture>
-            <source media="(max-width: 480px)" srcset="<?php echo $hero_mobile['url']; ?>">
-            <img src="<?php echo $hero_desktop['url']; ?>" alt="<?php echo $hero_desktop['alt']; ?>">
-        </picture>
-        <div class="lobby-label--wrapper">
+        <a href="<?php echo $target; ?>" role="link">
+            <picture>
+                <source media="(max-width: 480px)" srcset="<?php echo $hero_mobile['url']; ?>">
+                <img src="<?php echo $hero_desktop['url']; ?>" alt="<?php echo $hero_desktop['alt']; ?>">
+            </picture>
+            <div class="lobby-label--wrapper">
 
-            <h2 class="lobby-label">
-                <a href="<?php echo $target; ?>" role="link"><?php esc_html_e('Donate', 'BH') ?></a>
-            </h2>
+                <h2 class="lobby-label">
+                    <?php esc_html_e('Donate', 'BH') ?>
+                </h2>
 
-        </div>
-
+            </div>
+        </a>
     </div>
 	
 </section>
@@ -49,13 +50,14 @@ $lobby_links    = get_field('donate_main_page_links', 'option');
                 $target_cta = $lobby_link['link_title'];
 
                 if ( $lobby_link['link_subtitle'] ) {
-                    $target_cta .= ' <span class="subtitle">' . $lobby_link['link_subtitle'] . '</span>';
+                    $target_cta .= '<br/><span class="subtitle">' . $lobby_link['link_subtitle'] . '</span>';
                 }
 
                 ?>
 
                 <div class="article-box col-sm-3">
                     <article class="lobby-link">
+                        <a href="<?php echo $target_href; ?>" role="link">
 
                         <?php if ($thumb): ?>
                             <img src="<?php echo $thumb['sizes']['medium']; ?>" alt="<?php echo $thumb['title']; ?>">
@@ -63,10 +65,10 @@ $lobby_links    = get_field('donate_main_page_links', 'option');
 
                         <div class="lobby-label--wrapper">
                             <h3 class="lobby-label <?php echo ( $lobby_link['link_subtitle'] ) ? 'has-sub' : ''; ?>">
-                                <a href="<?php echo $target_href; ?>" role="link"><?php echo $target_cta; ?></a>
+                                <?php echo $target_cta; ?>
                             </h3>
                         </div>
-
+                        </a>
                     </article>
                 </div>
 
