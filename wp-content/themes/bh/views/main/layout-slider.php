@@ -4,36 +4,39 @@
  *
  * @author 		Beit Hatfutsot
  * @package 	bh/views/main
- * @version     2.0
+ * @version     2.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// check for ACF existence
+// Check for ACF existence
 if ( ! function_exists('get_field') )
 	return;
 
-// layout parameters
+// Layout parameters
 $slider = get_field('acf-options_exhibitions_and_events_slider', 'option');
 
 if ( ! $slider )
 	return;
 
+/**
+ * Variables
+ */
 global $events;
-$events = array();
+$events		= array();
+$wpml_lang	= function_exists('icl_object_id') ? ICL_LANGUAGE_CODE : '';
 
-$wpml_lang = function_exists('icl_object_id') ? ICL_LANGUAGE_CODE : '';
+foreach ( $slider as $s ) {
 
-foreach ($slider as $s) {
-	// init $item
+	// Init $item
 	$item = array();
 
-	// get slide parameters
+	// Get slide parameters
 	$type = $s['type'];
 
 	switch ( $type ) {
 
-		// event
+		// Event
 		case 'event' :
 
 			$event = $s['event'];
@@ -45,10 +48,10 @@ foreach ($slider as $s) {
 
 			break;
 
-		// custom
+		// Custom
 		case 'custom' :
 
-			// get custom slide parameters
+			// Get custom slide parameters
 			$image		= $s['custom_image'];
 			$title		= $s['custom_title'];
 			$link		= $s['custom_link'];
@@ -67,21 +70,23 @@ foreach ($slider as $s) {
 	}
 
 	if ( $item['event'] ) {
+
 		if ( $wpml_lang == 'he' ) {
 			array_unshift($events, $item);
 		}
 		else {
 			$events[] = $item;
 		}
+
 	}
 }
 
-if ($events) {
+if ( $events ) {
 
-	// build event elements
+	// Build event elements
 	get_template_part('views/main/slider/set-event-elements');
 
-	// display events slider
+	// Display events slider
 	get_template_part('views/main/slider/display-events-slider');
 	
 }

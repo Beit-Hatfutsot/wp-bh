@@ -9,6 +9,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: $font-bold;
 }
 
+h1 {
+	.main-layout & {
+		margin-top: 0;
+		margin-bottom: 15px;
+		font-size: 20px;
+	}
+}
+
 h2 {
 	font-size: 20px;
 	font-weight: $font-normal;
@@ -106,27 +114,21 @@ small {}
 /* images */
 /**********/
 
-.alignleft {
-	&.img,
-	&.wp-caption {
+img,
+.wp-caption {
+	&.alignleft {
 		float: left !important;
 		margin: 0 50px 20px 0;
 		max-width: 50%;
 	}
-}
 
-.alignright {
-	&.img,
-	&.wp-caption {
+	&.alignright {
 		float: right !important;
 		margin: 0 0 20px 50px;
 		max-width: 50%;
 	}
-}
 
-.aligncenter {
-	&.img,
-	&.wp-caption {
+	&.aligncenter {
 		margin: 0 auto 20px;
 		display: block;
 	}
@@ -165,6 +167,16 @@ img {
 		margin: 0;
 		font-size: 13px;
 		text-align: center;
+	}
+}
+
+.fb-share-wrap {
+	position: relative;
+
+	.fb-share-button {
+		position: absolute;
+		top: 15px;
+		left: 15px;
 	}
 }
 

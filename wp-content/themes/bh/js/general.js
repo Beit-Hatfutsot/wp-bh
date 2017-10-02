@@ -126,6 +126,15 @@ var $ = jQuery,
 				});
 			}
 
+			// images facebook share
+			$('img.fb-share').each(function() {
+				var url = $(this).attr('src'),
+					fbShareCode = '<div class="fb-share-button" data-href="' + url + '" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=' + url + '&amp;src=sdkpreparse">Share</a></div>';
+
+				$(this).wrap('<div class="fb-share-wrap"></div>');
+				$(this).after(fbShareCode);
+			});
+
 			// footer menu
 			BH_general.footer_menu();
 

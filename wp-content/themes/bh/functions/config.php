@@ -55,7 +55,7 @@ $globals = array(
  * Google Fonts
  */
 $google_fonts = array (
-	'Open Sans'			=> 'http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700',
-//	'Open Sans Hebrew'	=> 'http://fonts.googleapis.com/earlyaccess/opensanshebrew.css'
+	'Open Sans'			=> '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700',
+//	'Open Sans Hebrew'	=> '//fonts.googleapis.com/earlyaccess/opensanshebrew.css'
 	'Open Sans Hebrew'	=> TEMPLATE . '/fonts/opensanshebrew/stylesheet.css'
 );

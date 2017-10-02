@@ -1,29 +1,55 @@
-<article class="post" id="post-<?php the_ID(); ?>">
+<?php
+/**
+ * The Template for displaying post within loop
+ *
+ * @author 		Beit Hatfutsot
+ * @package 	bh/views/blog
+ * @version     2.5.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+?>
+
+<article class="post loop-post" id="post-<?php the_ID(); ?>" onclick="location.href='<?php echo get_permalink(); ?>';">
 
 	<?php
-		
-		$read_more_btn = get_field('acf-options_event_btn_read_more', 'option');
-		
-		// post categories
-		echo '<div class="post-categories">';
-			the_category(', ', '', $post->ID);
-		echo '</div>';
-		
-		// post title
-		echo '<h2 class="post-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-		
-		// post meta data
-		get_template_part('views/components/meta', 'single');
-		
-		// post featured image
-		get_template_part('views/components/featured-image');
-		
-		// post excerpt
-		echo '<div class="post-excerpt">';
-			the_excerpt();
-			echo '<div class="read-more"><a class="btn inline-btn red-btn big" href="' . get_permalink($post->ID) . '">' . $read_more_btn . '</a></div>';
-		echo '</div>';
-		
+	/**
+	 * Post categories
+	 */
+	?>
+	<div class="post-categories">
+		<?php the_category(', ', '', $post->ID); ?>
+	</div>
+
+	<?php
+	/**
+	 * Post title
+	 */
+	?>
+	<h2 class="post-title"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
+
+	<?php
+		/**
+		 * Post meta data
+		 */
+		get_template_part( 'views/components/meta', 'single' );
 	?>
 
-</article>
+	<?php
+		/**
+		 * Post featured image
+		 */
+		get_template_part( 'views/components/featured-image' );
+	?>
+
+	<?php
+	/**
+	 * Post excerpt
+	 */
+	?>
+	<div class="post-excerpt">
+		<?php the_excerpt(); ?>
+	</div>
+
+</article><!-- #post-## -->

@@ -95,24 +95,20 @@
 .events-list {
 	padding: 0 0 1px;
 	background-color: $events-list-bg;
-	
+
 	&.past-events-list {
 		padding-top: 10px;
 	}
-	
+
 	.row {
 		position: relative;
 		margin: 0 10px 10px;
-		color: $black-color2;
 		height: 219px;
+		color: $black-color2;
 		background-color: $white;
 		@include border-radius(6px);
 		overflow: hidden;
 
-		.event-name-wrap {
-			min-height: 40%;
-		}
-		
 		h2.event-name {
 			margin: 15px 0 0;
 			font-size: 24px;
@@ -124,43 +120,60 @@
 			}
 		}
 
-		.event-meta {
-			.event-type {
-			}
+		.col-1 {
+			display: none;
 
 			.event-date {
-				font-size: 14px;
-				padding: 0 5px;
-				color: $gray-color4;
+				margin-bottom: 5px;
 			}
 		}
-		
+
 		.col-2 {
 			padding: 0;
 			text-align: center;
 		}
-		
+
 		.col-3 {
 			height: 100%;
-			
+
 			.event-excerpt {
 				height: 100%;
 				overflow: hidden;
-				
+
+				.event-name-wrap {
+					min-height: 40%;
+				}
+
 				.event-desc {
 					line-height: normal;
-					@include calc(width, "100% - 175px");
+					@include calc(width, "100% - 185px");
+
+					.event-meta {
+						margin-bottom: 5px;
+
+						.event-type {
+							position: static;
+							margin-right: 5px;
+							display: inline-block;
+						}
+
+						.event-date {
+							font-size: 14px;
+							color: $gray-color4;
+							display: inline-block;
+						}
+					}
 				}
 			}
-			
+
 			.event-btn {
 				position: absolute;
 				bottom: 15px;
 				right: 15px;
 				width: 170px;
-				
+
 				.btn {
-					float: right;
+					padding: 7px 0;
 
 					&.event-ticket-net-link,
 					&.event-reservation-form-link,
@@ -172,23 +185,24 @@
 						margin-top: 10px;
 					}
 				}
-				
+
 				.free_admittance {
 					float: right;
-					margin-left: 10px;
 					line-height: 27px;
 					color: $green-msg;
 				}
 			}
 		}
-		
+
 		.event-type {
 			position: absolute;
 			padding: 0 5px;
 			bottom: 0;
-			right: 671px;
+			right: 15px;
+			font-size: 12px;
 			color: #333;
 			background-color: $events-list-bg;
+			display: none;
 		}
 	}
 }

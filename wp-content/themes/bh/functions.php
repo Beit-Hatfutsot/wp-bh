@@ -29,9 +29,6 @@ if ( is_admin() ) {
 require_once('functions/post-types.php');
 require_once('functions/taxonomies.php');
 
-// https
-require_once('functions/https.php');
-
 // transients
 // require_once('functions/transients.php');
 

@@ -433,17 +433,6 @@
 		return $result;
 	}
 	
-	// formfooter - custom tag
-	wpcf7_add_form_tag( 'formfooter', 'create_form_footer', true );
-	
-	function create_form_footer( $tag ) {
-		if ( !is_array( $tag ) ) return '';
-		
-		$form_footer = get_field('acf-options_form_footer', 'option');
-		
-		return '<div class="form-footer">' . $form_footer . '</div>';
-	}
-	
 	/**
 	 * make_payment
 	 * 

@@ -136,14 +136,6 @@
 	}
 
 	/******************/
-	/* events filters */
-	/******************/
-	
-	.event-filters-outer-wrapper {
-		margin-top: 0;
-	}
-
-	/******************/
 	/* shop - sidebar */
 	/******************/
 
@@ -912,27 +904,22 @@
 	/***************/
 	/* events list */
 	/***************/
-	
+
 	.events-list {
-
 		.row {
-
-			.event-name-wrap {
-				min-height: initial;
-			}
-
 			h2.event-name {
-				font-weight: $font-semi-bold;
+				margin-bottom: 5px;
 			}
 
 			.col-3 {
-
 				.event-excerpt {
-
-					.event-desc {
-						width: 100% !important;
+					.event-name-wrap {
+						min-height: initial;
 					}
 
+					.event-desc {
+						width: 100%;
+					}
 				}
 
 				.event-btn {
@@ -941,7 +928,7 @@
 			}
 		}
 	}
-	
+
 	/****************/
 	/* single event */
 	/****************/
@@ -1301,19 +1288,23 @@
 }
 
 @media (max-width: 526px) {
-	
+
 	/***************/
 	/* events list */
 	/***************/
-	
+
 	.events-list {
 		.row {
 			.col-3 {
 				.event-excerpt {
 					.event-desc {
 						display: none;
-					}												
+					}
 				}
+			}
+
+			.event-type {
+				display: block;
 			}
 		}
 	}
@@ -2077,30 +2068,28 @@
 	/***************/
 	/* events list */
 	/***************/
-	
+
 	.events-list {
 		.row {
-			height: auto !important;
+			height: auto;
 			min-height: 150px;
-			
-			h2.event-name,
-			.event-date {
-				margin-bottom: 5px;
+
+			.col-1 {
+				display: block;
 			}
-			
+
 			.col-2 {
-				width: 100% !important;
-				text-align: center !important;
+				width: 100%;
+				text-align: center;
 			}
-			
+
 			.col-3 {
-				display: none !important;
+				display: none;
 			}
-			
+
 			.event-type {
-				left: 15px !important;
-				right: auto !important;
-				font-size: 12px;
+				left: 15px;
+				right: auto;
 			}
 		}
 	}
@@ -2251,31 +2240,6 @@
 			}
 		}
 	}
-
-	/*******************/
-	/* events list     */
-	/*******************/
-
-	.events-list {
-		.row {
-			.event-meta {
-				.event-type {
-					left: 0;
-					right: auto;
-					display: inline-block;
-					position: static !important;
-				}
-
-				.event-date {
-					display: inline-block;
-				}
-			}
-
-			.event-type {
-				display: none;
-			}
-		}
-	}
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -2315,27 +2279,17 @@
 		left: 620px;
 		width: 350px !important;
 	}
-	
+
 	/***************/
 	/* events list */
 	/***************/
-	
+
 	.events-list {
 		.row {
 			height: 230px;
-			
-			.col-3 {
-				.event-excerpt {
-					height: 175px;
-				}
-			}
-			
-			.event-type {
-				right: 705px;
-			}
 		}
 	}
-	
+
 	/*******/
 	/* 404 */
 	/*******/
@@ -2724,45 +2678,33 @@
 			}
 		}
 	}
-	
+
 	/***************/
 	/* events list */
 	/***************/
-	
+
 	.events-list {
 		.row {
 			height: 233px;
-			
-			h2.event-name {
-				font-size: 20px !important;
-			}
-
-			.event-meta {
-
-				.event-type {
-					left: 0;
-					right: auto;
-					display: inline-block;
-					position: static;
-				}
-
-				.event-date {
-					display: inline-block;
-				}
-			}
 
 			.col-3 {
 				.event-excerpt {
-					height: 175px;
-				}
-			}
+					.event-name-wrap {
+						min-height: 25%;
+					}
 
-			.event-type {
-				display: none;
+					.event-desc {
+						@include calc(width, "100% - 145px");
+					}
+				}
+
+				.event-btn {
+					width: 135px;
+				}
 			}
 		}
 	}
-	
+
 	/*******/
 	/* 404 */
 	/*******/
@@ -3020,19 +2962,6 @@
 }
 
 @media (min-width: 481px) and (max-width: 1199px) {
-
-	/***************/
-	/* events list */
-	/***************/
-
-	.events-list {
-		.row {
-			.col-1.visible-xs {
-				display: none !important;
-			}
-		}
-	}
-
 
 	/*************************/
 	/* shop - single product */
@@ -3555,36 +3484,38 @@
 	}
 }
 
-@media (min-width: 351px) and (max-width: 767px) {
-	
+@media (min-width: 447px) and (max-width: 991px) {
+
 	/***************/
 	/* events list */
 	/***************/
-	
+
+	.events-list {
+		.row {
+			h2.event-name {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+@media (min-width: 447px) and (max-width: 767px) {
+
+	/***************/
+	/* events list */
+	/***************/
+
 	.events-list {
 		.row {
 			height: 230px;
 
-			h2.event-name {
-				font-weight: $font-semi-bold;
-			}
-			
 			.col-2 {
 				width: 230px;
 				text-align: left;
 			}
-			
+
 			.col-3 {
 				@include calc(width, "100% - 230px");
-				
-				.event-excerpt {
-					height: 200px;
-				}
-			}
-			
-			.event-type {
-				right: 15px;
-				font-size: 12px;
 			}
 		}
 	}
