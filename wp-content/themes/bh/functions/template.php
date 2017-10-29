@@ -4,10 +4,164 @@
  *
  * @author		Beit Hatfutsot
  * @package		bh/functions
- * @version		2.1
+ * @version		2.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+/**
+ * BH_set_header_globals
+ *
+ * This function sets header global variables
+ *
+ * @param	N/A
+ * @return	N/A
+ */
+function BH_set_header_globals() {
+
+	if ( ! function_exists( 'get_field' ) )
+		return;
+
+	/**
+	 * Variables
+	 */
+	global $globals;
+
+	/**
+	 * Set bh_sites
+	 */
+	$globals[ 'bh_sites' ] = array(
+
+		'main'				=> array(
+			'link'			=> HOME,
+			'header_title'	=> get_field( 'acf-options_main_site_header_title',		'option' ),
+			'footer_title'	=> get_field( 'acf-options_main_site_footer_title', 	'option' ),
+			'featured_page'	=> get_field( 'acf-options_main_site_featured_page',	'option' ),
+			'menu'			=> 'main-menu'
+		),
+
+		'shop'				=> array(
+			'link'			=> wc_get_page_permalink( 'shop' ),
+			'header_title'	=> get_field( 'acf-options_shop_site_header_title',		'option' ),
+			'footer_title'	=> get_field( 'acf-options_shop_site_footer_title',		'option' ),
+			'featured_page'	=> get_field( 'acf-options_shop_site_featured_page',	'option' ),
+			'menu'			=> 'shop-menu'
+		),
+
+		'mjs'				=> array(
+			'link'			=> get_field( 'acf-options_mjs_site_link',				'option' ),
+			'header_title'	=> get_field( 'acf-options_mjs_site_header_title',		'option' ),
+			'footer_title'	=> get_field( 'acf-options_mjs_site_footer_title',		'option' )
+		)
+
+	);
+
+	/**
+	 * Set current_site
+	 */
+	$globals[ 'current_site' ] = is_woocommerce() || $globals[ 'shop_page' ] ? 'shop' : 'main';
+
+	/**
+	 * Set menu - current site menu
+	 */
+	$args = array(
+
+		'theme_location'	=> $globals[ 'bh_sites' ][ $globals[ 'current_site' ] ][ 'menu' ],
+		'container'			=> false,
+		'items_wrap'		=> '%3$s',
+		'before'			=> '<span class="item-before disable"></span>',
+		'link_before'		=> '<span>',
+		'link_after'		=> '</span>',
+		'echo'				=> 0
+
+	);
+
+	/**
+	 * Set specific page variables for menu manipulation
+	 */
+	if ( $globals[ 'current_site' ] == 'main' ) {
+
+		$blog_page		= get_field( 'acf-options_blog_page', 'option' );
+		$blog_page_id	= $blog_page ? $blog_page->ID : '';
+		$events_page	= get_field( 'acf-options_events_page', 'option' );
+		$events_page_id	= $events_page ? $events_page->ID : '';
+
+		$args[ 'add_blog_list_under' ]		= $blog_page_id;
+		$args[ 'add_events_list_under' ]	= $events_page_id;
+
+	}
+	$globals[ 'menu' ] = wp_nav_menu( $args );
+
+}
+
+/**
+ * BH_set_header_elements
+ *
+ * This function sets header elements
+ *
+ * @param	N/A
+ * @return	(array) Array of elements
+ */
+function BH_set_header_elements() {
+
+	/**
+	 * Variables
+	 */
+	global $globals;
+
+	$elements = array(
+		'languages_switcher'			=> '',
+		'links_n_icons'					=> '',
+		'shop_cart_header_top_popup'	=> '',
+		'shop_cart_header_mid_popup'	=> '',
+		'newsletter_header_top_popup'	=> '',
+		'newsletter_header_mid_popup'	=> '',
+		'featured_page'					=> ''
+	);
+
+	/**
+	 * Get header global variables
+	 */
+	$bh_sites		= $globals[ 'bh_sites' ];
+	$current_site	= $globals[ 'current_site' ];
+
+	/**
+	 * Set header elements
+	 */
+
+	// Language switcher
+	$elements[ 'languages_switcher' ] = BH_languages_switcher();
+
+	// Links and icons
+	$elements[ 'links_n_icons' ] = BH_header_links_n_icons();
+
+	// Shop mini cart
+	if ( $current_site == 'shop' && is_active_sidebar( 'shop-mini-cart' ) ) {
+
+		$shop_cart_sidebar							= BH_get_dynamic_sidebar( 'shop-mini-cart' );
+		$elements[ 'shop_cart_header_top_popup' ]	= BH_shop_cart_popup( 'top', $shop_cart_sidebar );
+		$elements[ 'shop_cart_header_mid_popup' ]	= BH_shop_cart_popup( 'mid', $shop_cart_sidebar );
+
+	}
+
+	// Newsletter popup
+	if ( is_active_sidebar( 'newsletter' ) ) {
+
+		$newsletter_sidebar							= BH_get_dynamic_sidebar( 'newsletter' );
+		$elements[ 'newsletter_header_top_popup' ]	= BH_newsletter_popup( 'top', $newsletter_sidebar );
+		$elements[ 'newsletter_header_mid_popup' ]	= BH_newsletter_popup( 'mid', $newsletter_sidebar );
+
+	}
+
+	// Featured page
+	if ( $bh_sites && $current_site && $bh_sites[ $current_site ] ) {
+		$elements[ 'featured_page' ] = $bh_sites[ $current_site ][ 'featured_page' ];
+	}
+
+	// return
+	return $elements;
+
+}
 
 /**
  * BH_shop_cart_popup
@@ -94,7 +248,7 @@ function BH_header_links_n_icons() {
 
 	ob_start();
 	
-	get_template_part( 'views/header/header-elements' );
+	get_template_part( 'views/header/header-links-n-icons' );
 	$output = ob_get_contents();
 	
 	ob_end_clean();
@@ -136,10 +290,14 @@ function BH_get_contact_details() {
  */
 function set_opening_hours_msg( $code ) {
 
-	// change acf current language
-	if ($code) {
+	if ( ! function_exists( 'get_field' ) )
+		// return
+		return;
 
-		add_filter('acf/settings/current_language',	function() {
+	// Change acf current language
+	if ( $code ) {
+
+		add_filter('acf/settings/current_language', function() {
 			global $code;
 			return $code;
 		});
@@ -150,98 +308,101 @@ function set_opening_hours_msg( $code ) {
 
 	}
 
-	// get opening hours data
-	$hours				= get_field( 'acf-options_opening_hours', 'option' );
+	// Get opening hours data
+	$hours				= get_field( 'acf-options_opening_hours',			'option' );
 
-	// get messages
-	$open_msg			= get_field( 'acf-options_open_message', 'option' );
-	$close_msg			= get_field( 'acf-options_close_message', 'option' );
-	$opening_today_msg	= get_field( 'acf-options_opening_today_message', 'option' );
+	// Get messages
+	$open_msg			= get_field( 'acf-options_open_message',			'option' );
+	$close_msg			= get_field( 'acf-options_close_message',			'option' );
+	$opening_today_msg	= get_field( 'acf-options_opening_today_message',	'option' );
 
-	// get some strings related to above messages
-	$tommorow_str		= get_field( 'acf-options_tomorrow_str', 'option' );
-	$on_day_str			= get_field( 'acf-options_on_day_str', 'option' );
+	// Get some strings related to above messages
+	$tommorow_str		= get_field( 'acf-options_tomorrow_str',			'option' );
+	$on_day_str			= get_field( 'acf-options_on_day_str',				'option' );
 
-	if ( $hours && $open_msg && $close_msg && $opening_today_msg && $tommorow_str && $on_day_str ) :
+	if ( ! $hours || ! $open_msg || ! $close_msg || ! $opening_today_msg || ! $tommorow_str || ! $on_day_str )
+		// return
+		return;
 
-		$status			= 'close';			// [open/close/opening-today]
-		$msg			= '';				// message to be displayed
+	$status			= 'close';			// [open/close/opening-today]
+	$msg			= '';				// message to be displayed
 
-		$current_day	= date_i18n('w');	// w => numeric representation of the day of the week - 0 (for Sunday) through 6 (for Saturday)
-		$current_time	= date_i18n('Hi');	// H => 24-hour format of an hour with leading zeros; i => Minutes with leading zeros
+	$current_day	= date_i18n('w');	// w => numeric representation of the day of the week - 0 (for Sunday) through 6 (for Saturday)
+	$current_time	= date_i18n('Hi');	// H => 24-hour format of an hour with leading zeros; i => Minutes with leading zeros
 
-		// locate the closest row in $hours
-		$row			= '';
+	// Locate the closest row in $hours
+	$row			= '';
 
-		foreach ( $hours as $hours_row ) :
+	foreach ( $hours as $hours_row ) {
 
-			if ( $hours_row['day'] >= $current_day ) :
+		if ( $hours_row['day'] >= $current_day ) {
 
-				if ( $hours_row['day'] == $current_day ) {
-					if ( $current_time < $hours_row['open'] ) {
+			if ( $hours_row['day'] == $current_day ) {
 
-						// before opening hour today
-						$status = 'opening-today';
-						$row = $hours_row;
-						break;
+				if ( $current_time < $hours_row['open'] ) {
 
-					} elseif ( $current_time >= $hours_row['open'] && $current_time <= $hours_row['close'] ) {
-
-						// open now
-						$status = 'open';
-						$row = $hours_row;
-						break;
-
-					} else {
-
-						// after closing hour today
-						continue;
-
-					}
-
-				} else {
-
-					// open on a later day
+					// Before opening hour today
+					$status = 'opening-today';
 					$row = $hours_row;
 					break;
 
+				} elseif ( $current_time >= $hours_row['open'] && $current_time <= $hours_row['close'] ) {
+
+					// Open now
+					$status = 'open';
+					$row = $hours_row;
+					break;
+
+				} else {
+
+					// After closing hour today
+					continue;
+
 				}
 
-			endif;
+			} else {
 
-		endforeach;
+				// Open on a later day
+				$row = $hours_row;
+				break;
 
-		// no match found, first row will be considered
-		if (!$row) {
-			$row = $hours[0];
-		}
-
-		// build the message
-		while ( has_sub_field( 'acf-options_opening_hours', 'option' ) ) {
-
-			$open_select	= get_sub_field_object('open');
-			$close_select	= get_sub_field_object('close');
-			
-			$day	= $row['day'];
-			$open	= $open_select['choices'][$row['open']];
-			$close	= $close_select['choices'][$row['close']];
-			
-			break;
+			}
 
 		}
 
-		if		($status == 'open')				{ $msg = sprintf( $open_msg, $close ); }
-		elseif	($status == 'opening-today')	{ $msg = sprintf( $opening_today_msg, $open ); }
-		else									{ $msg = sprintf( $close_msg, ( ($current_day == $row['day']-1) ? $tommorow_str : $on_day_str . ' ' . strftime( '%A', strtotime('next Sunday + ' . $day . ' days') ) ), $open ); }
+	}
 
-		$transient_key = 'BH-opening-hours-msg' . ( $code ? '-' . $code : '' );
+	// No match found, first row will be considered
+	if ( ! $row ) {
+		$row = $hours[0];
+	}
 
-		if ( $msg )
-			set_transient( $transient_key, '<div class="msg msg-' . $status . '">' . $msg . '</div>' );
-		else
-			delete_transient( $transient_key );
+	// Build the message
+	while ( has_sub_field( 'acf-options_opening_hours', 'option' ) ) {
 
-	endif;
+		$open_select	= get_sub_field_object( 'open' );
+		$close_select	= get_sub_field_object( 'close' );
+
+		$day	= $row[ 'day' ];
+		$open	= $open_select[ 'choices' ][ $row[ 'open' ] ];
+		$close	= $close_select[ 'choices' ][ $row[ 'close' ] ];
+
+		break;
+
+	}
+
+	if		( $status == 'open' )			{ $msg = sprintf( $open_msg, $close ); }
+	elseif	( $status == 'opening-today' )	{ $msg = sprintf( $opening_today_msg, $open ); }
+	else									{ $msg = sprintf( $close_msg, ( ( $current_day == $row[ 'day' ]-1 ) ? $tommorow_str : $on_day_str . ' ' . strftime( '%A', strtotime( 'next Sunday + ' . $day . ' days' ) ) ), $open ); }
+
+	$transient_key = 'BH-opening-hours-msg' . ( $code ? '-' . $code : '' );
+
+	if ( $msg ) {
+		set_transient( $transient_key, '<div class="msg msg-' . $status . '">' . $msg . '</div>' );
+	}
+	else {
+		delete_transient( $transient_key );
+	}
 
 }
 
@@ -260,7 +421,9 @@ function BH_get_gallery_html( $id, $title ) {
 		// return
 		return '';
 
-	// Get variables
+	/**
+	 * variables
+	 */
 	$images	= get_field( 'images', $id );
 	$output	= '';
 
@@ -280,10 +443,10 @@ function BH_get_gallery_html( $id, $title ) {
 	foreach ( $images as $i ) {
 
 		$image = array(
-			'title'		=> esc_attr( BH_trim_str( $i['title'] ) ),
-			'alt'		=> esc_attr( BH_trim_str( $i['alt'] ) ),
-			'caption'	=> esc_attr( BH_trim_str( $i['caption'] ) ),
-			'url'		=> esc_attr( BH_trim_str( $i['url'] ) )
+			'title'		=> esc_attr( BH_trim_str( $i[ 'title' ] ) ),
+			'alt'		=> esc_attr( BH_trim_str( $i[ 'alt' ] ) ),
+			'caption'	=> esc_attr( BH_trim_str( $i[ 'caption' ] ) ),
+			'url'		=> esc_attr( BH_trim_str( $i[ 'url' ] ) )
 		);
 
 		$gallery_images[] = $image;
@@ -304,7 +467,7 @@ function BH_get_gallery_html( $id, $title ) {
 	if ( $gallery_images ) {
 
 		$output .= '<button class="btn load-more inline-btn cyan-btn big">' . __('Load more', 'BH') . '</button>';
-		$globals['_galleries']['gallery-'.$id] = $gallery_images;
+		$globals[ '_galleries' ][ 'gallery-'.$id ] = $gallery_images;
 
 	}
 

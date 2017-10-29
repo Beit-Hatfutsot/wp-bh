@@ -4,52 +4,64 @@
  *
  * Display link boxes as part of footer
  *
- * @author 		Beit Hatfutsot
- * @package 	bh/views/footer
- * @version     2.0
+ * @author		Beit Hatfutsot
+ * @package		bh/views/footer
+ * @version		2.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// Get global variables
-global $current_site;	// main / shop;
+if ( ! function_exists( 'get_field' ) )
+	return;
 
-$links = get_field('acf-options_' . $current_site . '_site_footer_links', 'option');
+/**
+ * Variables
+ */
+global $globals;
 
-if ($links) :
-	echo '<div class="container">';
-		echo '<div class="row footer-links">';
+$current_site = $globals[ 'current_site' ];
 
-			foreach ($links as $l) :
-				// collect link data
-				$title		= $l['title'];
-				$big_icon	= $l['big_icon'];
-				$small_icon	= $l['small_icon'];
-				$link		= $l['link'];
+if ( $current_site )
+	$links = get_field( 'acf-options_' . $current_site . '_site_footer_links', 'option' );
 
-				// echo link html
-				echo '<div class="col-xs-4 link-box-wrapper">';
-					echo '<div class="link-box">';
-						echo '<a href="' . $link . '">';
+if ( $links ) { ?>
 
-							echo '<div class="before-link"></div>';
+	<div class="container">
+		<div class="footer-links row">
 
-							echo '<div class="link">';
+			<?php foreach ( $links as $l ) {
 
-								// title
-								echo '<div class="small-icon visible-xs">' . ( $small_icon ? '<span class="' . $small_icon . '"></span>' : '' ) . '</div>';
-								echo '<div class="title">' . ( $big_icon ? '<span class="' . $big_icon . ' hidden-xs"></span>' : '' ) . $title . '</div>';
-								
-								// learn more
-								echo '<div class="more">' . __('Learn more', 'BH') . '</div>';
+				/**
+				 * Collect link data
+				 */
+				$title		= $l[ 'title' ];
+				$big_icon	= $l[ 'big_icon' ];
+				$small_icon	= $l[ 'small_icon' ];
+				$link		= $l[ 'link' ];
 
-							echo '</div>';
+				?>
+
+				<div class="link-box-wrapper col-xs-4">
+					<div class="link-box">
+						<a href="<?php echo $link; ?>">
+
+							<div class="before-link"></div>
+
+							<div class="link">
+
+								<div class="small-icon visible-xs"><?php echo $small_icon ? '<span class="' . $small_icon . '"></span>' : ''; ?></div>
+								<div class="title"><?php echo ( $big_icon ? '<span class="' . $big_icon . ' hidden-xs"></span>' : '' ) . $title; ?></div>
+								<div class="more"><?php _e( 'Learn more', 'BH' ); ?></div>
+
+							</div>
 							
-						echo '</a>';
-					echo '</div>';
-				echo '</div>';
-			endforeach;
+						</a>
+					</div>
+				</div>
 
-		echo '</div>';
-	echo '</div>';
-endif;
+			<?php } ?>
+
+		</div><!-- .footer-links -->
+	</div>
+
+<?php }

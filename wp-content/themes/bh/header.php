@@ -1,47 +1,72 @@
-<!DOCTYPE html>
+<?php
+/**
+ * Theme header
+ *
+ * @author		Beit Hatfutsot
+ * @package		bh
+ * @version		2.6.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-
-	<?php
-		get_template_part('views/header/header', 'meta');
-		wp_head();
-	?>
-	
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
-	
-	<?php
-		get_template_part('views/header/pingdom');
-		get_template_part('views/header/facebook-remarketing');
-
-		if ( is_wc_endpoint_url('order-received') ) {
-			get_template_part('views/header/facebook-conversion');
-		}
-	?>
-	
-</head>
 
 <?php
-	global $shop_page;	// True / False	- Is shop page (set earlier in woocommerce-functions.php)
+	/**
+	 * Display header meta
+	 */
+	get_template_part( 'views/header/header', 'meta' );
+?>
+
+<?php
+	/**
+	 * Manipulate BODY classes
+	 */
+	global $globals;
 
 	$classes = array();
 
-	if ($shop_page) {
+	if ( $globals[ 'shop_page' ] ) {
 		$classes[] = 'woocommerce';
 	}
 ?>
 
-<body <?php body_class( implode(' ', $classes) ); ?>>
+<body <?php body_class( implode( ' ', $classes ) ); ?>>
+
 	<?php
-		if ( is_archive() || is_singular('post') )
-			get_template_part('views/header/facebook-api');
-			
-		get_template_part('views/header/google-tag-manager');
+		/**
+		 * Facebook API
+		 */
+		if ( is_archive() || is_singular( 'post' ) ) {
+			get_template_part( 'views/header/scripts/facebook-api' );
+		}
+	?>
 
-		get_template_part('views/header/zoom-analytics');
+	<?php
+		/**
+		 * Google Tag Manager
+		 */
+		get_template_part( 'views/header/scripts/google-tag-manager' );
+	?>
 
-		get_template_part('views/header/header');
+	<?php
+		/**
+		 * Zoom Analytics
+		 */
+		get_template_part( 'views/header/scripts/zoom-analytics' );
+	?>
+
+	<?php
+		/**
+		 * Display SVG sprite
+		 */
+		get_template_part( 'views/header/header', 'svg' );
+	?>
+
+	<?php
+		/**
+		 * Display the header
+		 */
+		get_template_part( 'views/header/header' );
 	?>
