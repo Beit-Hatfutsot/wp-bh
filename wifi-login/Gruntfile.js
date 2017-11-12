@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 			},
 
 			js: {
-				src: ['js/*.js', 'js/forms/*.js'],
+				src: ['js/*.js'],
 				dest: 'js/min/',
 				expand: true,
 				flatten: true, 
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 
 				files: [{
 					cwd: 'scss',
-					src: ['*.scss', '**/*.scss'],
+					src: ['*.scss'],
 					dest: 'css/',
 					expand: true,
 					flatten: false, 
@@ -50,12 +50,12 @@ module.exports = function(grunt) {
 
 		watch: {
 			js: {
-				files: ['js/*.js', 'js/forms/.*js'],
+				files: ['js/*.js'],
 				tasks: ['uglify']  
 			},
 
 			css: {
-				files: ['scss/*.scss', 'scss/**/*.scss'],
+				files: ['scss/*.scss'],
 				tasks: ['sass']
 			},
 

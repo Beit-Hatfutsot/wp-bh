@@ -4,29 +4,35 @@
  *
  * Display sites links as part of footer
  *
- * @author 		Beit Hatfutsot
- * @package 	bh/views/footer
- * @version     2.0
+ * @author		Beit Hatfutsot
+ * @package		bh/views/footer
+ * @version		2.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// Get global variables
-global	$bh_sites,		// BH sites information
-		$current_site;	// main / shop
+/**
+ * Variables
+ */
+global $globals;
 
-if ($bh_sites) :
-	echo '<div class="container">';
-		echo '<div class="row sites-links ' . $current_site . '-sites-links">';
+$bh_sites		= $globals[ 'bh_sites' ];
+$current_site	= $globals[ 'current_site' ];
 
-			foreach ($bh_sites as $site_name => $site_info) : ?>
-				<div class="col-xs-4 site-item">
-					<a class="<?php echo $site_name . ($site_name == $current_site ? ' active' : ''); ?>" href="<?php echo $site_info['link']; ?>" target="<?php echo $site_name == 'mjs' ? '_blank' : '_self'; ?>">
-						<div class="title"><?php echo $site_info['footer_title']; ?></div>
+if ( $bh_sites ) { ?>
+
+	<div class="container">
+		<div class="sites-links <?php echo $current_site; ?>-sites-links row">
+
+			<?php foreach ( $bh_sites as $site_name => $site_info ) { ?>
+				<div class="site-item col-xs-4">
+					<a class="<?php echo $site_name . ( $site_name == $current_site ? ' active' : '' ); ?>" href="<?php echo $site_info[ 'link' ]; ?>" target="<?php echo $site_name == 'mjs' ? '_blank' : '_self'; ?>">
+						<div class="title"><?php echo $site_info[ 'footer_title' ]; ?></div>
 					</a>
 				</div>
-			<?php endforeach;
+			<?php } ?>
 
-		echo '</div>';
-	echo '</div>';
-endif;
+		</div><!-- .sites-links -->
+	</div>
+
+<?php }

@@ -2,14 +2,14 @@
 /**
  * WooCommerce functions
  *
- * @author 		Beit Hatfutsot
- * @package 	bh/functions
- * @version     2.1
+ * @author		Beit Hatfutsot
+ * @package		bh/functions
+ * @version		2.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-add_theme_support('woocommerce');
+add_theme_support( 'woocommerce' );
 
 /****************************************************************************************************************************************************/
 /* WooCommerce optimization
@@ -24,7 +24,9 @@ add_theme_support('woocommerce');
  * @return	N/A
  */
 function BH_remove_woocommerce_generator_tag() {
-	remove_action('wp_head','wc_generator_tag');
+
+	remove_action( 'wp_head', 'wc_generator_tag' );
+
 }
 
 /**
@@ -37,26 +39,31 @@ function BH_remove_woocommerce_generator_tag() {
  * @return	N/A
  */
 function BH_woocommerce_manage_scripts_n_styles() {
+
 	if ( is_admin() || ! is_page() )
 		return;
-	
-	global	$post,
-			$shop_page;
 
-	$shop_page	= get_field('acf-shop_page', $post->ID) || 'shop-why-shop-with-us.php' == basename( get_page_template() ) || 'shop-about.php' == basename( get_page_template() ) || is_cart() || is_checkout() || is_account_page();		// is shop page (true/false)
+	/**
+	 * Variables
+	 */
+	global	$globals,
+			$post;
 
-	if ( function_exists('is_woocommerce') ) {
-		//dequeue scripts and styles
-		if ( ! is_woocommerce() && ! $shop_page ) {
-			// woocommerce styles
+	$globals[ 'shop_page' ] = ( function_exists( 'get_field' ) && get_field( 'acf-shop_page', $post->ID ) ) || 'shop-why-shop-with-us.php' == basename( get_page_template() ) || 'shop-about.php' == basename( get_page_template() ) || is_cart() || is_checkout() || is_account_page();		// is shop page (true/false)
+
+	if ( function_exists( 'is_woocommerce' ) ) {
+
+		// Dequeue scripts and styles
+		if ( ! is_woocommerce() && ! $globals[ 'shop_page' ] ) {
+			// Woocommerce styles
 			wp_dequeue_style( 'woocommerce_chosen_styles' );
 			wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
 			wp_dequeue_style( 'woocommerce-layout' );
 			wp_dequeue_style( 'woocommerce-smallscreen' );
 			wp_dequeue_style( 'woocommerce-general' );
 			wp_dequeue_style( 'mijireh_css' );
-			
-			// woocommerce-multilingual styles
+
+			// Woocommerce-multilingual styles
 			wp_dequeue_style( 'wcml_wc' );
 			wp_dequeue_style( 'currency-switcher' );
 			wp_dequeue_style( 'wpml-wcml-prices' );
@@ -65,8 +72,8 @@ function BH_woocommerce_manage_scripts_n_styles() {
 			wp_dequeue_style( 'cleditor' );
 			wp_dequeue_style( 'wp-pointer' );
 			wp_dequeue_style( 'buttons' );
-			
-			// woocommerce scripts
+
+			// Woocommerce scripts
 			wp_dequeue_script( 'wc-credit-card-form' );
 			wp_dequeue_script( 'chosen' );
 			wp_dequeue_script( 'jquery-blockui' );
@@ -90,8 +97,8 @@ function BH_woocommerce_manage_scripts_n_styles() {
 			wp_dequeue_script( 'simplify-commerce' );
 			wp_dequeue_script( 'wc-simplify-commerce' );
 			wp_dequeue_script( 'wc-price-slider' );
-			
-			// woocommerce-multilingual styles
+
+			// Woocommerce-multilingual styles
 			wp_dequeue_script( 'wcml-tm-scripts-prices' );
 			wp_dequeue_script( 'wcml-scripts' );
 			wp_dequeue_script( 'wcml-tm-scripts' );
@@ -104,7 +111,9 @@ function BH_woocommerce_manage_scripts_n_styles() {
 			wp_dequeue_script( 'wpml_tm' );
 			wp_dequeue_script( 'wcml-lock-script' );
 		}
+
 	}
+
 }
 
 /****************************************************************************************************************************************************/
@@ -120,7 +129,9 @@ function BH_woocommerce_manage_scripts_n_styles() {
  * @return	N/A
  */
 function BH_woocommerce_wrapper_start() {
+
 	echo '<section class="page-content">';
+
 }
 
 /**
@@ -132,7 +143,9 @@ function BH_woocommerce_wrapper_start() {
  * @return	N/A
  */
 function BH_woocommerce_wrapper_end() {
+
 	echo '</section>';
+
 }
 
 /****************************************************************************************************************************************************/
@@ -147,13 +160,16 @@ function BH_woocommerce_wrapper_end() {
  * @param	$defaults (array) WooCommerce breadcrumb default attributes
  * @return	(array)
  */
-function BH_woocommerce_breadcrumb_defaults($defaults) {
-	$defaults['home']			= __('Home', 'BH');
-	$defaults['delimiter']		= '<span class="breadcrumb-delimiter bh-sprites"></span>';
-	$defaults['wrap_before']	= '<nav class="woocommerce-breadcrumb">';
-	$defaults['wrap_after']		= '</nav>';
-	
+function BH_woocommerce_breadcrumb_defaults( $defaults ) {
+
+	$defaults[ 'home' ]			= __( 'Home', 'BH' );
+	$defaults[ 'delimiter' ]	= '<span class="breadcrumb-delimiter bh-sprites"></span>';
+	$defaults[ 'wrap_before' ]	= '<nav class="woocommerce-breadcrumb">';
+	$defaults[ 'wrap_after' ]	= '</nav>';
+
+	// return
 	return $defaults;
+
 }
 
 /****************************************************************************************************************************************************/
@@ -169,14 +185,20 @@ function BH_woocommerce_breadcrumb_defaults($defaults) {
  * @return	N/A
  */
 function override_woocommerce_widgets() {
-	// WC_Widget_Recently_Viewed
-	if ( class_exists('WC_Widget_Recently_Viewed') ) {
-		unregister_widget('WC_Widget_Recently_Viewed');
-		
-		include_once('widgets/woocommerce-recently-viewed.php');
-		
-		register_widget('BH_WC_Widget_Recently_Viewed');
+
+	/**
+	 * WC_Widget_Recently_Viewed
+	 */
+	if ( class_exists( 'WC_Widget_Recently_Viewed' ) ) {
+
+		unregister_widget( 'WC_Widget_Recently_Viewed' );
+
+		include_once( 'widgets/woocommerce-recently-viewed.php' );
+
+		register_widget( 'BH_WC_Widget_Recently_Viewed' );
+
 	}
+
 }
 
 /**
@@ -188,16 +210,22 @@ function override_woocommerce_widgets() {
  * @param	$fragments (array)
  * @return	(array)
  */
-function BH_woocommerce_shopping_cart_indicator_fragment($fragments) {
+function BH_woocommerce_shopping_cart_indicator_fragment( $fragments ) {
+
+	/**
+	 * Variables
+	 */
 	global $woocommerce;
-	
+
 	ob_start();
-	
-	echo '<div class="widget_shopping_cart_indicator">' . ($woocommerce->cart->cart_contents_count ? '<span>' . $woocommerce->cart->cart_contents_count . '</span>' : '') . '</div>';
-	
-	$fragments['div.widget_shopping_cart_indicator'] = ob_get_clean();
-	
+
+	echo '<div class="widget_shopping_cart_indicator">' . ( $woocommerce->cart->cart_contents_count ? '<span>' . $woocommerce->cart->cart_contents_count . '</span>' : '' ) . '</div>';
+
+	$fragments[ 'div.widget_shopping_cart_indicator' ] = ob_get_clean();
+
+	// return
 	return $fragments;
+
 }
 
 /**
@@ -210,30 +238,36 @@ function BH_woocommerce_shopping_cart_indicator_fragment($fragments) {
  * @param	&$viewed_products (&array) recently viewed products array
  * @return	N/A
  */
-function BH_add_viewed_products($post_id, &$viewed_products) {
-	$languages = icl_get_languages('skip_missing=1');
-	
-	if ( ! empty($languages) ) :
-	
-		foreach ($languages as $l) :
-			$id = icl_object_id($post_id, 'product', false, $l['language_code']);
-			
-			$key = array_search($id, $viewed_products);
-			
+function BH_add_viewed_products( $post_id, &$viewed_products ) {
+
+	/**
+	 * Variables
+	 */
+	$languages = icl_get_languages( 'skip_missing=1' );
+
+	if ( ! empty( $languages ) ) {
+
+		foreach ( $languages as $l ) {
+
+			$id		= icl_object_id( $post_id, 'product', false, $l[ 'language_code' ] );
+			$key	= array_search( $id, $viewed_products );
+
 			if ( $key === false ) {
 				// post doesn't exist in array - add a new post ID
-				array_unshift($viewed_products, $id);
-				
+				array_unshift( $viewed_products, $id );
+
 				if ( sizeof( $viewed_products ) > 40 )
-					array_pop($viewed_products);
+					array_pop( $viewed_products );
 			} else {
 				// post exists in array - prepent post ID
-				unset( $viewed_products[$key] );
-				array_unshift($viewed_products, $id);
+				unset( $viewed_products[ $key ] );
+				array_unshift( $viewed_products, $id );
 			}
-		endforeach;
-		
-	endif;
+
+		}
+
+	}
+
 }
 
 /**
@@ -246,23 +280,30 @@ function BH_add_viewed_products($post_id, &$viewed_products) {
  * @param	&$viewed_products (&array) recently viewed products array
  * @return	N/A
  */
-function BH_remove_viewed_products($post_id, &$viewed_products) {
-	$languages = icl_get_languages('skip_missing=1');
+function BH_remove_viewed_products( $post_id, &$viewed_products ) {
+
+	/**
+	 * Variables
+	 */
+	$languages = icl_get_languages( 'skip_missing=1' );
+
+	if ( ! empty( $languages ) ) {
 	
-	if ( ! empty($languages) ) :
-	
-		foreach ($languages as $l) :
-			$id = icl_object_id($post_id, 'product', false, $l['language_code']);
-			
-			$key_to_remove = array_search($id, $viewed_products);
-			
-			if ($key_to_remove !== false) :
+		foreach ( $languages as $l ) {
+
+			$id = icl_object_id( $post_id, 'product', false, $l[ 'language_code' ] );
+
+			$key_to_remove = array_search( $id, $viewed_products );
+
+			if ( $key_to_remove !== false ) {
 				// post exists in array - remove post ID
-				unset( $viewed_products[$key_to_remove] );
-			endif;
-		endforeach;
-		
-	endif;
+				unset( $viewed_products[ $key_to_remove ] );
+			}
+
+		}
+
+	}
+
 }
 
 /****************************************************************************************************************************************************/
@@ -278,29 +319,37 @@ function BH_remove_viewed_products($post_id, &$viewed_products) {
  * @return	N/A
  */
 function BH_loop_add_to_cart_link() {
+
+	/**
+	 * Variables
+	 */
 	global $product;
 
-	// Enhanced Ecommerce - "add to cart" event tracking
-	// collect product info and submit it on form submission
+	/**
+	 * Enhanced Ecommerce - "add to cart" event tracking
+	 * Collect product info and submit it on form submission
+	 */
 	$p_id		= $product->get_id();
 	$p_sku		= esc_js( $product->get_sku() );
 	$p_name		= esc_js( $product->get_title() );
 	$p_currency	= get_woocommerce_currency();
-	
-	if ( defined('DOING_AJAX') && DOING_AJAX && class_exists('woocommerce_wpml') ) {
-		// filter product price and currency
-		// used in case of an AJAX call and active woocommerce wpml
-		$p_price = number_format((float)apply_filters('wcml_raw_price_amount', $product->get_price()), 2, '.', '');
-		$p_currency = apply_filters('wcml_price_currency', $p_currency);
+
+	/**
+	 * Filter product price and currency
+	 * Used in case of an AJAX call and active woocommerce wpml
+	 */
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && class_exists( 'woocommerce_wpml' ) ) {
+		$p_price = number_format( (float)apply_filters( 'wcml_raw_price_amount', $product->get_price() ), 2, '.', '' );
+		$p_currency = apply_filters( 'wcml_price_currency', $p_currency );
 	}
 	else {
-		$p_price = number_format((float)$product->get_price(), 2, '.', '');
+		$p_price = number_format( (float)$product->get_price(), 2, '.', '' );
 	}
 
 	$category = '';
-	$product_cats = wp_get_post_terms($p_id, 'product_cat');
-	if ( $product_cats && ! is_wp_error ($product_cats) ) :
-		$single_cat	= array_shift($product_cats);
+	$product_cats = wp_get_post_terms( $p_id, 'product_cat' );
+	if ( $product_cats && ! is_wp_error( $product_cats ) ) :
+		$single_cat	= array_shift( $product_cats );
 		$category	= esc_js( $single_cat->name );
 	endif;
 
@@ -311,6 +360,7 @@ function BH_loop_add_to_cart_link() {
 		$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
 		esc_attr( $product->get_type() )
 	);
+
 }
 
 /****************************************************************************************************************************************************/
@@ -326,7 +376,9 @@ function BH_loop_add_to_cart_link() {
  * @return	N/A
  */
 function BH_shop_home_banners() {
-	get_template_part('views/woocommerce/archive/home', 'banners');
+
+	get_template_part( 'views/woocommerce/archive/home', 'banners' );
+
 }
 
 /**
@@ -338,7 +390,9 @@ function BH_shop_home_banners() {
  * @return	N/A
  */
 function BH_shop_home_categories_menu() {
-	get_template_part('views/woocommerce/archive/home', 'categories-menu');
+
+	get_template_part( 'views/woocommerce/archive/home', 'categories-menu' );
+
 }
 
 /**
@@ -350,7 +404,9 @@ function BH_shop_home_categories_menu() {
  * @return	N/A
  */
 function BH_shop_home_featured() {
-	get_template_part('views/woocommerce/archive/home', 'featured');
+
+	get_template_part( 'views/woocommerce/archive/home', 'featured' );
+
 }
 
 /**
@@ -362,7 +418,9 @@ function BH_shop_home_featured() {
  * @return	N/A
  */
 function BH_shop_home_product_sliders() {
-	get_template_part('views/woocommerce/archive/home', 'sliders');
+
+	get_template_part( 'views/woocommerce/archive/home', 'sliders' );
+
 }
 
 /****************************************************************************************************************************************************/
@@ -378,13 +436,16 @@ function BH_shop_home_product_sliders() {
  * @return	(string)
  */
 function BH_shop_archive_title() {
+
 	ob_start();
-	
-	echo get_template_part('views/woocommerce/archive/archive', 'title');
-	
+
+	echo get_template_part( 'views/woocommerce/archive/archive', 'title' );
+
 	$output = ob_get_clean();
-	
+
+	// return
 	return $output;
+
 }
 
 /**
@@ -396,7 +457,9 @@ function BH_shop_archive_title() {
  * @return	N/A
  */
 function BH_shop_products_filter() {
-	get_template_part('views/sidebar/sidebar-shop', 'products-filter');
+
+	get_template_part( 'views/sidebar/sidebar-shop', 'products-filter' );
+
 }
 
 /**
@@ -408,7 +471,9 @@ function BH_shop_products_filter() {
  * @return	N/A
  */
 function BH_shop_wswu_banner() {
-	get_template_part('views/sidebar/sidebar-shop', 'wswu-banner');
+
+	get_template_part( 'views/sidebar/sidebar-shop', 'wswu-banner' );
+
 }
 
 /****************************************************************************************************************************************************/
@@ -425,9 +490,9 @@ function BH_shop_wswu_banner() {
  * @param	$terms (array) array of taxonomy terms - view from $taxonomies attribute
  * @return	(string)
  */
-function BH_awpf_widget_tax_terms_badge($output, $tax_name, $terms) {
+function BH_awpf_widget_tax_terms_badge( $output, $tax_name, $terms ) {
 
-	if ( ! $tax_name || ! $terms )
+	if ( ! $tax_name || ! $terms || ! function_exists( 'get_field' ) )
 		return;
 
 	$output = '';
@@ -441,7 +506,7 @@ function BH_awpf_widget_tax_terms_badge($output, $tax_name, $terms) {
 						'<input type="checkbox" name="' . $term_id . '" id="' . $term_id . '" value="' . $term_id . '" />' .
 						'<label for="' . $term_id . '">' .
 							'<div class="badge-name-wrapper"' . ( $color ? ' style="background-color: ' . $color . '"' : '' ) . '>' .
-								( $image ? '<div class="badge-image"><img src="' . $image['url'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '" alt="' . $name . '" /></div>' : '' ) .
+								( $image ? '<div class="badge-image"><img src="' . $image[ 'url' ] . '" width="' . $image[ 'width' ] . '" height="' . $image[ 'height' ] . '" alt="' . $name . '" /></div>' : '' ) .
 								'<div class="badge-name">' . $name . '</div>' .
 								'<div class="item-checked-top"></div>' .
 								'<div class="item-checked-bottom"></div>' .
@@ -464,6 +529,7 @@ function BH_awpf_widget_tax_terms_badge($output, $tax_name, $terms) {
 
 	$output .= '</style>';
 
+	// return
 	return $output;
 
 }
@@ -479,7 +545,7 @@ function BH_awpf_widget_tax_terms_badge($output, $tax_name, $terms) {
  */
 function BH_awpf_before_filter_content() {
 
-	echo '<div class="awpf-filters-toggle visible-xs"><h3><span class="inactive">' . __('Show product filters', 'BH') . '</span><span class="active">' . __('Hide product filters', 'BH') . '</span></h3></div>';
+	echo '<div class="awpf-filters-toggle visible-xs"><h3><span class="inactive">' . __( 'Show product filters', 'BH' ) . '</span><span class="active">' . __( 'Hide product filters', 'BH' ) . '</span></h3></div>';
 	echo '<div class="awpf-filters-wrapper">';
 
 }
@@ -510,7 +576,7 @@ function BH_awpf_after_filter_content() {
  */
 function BH_awpf_after_filter() {
 
-	echo '<div class="goto-products visible-xs">' . __('Filter products', 'BH') . '</div>';
+	echo '<div class="goto-products visible-xs">' . __( 'Filter products', 'BH' ) . '</div>';
 
 }
 
@@ -527,7 +593,9 @@ function BH_awpf_after_filter() {
  * @return	N/A
  */
 function BH_shop_tt_banner() {
-	get_template_part('views/woocommerce/archive/taxonomy-term', 'banner');
+
+	get_template_part( 'views/woocommerce/archive/taxonomy-term', 'banner' );
+
 }
 
 /****************************************************************************************************************************************************/
@@ -544,7 +612,9 @@ function BH_shop_tt_banner() {
  * @return	N/A
  */
 function BH_shop_single_product_images() {
-	get_template_part('views/woocommerce/single-product/single-product-section1', 'images');
+
+	get_template_part( 'views/woocommerce/single-product/single-product-section1', 'images' );
+
 }
 
 /**
@@ -557,7 +627,9 @@ function BH_shop_single_product_images() {
  * @return	N/A
  */
 function BH_shop_single_excerpt() {
-	get_template_part('views/woocommerce/single-product/single-product-section1', 'excerpt');
+
+	get_template_part( 'views/woocommerce/single-product/single-product-section1', 'excerpt' );
+
 }
 
 /**
@@ -570,7 +642,9 @@ function BH_shop_single_excerpt() {
  * @return	N/A
  */
 function BH_shop_single_add_to_cart() {
-	get_template_part('views/woocommerce/single-product/single-product-section1', 'add-to-cart');
+
+	get_template_part( 'views/woocommerce/single-product/single-product-section1', 'add-to-cart' );
+
 }
 
 /**
@@ -583,7 +657,9 @@ function BH_shop_single_add_to_cart() {
  * @return	N/A
  */
 function BH_shop_single_gift() {
-	get_template_part('views/woocommerce/single-product/single-product-section1', 'gift');
+
+	get_template_part( 'views/woocommerce/single-product/single-product-section1', 'gift' );
+
 }
 
 /**
@@ -596,7 +672,9 @@ function BH_shop_single_gift() {
  * @return	N/A
  */
 function BH_shop_single_content() {
-	get_template_part('views/woocommerce/single-product/single-product-section1', 'content');
+
+	get_template_part( 'views/woocommerce/single-product/single-product-section1', 'content' );
+
 }
 
 /**
@@ -609,7 +687,9 @@ function BH_shop_single_content() {
  * @return	N/A
  */
 function BH_shop_single_meta() {
-	get_template_part('views/woocommerce/single-product/single-product-section1', 'meta');
+
+	get_template_part( 'views/woocommerce/single-product/single-product-section1', 'meta' );
+
 }
 
 /**
@@ -622,7 +702,9 @@ function BH_shop_single_meta() {
  * @return	N/A
  */
 function BH_shop_single_shipping() {
-	get_template_part('views/woocommerce/single-product/single-product-section1', 'shipping');
+
+	get_template_part( 'views/woocommerce/single-product/single-product-section1', 'shipping' );
+
 }
 
 /**
@@ -635,7 +717,9 @@ function BH_shop_single_shipping() {
  * @return	N/A
  */
 function BH_shop_single_experience_banner() {
-	get_template_part('views/woocommerce/single-product/single-product-section2', 'banner');
+
+	get_template_part( 'views/woocommerce/single-product/single-product-section2', 'banner' );
+
 }
 
 /**
@@ -648,7 +732,9 @@ function BH_shop_single_experience_banner() {
  * @return	N/A
  */
 function BH_shop_single_related_products() {
-	get_template_part('views/woocommerce/single-product/single-product-section3', 'related');
+
+	get_template_part( 'views/woocommerce/single-product/single-product-section3', 'related' );
+
 }
 
 /**
@@ -660,7 +746,9 @@ function BH_shop_single_related_products() {
  * @return	N/A
  */
 function BH_EC_product_detail() {
-	get_template_part('views/woocommerce/single-product/ec-product-detail');
+
+	get_template_part( 'views/woocommerce/single-product/ec-product-detail' );
+
 }
 
 /****************************************************************************************************************************************************/
@@ -676,12 +764,14 @@ function BH_EC_product_detail() {
  * @return	N/A
  */
 function BH_shipping_options_disclaimer() {
+
 	echo
 		'<tr class="shipping-disclaimer">' .
 			'<td colspan="2">' .
-				__('<b>IMPORTANT NOTIFICATION:</b> Due to the Israeli postal office being unable to provide our customers up to date order tracking and delivery within guaranteed time range, until further notice we no longer offer regular shipping. We apologise for any inconvenience to our customers.', 'BH') .
+				__( '<b>IMPORTANT NOTIFICATION:</b> Due to the Israeli postal office being unable to provide our customers up to date order tracking and delivery within guaranteed time range, until further notice we no longer offer regular shipping. We apologise for any inconvenience to our customers.', 'BH' ) .
 			'</td>' .
 		'</tr>';
+
 }
 
 /****************************************************************************************************************************************************/
@@ -697,7 +787,9 @@ function BH_shipping_options_disclaimer() {
  * @return	N/A
  */
 function BH_checkout_title() {
-	echo '<h2 class="title">' . __('Checkout: Please fill your billing address and shipping address', 'BH') . '</h2><hr>';
+
+	echo '<h2 class="title">' . __( 'Checkout: Please fill your billing address and shipping address', 'BH' ) . '</h2><hr>';
+
 }
 
 /**
@@ -709,7 +801,9 @@ function BH_checkout_title() {
  * @return	N/A
  */
 function BH_checkout_order_pay_title() {
-	echo '<h2 class="title">' . __('Checkout: Please fill your payment details', 'BH') . '</h2><hr>';
+
+	echo '<h2 class="title">' . __( 'Checkout: Please fill your payment details', 'BH' ) . '</h2><hr>';
+
 }
 
 /**
@@ -721,7 +815,10 @@ function BH_checkout_order_pay_title() {
  * @return	N/A
  */
 function BH_checkout_order_received_title() {
-	return '<h2 class="title">' . __('Thank you. Your order has been received', 'BH') . '</h2><hr>';
+
+	// return
+	return '<h2 class="title">' . __( 'Thank you. Your order has been received', 'BH' ) . '</h2><hr>';
+
 }
 
 /**
@@ -733,7 +830,9 @@ function BH_checkout_order_received_title() {
  * @return	N/A
  */
 function BH_review_order_before_payment() {
-	echo '<h3 id="payment_heading">' . __('Secured Billing: Please choose your preferred billing method', 'BH') . '</h3>';
+
+	echo '<h3 id="payment_heading">' . __( 'Secured Billing: Please choose your preferred billing method', 'BH' ) . '</h3>';
+
 }
 
 /**
@@ -745,7 +844,10 @@ function BH_review_order_before_payment() {
  * @return	(string)
  */
 function BH_change_default_checkout_country() {
+
+	// return
 	return '';
+
 }
 
 /**
@@ -757,7 +859,10 @@ function BH_change_default_checkout_country() {
  * @return	(string)
  */
 function BH_change_default_checkout_state() {
+
+	// return
 	return '';
+
 }
 
 /****************************************************************************************************************************************************/
@@ -773,14 +878,21 @@ function BH_change_default_checkout_state() {
  * @param	$order_id (int) order ID
  * @return	N/A
  */
-function BH_shop_order_invoice($order_id) {
-	$order		= new WC_Order($order_id);
-	
-	// get currency code
+function BH_shop_order_invoice( $order_id ) {
+
+	if ( ! function_exists( 'get_field' ) )
+		return;
+
+	/**
+	 * Variables
+	 */
+	$order = new WC_Order( $order_id );
+
+	// Get currency code
 	$currency				= $order->get_order_currency();
 	$currency_code			= '';
-	
-	switch ($currency) :
+
+	switch ( $currency ) :
 		case 'EUR' :		$currency_code = '1';	break;
 		case 'USD' :		$currency_code = '2';	break;
 		case 'JPY' :		$currency_code = '3';	break;
@@ -792,93 +904,93 @@ function BH_shop_order_invoice($order_id) {
 		case 'NZD' :		$currency_code = '9';	break;
 		case 'AUD' :		$currency_code = '10';	break;
 	endswitch;
-	
-	// get current exchange rate
-	$wcml_settings			= get_option('_wcml_settings');
-	$exr					= (float)( 1 / $wcml_settings['currency_options']['USD']['rate'] );
-	$exr_str				= ($exr) ? sprintf('%f', $exr) : '';
-	
-	// get order billing country
-	$client_country_code	= get_post_meta($order_id, '_billing_country',		true);
+
+	// Get current exchange rate
+	$wcml_settings			= get_option( '_wcml_settings' );
+	$exr					= (float)( 1 / $wcml_settings[ 'currency_options' ][ 'USD' ][ 'rate' ] );
+	$exr_str				= ( $exr ) ? sprintf( '%f', $exr ) : '';
+
+	// Get order billing country
+	$client_country_code	= get_post_meta( $order_id, '_billing_country', true );
 	$countries				= include WC()->plugin_path() . '/i18n/countries.php';
-	$client_country			= ($client_country_code && $countries) ? $countries[$client_country_code] : '';
-	
-	// collect order info
-	$compID					= get_field('acf-options_icount_company_id',	'option');
-	$user					= get_field('acf-options_icount_user',			'option');
-	$pass					= get_field('acf-options_icount_password',		'option');
-	
-	$dateissued				= date( 'Ymd', strtotime($order->order_date) );
-	$ppdateissued			= date( 'Y-m-d', strtotime($order->order_date) );
-	
-	$clientname				= get_post_meta($order_id, '_billing_first_name',	true) . ' ' . get_post_meta($order_id, '_billing_last_name',	true);
-	$client_street			= get_post_meta($order_id, '_billing_address_1',	true);
-	$client_city			= get_post_meta($order_id, '_billing_city',			true);
-	$client_zip				= get_post_meta($order_id, '_billing_postcode',		true);
-	$sendOrig				= get_post_meta($order_id, '_billing_email',		true);
-	
+	$client_country			= ( $client_country_code && $countries ) ? $countries[ $client_country_code ] : '';
+
+	// Collect order info
+	$compID					= get_field( 'acf-options_icount_company_id',	'option' );
+	$user					= get_field( 'acf-options_icount_user',			'option' );
+	$pass					= get_field( 'acf-options_icount_password',		'option' );
+
+	$dateissued				= date( 'Ymd', strtotime( $order->order_date ) );
+	$ppdateissued			= date( 'Y-m-d', strtotime( $order->order_date ) );
+
+	$clientname				= get_post_meta( $order_id, '_billing_first_name',	true ) . ' ' . get_post_meta( $order_id, '_billing_last_name',	true );
+	$client_street			= get_post_meta( $order_id, '_billing_address_1',	true );
+	$client_city			= get_post_meta( $order_id, '_billing_city',		true );
+	$client_zip				= get_post_meta( $order_id, '_billing_postcode',	true );
+	$sendOrig				= get_post_meta( $order_id, '_billing_email',		true );
+
 	$absolutetotalwithvat	= number_format( (float)( $order->get_total() ),													2, '.', '' );
-	$totalsum				= ($currency == 'ILS') ? number_format( (float)( $order->get_total() - $order->get_total_tax() ),	2, '.', '' ) : number_format( (float)( $exr * ( $order->get_total() - $order->get_total_tax() ) ),	2, '.', '' );
-	$totalvat				= ($currency == 'ILS') ? number_format( (float)( $order->get_total_tax() ),							2, '.', '' ) : number_format( (float)( $exr * ( $order->get_total_tax() ) ),						2, '.', '' );
-	$totalwithvat			= ($currency == 'ILS') ? number_format( (float)( $order->get_total() ),								2, '.', '' ) : number_format( (float)( $exr * ( $order->get_total() ) ),							2, '.', '' );
+	$totalsum				= ( $currency == 'ILS' ) ? number_format( (float)( $order->get_total() - $order->get_total_tax() ),	2, '.', '' ) : number_format( (float)( $exr * ( $order->get_total() - $order->get_total_tax() ) ),	2, '.', '' );
+	$totalvat				= ( $currency == 'ILS' ) ? number_format( (float)( $order->get_total_tax() ),						2, '.', '' ) : number_format( (float)( $exr * ( $order->get_total_tax() ) ),						2, '.', '' );
+	$totalwithvat			= ( $currency == 'ILS' ) ? number_format( (float)( $order->get_total() ),							2, '.', '' ) : number_format( (float)( $exr * ( $order->get_total() ) ),							2, '.', '' );
 	$totalshipping			= number_format( (float)( $order->get_total_shipping() ),											2, '.', '' );
 	$taxexempt				= '1';
 	$maampercent			= '18';		// we don't charge for VAT. if we will, we must use a custom field for defining this value
-	
-	// collect order items (including shipping as a separated item)
+
+	// Collect order items (including shipping as a separated item)
 	$order_items			= $order->get_items();
-	
+
 	$items					= array();
 	$desc					= array();	// item name
 	$quantity				= array();	// item quantity
 	$unitprice				= array();	// item unit price
-	
-	if ($order_items) {
-		foreach ($order_items as $item) {
-			$desc[]			= $item['name'];
-			$quantity[]		= $item['qty'];
-			$unitprice[]	= $order->get_item_subtotal($item, false, true);
+
+	if ( $order_items ) {
+		foreach ( $order_items as $item ) {
+			$desc[]			= $item[ 'name' ];
+			$quantity[]		= $item[ 'qty' ];
+			$unitprice[]	= $order->get_item_subtotal( $item, false, true );
 		}
-		
-		// shipping info
+
+		// Shipping info
 		$desc[]				= $order->get_shipping_method();
 		$quantity[]			= '1';
 		$unitprice[]		= $totalshipping;
 	}
-	
-	if ($desc && $quantity && $unitprice) {
-		for ($i=0 ; $i<count($desc) ; $i++)
-			$items['desc[' . $i . ']']		= $desc[$i];
-			
-		for ($i=0 ; $i<count($quantity) ; $i++)
-			$items['quantity[' . $i . ']']	= $quantity[$i];
-			
-		for ($i=0 ; $i<count($unitprice) ; $i++)
-			$items['unitprice[' . $i . ']']	= $unitprice[$i];
+
+	if ( $desc && $quantity && $unitprice ) {
+		for ( $i=0 ; $i<count( $desc ) ; $i++ )
+			$items[ 'desc['.$i.']' ]		= $desc[$i];
+
+		for ( $i=0 ; $i<count( $quantity ) ; $i++ )
+			$items[ 'quantity['.$i.']']		= $quantity[$i];
+
+		for ( $i=0 ; $i<count( $unitprice ) ; $i++ )
+			$items[ 'unitprice['.$i.']']	= $unitprice[$i];
 	}
-	
-	// collect payment info
-	$payment_method			= get_post_meta($order_id, '_payment_method', true);
-	$payment				= array();
-	
-	switch ($payment_method) :
-		case 'pelecard'	:
-			$payment['credit']				= '1';
-			$payment['cc_paymenttype']		= '1';
-			$payment['cctotal']				= $absolutetotalwithvat;
-			$payment['ccfirstpayment']		= $absolutetotalwithvat;
-			$payment['cc_numofpayments']	= '1';
-			$payment['cc_peraondate']		= $dateissued;
-			
+
+	// Collect payment info
+	$payment_method	= get_post_meta( $order_id, '_payment_method', true );
+	$payment		= array();
+
+	switch ( $payment_method ) :
+		case 'pelecard' :
+			$payment[ 'credit' ]			= '1';
+			$payment[ 'cc_paymenttype' ]	= '1';
+			$payment[ 'cctotal' ]			= $absolutetotalwithvat;
+			$payment[ 'ccfirstpayment' ]	= $absolutetotalwithvat;
+			$payment[ 'cc_numofpayments' ]	= '1';
+			$payment[ 'cc_peraondate' ]		= $dateissued;
+
 			break;
-		case 'paypal'	:
-			$payment['paypal']				= '1';
-			$payment['pp_sum']				= $absolutetotalwithvat;
-			$payment['pp_paydate']			= $ppdateissued;
-			
+		case 'paypal' :
+			$payment[ 'paypal' ]			= '1';
+			$payment[ 'pp_sum' ]			= $absolutetotalwithvat;
+			$payment[ 'pp_paydate' ]		= $ppdateissued;
+
 			break;
 	endswitch;
-	
+
 	$data = array(
 		'compID'			=> $compID,
 		'user'				=> $user,
@@ -903,33 +1015,34 @@ function BH_shop_order_invoice($order_id) {
 //		'show_response'		=> '1',
 //		'debug'				=> 'yes'
 	);
-	
-	// add language indicator
-	if ($currency != 'ILS')
-		$data['lang'] = 'en';
-	
-	// add items and payment info into $data
+
+	// Add language indicator
+	if ( $currency != 'ILS' )
+		$data[ 'lang' ] = 'en';
+
+	// Add items and payment info into $data
 	$data = $data + $items + $payment;
-	
-	// send request
-	$url = get_field('acf-options_icount_api_url', 'option');
-	
+
+	// Send request
+	$url = get_field( 'acf-options_icount_api_url', 'option' );
+
 	$options = array (
 		'http' => array (
 			'header'	=> "Content-type: application/x-www-form-urlencoded\r\n",
 			'method'	=> 'POST',
-			'content'	=> http_build_query($data),
+			'content'	=> http_build_query( $data ),
 		)
 	);
-	$context = stream_context_create($options);
-	
-	$result = file_get_contents($url, false, $context);
-	
+	$context = stream_context_create( $options );
+
+	$result = file_get_contents( $url, false, $context );
+
 /*	$headers = 'From: nirg@bh.org.il' . "\r\n" .
 		'Reply-To: webmaster@example.com' . "\r\n" .
 		'X-Mailer: PHP/' . phpversion();
-		
-	mail('nirg@bh.org.il', 'A new invoice for order#' . $order_id, $result, $headers); */
+
+	mail( 'nirg@bh.org.il', 'A new invoice for order#' . $order_id, $result, $headers ); */
+
 }
 
 /**
@@ -941,67 +1054,74 @@ function BH_shop_order_invoice($order_id) {
  * @param	$args (array)
  * @return	N/A
  */
-function BH_shop_order_refund($refund_id, $args) {
-	if ( ! $args )
+function BH_shop_order_refund( $refund_id, $args ) {
+
+	if ( ! $args || ! function_exists( 'get_field' ) )
 		return;
 
 	include( THEME_ROOT . '/includes/UUID.php' );
 
-	$order_id		= $args['order_id'];
-	$refund_amount	= $args['amount'];
-	$line_items		= $args['line_items'];
+	/**
+	 * Variables
+	 */
+	$order_id		= $args[ 'order_id' ];
+	$refund_amount	= $args[ 'amount' ];
+	$line_items		= $args[ 'line_items' ];
 
-	$order			= new WC_Order($order_id);
+	$order			= new WC_Order( $order_id );
 	$order_total	= number_format( (float)( $order->get_total() ), 2, '.', '' );
 	$order_items	= $order->get_items();
 
 	// Collect Measurement Protocol data
 	$url	= 'https://www.google-analytics.com/collect?v=1';
 	$data	=
-		'&tid=' . get_field('acf-options_tracking_code', 'option') .
+		'&tid=' . get_field( 'acf-options_tracking_code', 'option' ) .
 		'&cid=' . UUID::v4() .
 		'&t=event' .
-		'&ec=' . ( ($refund_amount == $order_total) ? 'OrderRefund' : 'OrderPartialRefund' ) .
+		'&ec=' . ( ( $refund_amount == $order_total ) ? 'OrderRefund' : 'OrderPartialRefund' ) .
 		'&ea=refund' .
 		'&ni=1' .
 		'&ti=' . $order_id .
 		'&pa=refund';
 
-	if ($refund_amount != $order_total) :
+	if ( $refund_amount != $order_total ) {
+
 		// Order partial refunded
 		// Collect items refunded
 		$items_refunded = array();
 
-		if ($line_items) :
-			foreach ($line_items as $key => $val) {
+		if ( $line_items ) {
+			foreach ( $line_items as $key => $val ) {
 				if ( $val['qty'] && $val['qty'] > 0 ) {
-					$items_refunded[$key]			= array();
-					$items_refunded[$key]['sku']	= wc_get_product( $order_items[$key]['product_id'] )->sku;
-					$items_refunded[$key]['qty']	= $val['qty'];
+					$items_refunded[ $key ]				= array();
+					$items_refunded[ $key ][ 'sku' ]	= wc_get_product( $order_items[ $key ][ 'product_id' ] )->sku;
+					$items_refunded[ $key ][ 'qty' ]	= $val[ 'qty' ];
 				}
 			}
-		endif;
+		}
 
-		// add products to $data
-		if ($items_refunded) :
+		// Add products to $data
+		if ( $items_refunded ) {
 			$i = 1;
-			foreach ($items_refunded as $item) {
+			foreach ( $items_refunded as $item ) {
 				$data .=
-					'&pr'.$i.'id=' . $item['sku'] .
-					'&pr'.$i.'qt=' . $item['qty'];
+					'&pr'.$i.'id=' . $item[ 'sku' ] .
+					'&pr'.$i.'qt=' . $item[ 'qty' ];
 				$i++;
 			}
-		endif;
-	endif;
+		}
 
-	// submit Refund event
-	BH_background_post($url . $data);
+	}
+
+	// Submit Refund event
+	BH_background_post( $url . $data );
 
 /*	$headers = 'From: nirg@bh.org.il' . "\r\n" .
 		'Reply-To: webmaster@example.com' . "\r\n" .
 		'X-Mailer: PHP/' . phpversion();
-		
-	mail('nir@htmline.com', 'A new refund for order#' . $order_id, 'Refund hit: ' . $url . $data, $headers); */
+
+	mail( 'nir@htmline.com', 'A new refund for order#' . $order_id, 'Refund hit: ' . $url . $data, $headers ); */
+
 }
 
 /****************************************************************************************************************************************************/
@@ -1016,20 +1136,25 @@ function BH_shop_order_refund($refund_id, $args) {
  * @param	$product_id (int) product ID
  * @return	(string)
  */
-function BH_shop_get_artist_links($product_id) {
-	$artists = wp_get_post_terms($product_id, 'artist');
-	
-	$artists_html = '';
-	
-	if ($artists) {
+function BH_shop_get_artist_links( $product_id ) {
+
+	/**
+	 * Variables
+	 */
+	$artists		= wp_get_post_terms( $product_id, 'artist' );
+	$artists_html	= '';
+
+	if ( $artists ) {
 		$count = 1;
-		foreach ($artists as $artist) {
-			$artists_html .= ($count++ > 1) ? ', ' : '';
-			$artists_html .= '<a href="' . get_term_link($artist) . '">' . $artist->name . '</a>';
+		foreach ( $artists as $artist ) {
+			$artists_html .= ( $count++ > 1 ) ? ', ' : '';
+			$artists_html .= '<a href="' . get_term_link( $artist ) . '">' . $artist->name . '</a>';
 		}
 	}
-	
+
+	// return
 	return $artists_html;
+
 }
 
 /**
@@ -1041,16 +1166,18 @@ function BH_shop_get_artist_links($product_id) {
  * @param	$product (object)
  * @return	(string)
  */
-function BH_shop_price_html($price, $product) {
+function BH_shop_price_html( $price, $product ) {
 
-	if ( defined('DOING_AJAX') && DOING_AJAX && class_exists('woocommerce_wpml') ) {
-		// filter product price and currency
-		// used in case of an AJAX call and active woocommerce wpml
+	/**
+	 * Filter product price and currency
+	 * Used in case of an AJAX call and active woocommerce wpml
+	 */
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && class_exists( 'woocommerce_wpml' ) ) {
 		$args = array(
 			'currency' => apply_filters( 'wcml_price_currency', get_woocommerce_currency_symbol() ),
 		);
 
-		$price = '<span class="amount">' . wc_price( apply_filters('wcml_raw_price_amount', $product->get_price()), $args ) . '</span>';
+		$price = '<span class="amount">' . wc_price( apply_filters( 'wcml_raw_price_amount', $product->get_price() ), $args ) . '</span>';
 	}
 
 	// return
@@ -1067,20 +1194,25 @@ function BH_shop_price_html($price, $product) {
  * @param	$product (object)
  * @return	(string)
  */
-function BH_shop_sale_price_html($price, $product) {
+function BH_shop_sale_price_html( $price, $product ) {
 
-	$del = BH_strip_tags_content($price, '<ins>', true);
-	$ins = BH_strip_tags_content($price, '<del>', true);
+	/**
+	 * Variables
+	 */
+	$del = BH_strip_tags_content( $price, '<ins>', true );
+	$ins = BH_strip_tags_content( $price, '<del>', true );
 
-	if ( defined('DOING_AJAX') && DOING_AJAX && class_exists('woocommerce_wpml') ) {
-		// filter product price and currency
-		// used in case of an AJAX call and active woocommerce wpml
+	/**
+	 * Filter product price and currency
+	 * Used in case of an AJAX call and active woocommerce wpml
+	 */
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && class_exists( 'woocommerce_wpml' ) ) {
 		$args = array(
 			'currency' => apply_filters( 'wcml_price_currency', get_woocommerce_currency_symbol() ),
 		);
 
-		$del = '<del><span class="amount">' . wc_price( apply_filters('wcml_raw_price_amount', $product->get_regular_price()), $args ) . '</span></del>';
-		$ins = '<ins><span class="amount">' . wc_price( apply_filters('wcml_raw_price_amount', $product->get_price()), $args ) . '</span></ins>';
+		$del = '<del><span class="amount">' . wc_price( apply_filters( 'wcml_raw_price_amount', $product->get_regular_price() ), $args ) . '</span></del>';
+		$ins = '<ins><span class="amount">' . wc_price( apply_filters( 'wcml_raw_price_amount', $product->get_price() ), $args ) . '</span></ins>';
 	}
 
 	// return
@@ -1096,19 +1228,22 @@ function BH_shop_sale_price_html($price, $product) {
  * @param	$options (array) catlog order by default options
  * @return	(array)
  */
-function BH_shop_catalog_orderby_options($options) {
-	$options['menu_order']	= __('Most Popular', 'BH');
-	$options['price']		= __('Price: Low to High', 'BH');
-	$options['price-desc']	= __('Price: High to Low', 'BH');
-	
-	if ( isset( $options['popularity'] ) )
-		unset( $options['popularity'] );
-		
-	if ( isset( $options['rating'] ) )
-		unset( $options['rating'] );
-		
-	if ( isset( $options['date'] ) )
-		unset( $options['date'] );
-		
+function BH_shop_catalog_orderby_options( $options ) {
+
+	$options[ 'menu_order' ]	= __( 'Most Popular', 'BH' );
+	$options[ 'price' ]			= __( 'Price: Low to High', 'BH' );
+	$options[ 'price-desc' ]	= __( 'Price: High to Low', 'BH' );
+
+	if ( isset( $options[ 'popularity' ] ) )
+		unset( $options[ 'popularity' ] );
+
+	if ( isset( $options[ 'rating' ] ) )
+		unset( $options[ 'rating' ] );
+
+	if ( isset( $options[ 'date' ] ) )
+		unset( $options[ 'date' ] );
+
+	// return
 	return $options;
+
 }

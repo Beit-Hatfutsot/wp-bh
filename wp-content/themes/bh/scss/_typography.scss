@@ -308,3 +308,15 @@ blockquote {}
 		}
 	}
 }
+
+/************/
+/* svg-defs */
+/************/
+
+body > svg {
+	display: none;
+}
+
+.shape {
+	vertical-align: top;
+}

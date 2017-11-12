@@ -1,7 +1,7 @@
 {
-	"name": "bh.org.il",
+	"name": "bh.org.il-wifi-login",
 	"version": "1.0.0",
-	"description": "Beit Hatfutsot – The Museum of the Jewish People",
+	"description": "Beit Hatfutsot – The Museum of the Jewish People – WiFI Login",
 	"homepage": "https://github.com/Beit-Hatfutsot/wp-bh.git#readme",
 	"bugs": {
 		"url": "https://github.com/Beit-Hatfutsot/wp-bh/issues",
