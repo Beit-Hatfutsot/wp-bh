@@ -293,7 +293,7 @@
         },
         {
             "key": "field_59ae4101afe97",
-            "label": "iCount Forms",
+            "label": "Billing Forms",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -337,6 +337,22 @@
                 "id": ""
             },
             "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a083b2c79fe1",
+            "label": "AFBH Donation Form URL",
+            "name": "acf-options_afbh_d_form",
+            "type": "url",
+            "instructions": "Enter here the URL for the AFBH Click&Pledge donation form (for US donations)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/co.clickandpledge.com\/sp\/d1\/default.aspx?wid=39977",
             "placeholder": ""
         },
         {
@@ -422,7 +438,7 @@
             }
         ]
     ],
-    "menu_order": 18,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -430,5 +446,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1506434535
+    "modified": 1510489440
 }

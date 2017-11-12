@@ -1,5 +1,6 @@
 <?php
 $form_target = BH_get_donation_page_url('iframe');
+$afbh_link = get_field('acf-options_afbh_d_form', 'option');
 
 $tab_labels = array(
     'online'    => esc_html_x('Online', 'donation-tabs-default', 'BH'),
@@ -33,7 +34,9 @@ if ( wp_is_mobile() ) {
             <div role="tabpanel" class="tab-pane active" id="online">
                 <p class="tax-deduct">
                     <strong><?php echo esc_html__('Your gift is tax deductible in Israel.', 'BH') . ' '; ?></strong>
+                    <?php if ($afbh_link): ?>
                     <a href="https://co.clickandpledge.com/sp/d1/default.aspx?wid=39977" role="link" target="_blank" rel="nofollow" class="us-donation"><?php esc_html_e('Make a tax deductible gift in the United States instead', 'BH') ?></a>
+                    <?php endif; ?>
                 </p>
 
                 <form id="donate-form" class="donate-form container" method="post" action="<?php echo $form_target; ?>">
