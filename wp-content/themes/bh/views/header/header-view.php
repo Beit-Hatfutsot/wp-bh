@@ -18,66 +18,82 @@ global $globals;
 $bh_sites		= $globals[ 'bh_sites' ];
 $current_site	= $globals[ 'current_site' ];
 $menu			= $globals[ 'menu' ];
+$wpml_lang		= $globals[ 'wpml_lang' ];
+
+if ( ! $bh_sites )
+	return;
 
 ?>
 
 <header>
 
-	<div class="header-top <?php echo $current_site; ?>">
+	<div class="header-top" <?php echo $current_site !== false && $bh_sites[ $current_site ][ 'dark_color' ] ? 'style="border-bottom-color: ' . $bh_sites[ $current_site ][ 'dark_color' ] . ';"' : ''; ?>>
 		<div class="container">
 
 			<div class="sites">
-				<?php if ( $bh_sites ) { ?>
 
-					<ul>
-						<?php foreach ( $bh_sites as $site_name => $site_info ) { ?>
+				<ul>
+					<?php foreach ( $bh_sites as $key => $s ) {
 
-							<li class="site-item <?php echo $site_name . ( $site_name == $current_site ? ' active' : '' ); ?>">
-								<a href="<?php echo $site_info[ 'link' ]; ?>">
-									<div class="title"><?php echo $site_info[ 'header_title' ]; ?></div>
-									<div class="icon"></div>
-								</a>
-							</li>
+						// Get site data
+						$type			= $s[ 'type' ];
+						$color			= $s[ 'dark_color' ];
+						$title			= $s[ 'title' ];
+						$title_hover	= $s[ 'title_hover' ];
+						$link			= $type == 'shop' && function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : $s[ 'link' ];
 
-						<?php } ?>
-					</ul>
+						if ( ! $title || ! $title_hover || ! $link )
+							continue;
 
-				<?php } ?>
+						?>
+
+						<li class="site-item <?php echo $current_site !== false && $key == $current_site ? 'active' : ''; ?>" <?php echo $color ? 'style="background-color: ' . $color . ';"' : ''; ?>>
+							<a href="<?php echo $link; ?>">
+								<div class="title">
+									<span class="title-1"><?php echo $title; ?></span>
+									<span class="title-2"><?php echo $title_hover; ?></span>
+								</div>
+							</a>
+						</li>
+
+					<?php } ?>
+				</ul>
+
 			</div><!-- .sites -->
 
 			<div class="logo-wrapper">
 
-				<div class="mobile-menu-btn hidden-lg hidden-md">
-					<a></a>
+				<?php
+				/**
+				 * Display the mobile menu button
+				 */
+				?>
+				<div class="mobile-menu-btn hidden-md hidden-lg">
+					<a>
+						<?php get_template_part( 'views/svgs/shape', 'mobile-menu-' . $wpml_lang ); ?>
+					</a>
 				</div>
 
+				<?php
+				/**
+				 * Display the logo
+				 */
+				?>
 				<div class="logo">
-					<a href="<?php echo HOME; ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
+					<a href="<?php echo HOME; ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+						<?php get_template_part( 'views/svgs/shape', 'logo-' . $wpml_lang ); ?>
+					</a>
 				</div>
 
-				<div class="header-elements header-top-elements visible-lg visible-md">
+				<?php
+				/**
+				 * Display the header elements
+				 */
+				$header_position = 'top'; ?>
 
-					<?php if ( $elements[ 'languages_switcher' ] ) { ?>
-						<div class="header-element languages-switcher">
-							<?php echo $elements[ 'languages_switcher' ]; ?>
-						</div>
-					<?php } ?>
+				<div class="header-elements header-top-elements visible-md visible-lg">
 
-					<?php if ( $elements[ 'links_n_icons' ] ) {
-						echo $elements[ 'links_n_icons' ];
-					} ?>
-
-					<?php if ( $current_site == 'shop' && $elements[ 'shop_cart_header_top_popup' ] ) { ?>
-						<div class="header-element shop-cart-popup shop-cart-header-top-popup">
-							<?php echo $elements[ 'shop_cart_header_top_popup' ]; ?>
-						</div>
-					<?php } ?>
-
-					<?php if ( $elements[ 'newsletter_header_top_popup' ] ) { ?>
-						<div class="header-element newsletter-popup">
-							<?php echo $elements[ 'newsletter_header_top_popup' ]; ?>
-						</div>
-					<?php } ?>
+					<?php include( locate_template( 'views/header/header-view-elements.php' ) ); ?>
 
 				</div><!-- .header-elements -->
 
@@ -86,62 +102,67 @@ $menu			= $globals[ 'menu' ];
 		</div>
 	</div><!-- .header-top -->
 
-	<div class="header-mid <?php echo $current_site; ?> hidden-lg hidden-md">
+	<div class="header-mid hidden-md hidden-lg">
 		<div class="container">
 
-			<?php if ( $elements[ 'featured_page' ] ) { ?>
-				<div class="featured-page">
-					<a href="<?php echo get_permalink( $elements[ 'featured_page' ]->ID ); ?>"><?php echo $elements[ 'featured_page' ]->post_title; ?></a>
-				</div>
-			<?php } ?>
+			<?php
+				/**
+				 * Display the featured page
+				 */
+				if ( $elements[ 'featured_page' ] ) { ?>
 
-			<div class="header-elements header-mid-elements hidden-lg hidden-md">
-
-				<?php if ( $elements[ 'languages_switcher' ] ) { ?>
-					<div class="header-element languages-switcher">
-						<?php echo $elements[ 'languages_switcher' ]; ?>
+					<div class="featured-page">
+						<a href="<?php echo get_permalink( $elements[ 'featured_page' ]->ID ); ?>"><?php echo $elements[ 'featured_page' ]->post_title; ?></a>
 					</div>
-				<?php } ?>
 
-				<?php if ( $elements[ 'links_n_icons' ] ) {
-					echo $elements[ 'links_n_icons' ];
-				} ?>
+				<?php }
+			?>
 
-				<?php if ( $current_site == 'shop' && $elements[ 'shop_cart_header_mid_popup' ] ) { ?>
-					<div class="header-element shop-cart-popup shop-cart-header-mid-popup">
-						<?php echo $elements[ 'shop_cart_header_mid_popup' ]; ?>
-					</div>
-				<?php } ?>
+			<?php
+			/**
+			 * Display the header elements
+			 */
+			$header_position = 'mid'; ?>
 
-				<?php if ( $elements[ 'newsletter_header_mid_popup' ] ) { ?>
-					<div class="header-element newsletter-popup">
-						<?php echo $elements[ 'newsletter_header_mid_popup' ]; ?>
-					</div>
-				<?php } ?>
+			<div class="header-elements header-mid-elements hidden-md hidden-lg">
+
+				<?php include( locate_template( 'views/header/header-view-elements.php' ) ); ?>
 
 			</div><!-- .header-elements -->
 
 		</div>
 	</div><!-- .header-mid -->
 
-	<div class="header-bottom <?php echo $current_site; ?> visible-lg visible-md">
+	<div class="header-bottom visible-md visible-lg">
 		<div class="container">
 
-			<?php if ( $menu ) { ?>
+			<?php
+				/**
+				 * Display the menu
+				 */
+				if ( $menu ) { ?>
 
-				<nav class="menu">
-					<ul class="nav">
-						<?php echo $menu; ?>
-					</ul>
-				</nav><!-- .menu -->
+					<nav class="menu">
+						<ul class="nav">
+							<?php echo $menu; ?>
+						</ul>
+					</nav><!-- .menu -->
 
-			<?php } ?>
+				<?php }
+			?>
 
-			<?php if ( $elements[ 'featured_page' ] ) { ?>
-				<div class="featured-page">
-					<a href="<?php echo get_permalink( $elements[ 'featured_page' ]->ID ); ?>"><?php echo $elements[ 'featured_page' ]->post_title; ?></a>
-				</div>
-			<?php } ?>
+			<?php
+				/**
+				 * Display the featured page
+				 */
+				if ( $elements[ 'featured_page' ] ) { ?>
+
+					<div class="featured-page">
+						<a href="<?php echo get_permalink( $elements[ 'featured_page' ]->ID ); ?>"><?php echo $elements[ 'featured_page' ]->post_title; ?></a>
+					</div>
+
+				<?php }
+			?>
 
 		</div>
 	</div><!-- .header-bottom -->

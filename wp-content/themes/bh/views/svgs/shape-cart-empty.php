@@ -1,6 +1,6 @@
 <?php
 /**
- * Shape - flag-IL
+ * Shape - cart-empty
  *
  * @author		Beit Hatfutsot
  * @package		bh/views/svgs
@@ -12,6 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
 
-<svg viewBox="0 0 30.25 30.25" class="shape shape-flag-IL">
-	<use xlink:href="#shape-flag-IL"></use>
+<svg viewBox="0 0 31 28.99" class="shape shape-cart-empty">
+	<use xlink:href="#shape-cart-empty"></use>
 </svg>

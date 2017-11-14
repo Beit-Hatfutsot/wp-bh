@@ -19,20 +19,39 @@ global $globals;
 $bh_sites		= $globals[ 'bh_sites' ];
 $current_site	= $globals[ 'current_site' ];
 
-if ( $bh_sites ) { ?>
+if ( ! $bh_sites )
+	return;
 
-	<div class="container">
-		<div class="sites-links <?php echo $current_site; ?>-sites-links row">
+$total_sites	= count( $bh_sites );
 
-			<?php foreach ( $bh_sites as $site_name => $site_info ) { ?>
-				<div class="site-item col-xs-4">
-					<a class="<?php echo $site_name . ( $site_name == $current_site ? ' active' : '' ); ?>" href="<?php echo $site_info[ 'link' ]; ?>" target="<?php echo $site_name == 'mjs' ? '_blank' : '_self'; ?>">
-						<div class="title"><?php echo $site_info[ 'footer_title' ]; ?></div>
-					</a>
-				</div>
-			<?php } ?>
+?>
 
-		</div><!-- .sites-links -->
-	</div>
+<div class="container">
+	<div class="sites-links row" <?php echo $current_site !== false && $bh_sites[ $current_site ][ 'dark_color' ] ? 'style="border-color: ' . $bh_sites[ $current_site ][ 'dark_color' ] . ';"' : ''; ?>>
 
-<?php }
+		<?php foreach ( $bh_sites as $key => $s ) {
+
+			// Get site data
+			$type			= $s[ 'type' ];
+			$color			= $s[ 'dark_color' ];
+			$title			= $s[ 'title' ];
+			$title_hover	= $s[ 'title_hover' ];
+			$link			= $type == 'shop' && function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : $s[ 'link' ];
+
+			if ( ! $title || ! $title_hover || ! $link )
+				continue;
+
+			?>
+
+			<div class="site-item col-xs-<?php echo (int) 12/$total_sites; ?>">
+				<a class="<?php echo $current_site !== false && $key == $current_site ? 'active' : ''; ?>" <?php echo $color ? 'style="background-color: ' . $color . ';"' : ''; ?> href="<?php echo $link; ?>" target="<?php echo $type == 'dbs' ? '_blank' : '_self'; ?>">
+					<div class="title">
+						<span class="title-1"><?php echo $title; ?></span>
+						<span class="title-2"><?php echo $title_hover; ?></span>
+					</div>
+				</a>
+			</div>
+		<?php } ?>
+
+	</div><!-- .sites-links -->
+</div>

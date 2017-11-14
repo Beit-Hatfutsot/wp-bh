@@ -19,23 +19,40 @@ if ( ! function_exists( 'get_field' ) )
  */
 global $globals;
 
+$bh_sites		= $globals[ 'bh_sites' ];
 $current_site	= $globals[ 'current_site' ];
-$links			= get_field( 'acf-options_social_icons_links', 'option' );
 
-if ( $links ) { ?>
+if ( ! $bh_sites || $current_site === false )
+	return;
 
-	<div class="container">
-		<div class="social-links <?php echo $current_site; ?>-social-links row">
+$links			= $bh_sites[ $current_site ][ 'social_links' ];
 
-			<ul>
-				<?php foreach ( $links as $l ) { ?>
-					<li>
-						<a href="<?php echo $l[ 'link' ]; ?>" target="_blank"><i class="fa <?php echo $l[ 'icon' ]; ?>"></i></a>
-					</li>
-				<?php } ?>
-			</ul>
+if ( ! $links )
+	return;
 
-		</div><!-- .social-links -->
-	</div>
+?>
 
-<?php }
+<div class="container">
+	<div class="social-links row" <?php echo $current_site !== false && $bh_sites[ $current_site ][ 'light_color' ] ? 'style="background-color: ' . $bh_sites[ $current_site ][ 'light_color' ] . ';"' : ''; ?>>
+
+		<ul>
+			<?php foreach ( $links as $l ) {
+
+				// Get link data
+				$icon	= $l[ 'icon' ];
+				$link	= $l[ 'link' ];
+
+				if ( ! $icon || ! $link )
+					continue;
+
+				?>
+
+				<li>
+					<a href="<?php echo $link; ?>" target="_blank"><i class="fa <?php echo $icon; ?>"></i></a>
+				</li>
+
+			<?php } ?>
+		</ul>
+
+	</div><!-- .social-links -->
+</div>

@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		if ( function_exists( 'the_field' ) ) { ?>
 
 			<script>
-				_BH_GA_tid	= '<?php the_field('acf-options_tracking_code', 'option'); ?>';
+				_BH_GA_tid	= '<?php the_field( 'acf-options_tracking_code', 'option' ); ?>';
 			</script>
 
 		<?php }

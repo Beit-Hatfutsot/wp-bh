@@ -30,43 +30,25 @@ function BH_set_header_globals() {
 	/**
 	 * Set bh_sites
 	 */
-	$globals[ 'bh_sites' ] = array(
+	$globals[ 'bh_sites' ] = get_field( 'acf-options_sites', 'option' );
 
-		'main'				=> array(
-			'link'			=> HOME,
-			'header_title'	=> get_field( 'acf-options_main_site_header_title',		'option' ),
-			'footer_title'	=> get_field( 'acf-options_main_site_footer_title', 	'option' ),
-			'featured_page'	=> get_field( 'acf-options_main_site_featured_page',	'option' ),
-			'menu'			=> 'main-menu'
-		),
-
-		'shop'				=> array(
-			'link'			=> wc_get_page_permalink( 'shop' ),
-			'header_title'	=> get_field( 'acf-options_shop_site_header_title',		'option' ),
-			'footer_title'	=> get_field( 'acf-options_shop_site_footer_title',		'option' ),
-			'featured_page'	=> get_field( 'acf-options_shop_site_featured_page',	'option' ),
-			'menu'			=> 'shop-menu'
-		),
-
-		'mjs'				=> array(
-			'link'			=> get_field( 'acf-options_mjs_site_link',				'option' ),
-			'header_title'	=> get_field( 'acf-options_mjs_site_header_title',		'option' ),
-			'footer_title'	=> get_field( 'acf-options_mjs_site_footer_title',		'option' )
-		)
-
-	);
+	if ( ! $globals[ 'bh_sites' ] )
+		return;
 
 	/**
 	 * Set current_site
 	 */
-	$globals[ 'current_site' ] = is_woocommerce() || $globals[ 'shop_page' ] ? 'shop' : 'main';
+	$globals[ 'current_site' ] = BH_set_current_site();
+
+	if ( $globals[ 'current_site' ] === false || ! $globals[ 'bh_sites' ][ $globals[ 'current_site' ] ][ 'menu_theme_location' ] )
+		return;
 
 	/**
 	 * Set menu - current site menu
 	 */
 	$args = array(
 
-		'theme_location'	=> $globals[ 'bh_sites' ][ $globals[ 'current_site' ] ][ 'menu' ],
+		'theme_location'	=> $globals[ 'bh_sites' ][ $globals[ 'current_site' ] ][ 'menu_theme_location' ],
 		'container'			=> false,
 		'items_wrap'		=> '%3$s',
 		'before'			=> '<span class="item-before disable"></span>',
@@ -79,7 +61,7 @@ function BH_set_header_globals() {
 	/**
 	 * Set specific page variables for menu manipulation
 	 */
-	if ( $globals[ 'current_site' ] == 'main' ) {
+	if ( $args[ 'theme_location' ] == 'main-menu' ) {
 
 		$blog_page		= get_field( 'acf-options_blog_page', 'option' );
 		$blog_page_id	= $blog_page ? $blog_page->ID : '';
@@ -91,6 +73,110 @@ function BH_set_header_globals() {
 
 	}
 	$globals[ 'menu' ] = wp_nav_menu( $args );
+
+}
+
+/**
+ * BH_set_current_site
+ *
+ * This function predicts the current site
+ *
+ * @param	N/A
+ * @return	(mixed) Site index in $globals[ 'bh_sites' ] or FALSE if no sites defined
+ */
+function BH_set_current_site() {
+
+	/**
+	 * Variables
+	 */
+	global $globals;
+
+	$bh_sites = $globals[ 'bh_sites' ];
+
+	if ( ! $bh_sites )
+		return false;
+
+	$index = 0;
+
+	if ( ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) || $globals[ 'shop_page' ] ) {
+
+		// Shop - locate first shop type site
+		foreach ( $bh_sites as $s ) {
+			if ( $s[ 'type' ] == 'shop' )
+				// return
+				return $index;
+
+			$index++;
+		}
+
+	} else {
+
+		// Main - predict current site according to current object relevance
+		$current_object_id = get_queried_object_id();
+
+		foreach ( $bh_sites as $s ) {
+			if ( $s[ 'type' ] == 'main' && ( ( $s[ 'featured_page' ] && $s[ 'featured_page' ]->ID == $current_object_id ) || ( $s[ 'menu_theme_location' ] && BH_is_object_in_menu( $s[ 'menu_theme_location' ], $current_object_id ) ) ) )
+				// return
+				return $index;
+
+			$index++;
+		}
+
+	}
+
+	if ( $index == count( $bh_sites ) ) {
+
+		// No site found for current object - set the first site defined as main
+		$index = 0;
+
+		foreach ( $bh_sites as $s ) {
+			if ( $s[ 'type' ] == 'main' )
+				// return
+				return $index;
+
+			$index++;
+		}
+
+	}
+
+	// return
+	return false;
+
+}
+
+/**
+ * BH_is_object_in_menu
+ *
+ * This function checks whether an object exists in a menu
+ *
+ * @param	$theme_location (string) Menu theme location
+ * @param	$object_id (int) Object ID
+ * @return	(bool)
+ */
+function BH_is_object_in_menu( $theme_location, $object_id = null ) {
+
+	if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $theme_location ] ) ) {
+
+		$menu = wp_get_nav_menu_object( $locations[ $theme_location ] );
+		$menu_items = wp_get_nav_menu_items( $menu->term_id );
+
+		if ( ! $menu_items )
+			return false;
+
+		$menu_items_ids = wp_list_pluck( $menu_items, 'object_id' );
+
+		if( ! $object_id ) {
+			global $post;
+			$object_id = get_queried_object_id();
+		}
+
+		// return
+		return in_array( (int) $object_id, $menu_items_ids );
+
+	}
+
+	// return
+	return false;
 
 }
 
@@ -111,7 +197,7 @@ function BH_set_header_elements() {
 
 	$elements = array(
 		'languages_switcher'			=> '',
-		'links_n_icons'					=> '',
+		'header_links'					=> '',
 		'shop_cart_header_top_popup'	=> '',
 		'shop_cart_header_mid_popup'	=> '',
 		'newsletter_header_top_popup'	=> '',
@@ -124,6 +210,10 @@ function BH_set_header_elements() {
 	 */
 	$bh_sites		= $globals[ 'bh_sites' ];
 	$current_site	= $globals[ 'current_site' ];
+	$site_type		= '';
+
+	if ( $bh_sites && $current_site !== false )
+		$site_type	= $bh_sites[ $current_site ][ 'type' ];
 
 	/**
 	 * Set header elements
@@ -132,11 +222,11 @@ function BH_set_header_elements() {
 	// Language switcher
 	$elements[ 'languages_switcher' ] = BH_languages_switcher();
 
-	// Links and icons
-	$elements[ 'links_n_icons' ] = BH_header_links_n_icons();
+	// Header links
+	$elements[ 'header_links' ] = BH_header_links();
 
 	// Shop mini cart
-	if ( $current_site == 'shop' && is_active_sidebar( 'shop-mini-cart' ) ) {
+	if ( $site_type == 'shop' && is_active_sidebar( 'shop-mini-cart' ) ) {
 
 		$shop_cart_sidebar							= BH_get_dynamic_sidebar( 'shop-mini-cart' );
 		$elements[ 'shop_cart_header_top_popup' ]	= BH_shop_cart_popup( 'top', $shop_cart_sidebar );
@@ -154,7 +244,7 @@ function BH_set_header_elements() {
 	}
 
 	// Featured page
-	if ( $bh_sites && $current_site && $bh_sites[ $current_site ] ) {
+	if ( $bh_sites && $current_site !== false && $bh_sites[ $current_site ][ 'featured_page' ] ) {
 		$elements[ 'featured_page' ] = $bh_sites[ $current_site ][ 'featured_page' ];
 	}
 
@@ -237,18 +327,18 @@ function BH_newsletter_popup( $header_position, $sidebar ) {
 }
 
 /**
- * BH_header_links_n_icons
- * 
- * This function returns the icons and links to be displayed as part of header elements
- * 
+ * BH_header_links
+ *
+ * This function returns the header links to be displayed as part of header elements
+ *
  * @param	N/A
  * @return	(string)
  */
-function BH_header_links_n_icons() {
+function BH_header_links() {
 
 	ob_start();
 	
-	get_template_part( 'views/header/header-links-n-icons' );
+	get_template_part( 'views/header/header-links' );
 	$output = ob_get_contents();
 	
 	ob_end_clean();
@@ -399,8 +489,7 @@ function set_opening_hours_msg( $code ) {
 
 	if ( $msg ) {
 		set_transient( $transient_key, '<div class="msg msg-' . $status . '">' . $msg . '</div>' );
-	}
-	else {
+	} else {
 		delete_transient( $transient_key );
 	}
 

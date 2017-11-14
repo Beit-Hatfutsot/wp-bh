@@ -3,7 +3,7 @@
  * WooCommerce functions
  *
  * @author		Beit Hatfutsot
- * @package		bh/functions
+ * @package		bh/functions/woocommerce
  * @version		2.6.0
  */
 
@@ -341,8 +341,7 @@ function BH_loop_add_to_cart_link() {
 	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && class_exists( 'woocommerce_wpml' ) ) {
 		$p_price = number_format( (float)apply_filters( 'wcml_raw_price_amount', $product->get_price() ), 2, '.', '' );
 		$p_currency = apply_filters( 'wcml_price_currency', $p_currency );
-	}
-	else {
+	} else {
 		$p_price = number_format( (float)$product->get_price(), 2, '.', '' );
 	}
 

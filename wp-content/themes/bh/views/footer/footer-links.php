@@ -11,57 +11,61 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if ( ! function_exists( 'get_field' ) )
-	return;
-
 /**
  * Variables
  */
 global $globals;
 
-$current_site = $globals[ 'current_site' ];
+$bh_sites		= $globals[ 'bh_sites' ];
+$current_site	= $globals[ 'current_site' ];
 
-if ( $current_site )
-	$links = get_field( 'acf-options_' . $current_site . '_site_footer_links', 'option' );
+if ( ! $bh_sites || $current_site === false )
+	return;
 
-if ( $links ) { ?>
+$links			= $bh_sites[ $current_site ][ 'footer_links' ];
 
-	<div class="container">
-		<div class="footer-links row">
+if ( ! $links )
+	return;
 
-			<?php foreach ( $links as $l ) {
+?>
 
-				/**
-				 * Collect link data
-				 */
-				$title		= $l[ 'title' ];
-				$big_icon	= $l[ 'big_icon' ];
-				$small_icon	= $l[ 'small_icon' ];
-				$link		= $l[ 'link' ];
+<div class="container">
+	<div class="footer-links row">
 
-				?>
+		<?php foreach ( $links as $l ) {
 
-				<div class="link-box-wrapper col-xs-4">
-					<div class="link-box">
-						<a href="<?php echo $link; ?>">
+			/**
+			 * Get link data
+			 */
+			$title		= $l[ 'title' ];
+			$big_icon	= $l[ 'big_icon' ];
+			$small_icon	= $l[ 'small_icon' ];
+			$link		= $l[ 'link' ];
 
-							<div class="before-link"></div>
+			if ( ! $title || ! $link )
+				continue;
 
-							<div class="link">
+			?>
 
-								<div class="small-icon visible-xs"><?php echo $small_icon ? '<span class="' . $small_icon . '"></span>' : ''; ?></div>
-								<div class="title"><?php echo ( $big_icon ? '<span class="' . $big_icon . ' hidden-xs"></span>' : '' ) . $title; ?></div>
-								<div class="more"><?php _e( 'Learn more', 'BH' ); ?></div>
+			<div class="link-box-wrapper col-xs-4">
+				<div class="link-box">
+					<a href="<?php echo $link; ?>">
 
-							</div>
-							
-						</a>
-					</div>
+						<div class="before-link"></div>
+
+						<div class="link">
+
+							<div class="small-icon visible-xs"><?php echo $small_icon ? '<span class="' . $small_icon . '"></span>' : ''; ?></div>
+							<div class="title"><?php echo ( $big_icon ? '<span class="' . $big_icon . ' hidden-xs"></span>' : '' ) . $title; ?></div>
+							<div class="more"><?php _e( 'Learn more', 'BH' ); ?></div>
+
+						</div>
+
+					</a>
 				</div>
+			</div>
 
-			<?php } ?>
+		<?php } ?>
 
-		</div><!-- .footer-links -->
-	</div>
-
-<?php }
+	</div><!-- .footer-links -->
+</div>
