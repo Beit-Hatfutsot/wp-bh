@@ -109,12 +109,8 @@ body > header {
 	/**************/
 
 	.header-top {
-		height: 80px;
 		border-bottom-width: 10px;
 		border-bottom-style: solid;
-
-		&.main { border-bottom-color: $main-color; }
-		&.shop { border-bottom-color: $shop-color; }
 
 		/************/
 		/* BH sites */
@@ -127,94 +123,34 @@ body > header {
 
 				li {
 					float: left;
-					margin: 30px 15px 0 0;
 
 					a {
-						width: 80px;
-						height: 40px;
 						text-align: center;
 						text-decoration: none;
 						display: block;
 
 						.title {
-							line-height: 15px;
-							font-size: 15px;
-							font-weight: $font-semi-bold;
+							font-weight: $font-bold;
 							color: $font-invert-color;
-						}
-
-						.icon {
-							margin: 0 auto;
-							@include sprites;
-							display: none;
-						}
-
-						.title,
-						.icon {
 							@include vertical-align;
+
+							.title-2 {
+								display: none;
+							}
 						}
 					}
 
-					&:hover {
-						margin: 18px 11px 0 -4px;
-
-						a {
-							width: 88px;
-							height: 52px;
-						}
-					}
-
-					&.active {
-						margin: 0 15px 0 0;
-
-						a {
-							width: 120px;
-							height: 70px;
-						}
-					}
-
-					&:hover,
 					&.active {
 						a {
 							.title {
-								display: none;
+								.title-1 {
+									display: none;
+								}
+
+								.title-2 {
+									display: block;
+								}
 							}
-
-							.icon {
-								display: block;
-							}
-						}
-					}
-
-					&.main {
-						background-color: $main-color;
-
-						&:hover .icon {
-							@include sprite-museum-en-s;
-						}
-
-						&.active .icon {
-							@include sprite-museum-en;
-						}
-					}
-
-					&.shop {
-						background-color: $shop-color;
-
-						&:hover .icon {
-							@include sprite-shop-en-s;
-						}
-
-						&.active .icon {
-							@include sprite-shop-en;
-						}
-					}
-
-					&.mjs {
-						background-color: $mjs-color;
-
-						&:hover .icon {
-							@include sprite-mjs-en-s;
 						}
 					}
 				}
@@ -226,26 +162,12 @@ body > header {
 		/****************/
 
 		.logo-wrapper {
-			.mobile-menu-btn,
-			.logo {
-				float: right;
-				margin-left: 15px;
-				height: 70px;
-
+			.mobile-menu-btn {
 				a {
-					@include sprites;
 					@include vertical-align;
 					display: block;
+					cursor: pointer;
 				}
-			}
-
-			.mobile-menu-btn a {
-				@include sprite-mobile-menu-en;
-				cursor: pointer;
-			}
-
-			.logo a {
-				@include sprite-logo-en-124x57;
 			}
 		}
 	}
@@ -268,58 +190,34 @@ body > header {
 					float: left;
 
 					& > a {
-						padding: 0 25px;
+						padding: 0 20px;
 						line-height: 40px;
 						font-size: 21px;
 						color: $font-color;
+						text-align: center;
 						text-decoration: none;
-						cursor: default;
-
-						&:link, &:visited {
-							cursor: pointer;
-						}
-
-						&:focus {
-							background-color: transparent;
-						}
-					}
-
-					& > .item-before {
-						position: absolute;
-						top: 40px;
-						left: 0;
-						width: 100%;
-						height: 0;
-						border-left: solid transparent;
-						border-right: solid transparent;
-						border-top: 10px solid;
-						z-index: 1;
-						display: none;
-
-						&.disable {
-							display: none !important;
-						}
+						background-color: transparent;
 					}
 
 					.sub-menu {
 						position: absolute;
 						padding: 10px 0;
-						top: 45px;
+						top: 40px;
 						left: 0;
 						list-style: none;
 						white-space: nowrap;
-						border:	1px solid $gray-color5;
-						@include border-radius(3px);
+						border:	solid $gray-color5;
+						border-width: 0 1px 1px 1px;
 						background-color: $gray-color6;
-						@include box-shadow(0, 0, rgba(0,0,0,0.2), 6px, 0);
+						@include box-shadow(0, 6px, rgba(0,0,0,0.2), 6px, 0);
 						display: none;
 						
 						& > li {
 							position: relative;
 
 							& > a {
-								padding: 5px 10px;
-								font-size: 19px;
+								padding: 5px 20px;
+								font-size: 18px;
 								color: $font-color;
 								text-decoration: none;
 								display: block;
@@ -328,6 +226,10 @@ body > header {
 							& > .sub-menu {
 								top: -11px;
 								left: 100%;
+								border-width: 1px;
+								-webkit-box-shadow: none;
+								-moz-box-shadow:    none;
+								box-shadow:			none;
 							}
 
 							&:hover {
@@ -335,20 +237,20 @@ body > header {
 									display: block;
 								}
 							}
+
+							&:hover,
+							&.current-menu-item,
+							&.current-menu-parent,
+							&.current-menu-ancestor {
+								& > a {
+									font-weight: $font-bold;
+								}
+							}
 						}
 					}
 
 					&:hover {
-						&.menu-item-has-children > .item-before,
 						& > .sub-menu {
-							display: block;
-						}
-					}
-
-					&.current-menu-item,
-					&.current-menu-parent,
-					&.current-menu-ancestor {
-						& > .item-before {
 							display: block;
 						}
 					}
@@ -358,78 +260,31 @@ body > header {
 					&.current-menu-parent,
 					&.current-menu-ancestor {
 						& > a {
-							color: $font-invert-color !important;
-							text-shadow: 0px 0.1px 0.1px rgba(255, 255, 255, 1) !important;
+							font-weight: $font-bold;
 						}
 					}
 				}
-			}
-		}
 
-		&.main nav.menu ul.nav > li {
-			& > .item-before {
-				border-top-color: $main-color;
-			}
-
-			.sub-menu > li {
-				&:hover,
-				&.current-menu-item,
-				&.current-menu-parent,
-				&.current-menu-ancestor {
-					& > a {
-						background-color: $blue-color4;
-					}
-				}
-			}
-
-			&:hover,
-			&.current-menu-item,
-			&.current-menu-parent,
-			&.current-menu-ancestor {
-				& > a {
-					background-color: $main-color;
-				}
-			}
-
-			&.featured {
-				& > a {
-					color: $blue-color1;
-					text-shadow: 0px 0.1px 0.1px $blue-color1;
+				a:after {
+					content: attr(data-title);
+					height: 0;
+					font-weight: bold;
+					overflow: hidden;
+					display: block;
+					visibility: hidden;
 				}
 			}
 		}
+	}
 
-		&.shop nav.menu ul.nav > li {
-			& > .item-before {
-				border-top-color: $shop-color;
-			}
+	/********/
+	/* logo */
+	/********/
 
-			.sub-menu > li {
-				&:hover,
-				&.current-menu-item,
-				&.current-menu-parent,
-				&.current-menu-ancestor {
-					& > a {
-						background-color: $orange-color4;
-					}
-				}
-			}
-
-			&:hover,
-			&.current-menu-item,
-			&.current-menu-parent,
-			&.current-menu-ancestor {
-				& > a {
-					background-color: $shop-color;
-				}
-			}
-
-			&.featured {
-				& > a {
-					color: $orange-color1;
-					text-shadow: 0px 0.1px 0.1px $orange-color1;
-				}
-			}
+	.logo {
+		a {
+			@include vertical-align;
+			display: block;
 		}
 	}
 
@@ -438,37 +293,34 @@ body > header {
 	/*******************/
 
 	.header-elements {
-		&.header-top-elements {
-			height: 70px;
-		}
-
-		&.header-mid-elements {
-			float: right;
-			height: 60px;
-		}
+		float: right;
 
 		.header-element {
 			float: right;
-			margin-left: 15px;
+			margin-left: 27px;
 			@include vertical-align;
 
-			.label {
-				padding: 0 5px;
-				line-height: 30px;
-				font-size: 13px;
-				font-weight: $font-semi-bold;
-				color: $font-invert-color;
-				@include border-radius(0);
+			a {
+				font-weight: $font-normal;
+				color: $gray-color3;
+				text-align: center;
 				text-decoration: none;
-
-				&:hover {
-					background-color: $gray-color3 !important;
-				}
-			}
-
-			a,
-			button {
 				display: block;
+				cursor: pointer;
+
+				&:hover,
+				&.active {
+					font-weight: $font-bold;
+				}
+
+				&:after {
+					content: attr(data-title);
+					height: 0;
+					font-weight: bold;
+					overflow: hidden;
+					display: block;
+					visibility: hidden;
+				}
 			}
 
 			/**********************/
@@ -497,14 +349,20 @@ body > header {
 			/*******************/
 
 			&.shop-cart-popup {
-				margin-left: 23px;
 				z-index: 200;
 
 				.shop-cart-popup-btn {
 					position: relative;
-					margin-top: 5px;
-					padding-bottom: 5px;
-					
+
+					button {
+						background: transparent;
+					}
+
+					svg {
+						width: 32px;
+						height: 30px;
+					}
+
 					.widget_shopping_cart_indicator {
 						span {
 							position: absolute;
@@ -525,133 +383,92 @@ body > header {
 				.shop-cart-popup-content {
 					position: absolute;
 					padding: 10px;
-					top: 50px;
-					left: -175px;
-					width: 375px;
 					line-height: normal;
 					border:	solid $gray-color5;
 					border-width: 0 1px 1px 1px;
-					@include border-radius(3px);
-					background-color: $gray-color6;
-					@include box-shadow(0, 0, rgba(0,0,0,0.2), 6px, 0);
+					background-color: $white;
+					@include box-shadow(0, 6px, rgba(0,0,0,0.2), 6px, 0);
 					display: none;
 
-					&:before,
-					&:after {
-						content: "";
-						position: absolute;
-						left: 0;
-						width: 0;
-						height: 0;
-						border-left: 187.5px solid transparent;
-						border-right: 187.5px solid transparent;
-					}
-
-					&:before {
-						top: -15px;
-						border-bottom: 15px solid $gray-color5;
-					}
-					
-					&:after {
-						top: -14px;
-						border-bottom: 15px solid $gray-color6;
-					}
-					
 					ul.cart_list {
-						margin-bottom: 10px;
-
 						li.empty {
-							margin-bottom: -5px;
-							padding: 0;
+							padding: 5px;
+							font-size: 18px;
 							text-align: center;
 						}
 						
 						li.product_list_widget_item_wrapper {
-							margin: 0 0 3px;
+							margin: 0 0 5px;
 							padding: 0;
 							
 							.product_list_widget_item {
 								a {
 									font-weight: $font-normal;
-									color: $font-color;
-									background-color: $white;
-									text-decoration: none;
-									vertical-align: middle;
-									display: inline-block;
-									
-									&:hover {
-										background-color: $orange-color7;
-									}
+									overflow: hidden;
 
 									.col1 {
-										position: relative;
-										float: left;
-
-										&:after {
-											content: "";
-											position: absolute;
-											top: 0;
-											left: 100%;
-											width: 3px;
-											height: 100%;
-											background-color: $gray-color6;
-										}
+										width: 75%;
 									}
 
 									.col2 {
-										float: right;
+										width: 25%;
 									}
 
 									.col1,
 									.col2 {
-										padding: 10px 0;
+										float: left;
+										padding: 5px 0;
 
 										.col {
 											float: left;
-											padding-left: 10px !important;
-											padding-right: 10px !important;
+											text-align: left;
 											
 											&.item-image {
+												padding-right: 15px;
+
 												.item-image-wrapper {
-													padding: 1px;
-													width: 55px;
-													height: 55px;
-													border: 1px solid $border-color1;
+													width: 60px;
+													height: 60px;
 													text-align: center;
-													
+
 													img {
-														float: none;
 														margin: 0;
 														width: auto;
 														max-width: 100%;
 														height: auto;
 														max-height: 100%;
 														@include vertical-align;
-														-webkit-box-shadow:	none;
-														-moz-box-shadow:	none;
-														box-shadow:			none;
 													}
 												}
 											}
 											
 											&.item-data {
-												margin: 5px 10px 0 -10px;
-												width: 190px;
-												font-size: 13px;
+												width: calc(100% - 75px);
+												font-size: 14px;
 												
 												.quantity {
 													margin-top: 3px;
 													padding: 0;
 													width: 100%;
-													display: inline-block;
+													font-size: 12px;
 												}
 											}
 											
 											&.item-price {
-												margin-top: 5px;
-												width: 88px;
-												font-size: 13px;
-												text-align: right;
+												float: right;
+												font-size: 15px;
+											}
+										}
+									}
+
+									&:hover {
+										.col1 {
+											.col.item-data {
+												font-weight: $font-bold;
+
+												.quantity {
+													font-weight: $font-normal;
+												}
 											}
 										}
 									}
@@ -659,12 +476,13 @@ body > header {
 							}
 						}
 					}
-						
+					
 					.total {
-						padding: 0;
-						border-top: 0;
-						background-color: $white;
-						
+						margin-top: 10px;
+						padding-top: 10px;
+						line-height: 14px;
+						border-top: 1px solid $gray-color5;
+
 						&:before,
 						&:after {
 							content: "";
@@ -676,80 +494,54 @@ body > header {
 						}
 						
 						.col {
-							position: relative;
-							float: left;
-							padding: 10px !important;
 							font-size: 13px;
-							
-							&:first-child:after {
-								content: "";
-								position: absolute;
-								top: 0;
-								left: 100%;
-								width: 3px;
-								height: 100%;
-								background-color: $gray-color6;
-							}
 
 							&.title {
-								width: 265px;
+								float: left;
+								width: 75%;
+								font-size: 14px;
+								text-align: right;
 							}
-							
+
 							&.sum {
-								width: 88px;
-								
+								float: left;
+								width: 25%;
+								font-size: 15px;
+
 								.amount {
-									text-align: right;
-									display: block;
+									float: right;
 								}
 							}
 						}
 					}
 					
 					.buttons {
-						margin-top: 10px;
+						margin-top: 15px;
 						
 						.view-cart-btn {
 							float: left;
+							margin: 0;
 							padding-left: 10px;
-							font-size: 13px;
-							line-height: 32px;
-							color: $font-color;
+							line-height: 30px;
+							font-size: 14px;
+							text-decoration: underline;
 						}
 						
 						.checkout-btn {
-							margin: 0 auto;
+							float: right;
+							margin: 0;
 							width: 124px;
 							height: 30px;
 							line-height: 30px;
 							font-size: 18px;
 							font-weight: $font-bold;
 							color: $font-invert-color;
-							-webkit-box-shadow:	none;
-							-moz-box-shadow:	none;
-							box-shadow:			none;
-							-webkit-text-shadow:	none;
-							-moz-text-shadow:		none;
-							text-shadow:			none;
 							background: $orange-color2;
-							text-align: center;
-							text-decoration: none;
-							border: 0;
 
 							&:hover {
-								background-color: $orange-color1;
+								background-color: $gray-color3;
 							}
 						}
-					}
-					
-					.glyphicon-remove {
-						position: absolute;
-						top: auto;
-						bottom: 17px;
-						right: 10px;
-						color: $font-color;
-						cursor: pointer;
-						display: none;
 					}
 				}
 
@@ -764,28 +556,6 @@ body > header {
 					-webkit-transform:	none;
 					-ms-transform:		none;
 					transform:			none;
-					height: 60px;
-
-					.shop-cart-popup-btn {
-						margin-top: 0;
-						padding-bottom: 0;
-						@include vertical-align;
-					}
-
-					.shop-cart-popup-content {
-						top: 140px;
-						@include calc(left, "50% - 187.5px");
-						border-top-width: 1px;
-
-						&:before,
-						&:after {
-							display: none;
-						}
-
-						.glyphicon-remove {
-							display: block;
-						}
-					}
 				}
 			}
 
@@ -795,16 +565,6 @@ body > header {
 
 			&.newsletter-popup {
 				z-index: 100;
-
-				.newsletter-popup-btn {
-					.label {
-						background-color: $orange-color3;
-
-						&.active {
-							background-color: $orange-color2 !important;
-						}
-					}
-				}
 
 				.newsletter-popup-content {
 					position: absolute;
@@ -997,7 +757,7 @@ body > header {
 
 	.featured-page {
 		a {
-			color: $font-invert-color;
+			color: $font-color;
 			text-decoration: none;
 			display: block;
 		}
@@ -1006,14 +766,12 @@ body > header {
 	.header-mid {
 		.featured-page {
 			float: left;
-			height: 60px;
+			margin-top: 5px;
 
 			a {
-				padding: 0 5px;
+				padding: 0 8px;
 				line-height: 30px;
-				font-size: 13px;
-				font-weight: $font-semi-bold;
-				@include vertical-align;
+				font-size: 15px;
 			}
 		}
 	}
@@ -1021,30 +779,13 @@ body > header {
 	.header-bottom {
 		.featured-page {
 			float: right;
-			margin-top: -50px;
+			margin-top: -40px;
 
 			a {
-				padding: 0 15px;
-				line-height: 50px;
-				font-size: 21px;
-				font-weight: $font-bold;
+				padding: 0 12px;
+				line-height: 40px;
+				font-size: 19px;
 			}
-		}
-	}
-
-	.main .featured-page a {
-		background-color: $blue-color2;
-
-		&:hover {
-			background-color: $blue-color1;
-		}
-	}
-
-	.shop .featured-page a {
-		background-color: $orange-color2;
-
-		&:hover {
-			background-color: $orange-color1;
 		}
 	}
 }
@@ -1054,7 +795,6 @@ body > header {
 /****************/
 
 .page-content {
-	margin-top: 120px;
 	padding-top: 15px;
 
 	/*************/
@@ -4580,11 +4320,11 @@ footer {
 		border-top: 10px solid;
 
 		&.main-sites-links {
-			border-color: $main-color;
+//			border-color: $main-color;
 		}
 
 		&.shop-sites-links {
-			border-color: $shop-color;
+//			border-color: $shop-color;
 		}
 
 		.site-item {
@@ -4603,15 +4343,15 @@ footer {
 				}
 
 				&.main {
-					background-color: $main-color;
+//					background-color: $main-color;
 				}
 
 				&.shop {
-					background-color: $shop-color;
+//					background-color: $shop-color;
 				}
 
 				&.mjs {
-					background-color: $mjs-color;
+//					background-color: $mjs-color;
 				}
 
 				&:hover {

@@ -17,6 +17,7 @@ global $globals;
 
 $bh_sites		= $globals[ 'bh_sites' ];
 $current_site	= $globals[ 'current_site' ];
+$elements		= $globals[ 'header_elements' ];
 
 if ( ! $bh_sites )
 	return;
@@ -38,15 +39,6 @@ if ( ! $bh_sites )
 
 <?php
 	/**
-	 * Display the header links
-	 */
-	if ( $elements[ 'header_links' ] ) {
-		echo $elements[ 'header_links' ];
-	}
-?>
-
-<?php
-	/**
 	 * Display the shop mini cart
 	 */
 	if ( $current_site !== false && $bh_sites[ $current_site ][ 'type' ] == 'shop' && $elements[ 'shop_cart_header_' . $header_position . '_popup' ] ) { ?>
@@ -56,6 +48,15 @@ if ( ! $bh_sites )
 		</div>
 
 	<?php }
+?>
+
+<?php
+	/**
+	 * Display the header links
+	 */
+	if ( $elements[ 'header_links' ] ) {
+		echo $elements[ 'header_links' ];
+	}
 ?>
 
 <?php

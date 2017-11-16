@@ -14,6 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 <?php
 	/**
+	 * Variables
+	 */
+	global $globals;
+?>
+
+<?php
+	/**
 	 * Display header meta
 	 */
 	get_template_part( 'views/header/header', 'meta' );
@@ -21,15 +28,32 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 <?php
 	/**
+	 * Set header global variables
+	 */
+	BH_set_header_globals();
+?>
+
+<?php
+	/**
+	 * Set header elements
+	 */
+	$globals[ 'header_elements' ] = BH_set_header_elements();
+?>
+
+<?php
+	/**
 	 * Manipulate BODY classes
 	 */
-	global $globals;
+	$current_site	= $globals[ 'current_site' ];
+	$shop_page		= $globals[ 'shop_page' ];
 
 	$classes = array();
 
-	if ( $globals[ 'shop_page' ] ) {
+	if ( $current_site !== false )
+		$classes[] = 'site-' . $current_site;
+
+	if ( $shop_page )
 		$classes[] = 'woocommerce';
-	}
 ?>
 
 <body <?php body_class( implode( ' ', $classes ) ); ?>>

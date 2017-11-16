@@ -48,14 +48,15 @@ define( 'EXR_API_KEY',	'8173E30F944972AB110F61D13501D61B' );	// Exchange Rate AP
  */
 global $globals;
 $globals = array(
-	'google_fonts'	=> array(),		// Google Fonts
-	'bh_sites'		=> array(),		// BH sites
-	'current_site'	=> '',			// Current site index in $globals[ 'bh-site' ]
-	'shop_page'		=> '',			// True / False	- Is shop page (set in woocommerce-functions.php)
-	'menus'			=> array(),		// Theme menu locations
-	'menu'			=> '',			// Current site menu HTML structure
-	'_galleries'	=> array(),		// Array of arrays of galleries images
-	'wpml_lang'		=> ''			// Current language code
+	'google_fonts'		=> array(),		// Google Fonts
+	'bh_sites'			=> array(),		// BH sites
+	'current_site'		=> '',			// Current site index in $globals[ 'bh_sites' ]
+	'header_elements'	=> array(),		// Header elements
+	'shop_page'			=> '',			// True / False	- Is shop page (set in woocommerce-functions.php)
+	'menus'				=> array(),		// Theme menu locations
+	'menu'				=> '',			// Current site menu HTML structure
+	'_galleries'		=> array(),		// Array of arrays of galleries images
+	'wpml_lang'			=> ''			// Current language code
 );
 
 /**

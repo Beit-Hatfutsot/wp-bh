@@ -41,8 +41,8 @@ if ( $links ) {
 		 * Display link html
 		 */
 		echo
-			'<div class="header-element">' .
-				'<a class="label" href="' . $link . '">' . $btn_text . '</a>' .
+			'<div class="header-element custom-link">' .
+				'<a data-title="' . $btn_text . '" href="' . $link . '">' . $btn_text . '</a>' .
 			'</div>';
 
 	}

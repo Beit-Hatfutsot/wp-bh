@@ -25,70 +25,7 @@ body > header {
 			ul {
 				li {
 					float: right;
-					margin: 30px 0 0 15px;
-
-					a {
-						.title {
-							font-weight: $font-bold;
-						}
-					}
-
-					&:hover {
-						margin: 18px -4px 0 11px;
-					}
-
-					&.active {
-						margin: 0 0 0 15px;
-
-					}
-
-					&.main {
-						&:hover .icon {
-							@include sprite-museum-he-s;
-						}
-
-						&.active .icon {
-							@include sprite-museum-he;
-						}
-					}
-
-					&.shop {
-						&:hover .icon {
-							@include sprite-shop-he-s;
-						}
-
-						&.active .icon {
-							@include sprite-shop-he;
-						}
-					}
-
-					&.mjs {
-						&:hover .icon {
-							@include sprite-mjs-he-s;
-						}
-					}
 				}
-			}
-		}
-
-		/****************/
-		/* logo wrapper */
-		/****************/
-
-		.logo-wrapper {
-			.mobile-menu-btn,
-			.logo {
-				float: left;
-				margin-left: auto;
-				margin-right: 15px;
-			}
-
-			.mobile-menu-btn a {
-				@include sprite-mobile-menu-he;
-			}
-
-			.logo a {
-				@include sprite-logo-he-127x57;
 			}
 		}
 	}

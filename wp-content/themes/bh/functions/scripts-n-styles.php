@@ -66,6 +66,12 @@ function BH_wp_scripts_n_styles() {
 	wp_register_style( 'donate',				    CSS_DIR . '/donate.css',										array( 'bootstrap' ),		VERSION );
 	wp_register_style( 'rtl',						CSS_DIR . '/rtl.css',											array( 'bootstrap-rtl' ),	VERSION );
 	
+	if ( file_exists( THEME_ROOT . '/css/sites.css') )
+		wp_enqueue_style ( 'sites',					CSS_DIR . '/sites.css',											array( 'bootstrap' ),		VERSION );
+
+	if ( file_exists( THEME_ROOT . '/css/sites-rtl.css') )
+		wp_register_style ( 'sites-rtl',			CSS_DIR . '/sites-rtl.css',										array( 'bootstrap' ),		VERSION );
+
 	if ( is_page() ) {
 
 		$page_template = basename( get_page_template() );
@@ -110,6 +116,7 @@ function BH_wp_scripts_n_styles() {
 	if (is_rtl()) {
 		wp_enqueue_style( 'bootstrap-rtl' );
 		wp_enqueue_style( 'rtl' );
+		wp_enqueue_style( 'sites-rtl' );
 	}
 
 	/**

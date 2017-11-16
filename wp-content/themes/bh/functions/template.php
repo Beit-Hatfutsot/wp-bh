@@ -51,9 +51,10 @@ function BH_set_header_globals() {
 		'theme_location'	=> $globals[ 'bh_sites' ][ $globals[ 'current_site' ] ][ 'menu_theme_location' ],
 		'container'			=> false,
 		'items_wrap'		=> '%3$s',
-		'before'			=> '<span class="item-before disable"></span>',
+		'before'			=> '<span class="item-before"></span>',
 		'link_before'		=> '<span>',
 		'link_after'		=> '</span>',
+		'walker'			=> new Walker_Top_Menu_Walker(),
 		'echo'				=> 0
 
 	);
@@ -265,15 +266,19 @@ function BH_set_header_elements() {
 function BH_shop_cart_popup( $header_position, $sidebar ) {
 
 	if ( ! $header_position || ! $sidebar )
-		// return
 		return '';
+
+	ob_start();
+	get_template_part( 'views/svgs/shape', 'cart' );
+	$cart = ob_get_contents();
+	ob_end_clean();
 
 	$output = '<div class="shop-cart-popup-btn">';
 
 	if ( $header_position == 'top' )
-		$output .= '<a class="sprite-cart" href="' . WC()->cart->get_cart_url() . '"></a>';
+		$output .= '<a href="' . WC()->cart->get_cart_url() . '">' . $cart . '</a>';
 	else
-		$output .= '<button class="sprite-cart"></button>';
+		$output .= '<button>' . $cart . '</button>';
 
 	// Insert shopping cart indicator placeholder - code in woocommerce.js will update this on page load
 	$output .= '<div class="widget_shopping_cart_indicator"></div>';
@@ -281,9 +286,7 @@ function BH_shop_cart_popup( $header_position, $sidebar ) {
 	if ( $header_position == 'mid' )
 		$output .= '</div>';
 
-	$output .= '<div class="shop-cart-popup-content">';
-		$output .= $sidebar;
-	$output .= '</div>';
+	$output .= '<div class="shop-cart-popup-content">' . $sidebar . '</div>';
 
 	if ( $header_position == 'top' )
 		$output .= '</div>';
@@ -305,7 +308,6 @@ function BH_shop_cart_popup( $header_position, $sidebar ) {
 function BH_newsletter_popup( $header_position, $sidebar ) {
 
 	if ( ! $header_position || ! $sidebar )
-		// return
 		return '';
 
 	// Manipulate $sidebar to contain $header_position info
@@ -313,7 +315,7 @@ function BH_newsletter_popup( $header_position, $sidebar ) {
 	$sidebar = preg_replace( "/\"mm_key\[([a-z\-]+)\]\"/", "\"mm_key[$1-" . $header_position . "]\"", $sidebar );
 
 	$output = '<div class="newsletter-popup-btn">';
-		$output .= '<button class="label">' . __('ENews', 'BH') . '</button>';
+		$output .= '<a data-title="' . __( 'ENews', 'BH' ) . '">' . __( 'ENews', 'BH' ) . '</a>';
 	$output .= '</div>';
 
 	$output .= '<div class="newsletter-popup-content">';

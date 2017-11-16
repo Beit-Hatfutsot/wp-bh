@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 global $globals;
 
-$globals[ 'wpml_lang' ] = function_exists('icl_object_id') ? ICL_LANGUAGE_CODE : '';
+$globals[ 'wpml_lang' ] = function_exists( 'icl_object_id' ) ? ICL_LANGUAGE_CODE : '';
 
 /**
  * Load theme text domain

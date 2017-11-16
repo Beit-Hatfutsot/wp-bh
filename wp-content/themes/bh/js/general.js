@@ -206,22 +206,14 @@ var $ = jQuery,
 		 * @return	N/A
 		 */
 		shop_cart_popup : function() {
-			
+
 			var shop_cart_popup_wrapper		= $('header .shop-cart-header-mid-popup'),
 				shop_cart_popup_btn			= shop_cart_popup_wrapper.children('.shop-cart-popup-btn'),
 				shop_cart_popup_content		= shop_cart_popup_wrapper.children('.shop-cart-popup-content');
-			
-			// append 'glyphicon-remove' icon
-			shop_cart_popup_content.append('<span class="glyphicon glyphicon-remove"></span>');
-			var shop_cart_popup_close		= shop_cart_popup_content.children('.glyphicon-remove');
 
 			// bind click events
 			shop_cart_popup_btn.click(function() {
 				shop_cart_popup_content.toggle();
-			});
-			
-			shop_cart_popup_close.click(function() {
-				shop_cart_popup_content.hide();
 			});
 
 		},
@@ -453,7 +445,7 @@ var $ = jQuery,
 			// bind click events
 			newsletter_popup_btn.click(function() {
 				$(this).next().toggle();
-				$(this).children('button').toggleClass('active');
+				$(this).children('a').toggleClass('active');
 				
 				// reset newsletter popup expiry
 				BH_general.set_newsletter_popup('set');
@@ -461,7 +453,7 @@ var $ = jQuery,
 			
 			newsletter_popup_close.click(function() {
 				$(this).parent().hide();
-				newsletter_popup_btn.children('button').removeClass('active');
+				newsletter_popup_btn.children('a').removeClass('active');
 				
 				// reset newsletter popup expiry
 				BH_general.set_newsletter_popup('set');
@@ -770,32 +762,6 @@ var $ = jQuery,
 		},
 
 		/**
-		 * top_menu
-		 *
-		 * Adjust top menu items style
-		 * Called from loaded/alignments
-		 *
-		 * @param	N/A
-		 * @return	N/A
-		 */
-		top_menu : function() {
-
-			$('nav.menu ul.nav > li').each(function() {
-				var li_width			= $(this).width(),
-					item_before			= $(this).children('.item-before'),
-					sub_menu			= $(this).children('.sub-menu'),
-					sub_menu_width		= sub_menu.width();
-
-				item_before.css('border-left-width', li_width/2);
-				item_before.css('border-right-width', li_width/2);
-				item_before.removeClass('disable');
-
-				sub_menu.css('left', (li_width-sub_menu_width)/2);
-			});
-
-		},
-
-		/**
 		 * footer_links
 		 *
 		 * Adjust footer links height
@@ -1026,9 +992,6 @@ var $ = jQuery,
 			
 			// set window breakpoint values
 			BH_general.breakpoint_refreshValue();
-
-			// top menu
-			BH_general.top_menu();
 
 			// footer links
 			BH_general.footer_links();

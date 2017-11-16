@@ -12,6 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
 
-<svg viewBox="0 0 34.96 30" class="shape shape-cart">
+<svg viewBox="0 0 31 28.99" class="shape shape-cart">
 	<use xlink:href="#shape-cart"></use>
 </svg>

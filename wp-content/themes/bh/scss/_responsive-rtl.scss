@@ -17,6 +17,30 @@
 
 @media (max-width: 991px) {
 
+	/**********/
+	/* header */
+	/**********/
+
+	body > header {
+
+		/**************/
+		/* header top */
+		/**************/
+
+		.header-top {
+
+			/****************/
+			/* logo wrapper */
+			/****************/
+
+			.logo-wrapper {
+				.mobile-menu-btn {
+					float: left;
+				}
+			}
+		}
+	}
+
 	/******************/
 	/* shop - archive */
 	/******************/
@@ -82,6 +106,26 @@
 
 @media (max-width: 767px) {
 	
+	/**********/
+	/* header */
+	/**********/
+
+	body > header {
+
+		/********/
+		/* logo */
+		/********/
+
+		.logo {
+			a {
+				svg {
+					width: 124px;
+					height: 40px;
+				}
+			}
+		}
+	}
+
 	/****************/
 	/* page content */
 	/****************/
@@ -233,7 +277,7 @@
 @media (max-width: 526px) {}
 
 @media (max-width: 480px) {
-	
+
 	/**********/
 	/* header */
 	/**********/
@@ -253,18 +297,22 @@
 			.sites {
 				ul {
 					li {
-						margin: 16px 0 0 10px;
-
-						&:hover {
-							margin: 16px 0 0 10px;
-						}
+						margin: 15px 0 0 4px;
 
 						&.active {
-							margin: 0 0 0 10px;
+							margin: 0 0 0 4px;
 						}
 					}
 				}
 			}
+		}
+
+		/********/
+		/* logo */
+		/********/
+
+		.logo {
+			float: right;
 		}
 
 		/*******************/
@@ -480,18 +528,6 @@
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
-	/**********/
-	/* header */
-	/**********/
-	
-	body > header .navbar {
-		.navbar-header {
-			.navbar-brand {
-				@include logo-he-medium;
-			}
-		}
-	}
-	
 	/******************/
 	/* featured links */
 	/******************/
@@ -575,6 +611,56 @@
 	}
 }
 
+@media (min-width: 768px) {
+
+	/**********/
+	/* header */
+	/**********/
+
+	body > header {
+
+		/**************/
+		/* header top */
+		/**************/
+
+		.header-top {
+
+			/************/
+			/* BH sites */
+			/************/
+
+			.sites {
+				ul {
+					li {
+						margin: 30px 0 0 17px;
+
+						&:hover {
+							margin: 18px -11px 0 6px;
+						}
+
+						&.active {
+							margin: 0 0 0 17px;
+						}
+					}
+				}
+			}
+		}
+
+		/********/
+		/* logo */
+		/********/
+
+		.logo {
+			a {
+				svg {
+					width: 168px;
+					height: 55px;
+				}
+			}
+		}
+	}
+}
+
 @media (min-width: 768px) and (max-width: 1199px) {}
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -596,8 +682,9 @@
 			/****************/
 
 			.logo-wrapper {
-				.logo a {
-					@include sprite-logo-he-106x48;
+				.mobile-menu-btn {
+					margin-left: 0;
+					margin-right: 20px;
 				}
 			}
 		}
@@ -642,6 +729,24 @@
 	}
 }
 
+@media (min-width: 481px) {
+
+	/**********/
+	/* header */
+	/**********/
+
+	body > header {
+
+		/********/
+		/* logo */
+		/********/
+
+		.logo {
+			float: left;
+		}
+	}
+}
+
 @media (min-width: 481px) and (max-width: 1199px) {}
 
 @media (min-width: 481px) and (max-width: 991px) {}
@@ -667,26 +772,10 @@
 			.sites {
 				ul {
 					li {
-						margin: 22px 0 0 12px;
-
-						&:hover {
-							margin: 22px 0 0 12px;
-						}
+						margin: 20px 0 0 6px;
 
 						&.active {
-							margin: 0 0 0 12px;
-						}
-
-						&.main {
-							&.active .icon {
-								@include sprite-museum-he-s;
-							}
-						}
-
-						&.shop {
-							&.active .icon {
-								@include sprite-shop-he-s;
-							}
+							margin: 0 0 0 6px;
 						}
 					}
 				}
@@ -697,8 +786,9 @@
 			/****************/
 
 			.logo-wrapper {
-				.logo a {
-					@include sprite-logo-he-91x41;
+				.mobile-menu-btn {
+					margin-left: 0;
+					margin-right: 13px;
 				}
 			}
 		}
