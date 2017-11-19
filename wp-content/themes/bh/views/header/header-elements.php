@@ -26,15 +26,11 @@ if ( ! $bh_sites )
 
 <?php
 	/**
-	 * Display the language switcher
+	 * Display the languages switcher
 	 */
-	if ( $elements[ 'languages_switcher' ] ) { ?>
-
-		<div class="header-element languages-switcher">
-			<?php echo $elements[ 'languages_switcher' ]; ?>
-		</div>
-
-	<?php }
+	if ( $elements[ 'languages_switcher' ] ) {
+		echo $elements[ 'languages_switcher' ];
+	}
 ?>
 
 <?php

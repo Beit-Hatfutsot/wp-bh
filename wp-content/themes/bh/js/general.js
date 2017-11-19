@@ -77,6 +77,9 @@ var $ = jQuery,
 			}
 
 			// newsletter popup
+			BH_general.languages_switcher();
+
+			// newsletter popup
 			BH_general.newsletter_popup();
 
 			// faqs
@@ -428,6 +431,28 @@ var $ = jQuery,
 		},
 
 		/**
+		 * languages_switcher
+		 *
+		 * Maintain functionality for open/close languages switcher
+		 * Called from init
+		 *
+		 * @param	N/A
+		 * @return	N/A
+		 */
+		languages_switcher : function() {
+
+			var languages_switcher_wrapper	= $('.header-mid-elements .languages-switcher'),
+				languages_switcher_btn		= languages_switcher_wrapper.children('.languages-switcher-btn'),
+				languages_switcher_content	= languages_switcher_wrapper.children('.languages-switcher-content');
+
+			// bind click event
+			languages_switcher_btn.click(function() {
+				$(this).next().toggle();
+			});
+
+		},
+
+		/**
 		 * newsletter_popup
 		 *
 		 * Maintain functionality for open/close newsletter popup
@@ -443,7 +468,7 @@ var $ = jQuery,
 				newsletter_popup_content	= newsletter_popup_wrapper.children('.newsletter-popup-content'),
 				newsletter_popup_close		= newsletter_popup_wrapper.find('.close-btn');
 			
-			// bind click events
+			// bind click event
 			newsletter_popup_btn.click(function() {
 				$(this).next().toggle();
 				$(this).children('a').toggleClass('active');

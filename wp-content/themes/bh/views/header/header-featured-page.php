@@ -4,6 +4,7 @@
  *
  * @author 		Beit Hatfutsot
  * @package 	bh/views/header
+ * @since		2.6.0
  * @version     2.6.0
  */
 

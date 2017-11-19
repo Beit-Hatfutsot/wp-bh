@@ -326,6 +326,28 @@ function BH_newsletter_popup( $header_position, $sidebar ) {
 }
 
 /**
+ * BH_languages_switcher
+ *
+ * This function returns the languages switcher to be displayed as part of header elements
+ *
+ * @param	N/A
+ * @return	(string)
+ */
+function BH_languages_switcher() {
+
+	ob_start();
+	
+	get_template_part( 'views/header/header-languages-switcher' );
+	$output = ob_get_contents();
+	
+	ob_end_clean();
+	
+	// return
+	return $output;
+
+}
+
+/**
  * BH_header_links
  *
  * This function returns the header links to be displayed as part of header elements

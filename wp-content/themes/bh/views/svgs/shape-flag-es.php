@@ -1,6 +1,6 @@
 <?php
 /**
- * Shape - flag-RU
+ * Shape - flag-es
  *
  * @author		Beit Hatfutsot
  * @package		bh/views/svgs
@@ -12,6 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
 
-<svg viewBox="0 0 30 30" class="shape shape-flag-RU">
-	<use xlink:href="#shape-flag-RU"></use>
+<svg viewBox="0 0 30 30" class="shape shape-flag-es">
+	<use xlink:href="#shape-flag-es"></use>
 </svg>

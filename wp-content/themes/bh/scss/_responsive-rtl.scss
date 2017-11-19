@@ -39,6 +39,26 @@
 				}
 			}
 		}
+
+		/*******************/
+		/* header elements */
+		/*******************/
+
+		.header-elements {
+			.header-element {
+
+				/**********************/
+				/* languages switcher */
+				/**********************/
+
+				&.languages-switcher {
+					.languages-switcher-content {
+						left: 0;
+						right: auto;
+					}
+				}
+			}
+		}
 	}
 
 	/******************/
