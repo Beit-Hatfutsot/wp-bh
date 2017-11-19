@@ -86,6 +86,12 @@ $style .=
 .site-$key header .newsletter-popup .newsletter-popup-content .widgetcontent form .newsletter-submit {
 	background-color: $s[dark_color] !important;
 }
+.site-$key footer .sites-links {
+	border-color: $s[dark_color];
+}
+footer .sites-links .site-item-$key a {
+	background-color: $s[dark_color];
+}
 ";
 
 		}

@@ -254,36 +254,6 @@
 			}
 		}
 	}
-
-	/**********/
-	/* footer */
-	/**********/
-
-	footer {
-
-		/***************/
-		/* sites links */
-		/***************/
-
-		.sites-links {
-			.site-item {
-				a {
-					.title {
-						line-height: 20px;
-						font-size: 20px;
-						font-weight: $font-normal;
-					}
-
-					&.active {
-						.title {
-							line-height: 22px;
-							font-size: 22px;
-						}
-					}
-				}
-			}
-		}
-	}
 }
 
 @media (max-width: 991px) {
@@ -1300,45 +1270,6 @@
 				&:last-child { padding-left: 5px; padding-right: 15px; }
 			}
 		}
-
-		/***************/
-		/* sites links */
-		/***************/
-
-		.sites-links {
-			border-top: 6px solid;
-
-			.site-item {
-				padding-left: 5px;
-				padding-right: 5px;
-
-				&:first-child { padding-left: 15px; padding-right: 5px; }
-				&:last-child { padding-left: 5px; padding-right: 15px; }
-
-				a {
-					height: 40px;
-
-					.title {
-						line-height: 13px;
-						font-size: 13px;
-						font-weight: $font-normal;
-					}
-
-					&:hover {
-						height: 50px;
-					}
-
-					&.active {
-						height: 60px;
-
-						.title {
-							line-height: 16px;
-							font-size: 16px;
-						}
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -2067,6 +1998,43 @@
 				}
 			}
 		}
+
+		/***************/
+		/* sites links */
+		/***************/
+
+		.sites-links {
+			.site-item {
+				padding-left: 2.5px;
+				padding-right: 2.5px;
+
+				&:first-child { padding-left: 15px; padding-right: 2.5px; }
+				&:last-child { padding-left: 2.5px; padding-right: 15px; }
+
+				a {
+					height: 30px;
+
+					.title {
+						line-height: 12px;
+						font-size: 12px;
+					}
+
+					&.active {
+						height: 50px;
+
+						.title {
+							line-height: 10px;
+							font-size: 10px;
+
+							strong {
+								line-height: 15px;
+								font-size: 15px;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -2258,8 +2226,49 @@
 		left: 820px;
 		width: 350px !important;
 	}
+
+	/**********/
+	/* footer */
+	/**********/
+
+	footer {
+
+		/***************/
+		/* sites links */
+		/***************/
+
+		.sites-links {
+			.site-item {
+				a {
+					.title {
+						line-height: 22px;
+						font-size: 22px;
+
+						.title-2 {
+							strong {
+								line-height: 24px;
+								font-size: 24px;
+							}
+						}
+					}
+
+					&.active {
+						.title {
+							line-height: 24px;
+							font-size: 24px;
+
+							strong {
+								line-height: 26px;
+								font-size: 26px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
-	
+
 @media (min-width: 992px) {
 
 	/**********/
@@ -2651,6 +2660,40 @@
 				}
 			}
 		}
+
+		/***************/
+		/* sites links */
+		/***************/
+
+		.sites-links {
+			.site-item {
+				a {
+					.title {
+						line-height: 20px;
+						font-size: 20px;
+
+						.title-2 {
+							strong {
+								line-height: 22px;
+								font-size: 22px;
+							}
+						}
+					}
+
+					&.active {
+						.title {
+							line-height: 22px;
+							font-size: 22px;
+
+							strong {
+								line-height: 24px;
+								font-size: 24px;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -2775,6 +2818,43 @@
 
 	.main-wrapper {
 		margin-top: 120px;
+	}
+
+	/**********/
+	/* footer */
+	/**********/
+
+	footer {
+
+		/***************/
+		/* sites links */
+		/***************/
+
+		.sites-links {
+			.site-item {
+				a {
+					height: 45px;
+
+					&:hover {
+						height: 60px;
+
+						.title {
+							.title-1 {
+								display: none;
+							}
+
+							.title-2 {
+								display: block;
+							}
+						}
+					}
+
+					&.active {
+						height: 75px;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -3238,6 +3318,40 @@
 
 					&:nth-child(5n+1) {
 						clear: none;
+					}
+				}
+			}
+		}
+
+		/***************/
+		/* sites links */
+		/***************/
+
+		.sites-links {
+			.site-item {
+				a {
+					.title {
+						line-height: 16px;
+						font-size: 16px;
+
+						.title-2 {
+							strong {
+								line-height: 20px;
+								font-size: 20px;
+							}
+						}
+					}
+
+					&.active {
+						.title {
+							line-height: 18px;
+							font-size: 18px;
+
+							strong {
+								line-height: 23px;
+								font-size: 23px;
+							}
+						}
 					}
 				}
 			}
@@ -3808,6 +3922,43 @@
 
 					&:nth-child(5n+1) {
 						clear: none;
+					}
+				}
+			}
+		}
+
+		/***************/
+		/* sites links */
+		/***************/
+
+		.sites-links {
+			.site-item {
+				padding-left: 5px;
+				padding-right: 5px;
+
+				&:first-child { padding-left: 15px; padding-right: 5px; }
+				&:last-child { padding-left: 5px; padding-right: 15px; }
+
+				a {
+					height: 40px;
+
+					.title {
+						line-height: 16px;
+						font-size: 16px;
+					}
+
+					&.active {
+						height: 60px;
+
+						.title {
+							line-height: 16px;
+							font-size: 16px;
+
+							strong {
+								line-height: 18px;
+								font-size: 18px;
+							}
+						}
 					}
 				}
 			}

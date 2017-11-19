@@ -27,13 +27,12 @@ $total_sites	= count( $bh_sites );
 ?>
 
 <div class="container">
-	<div class="sites-links row" <?php echo $current_site !== false && $bh_sites[ $current_site ][ 'dark_color' ] ? 'style="border-color: ' . $bh_sites[ $current_site ][ 'dark_color' ] . ';"' : ''; ?>>
+	<div class="sites-links row">
 
 		<?php foreach ( $bh_sites as $key => $s ) {
 
 			// Get site data
 			$type			= $s[ 'type' ];
-			$color			= $s[ 'dark_color' ];
 			$title			= $s[ 'title' ];
 			$title_hover	= $s[ 'title_hover' ];
 			$link			= $type == 'shop' && function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : $s[ 'link' ];
@@ -43,8 +42,8 @@ $total_sites	= count( $bh_sites );
 
 			?>
 
-			<div class="site-item col-xs-<?php echo (int) 12/$total_sites; ?>">
-				<a class="<?php echo $current_site !== false && $key == $current_site ? 'active' : ''; ?>" <?php echo $color ? 'style="background-color: ' . $color . ';"' : ''; ?> href="<?php echo $link; ?>" target="<?php echo $type == 'dbs' ? '_blank' : '_self'; ?>">
+			<div class="site-item site-item-<?php echo $key; ?> col-xs-<?php echo (int) 12/$total_sites; ?>">
+				<a class="<?php echo $current_site !== false && $key == $current_site ? 'active' : ''; ?>" href="<?php echo $link; ?>" target="<?php echo $type == 'dbs' ? '_blank' : '_self'; ?>">
 					<div class="title">
 						<span class="title-1"><?php echo $title; ?></span>
 						<span class="title-2"><?php echo $title_hover; ?></span>
