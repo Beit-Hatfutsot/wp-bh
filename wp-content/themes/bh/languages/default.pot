@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BH Website 1.0\n"
-"POT-Creation-Date: 2017-02-12 20:52+0200\n"
-"PO-Revision-Date: 2017-02-12 20:52+0200\n"
+"POT-Creation-Date: 2017-11-19 11:10+0200\n"
+"PO-Revision-Date: 2017-11-19 11:10+0200\n"
 "Last-Translator: Nir Goldberg <nir@htmline.com>\n"
 "Language-Team: BH online <nirg@bh.org.il>\n"
 "Language: he_IL\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: scss\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: searchform.php:13
+#: searchform.php:24
 msgid "Search in shop..."
 msgstr ""
 
-#: searchform.php:13
+#: searchform.php:24
 msgid "Search in site..."
 msgstr ""
 
@@ -40,15 +40,11 @@ msgstr ""
 msgid "Purchase"
 msgstr ""
 
-#: views/sidebar/sidebar-blog.php:91
-msgid "Categories"
-msgstr ""
-
-#: views/sidebar/sidebar-blog.php:103
+#: views/sidebar/sidebar-blog.php:140
 msgid "Recent Posts"
 msgstr ""
 
-#: views/sidebar/sidebar-blog.php:114
+#: views/sidebar/sidebar-blog.php:157
 msgid "Archives"
 msgstr ""
 
@@ -63,18 +59,42 @@ msgstr ""
 msgid "And there are more"
 msgstr ""
 
-#: views/page/page.php:33
+#: views/donate/process-options.php:58
+#, php-format
+msgid ""
+"P.O.B %1$s Tel-Aviv<br/>%2$s Israel<br/>For more information please contact "
+"us at %3$s"
+msgstr ""
+
+#: views/donate/process-options.php:72
+#, php-format
+msgid "Bank Mizrahi-Tefahot<br/>Branch: %1$s<br/>Account: %2$s"
+msgstr ""
+
+#: views/donate/process-flow.php:16
+msgid "Amount"
+msgstr ""
+
+#: views/donate/process-flow.php:17
+msgid "Details"
+msgstr ""
+
+#: views/donate/process-flow.php:18
+msgid "Payment"
+msgstr ""
+
+#: views/donate/process-flow.php:19
+msgid "Complete"
+msgstr ""
+
+#: views/page/page.php:51
 msgid "Password:"
 msgstr ""
 
-#: views/page/page.php:40
+#: views/page/page.php:58
 msgid ""
 "This content is password protected. To view it please enter your password "
 "below:"
-msgstr ""
-
-#: views/page/content/gallery.php:51
-msgid "Load more"
 msgstr ""
 
 #: views/microfilm/microfilm-view.php:9
@@ -232,20 +252,20 @@ msgstr ""
 msgid "Form submited succesfuly. Thank you."
 msgstr ""
 
-#: views/footer/footer-menu.php:22
+#: views/footer/footer-menu.php:33
 msgid "Language/שפה"
 msgstr ""
 
-#: views/footer/footer-links.php:44
+#: views/footer/footer-links.php:60
 msgid "Learn more"
 msgstr ""
 
-#: views/components/meta-single.php:2
+#: views/components/meta-single.php:26 views/components/meta-author.php:43
 #: views/woocommerce/single-product/single-product-section1-title.php:22
 msgid "By "
 msgstr ""
 
-#: views/components/meta-single.php:10
+#: views/components/meta-single.php:34
 msgid "Comments"
 msgstr ""
 
@@ -261,7 +281,7 @@ msgstr ""
 msgid "homepage"
 msgstr ""
 
-#: views/woocommerce/featured-product-item.php:66
+#: views/woocommerce/featured-product-item.php:77
 msgid "Click for more details"
 msgstr ""
 
@@ -281,7 +301,7 @@ msgstr ""
 msgid "QTY"
 msgstr ""
 
-#: views/woocommerce/single-product/single-product-section1-add-to-cart.php:51
+#: views/woocommerce/single-product/single-product-section1-add-to-cart.php:50
 msgid "Add to cart"
 msgstr ""
 
@@ -311,7 +331,7 @@ msgid ""
 "location and product dimensions."
 msgstr ""
 
-#: views/woocommerce/single-product/single-product-section3-related.php:56
+#: views/woocommerce/single-product/single-product-section3-related.php:57
 msgid "You might also like"
 msgstr ""
 
@@ -319,7 +339,7 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: views/main/slider/display-events-slider.php:22
+#: views/main/slider/display-events-slider.php:38
 msgid "All events"
 msgstr ""
 
@@ -465,8 +485,12 @@ msgstr ""
 msgid "Payment Method:"
 msgstr ""
 
-#: functions/template.php:66
+#: functions/template.php:318
 msgid "ENews"
+msgstr ""
+
+#: functions/template.php:557
+msgid "Load more"
 msgstr ""
 
 #: functions/menus.php:18
@@ -474,62 +498,70 @@ msgid "Main Menu"
 msgstr ""
 
 #: functions/menus.php:19
+msgid "Education Menu"
+msgstr ""
+
+#: functions/menus.php:20
 msgid "Shop Menu"
 msgstr ""
 
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:182
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:189
 msgid "Your Email:"
 msgstr ""
 
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:183
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:190
 msgid "Email Address"
 msgstr ""
 
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:184
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:191
 msgid "Email address is missing or incorrect"
 msgstr ""
 
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:187
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:195
 msgid "Choose Language:"
 msgstr ""
 
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:196
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:204
 msgid "Please check at least one newsletter name"
 msgstr ""
 
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:198
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:206
 msgid "Register"
 msgstr ""
 
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:206
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:207
+msgid "No thanks"
+msgstr ""
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:215
 msgid "General error, please try again later"
 msgstr ""
 
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:207
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:216
 msgid "Registration has been failed, please try again later"
 msgstr ""
 
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:208
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:217
 msgid "Registration was successful, thank you!"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:151
+#: functions/woocommerce/woocommerce-functions.php:165
 msgid "Home"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:483
+#: functions/woocommerce/woocommerce-functions.php:547
 msgid "Show product filters"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:483
+#: functions/woocommerce/woocommerce-functions.php:547
 msgid "Hide product filters"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:514
+#: functions/woocommerce/woocommerce-functions.php:578
 msgid "Filter products"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:683
+#: functions/woocommerce/woocommerce-functions.php:770
 msgid ""
 "<b>IMPORTANT NOTIFICATION:</b> Due to the Israeli postal office being unable "
 "to provide our customers up to date order tracking and delivery within "
@@ -537,31 +569,31 @@ msgid ""
 "shipping. We apologise for any inconvenience to our customers."
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:701
+#: functions/woocommerce/woocommerce-functions.php:790
 msgid "Checkout: Please fill your billing address and shipping address"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:713
+#: functions/woocommerce/woocommerce-functions.php:804
 msgid "Checkout: Please fill your payment details"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:725
+#: functions/woocommerce/woocommerce-functions.php:819
 msgid "Thank you. Your order has been received"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:737
+#: functions/woocommerce/woocommerce-functions.php:833
 msgid "Secured Billing: Please choose your preferred billing method"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:1115
+#: functions/woocommerce/woocommerce-functions.php:1232
 msgid "Most Popular"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:1116
+#: functions/woocommerce/woocommerce-functions.php:1233
 msgid "Price: Low to High"
 msgstr ""
 
-#: functions/woocommerce/woocommerce-functions.php:1117
+#: functions/woocommerce/woocommerce-functions.php:1234
 msgid "Price: High to Low"
 msgstr ""
 

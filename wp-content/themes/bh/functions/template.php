@@ -318,10 +318,7 @@ function BH_newsletter_popup( $header_position, $sidebar ) {
 		$output .= '<a data-title="' . __( 'ENews', 'BH' ) . '">' . __( 'ENews', 'BH' ) . '</a>';
 	$output .= '</div>';
 
-	$output .= '<div class="newsletter-popup-content">';
-		$output .= $sidebar;
-		$output .= '<span class="glyphicon glyphicon-remove"></span>';
-	$output .= '</div>';
+	$output .= '<div class="newsletter-popup-content">' . $sidebar . '</div>';
 
 	// return
 	return $output;

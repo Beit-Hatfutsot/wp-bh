@@ -49,7 +49,10 @@ function validateForm(formData, jqForm, options) {
 	else {
 		newsletterErr.addClass('hide');
 	}
-	
+
+	// Hide success message if already displayed from previous request
+	result_container.find('.msg-0').addClass('hide');
+
 	if (!res)
 		return false;
 		

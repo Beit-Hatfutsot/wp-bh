@@ -46,6 +46,9 @@ body > header {
 					float: right;
 
 					.sub-menu {
+						left: auto;
+						right: 0;
+						
 						& > li {
 							& > .sub-menu {
 								left: auto;
@@ -63,55 +66,38 @@ body > header {
 	/*******************/
 
 	.header-elements {
-		&.header-mid-elements {
-			float: left;
-		}
+		float: left;
 
 		.header-element {
 			float: left;
-			margin-left: auto;
-			margin-right: 15px;
-
-			.label {
-				font-weight: $font-bold;
-			}
+			margin-left: 0;
+			margin-right: 27px;
 
 			/*******************/
 			/* shop cart popup */
 			/*******************/
 
 			&.shop-cart-popup {
-				margin-left: 8px;
-
 				.shop-cart-popup-content {
 					ul.cart_list {
 						li.product_list_widget_item_wrapper {
 							.product_list_widget_item {
 								a {
-									.col1 {
-										float: right;
-
-										&:after {
-											left: auto;
-											right: 100%;
-										}
-									}
-
-									.col2 {
-										float: left;
-									}
-
 									.col1,
 									.col2 {
+										float: right;
+
 										.col {
 											float: right;
+											text-align: right;
 											
-											&.item-data {
-												margin: 5px -10px 0 10px;
+											&.item-image {
+												padding-left: 15px;
+												padding-right: 0;
 											}
-
+											
 											&.item-price {
-												text-align: left;
+												float: left;
 											}
 										}
 									}
@@ -119,19 +105,19 @@ body > header {
 							}
 						}
 					}
-						
+					
 					.total {
 						.col {
-							float: right;
-							
-							&:first-child:after {
-								left: auto;
-								right: 100%;
+							&.title {
+								float: right;
+								text-align: left;
 							}
 
 							&.sum {
+								float: right;
+
 								.amount {
-									text-align: left;
+									float: left;
 								}
 							}
 						}
@@ -143,11 +129,10 @@ body > header {
 							padding-left: 0;
 							padding-right: 10px;
 						}
-					}
-					
-					.glyphicon-remove {
-						left: 10px;
-						right: auto;
+						
+						.checkout-btn {
+							float: left;
+						}
 					}
 				}
 			}
@@ -158,50 +143,37 @@ body > header {
 
 			&.newsletter-popup {
 				.newsletter-popup-content {
-					.widgettitle {
-						&:before {
-							left: auto;
-							right: 10px;
-						}
-					}
-					
 					.widgetcontent {
 						form {
 							.newsletter-groups {
 								label {
 									float: right;
-									margin-left: 80px;
-									margin-right: auto;
-
+									margin: 0 2px 0 90px;
+									
 									span {
+										padding-left: 0;
+										padding-right: 5px;
 										left: auto;
-										right: 25px;
-									}
-
-									&:after {
-										left: auto;
-										right: 4px;
+										right: 20px;
 									}
 								}
 							}
 
 							.newsletter-submit {
 								float: left;
-								font-weight: $font-bold;
+							}
+
+							.close-btn {
+								float: left;
 							}
 						}
 						
 						.result-container {
 							.loader {
-								left: 196px;
-								right: auto;
+								left: auto;
+								right: 0;
 							}
 						}
-					}
-					
-					.glyphicon-remove {
-						left: 10px;
-						right: auto;
 					}
 				}
 			}
@@ -215,10 +187,6 @@ body > header {
 	.header-mid {
 		.featured-page {
 			float: right;
-
-			a {
-				font-weight: $font-bold;
-			}
 		}
 	}
 

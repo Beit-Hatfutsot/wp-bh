@@ -81,6 +81,11 @@ $style .=
 .site-$key header .featured-page a:hover {
 	background-color: $s[light_color];
 }
+.site-$key header .newsletter-popup .newsletter-popup-content .widgetcontent form .newsletter-groups label:hover,
+.site-$key header .newsletter-popup .newsletter-popup-content .widgetcontent form .newsletter-groups input[type=checkbox]:checked + label,
+.site-$key header .newsletter-popup .newsletter-popup-content .widgetcontent form .newsletter-submit {
+	background-color: $s[dark_color] !important;
+}
 ";
 
 		}

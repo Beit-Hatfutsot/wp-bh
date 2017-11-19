@@ -73,15 +73,11 @@ if ( ! $bh_sites )
 				</div>
 
 				<?php
-				/**
-				 * Display the logo
-				 */
+					/**
+					 * Display the logo
+					 */
+					get_template_part( 'views/components/logo' );
 				?>
-				<div class="logo">
-					<a href="<?php echo HOME; ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-						<?php get_template_part( 'views/svgs/shape', 'logo-' . $wpml_lang ); ?>
-					</a>
-				</div>
 
 				<?php
 				/**
@@ -107,25 +103,15 @@ if ( ! $bh_sites )
 				/**
 				 * Display the featured page
 				 */
-				if ( $elements[ 'featured_page' ] ) { ?>
-
-					<div class="featured-page">
-						<a href="<?php echo get_permalink( $elements[ 'featured_page' ]->ID ); ?>"><?php echo $elements[ 'featured_page' ]->post_title; ?></a>
-					</div>
-
-				<?php }
+				get_template_part( 'views/header/header-featured-page' );
 			?>
 
 			<?php
-			/**
-			 * Display the logo
-			 */
+				/**
+				 * Display the logo
+				 */
+				get_template_part( 'views/components/logo' );
 			?>
-			<div class="logo">
-				<a href="<?php echo HOME; ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-					<?php get_template_part( 'views/svgs/shape', 'logo-' . $wpml_lang ); ?>
-				</a>
-			</div>
 
 			<?php
 			/**
@@ -164,13 +150,7 @@ if ( ! $bh_sites )
 				/**
 				 * Display the featured page
 				 */
-				if ( $elements[ 'featured_page' ] ) { ?>
-
-					<div class="featured-page">
-						<a href="<?php echo get_permalink( $elements[ 'featured_page' ]->ID ); ?>"><?php echo $elements[ 'featured_page' ]->post_title; ?></a>
-					</div>
-
-				<?php }
+				get_template_part( 'views/header/header-featured-page' );
 			?>
 
 		</div>

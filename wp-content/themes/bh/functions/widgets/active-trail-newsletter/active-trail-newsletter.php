@@ -1,7 +1,7 @@
 <?php
 /*
 Widget Name: Active_Trail_Newsletter
-Version: 2.0
+Version: 2.6.0
 
 Changes Log:
 1.0
@@ -30,12 +30,14 @@ class Active_Trail_Newsletter extends WP_Widget
 				'at_mm_userid'	=> '',
 				'title'			=> '',
 				'pre_text'		=> '',
+				'email_comment'	=> '',
 				'groups'		=> ''
 			));
 			
 		$at_mm_userid	= $instance['at_mm_userid'];
 		$title			= $instance['title'];
 		$pre_text		= $instance['pre_text'];
+		$email_comment	= $instance['email_comment'];
 
 		$groups			= isset($instance['groups']) ? $instance['groups'] : array();
 		$groups_html	= array();
@@ -130,6 +132,7 @@ class Active_Trail_Newsletter extends WP_Widget
 			<p class="inline inline-left"><label for="<?php echo $this->get_field_id('at_mm_userid'); ?>">Active Trail UserID: <input class="widefat" id="<?php echo $this->get_field_id('at_mm_userid'); ?>" name="<?php echo $this->get_field_name('at_mm_userid'); ?>" type="text" value="<?php echo esc_attr($at_mm_userid); ?>" /></label></p>
 			<p class="inline"><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
 			<p><label for="<?php echo $this->get_field_id('pre_text'); ?>">Pre Text: <textarea class="widefat" id="<?php echo $this->get_field_id('pre_text'); ?>" name="<?php echo $this->get_field_name('pre_text'); ?>" rows="5"><?php echo esc_attr($pre_text); ?></textarea></label></p>
+			<p><label for="<?php echo $this->get_field_id('email_comment'); ?>">Email Comment: <textarea class="widefat" id="<?php echo $this->get_field_id('email_comment'); ?>" name="<?php echo $this->get_field_name('email_comment'); ?>" rows="5"><?php echo esc_attr($email_comment); ?></textarea></label></p>
 			<div>
 				<label>Newsletter Groups:</label>
 				
@@ -148,6 +151,7 @@ class Active_Trail_Newsletter extends WP_Widget
 		$instance['at_mm_userid']	= $new_instance['at_mm_userid'];
 		$instance['title']			= $new_instance['title'];
 		$instance['pre_text']		= $new_instance['pre_text'];
+		$instance['email_comment']	= $new_instance['email_comment'];
 		
 		$instance['groups']			= array();
 		
@@ -185,6 +189,7 @@ class Active_Trail_Newsletter extends WP_Widget
 					<small><?php _e('Your Email:', 'BH'); ?></small>
 					<input class="mm_newemail" name="mm_newemail" type="text" placeholder="<?php _e('Email Address', 'BH'); ?>" value="" />
 					<div class="mailErr errph hide"><?php _e('Email address is missing or incorrect', 'BH'); ?></div>
+					<?php echo ( $instance['email_comment'] ) ? '<small class="email_comment">' . $instance['email_comment'] . '</small>' : ''; ?> 
 					
 					<div class="newsletter-groups">
 						<small><?php _e('Choose Language:', 'BH'); ?></small>
@@ -199,6 +204,7 @@ class Active_Trail_Newsletter extends WP_Widget
 					<div class="newsletterErr errph hide"><?php _e('Please check at least one newsletter name', 'BH'); ?></div>
 					
 					<input class="newsletter-submit" type="submit" value="<?php _e('Register', 'BH'); ?>" />
+					<div class="close-btn"><?php _e( 'No thanks', 'BH' ); ?></div>
 				</form>
 				
 				<div class="result-container">

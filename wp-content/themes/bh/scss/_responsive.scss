@@ -310,6 +310,26 @@
 				}
 			}
 		}
+
+		/*******************/
+		/* header elements */
+		/*******************/
+
+		.header-elements {
+			.header-element {
+
+				/********************/
+				/* newsletter popup */
+				/********************/
+
+				&.newsletter-popup {
+					position: static;
+					-webkit-transform:	none;
+					-ms-transform:		none;
+					transform:			none;
+				}
+			}
+		}
 	}
 
 	/****************/
@@ -801,6 +821,16 @@
 
 				&.shop-cart-popup {
 					.shop-cart-popup-content {
+						top: 100px;
+					}
+				}
+
+				/********************/
+				/* newsletter popup */
+				/********************/
+
+				&.newsletter-popup {
+					.newsletter-popup-content {
 						top: 100px;
 					}
 				}
@@ -1429,6 +1459,35 @@
 					.shop-cart-popup-content {
 						left: 15px;
 						@include calc(width, "100% - 30px");
+					}
+				}
+
+				/********************/
+				/* newsletter popup */
+				/********************/
+
+				&.newsletter-popup {
+					.newsletter-popup-btn {
+						line-height: 50px;
+					}
+
+					.newsletter-popup-content {
+						left: 15px;
+						@include calc(width, "100% - 30px");
+
+						.widgetcontent {
+							form {
+								.newsletter-groups {
+									label {
+										margin: 0 65px 0 2px;
+
+										span {
+											font-size: 14px;
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 
@@ -2211,6 +2270,21 @@
 						left: -171.5px;
 					}
 				}
+
+				/********************/
+				/* newsletter popup */
+				/********************/
+
+				&.newsletter-popup {
+					.newsletter-popup-btn {
+						line-height: 70px;
+					}
+
+					.newsletter-popup-content {
+						top: 70px;
+						left: -157.5px;
+					}
+				}
 			}
 		}
 	}
@@ -2789,6 +2863,16 @@
 						top: 120px;
 					}
 				}
+
+				/********************/
+				/* newsletter popup */
+				/********************/
+
+				&.newsletter-popup {
+					.newsletter-popup-content {
+						top: 120px;
+					}
+				}
 			}
 		}
 	}
@@ -3162,6 +3246,16 @@
 						width: 375px;
 					}
 				}
+
+				/********************/
+				/* newsletter popup */
+				/********************/
+
+				&.newsletter-popup {
+					.newsletter-popup-content {
+						width: 375px;
+					}
+				}
 			}
 		}
 	}
@@ -3251,6 +3345,20 @@
 					}
 
 					.shop-cart-popup-content {
+						@include calc(left, "50% - 187.5px");
+					}
+				}
+
+				/********************/
+				/* newsletter popup */
+				/********************/
+
+				&.newsletter-popup {
+					.newsletter-popup-btn {
+						line-height: 40px;
+					}
+
+					.newsletter-popup-content {
 						@include calc(left, "50% - 187.5px");
 					}
 				}

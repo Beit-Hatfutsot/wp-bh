@@ -440,7 +440,8 @@ var $ = jQuery,
 			
 			var newsletter_popup_wrapper	= $('header .newsletter-popup'),
 				newsletter_popup_btn		= newsletter_popup_wrapper.children('.newsletter-popup-btn'),
-				newsletter_popup_close		= newsletter_popup_wrapper.find('.glyphicon-remove');
+				newsletter_popup_content	= newsletter_popup_wrapper.children('.newsletter-popup-content'),
+				newsletter_popup_close		= newsletter_popup_wrapper.find('.close-btn');
 			
 			// bind click events
 			newsletter_popup_btn.click(function() {
@@ -452,7 +453,7 @@ var $ = jQuery,
 			});
 			
 			newsletter_popup_close.click(function() {
-				$(this).parent().hide();
+				newsletter_popup_content.hide();
 				newsletter_popup_btn.children('a').removeClass('active');
 				
 				// reset newsletter popup expiry
@@ -494,9 +495,9 @@ var $ = jQuery,
 				success: function(result) {
 					var r = JSON.parse(result);
 					if (r.status == 0) {
-						if (action == 'open' && r.operation == 'popup' && !newsletter_popup_btn.children('button').hasClass('active')) {
+						if (action == 'open' && r.operation == 'popup' && !newsletter_popup_btn.children('a').hasClass('active')) {
 							newsletter_popup_content.show();
-							newsletter_popup_btn.children('button').addClass('active');
+							newsletter_popup_btn.children('a').addClass('active');
 						}
 						
 						return true;
