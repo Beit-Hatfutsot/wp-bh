@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BH Website 1.0\n"
-"POT-Creation-Date: 2017-11-19 11:10+0200\n"
-"PO-Revision-Date: 2017-11-19 11:10+0200\n"
+"POT-Creation-Date: 2017-11-20 09:48+0200\n"
+"PO-Revision-Date: 2017-11-20 09:48+0200\n"
 "Last-Translator: Nir Goldberg <nir@htmline.com>\n"
 "Language-Team: BH online <nirg@bh.org.il>\n"
 "Language: he_IL\n"
@@ -486,10 +486,10 @@ msgid "Payment Method:"
 msgstr ""
 
 #: functions/template.php:318
-msgid "ENews"
+msgid "Newsletter"
 msgstr ""
 
-#: functions/template.php:557
+#: functions/template.php:579
 msgid "Load more"
 msgstr ""
 

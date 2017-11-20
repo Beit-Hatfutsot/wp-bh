@@ -315,7 +315,7 @@ function BH_newsletter_popup( $header_position, $sidebar ) {
 	$sidebar = preg_replace( "/\"mm_key\[([a-z\-]+)\]\"/", "\"mm_key[$1-" . $header_position . "]\"", $sidebar );
 
 	$output = '<div class="newsletter-popup-btn">';
-		$output .= '<a data-title="' . __( 'ENews', 'BH' ) . '">' . __( 'ENews', 'BH' ) . '</a>';
+		$output .= '<a data-title="' . __( 'Newsletter', 'BH' ) . '">' . __( 'Newsletter', 'BH' ) . '</a>';
 	$output .= '</div>';
 
 	$output .= '<div class="newsletter-popup-content">' . $sidebar . '</div>';

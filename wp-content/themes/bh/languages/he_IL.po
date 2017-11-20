@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BH Website 1.0\n"
-"POT-Creation-Date: 2017-11-19 11:11+0200\n"
-"PO-Revision-Date: 2017-11-19 11:12+0200\n"
+"POT-Creation-Date: 2017-11-20 09:48+0200\n"
+"PO-Revision-Date: 2017-11-20 09:49+0200\n"
 "Last-Translator: Nir Goldberg <nir@htmline.com>\n"
 "Language-Team: BH online <nirg@bh.org.il>\n"
 "Language: he_IL\n"
@@ -804,10 +804,10 @@ msgid "To Barak Aharoni with appreciation of your good work"
 msgstr "לברק אהרוני על פועלו"
 
 #: functions/template.php:318
-msgid "ENews"
+msgid "Newsletter"
 msgstr "ניוזלטר"
 
-#: functions/template.php:557
+#: functions/template.php:579
 msgid "Load more"
 msgstr "תמונות נוספות"
 
@@ -1012,6 +1012,9 @@ msgstr "אנא שלחו את הבקשה באמצעות כרטיס אשראי א�
 msgid "General Error."
 msgstr "שגיאה כללית."
 
+#~ msgid "ENews"
+#~ msgstr "ניוזלטר"
+
 #~ msgid "Yes, I want to receive news and updates from the Museum"
 #~ msgstr "ברצוני לקבל חדשות ועדכונים מהמוזיאון"
 
@@ -1050,9 +1053,6 @@ msgstr "שגיאה כללית."
 
 #~ msgid "Search Results for: &#8216;%s&#8217;"
 #~ msgstr "תוצאות חיפוש עבור הביטוי: &#8217;%s&#8216;"
-
-#~ msgid "Newsletter"
-#~ msgstr "ניוזלטר"
 
 #~ msgid "Products tagged &ldquo;"
 #~ msgstr "מוצרים המתויגים &ldquo;%s&rdquo;"
