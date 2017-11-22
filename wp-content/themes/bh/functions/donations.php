@@ -371,7 +371,8 @@ function BH_donation_email_certificate_task($args) {
 
     $message = '<html>' . $message_head . '<body>' . $message_body . '</body>' . '</html>';
 
-    $to = 'itay@ibanner.co.il';
+    $to = get_field( 'certificate_tasks_recipient', 'option');
+    $to = sanitize_email($to);
 
     $headers  = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
