@@ -8,7 +8,7 @@
             <?php
             $docs = array(
                     'proper_management_approval' => esc_html__('Proper Management Approval Document', 'BH'),
-                    'article46' => esc_html__('IRS public institution & article 46 Approval', 'BH'),
+                    'article46_approval' => esc_html__('IRS public institution & article 46 Approval', 'BH'),
                     'annual_report' => esc_html__('Annual Report', 'BH'),
             );
 

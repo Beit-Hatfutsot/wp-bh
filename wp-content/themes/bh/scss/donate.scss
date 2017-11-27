@@ -135,6 +135,14 @@ h1 {
   padding-bottom: 60px;
 }
 
+a, a:hover {
+  .hero &,
+  .lobby-link & {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 .lobby-label {
   background-color: $blue-color3;
   height: 60px;
@@ -145,15 +153,6 @@ h1 {
   &.has-sub {
     line-height: 22px;
     padding-top: 5px;
-  }
-
-  a, a:hover {
-    color: #fff;
-    text-decoration: none;
-
-    .lobby-link & {
-      white-space:pre;
-    }
   }
 
   .subtitle {
@@ -465,6 +464,10 @@ h1 {
 
   input[type="radio" i]:focus {
     outline: none;
+  }
+
+  .error-msg {
+    color: $red-msg;
   }
 
 

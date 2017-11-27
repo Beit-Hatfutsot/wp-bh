@@ -4,7 +4,9 @@
     var $flowStrip = $('#donate-process-flow'),
         $csRadio = $('#custom-amount-radio'),
         $csHotspot = $('.cs-hotspot'),
-        $csField = $('#custom-amount-field');
+        $fixedAmountRadio = $('.fixed-amount'),
+        $csField = $('#custom-amount-field'),
+        $donationAmount = 0;
 
     function updateExampleImage() {
         $('#certificate-example').attr({
@@ -13,9 +15,28 @@
         });
     }
 
+    function updateDonationAmount(newAmount) {
+        $donationAmount = newAmount;
+    }
+
+    function validateDonationAmount() {
+
+        var $amountAlert = $('#error-msg--amount'),
+            $continueButton = $('#cont-to-details');
+
+        if ( $donationAmount > 5 ) {
+            $amountAlert.hide();
+            $continueButton.attr('disabled', false);
+        } else {
+            $amountAlert.show();
+            $continueButton.attr('disabled', true);
+        }
+    }
+
     $(document).ready(function () {
         $('.flow-details').hide();
         $('#donate-layout-options').find($flowStrip).hide();
+        $('#error-msg--amount').hide();
     });
 
     $('#show-tribute').click(function(){
@@ -24,7 +45,6 @@
 
         $tributeOnDemand.toggleClass('hide');
         $tributeOnDemand.attr( 'aria-expanded', function (i, currentState) {
-            console.log(currentState);
             var newState = currentState == 'false' ? 'true' : 'false';
             return newState.toString();
         } );
@@ -45,8 +65,7 @@
     $('#cont-to-details').click(function (event) {
 
         var $tabContentArea = $('#donate-process-options').find('.tab-content'),
-            $scrollTarget = $('#process-title').position(),
-            $donationAmount = $('input[name="donationAmount"]:checked').val();
+            $scrollTarget = $('#process-title').position();
 
         $flowStrip.show();
         $('#donate-option-tabs').hide();
@@ -69,15 +88,26 @@
 
     $csField.click(function () {
         $csRadio.prop("checked", true);
+        $donationAmount = $csField.val();
+        validateDonationAmount();
     });
 
     $csHotspot.click(function () {
         $csRadio.prop("checked", true);
+        $donationAmount = $csField.val();
+        validateDonationAmount();
     });
 
     $csField.keyup(function () {
         var cs = $csField.val();
         $csRadio.val(cs);
+        $donationAmount = $csField.val();
+        validateDonationAmount();
     });
+
+    $fixedAmountRadio.click(function () {
+        $donationAmount = $('input[name="donationAmount"]:checked').val();
+        validateDonationAmount();
+    })
 
 })(jQuery);

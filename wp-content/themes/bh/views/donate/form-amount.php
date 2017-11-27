@@ -12,23 +12,23 @@ $default_alt            = $certificate_examples['appreciation']['alt'];
 
     <div class="radio other">
         <input type="radio" name="donationAmount" id="custom-amount-radio" value="other" class="cs-hotspot"><label for="custom-donation-radio" class="cs-hotspot">
-            <input type="number" class="form-control" name="customDonationAmount" id="custom-amount-field" placeholder="<?php esc_html_e('How much would you like to give? (In NIS)', 'BH'); ?>">
+            <input type="number" class="form-control" name="customDonationAmount" id="custom-amount-field" min="5" placeholder="<?php esc_html_e('How much would you like to give? (In NIS)', 'BH'); ?>">
         </label>
     </div>
     <div class="radio">
-        <input type="radio" name="donationAmount" id="100" value="100" title="<?php esc_html_e('Donate 100 Shekels', 'BH'); ?>"><label for="100"><em>100 <?php esc_html_e('NIS', 'BH'); ?></em><?php esc_html_e('will help expand our Jewish identity outreach program to IDF soldiers', 'BH') ; ?>
+        <input type="radio" name="donationAmount" id="100" value="100" title="<?php esc_html_e('Donate 100 Shekels', 'BH'); ?>" class="fixed-amount"><label for="100"><em>100 <?php esc_html_e('NIS', 'BH'); ?></em><?php esc_html_e('will help expand our Jewish identity outreach program to IDF soldiers', 'BH') ; ?>
         </label>
     </div>
     <div class="radio">
-        <input type="radio" name="donationAmount" id="200" value="200" title="<?php esc_html_e('Donate 200 Shekels', 'BH'); ?>"><label for="200"><em>200 <?php esc_html_e('NIS', 'BH'); ?></em><?php esc_html_e('will help expand our rich database of Jewish family trees, names and places', 'BH') ; ?>
+        <input type="radio" name="donationAmount" id="200" value="200" title="<?php esc_html_e('Donate 200 Shekels', 'BH'); ?>" class="fixed-amount"><label for="200"><em>200 <?php esc_html_e('NIS', 'BH'); ?></em><?php esc_html_e('will help expand our rich database of Jewish family trees, names and places', 'BH') ; ?>
         </label>
     </div>
     <div class="radio">
-        <input type="radio" name="donationAmount" id="500" value="500" title="<?php esc_html_e('Donate 500 Shekels', 'BH'); ?>"><label for="500"><em>500 <?php esc_html_e('NIS', 'BH'); ?></em><?php esc_html_e('will go towards developing educational materials for school groups', 'BH') ; ?>
+        <input type="radio" name="donationAmount" id="500" value="500" title="<?php esc_html_e('Donate 500 Shekels', 'BH'); ?>" class="fixed-amount"><label for="500"><em>500 <?php esc_html_e('NIS', 'BH'); ?></em><?php esc_html_e('will go towards developing educational materials for school groups', 'BH') ; ?>
         </label>
     </div>
     <div class="radio">
-        <input type="radio" name="donationAmount" id="1000" value="1000" title="<?php esc_html_e('Donate 1000 Shekels', 'BH'); ?>"><label for="1000"><em>1000 <?php esc_html_e('NIS', 'BH'); ?></em><?php esc_html_e('will help bring a group of visitors with special needs to Beit Hatfusot', 'BH') ; ?>
+        <input type="radio" name="donationAmount" id="1000" value="1000" title="<?php esc_html_e('Donate 1000 Shekels', 'BH'); ?>" class="fixed-amount"><label for="1000"><em>1000 <?php esc_html_e('NIS', 'BH'); ?></em><?php esc_html_e('will help bring a group of visitors with special needs to Beit Hatfusot', 'BH') ; ?>
         </label>
     </div>
 
@@ -93,5 +93,6 @@ $default_alt            = $certificate_examples['appreciation']['alt'];
 </fieldset>
 
 <div class="form-group flow-amount col-sm-offset-2 col-sm-8">
-    <button type="button" id="cont-to-details" class="btn orange-btn"><?php esc_html_e('Continue', 'BH'); ?></button>
+    <p id="error-msg--amount" class="error-msg error-msg--amount"><?php esc_html_e('Please select a donation amount, or enter a custom sum.', 'BH'); ?></p>
+    <button type="button" id="cont-to-details" class="btn orange-btn" disabled><?php esc_html_e('Continue', 'BH'); ?></button>
 </div>

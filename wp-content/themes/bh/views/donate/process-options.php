@@ -1,5 +1,6 @@
 <?php
 $form_target = BH_get_donation_page_url('iframe');
+$afbh_link = get_field('acf-options_afbh_d_form', 'option');
 
 $tab_labels = array(
     'online'    => esc_html_x('Online', 'donation-tabs-default', 'BH'),
@@ -33,7 +34,9 @@ if ( wp_is_mobile() ) {
             <div role="tabpanel" class="tab-pane active" id="online">
                 <p class="tax-deduct">
                     <strong><?php echo esc_html__('Your gift is tax deductible in Israel.', 'BH') . ' '; ?></strong>
+                    <?php if ($afbh_link): ?>
                     <a href="https://co.clickandpledge.com/sp/d1/default.aspx?wid=39977" role="link" target="_blank" rel="nofollow" class="us-donation"><?php esc_html_e('Make a tax deductible gift in the United States instead', 'BH') ?></a>
+                    <?php endif; ?>
                 </p>
 
                 <form id="donate-form" class="donate-form container" method="post" action="<?php echo $form_target; ?>">
@@ -47,40 +50,31 @@ if ( wp_is_mobile() ) {
 
             </div>
             <div role="tabpanel" class="tab-pane container" id="check">
-                <p>
-                    <strong><?php esc_html_e('Please make check payable to Beit Hatfutsot and send to:', 'BH'); ?></strong>
-                </p>
-                <address>
-                    <?php
-                    $email = 'racheli@bh.org.il';
-                    $email_link = '<a href="' . $email . '">' . $email . '</a>';
-                    $address = sprintf(
-                            __('P.O.B %1$s Tel-Aviv<br/>%2$s Israel<br/>For more information please contact us at %3$s' , 'BH'),
-                            '39359' , '6139202', $email_link );
-                    echo $address;
-                    ?>
-                </address>
+
+                <?php if( get_field('donate_by_check', 'option') ):
+
+                    the_field('donate_by_check', 'option');
+
+                endif; ?>
+
             </div>
             <div role="tabpanel" class="tab-pane container" id="transfer">
-                <p>
-                    <strong><?php esc_html_e('If you wish to make a bank transfer from within Israel:', 'BH'); ?></strong>
-                </p>
-                <p>
-                    <?php
-                    $email = 'racheli@bh.org.il';
-                    $email_link = '<a href="' . $email . '">' . $email . '</a>';
-                    $address = sprintf( __('Bank Mizrahi-Tefahot<br/>Branch: %1$s<br/>Account: %2$s' , 'BH'), '493' , '387660' );
-                    echo $address;
-                    ?>
-                </p>
-                <p>
-                    <?php echo esc_html__('For more information please contact us at', 'BH') . ' ' . $email_link; ?>
-                </p>
+
+                <?php if( get_field('donate_by_bank_transfer', 'option') ):
+
+                    the_field('donate_by_bank_transfer', 'option');
+
+                endif; ?>
+
             </div>
             <div role="tabpanel" class="tab-pane container" id="telephone">
-                <p>
-                    <strong><?php esc_html_e('Please call us on this number:', 'BH'); ?><a href="tel:+97237457841" role="link" class="phone-link">+972 3 7457841</a> </strong>
-                </p>
+
+                <?php if( get_field('donate_by_phone', 'option') ):
+
+                    the_field('donate_by_phone', 'option');
+
+                endif; ?>
+
             </div>
         </div>
 
