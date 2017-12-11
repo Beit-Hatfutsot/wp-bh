@@ -35,7 +35,7 @@ if ( wp_is_mobile() ) {
                 <p class="tax-deduct">
                     <strong><?php echo esc_html__('Your gift is tax deductible in Israel.', 'BH') . ' '; ?></strong>
                     <?php if ($afbh_link): ?>
-                    <a href="https://co.clickandpledge.com/sp/d1/default.aspx?wid=39977" role="link" target="_blank" rel="nofollow" class="us-donation"><?php esc_html_e('Make a tax deductible gift in the United States instead', 'BH') ?></a>
+                    <a href="<?php echo esc_url($afbh_link); ?>" role="link" target="_blank" rel="nofollow" class="us-donation"><?php esc_html_e('Make a tax deductible gift in the United States instead', 'BH') ?></a>
                     <?php endif; ?>
                 </p>
 
