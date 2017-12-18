@@ -1387,6 +1387,7 @@
 			height: 50px;
 
 			.header-element {
+				margin-left: 5px;
 
 				/**********************/
 				/* languages switcher */
@@ -1408,6 +1409,8 @@
 				/*******************/
 
 				&.shop-cart-popup {
+					margin-left: 15px;
+
 					.shop-cart-popup-btn {
 						margin-top: 10px;
 						padding-bottom: 10px;
@@ -1459,8 +1462,17 @@
 		/* featured page */
 		/*****************/
 
-		.featured-page {
-			display: none;
+		.header-mid {
+			.featured-page {
+				float: right;
+				margin-top: 12.5px;
+
+				a {
+					padding: 0 1px;
+					line-height: 25px;
+					font-size: 11px;
+				}
+			}
 		}
 	}
 

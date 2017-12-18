@@ -330,12 +330,17 @@
 
 		.header-elements {
 			.header-element {
+				margin-left: 0;
+				margin-right: 5px;
 
 				/*******************/
 				/* shop cart popup */
 				/*******************/
 
 				&.shop-cart-popup {
+					margin-left: 5px;
+					margin-right: 5px;
+
 					.shop-cart-popup-content {
 						left: auto;
 						right: 15px;
@@ -362,6 +367,16 @@
 						}
 					}
 				}
+			}
+		}
+
+		/*****************/
+		/* featured page */
+		/*****************/
+
+		.header-mid {
+			.featured-page {
+				float: left;
 			}
 		}
 	}
