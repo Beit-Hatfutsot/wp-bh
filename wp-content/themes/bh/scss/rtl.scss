@@ -73,6 +73,29 @@ body > header {
 			margin-left: 0;
 			margin-right: 27px;
 
+			/**********************/
+			/* languages switcher */
+			/**********************/
+
+			&.languages-switcher {
+				.languages-switcher-content {
+					.wpml-languages-switcher,
+					.wpml-untranslated-languages-switcher {
+						li {
+							a {
+								text-align: right;
+
+								.flag {
+									float: right;
+									margin-left: 10px;
+									margin-right: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+
 			/*******************/
 			/* shop cart popup */
 			/*******************/
