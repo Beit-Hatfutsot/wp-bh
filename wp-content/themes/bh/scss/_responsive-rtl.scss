@@ -597,6 +597,17 @@
 
 			.header-element {
 
+				/**********************/
+				/* languages switcher */
+				/**********************/
+
+				&.languages-switcher {
+					.languages-switcher-content {
+						left: auto;
+						right: -11px;
+					}
+				}
+
 				/*******************/
 				/* shop cart popup */
 				/*******************/
