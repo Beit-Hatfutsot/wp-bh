@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BH Website 1.0\n"
-"POT-Creation-Date: 2017-11-20 09:48+0200\n"
-"PO-Revision-Date: 2017-11-20 09:48+0200\n"
+"POT-Creation-Date: 2017-12-19 18:07+0200\n"
+"PO-Revision-Date: 2017-12-19 18:07+0200\n"
 "Last-Translator: Nir Goldberg <nir@htmline.com>\n"
 "Language-Team: BH online <nirg@bh.org.il>\n"
 "Language: he_IL\n"
@@ -28,11 +28,19 @@ msgstr ""
 msgid "Search in site..."
 msgstr ""
 
-#: views/event/events-filters.php:22
+#: views/event/events-filters.php:83
+msgid "All Exhibitions"
+msgstr ""
+
+#: views/event/events-filters.php:88
+msgid "All Events"
+msgstr ""
+
+#: views/event/events-filters.php:93
 msgid "All Categories"
 msgstr ""
 
-#: views/event/events-filters.php:36
+#: views/event/events-filters.php:125
 msgid "Start from"
 msgstr ""
 
@@ -57,18 +65,6 @@ msgstr ""
 #: views/sidebar/sidebar-shop-wswu-banner.php:27
 #: views/woocommerce/single-product/single-product-section2-banner.php:31
 msgid "And there are more"
-msgstr ""
-
-#: views/donate/process-options.php:58
-#, php-format
-msgid ""
-"P.O.B %1$s Tel-Aviv<br/>%2$s Israel<br/>For more information please contact "
-"us at %3$s"
-msgstr ""
-
-#: views/donate/process-options.php:72
-#, php-format
-msgid "Bank Mizrahi-Tefahot<br/>Branch: %1$s<br/>Account: %2$s"
 msgstr ""
 
 #: views/donate/process-flow.php:16

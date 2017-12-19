@@ -4,7 +4,7 @@
  *
  * @author		Beit Hatfutsot
  * @package		bh/functions
- * @version		2.6.0
+ * @version		2.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -22,7 +22,8 @@ if ( function_exists( 'wp_get_theme' ) ) {
 	$theme_data		= wp_get_theme();
 	$theme_version	= $theme_data->get( 'Version' );
 
-} else {
+}
+else {
 
 	$theme_data		= get_theme_data( trailingslashit( get_stylesheet_directory() ) . 'style.css' );
 	$theme_version	= $theme_data[ 'Version' ];
@@ -48,15 +49,29 @@ define( 'EXR_API_KEY',	'8173E30F944972AB110F61D13501D61B' );	// Exchange Rate AP
  */
 global $globals;
 $globals = array(
+	// General
 	'google_fonts'		=> array(),		// Google Fonts
+	'wpml_lang'			=> '',			// Current language code
+
+	// Header
 	'bh_sites'			=> array(),		// BH sites
 	'current_site'		=> '',			// Current site index in $globals[ 'bh_sites' ]
 	'header_elements'	=> array(),		// Header elements
-	'shop_page'			=> '',			// True / False	- Is shop page (set in woocommerce-functions.php)
+
+	// Menus
 	'menus'				=> array(),		// Theme menu locations
 	'menu'				=> '',			// Current site menu HTML structure
-	'_galleries'		=> array(),		// Array of arrays of galleries images
-	'wpml_lang'			=> ''			// Current language code
+
+	// Events
+	'events'			=> array(),		// Array of event post objects
+	'category_id'		=> '',			// Current event category ID
+	'sticky_events_ids'	=> array(),		// Array of sticky event IDs
+
+	// Shop
+	'shop_page'			=> '',			// True / False	- Is shop page (set in woocommerce-functions.php)
+
+	// Galleries
+	'_galleries'		=> array()		// Array of arrays of galleries images
 );
 
 /**

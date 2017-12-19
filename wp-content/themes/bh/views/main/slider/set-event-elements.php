@@ -4,107 +4,132 @@
  *
  * @author 		Beit Hatfutsot
  * @package 	bh/views/main/slider
- * @version     2.0
+ * @version     2.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $categories, $events, $is_categories_empty, $is_events_empty;
+/**
+ * Variables
+ */
+global $globals;
+global $categories, $is_categories_empty, $is_events_empty;
 
-// set $categories - array of categories term_id
-// this array will hold arrays of event DOM elements related to each category
-// used for two purposes:
-// 1. display categories filter - display only categories which include at least one future event
-// 2. filter events based on a JSON encoded information
+/**
+ * Set $categories - array of categories term_id
+ *
+ * This array will hold arrays of event DOM elements related to each category
+ * Used for two purposes:
+ * 1. Display categories filter - display only categories which include at least one future event
+ * 2. Filter events based on a JSON encoded information
+ */
 $args = array(
-	'orderby'	=> 'term_order'
+	'orderby' => 'term_order'
 );
 
-if ( function_exists('BH_get_cached_terms') )
-	$category_terms = BH_get_cached_terms('event_category', $args);
-else
-	$category_terms = get_terms('event_category', $args);
+if ( function_exists( 'BH_get_cached_terms' ) ) {
+	$category_terms = BH_get_cached_terms( 'event_category', $args );
+}
+else {
+	$category_terms = get_terms( 'event_category', $args );
+}
 
 $categories = array();
 $is_categories_empty	= true;	// indicates there is no category includes at least 1 future event
 $is_events_empty		= true;	// indicates there is no events to show
 
-// set $categories[0] for all events
+// Set $categories[0] for all events
 $categories[0] = array();
 
-if ($category_terms) :
-	foreach ($category_terms as $category_term) :
-		// set empty array to each category as default
-		$categories[$category_term->term_id] = array();
-	endforeach;
-endif;
+if ( $category_terms ) {
 
-// fill in $categories array
-foreach ($events as $e) {
-	if ( $e['type'] == 'event' ) {
+	foreach ( $category_terms as $category_term ) {
+		// Set empty array to each category as default
+		$categories[ $category_term->term_id ] = array();
+	}
+
+}
+
+// Check if ACF exists
+if ( ! function_exists( 'get_field' ) )
+	// return
+	return;
+
+// Fill in $categories array
+foreach ( $globals[ 'events' ] as $e ) {
+
+	if ( $e[ 'type' ] == 'event' ) {
+
 		// event
-		$event = $e['event'];
+		$event = $e[ 'event' ];
 
-		$image = get_field('acf-event_slider_image', $event->ID);
+		$image = get_field( 'acf-event_slider_image', $event->ID );
 
-		if ($image) {
-			$event_categories	= wp_get_post_terms($event->ID, 'event_category');
-			$singular_name		= ($event_categories) ? get_field('acf-event_category_singular_name',				'event_category_' . $event_categories[0]->term_id) : '';
-			$description		= get_field('acf-event_description',		$event->ID);
-			$series				= get_field('acf-event_series_of_events',	$event->ID);
-			
+		if ( $image ) {
+
+			$event_categories	= wp_get_post_terms( $event->ID, 'event_category' );
+			$singular_name		= ( $event_categories ) ? get_field( 'acf-event_category_singular_name', 'event_category_' . $event_categories[0]->term_id ) : '';
+			$description		= get_field( 'acf-event_description',		$event->ID );
+			$series				= get_field( 'acf-event_series_of_events',	$event->ID );
+
 			$event_element =
 				"<div class='event-item event-item-" . $event->ID . "' style='display: none;'>" .
-					"<a href='" . get_permalink($event->ID) . "'>" .
-						"<img src='" . $image['sizes']['thumbnail'] . "' alt='" . ( ($image['alt']) ? $image['alt'] : '' ) . "' />" .
+					"<a href='" . get_permalink( $event->ID ) . "'>" .
+						"<img src='" . $image[ 'sizes' ][ 'thumbnail' ] . "' alt='" . ( ( $image[ 'alt' ] ) ? $image[ 'alt' ] : '' ) . "' />" .
 						"<div class='event-meta'>" .
 							
-							// event type
-							BH_get_event_type($event->ID) .
+							// Event type
+							BH_get_event_type( $event->ID ) .
 							
-							// event date
-							BH_get_event_date($event->ID) .
+							// Event date
+							BH_get_event_date( $event->ID ) .
 							
-							// event title and description
-							"<h3>" . get_the_title($event->ID) . "</h3>" .
-							// "<div class='event-desc'>" . $description . "</div>" .
+							// Event title and description
+							"<h3>" . get_the_title( $event->ID ) . "</h3>" .
+
 						"</div>" .
 					"</a>" .
 				"</div>";
-			
-			// include event as part of "all events" array
+
+			// Include event as part of "all events" array
 			$categories[0][] = $event_element;
-			
+
 			// include event as part of its categories arrays
-			if ($event_categories) :
-				foreach ($event_categories as $event_category) :
-					$categories[$event_category->term_id][] = $event_element;
-				endforeach;
+			if ( $event_categories ) {
+
+				foreach ( $event_categories as $event_category ) {
+					$categories[ $event_category->term_id ][] = $event_element;
+				}
 
 				$is_categories_empty = false;	// at least 1 category includes at least 1 future event
-			endif;
-			
-			$is_events_empty = false;	// at least 1 event to show
-		}
-	}
 
+			}
+
+			$is_events_empty = false;	// at least 1 event to show
+
+		}
+
+	}
 	else {
+
 		// custom
 		$event_element =
 			"<div class='event-item custom-event-item' style='display: none;'>" .
-				"<a href='" . $e['event']['link'] . "' " . ( $e['event']['target'] == 'blank' ? "target='_blank'" : "" ) . ">" .
-					"<img src='" . $e['event']['image']['sizes']['thumbnail'] . "' alt='" . ( ($e['event']['image']['alt']) ? $e['event']['image']['alt'] : '' ) . "' />" .
+				"<a href='" . $e[ 'event' ][ 'link' ] . "' " . ( $e[ 'event' ][ 'target' ] == 'blank' ? "target='_blank'" : "" ) . ">" .
+					"<img src='" . $e[ 'event' ][ 'image' ][ 'sizes' ][ 'thumbnail' ] . "' alt='" . ( ( $e[ 'event' ][ 'image' ][ 'alt' ] ) ? $e[ 'event' ][ 'image' ][ 'alt' ] : '' ) . "' />" .
 					"<div class='event-meta'>" .
 
-						// event title
-						"<h3>" . $e['event']['title'] . "</h3>" .
+						// Event title
+						"<h3>" . $e[ 'event' ][ 'title' ] . "</h3>" .
 					"</div>" .
 				"</a>" .
 			"</div>";
-		
-		// include event as part of "all events" array
+
+		// Include event as part of "all events" array
 		$categories[0][] = $event_element;
 
 		$is_events_empty = false;	// at least 1 event to show
+
 	}
+
 }
