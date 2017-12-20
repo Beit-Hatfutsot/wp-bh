@@ -52,6 +52,9 @@ if ( function_exists( 'get_field' ) ) {
 					$categories_type = 'event';
 					break;
 
+				default :
+					$categories_type = 'exhibition';
+
 			endswitch;
 		}
 

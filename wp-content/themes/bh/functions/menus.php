@@ -337,23 +337,18 @@ function BH_add_event_categories_submenu( $items, $args ) {
 		// return
 		return $items;
 
-	/**
-	 * Variables
-	 */
-	$merged_items = $items;
+	foreach ( $args->add_events_list_under as $events_page ) {
 
-	// Get parent item key for each events page within $args->add_events_list_under
-	foreach ( $items as $key => $item ) {
-		foreach ( $args->add_events_list_under as $events_page ) {
+		/**
+		 * Variables
+		 */
+		$categories_type	= $events_page[ 'type' ];
+		$page_id			= $events_page[ 'id' ];
 
-			/**
-			 * Variables
-			 */
-			$categories_type	= $events_page[ 'type' ];
-			$page_id			= $events_page[ 'id' ];
+		foreach ( $items as $key => $item ) {
 
 			if ( $item->object_id == $page_id ) {
-				BH_add_event_categories_submenu_items( $merged_items, $key, $categories_type );
+				BH_add_event_categories_submenu_items( $items, $key, $categories_type );
 
 				break;
 			}
@@ -363,7 +358,7 @@ function BH_add_event_categories_submenu( $items, $args ) {
 	}
 
 	// return
-	return $merged_items;
+	return $items;
 
 }
 add_filter( 'wp_nav_menu_objects', 'BH_add_event_categories_submenu', 10, 2 );
@@ -374,12 +369,12 @@ add_filter( 'wp_nav_menu_objects', 'BH_add_event_categories_submenu', 10, 2 );
  * This function retrieves array of item objects containing event categories associated with a specific category type
  * and positioned as the direct children of $items[ $parent_item_key ]
  *
- * @param	$merged_items (array) The menu items, sorted by each menu item's menu order
+ * @param	$items (array) The menu items, sorted by each menu item's menu order
  * @param	$parent_item_key (int) Parent menu item key within $items
  * @param	$categories_type (string) The categories type associated with the relevant event categories
  * @return	N/A
  */
-function BH_add_event_categories_submenu_items( &$merged_items, $parent_item_key, $categories_type ) {
+function BH_add_event_categories_submenu_items( &$items, $parent_item_key, $categories_type ) {
 
 	if ( ! $parent_item_key )
 		// return
@@ -421,17 +416,17 @@ function BH_add_event_categories_submenu_items( &$merged_items, $parent_item_key
 		if ( $events_exist ) {
 
 			// Add menu-item-has-children indicator
-			if ( ! in_array( 'menu-item-has-children', $merged_items[ $parent_item_key ]->classes ) ) {
-				$merged_items[ $parent_item_key ]->classes[] = 'menu-item-has-children';
+			if ( ! in_array( 'menu-item-has-children', $items[ $parent_item_key ]->classes ) ) {
+				$items[ $parent_item_key ]->classes[] = 'menu-item-has-children';
 			}
 
 			$menu_item = new stdClass();
 
 			$menu_item->ID					= '999' . $cat->term_id;
 			$menu_item->post_status			= 'publish';
-			$menu_item->post_parent			= $merged_items[ $parent_item_key ]->object_id;
+			$menu_item->post_parent			= $items[ $parent_item_key ]->object_id;
 			$menu_item->post_type			= 'nav_menu_item';
-			$menu_item->menu_item_parent	= $merged_items[ $parent_item_key ]->ID;
+			$menu_item->menu_item_parent	= $items[ $parent_item_key ]->ID;
 			$menu_item->object_id			= $cat->term_id;
 			$menu_item->object				= 'event_category';
 			$menu_item->type				= 'taxonomy';
@@ -444,8 +439,8 @@ function BH_add_event_categories_submenu_items( &$merged_items, $parent_item_key
 			if ( is_tax( 'event_category', $cat->term_id ) ) {
 
 				// Modify parent item classes
-				$merged_items[ $parent_item_key ]->classes[] = 'current-menu-ancestor';
-				$merged_items[ $parent_item_key ]->classes[] = 'current-menu-parent';
+				$items[ $parent_item_key ]->classes[] = 'current-menu-ancestor';
+				$items[ $parent_item_key ]->classes[] = 'current-menu-parent';
 				
 				// Add classes to current item
 				$menu_item->classes[] = 'current-menu-item';
@@ -453,8 +448,8 @@ function BH_add_event_categories_submenu_items( &$merged_items, $parent_item_key
 			} elseif ( is_singular( 'event' ) && has_term( $cat->term_id, 'event_category' ) ) {
 
 				// Modify parent item classes
-				if ( ! in_array( 'current-menu-ancestor', $merged_items[ $parent_item_key ]->classes ) )
-					$merged_items[ $parent_item_key ]->classes[] = 'current-menu-ancestor';
+				if ( ! in_array( 'current-menu-ancestor', $items[ $parent_item_key ]->classes ) )
+					$items[ $parent_item_key ]->classes[] = 'current-menu-ancestor';
 
 				// Add classes to current item
 				$menu_item->classes[] = 'current-menu-ancestor';
@@ -468,9 +463,9 @@ function BH_add_event_categories_submenu_items( &$merged_items, $parent_item_key
 
 	}
 
-	// Merge categories list into $merged_items
+	// Merge categories list into $items
 	if ( $categories_list )
-		array_splice( $merged_items, $key, 0, $categories_list );
+		array_splice( $items, $parent_item_key, 0, $categories_list );
 
 }
 

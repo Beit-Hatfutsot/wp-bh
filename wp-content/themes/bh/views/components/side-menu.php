@@ -45,6 +45,9 @@ if ( 'event.php' == basename( get_page_template() ) ) {
 				$category_type = 'event';
 				break;
 
+			default :
+				$category_type = 'exhibition';
+
 		endswitch;
 	}
 
