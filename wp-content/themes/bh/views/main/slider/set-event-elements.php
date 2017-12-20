@@ -24,15 +24,10 @@ global $categories, $is_categories_empty, $is_events_empty;
  * 2. Filter events based on a JSON encoded information
  */
 $args = array(
-	'orderby' => 'term_order'
+	'taxonomy'	=> 'event_category',
+	'orderby'	=> 'term_order'
 );
-
-if ( function_exists( 'BH_get_cached_terms' ) ) {
-	$category_terms = BH_get_cached_terms( 'event_category', $args );
-}
-else {
-	$category_terms = get_terms( 'event_category', $args );
-}
+$category_terms = get_terms( $args );
 
 $categories = array();
 $is_categories_empty	= true;	// indicates there is no category includes at least 1 future event

@@ -107,12 +107,7 @@ endswitch;
 
 					<?php foreach ( $categories as $cat ) {
 
-						if ( function_exists( 'BH_get_cached_event_category_events' ) ) {
-							$events_exist = BH_get_cached_event_category_events( $cat );
-						}
-						else {
-							$events_exist = BH_get_event_category_events( $cat->term_id );
-						}
+						$events_exist = BH_get_event_category_events( $cat->term_id );
 
 						echo ( $events_exist ) ? '<option value="' . $cat->term_id . '"' .( ( $globals[ 'category_id' ] == $cat->term_id ) ? ' selected=selected' : '' ) . '>' . $cat->name . '</option>' : '';
 					
