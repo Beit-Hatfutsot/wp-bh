@@ -4,7 +4,7 @@
  *
  * @author		Beit Hatfutsot
  * @package		bh/functions
- * @version		2.6.0
+ * @version		2.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -296,39 +296,76 @@ function BH_add_event_categories_submenu( $items, $args ) {
 	/**
 	 * Variables
 	 */
-	$parent_item		= '';
-	$parent_item_key	= '';
-	$categories_list	= array();
+	$merged_items = $items;
 
-	// Get parent item and parent item key
+	// Get parent item key for each events page within $args->add_events_list_under
 	foreach ( $items as $key => $item ) {
+		foreach ( $args->add_events_list_under as $events_page ) {
 
-		if ( $item->object_id == $args->add_events_list_under ) {
-			$parent_item = $item;
-			$parent_item_key = $key;
+			/**
+			 * Variables
+			 */
+			$categories_type	= $events_page[ 'type' ];
+			$page_id			= $events_page[ 'id' ];
 
-			break;
+			if ( $item->object_id == $page_id ) {
+				BH_add_event_categories_submenu_items( $merged_items, $key, $categories_type );
+
+				break;
+			}
+
 		}
 
 	}
 
+	// return
+	return $merged_items;
+
+}
+add_filter( 'wp_nav_menu_objects', 'BH_add_event_categories_submenu', 10, 2 );
+
+/**
+ * BH_add_event_categories_submenu_items
+ *
+ * This function retrieves array of item objects containing event categories associated with a specific category type
+ * and positioned as the direct children of $items[ $parent_item_key ]
+ *
+ * @param	$merged_items (array) The menu items, sorted by each menu item's menu order
+ * @param	$parent_item_key (int) Parent menu item key within $items
+ * @param	$categories_type (string) The categories type associated with the relevant event categories
+ * @return	N/A
+ */
+function BH_add_event_categories_submenu_items( &$merged_items, $parent_item_key, $categories_type ) {
+
 	if ( ! $parent_item_key )
 		// return
-		return $items;
+		return $merged_items;
+
+	/**
+	 * Variables
+	 */
+	$categories_list = array();
 
 	// Add menu-item-has-children indicator
-	if ( ! in_array( 'menu-item-has-children', $items[ $parent_item_key ]->classes ) )
-		$items[ $parent_item_key ]->classes[] = 'menu-item-has-children';
+	if ( ! in_array( 'menu-item-has-children', $merged_items[ $parent_item_key ]->classes ) )
+		$merged_items[ $parent_item_key ]->classes[] = 'menu-item-has-children';
 
 	// Get event categories
-	$category_args = array(
-		'orderby' => 'term_order'
+	$args = array(
+		'taxonomy'	=> 'event_category',
+		'orderby'	=> 'term_order'
 	);
 
-	if ( function_exists( 'BH_get_cached_terms' ) )
-		$categories = BH_get_cached_terms( 'event_category', $category_args );
-	else
-		$categories = get_terms( 'event_category', $category_args );
+	if ( $categories_type ) {
+		$args[ 'meta_query' ] = array(
+			array(
+				'key'		=> 'acf-event_category_type',
+				'value'		=> $categories_type,
+				'compare'	=> '='
+			)
+		);
+	}
+	$categories = get_terms( $args );
 
 	// Build categories list
 	$index = 0;
@@ -346,9 +383,9 @@ function BH_add_event_categories_submenu( $items, $args ) {
 
 			$menu_item->ID					= '999' . $cat->term_id;
 			$menu_item->post_status			= 'publish';
-			$menu_item->post_parent			= $parent_item->object_id;
+			$menu_item->post_parent			= $merged_items[ $parent_item_key ]->object_id;
 			$menu_item->post_type			= 'nav_menu_item';
-			$menu_item->menu_item_parent	= $parent_item->ID;
+			$menu_item->menu_item_parent	= $merged_items[ $parent_item_key ]->ID;
 			$menu_item->object_id			= $cat->term_id;
 			$menu_item->object				= 'event_category';
 			$menu_item->type				= 'taxonomy';
@@ -361,23 +398,23 @@ function BH_add_event_categories_submenu( $items, $args ) {
 			if ( is_tax( 'event_category', $cat->term_id ) ) {
 
 				// Modify parent item classes
-				$items[ $parent_item_key ]->classes[]	= 'current-menu-ancestor';
-				$items[ $parent_item_key ]->classes[]	= 'current-menu-parent';
+				$merged_items[ $parent_item_key ]->classes[] = 'current-menu-ancestor';
+				$merged_items[ $parent_item_key ]->classes[] = 'current-menu-parent';
 				
 				// Add classes to current item
-				$menu_item->classes[]					= 'current-menu-item';
+				$menu_item->classes[] = 'current-menu-item';
 
 			} elseif ( is_singular( 'event' ) ) {
 
 				// Modify parent item classes
-				if ( ! in_array( 'current-menu-ancestor', $items[ $parent_item_key ]->classes ) )
-					$items[ $parent_item_key ]->classes[]	= 'current-menu-ancestor';
+				if ( ! in_array( 'current-menu-ancestor', $merged_items[ $parent_item_key ]->classes ) )
+					$merged_items[ $parent_item_key ]->classes[] = 'current-menu-ancestor';
 
 				if ( has_term( $cat->term_id, 'event_category' ) ) {
 
 					// Add classes to current item
-					$menu_item->classes[]				= 'current-menu-ancestor';
-					$menu_item->classes[]				= 'current-menu-parent';
+					$menu_item->classes[] = 'current-menu-ancestor';
+					$menu_item->classes[] = 'current-menu-parent';
 
 				}
 
@@ -389,15 +426,11 @@ function BH_add_event_categories_submenu( $items, $args ) {
 
 	}
 
-	// Merge categories list into $items
-	if ( $parent_item_key && $categories_list )
-		array_splice( $items, $parent_item_key, 0, $categories_list );
-
-	// return
-	return $items;
+	// Merge categories list into $merged_items
+	if ( $categories_list )
+		array_splice( $merged_items, $key, 0, $categories_list );
 
 }
-add_filter( 'wp_nav_menu_objects', 'BH_add_event_categories_submenu', 10, 2 );
 
 /**
  * BH_add_blog_categories_submenu
