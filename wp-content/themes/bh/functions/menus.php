@@ -208,11 +208,10 @@ function BH_get_event_categories_menu( $category_type, $current_object_id, $show
 					$events_list		= '';		// Events LIs
 					$current_category	= false;	// Indicates whether the current category is a parent menu item
 					$category_classes[]	= 'menu-item-has-children';
-					$event_classes		= array( 'menu-item', 'menu-item-type-post_type', 'menu-item-object-event' );
 
 					foreach ( $events as $event ) {
 
-						$event_classes[] = 'menu-item-999' . $event->ID;
+						$event_classes = array( 'menu-item', 'menu-item-type-post_type', 'menu-item-object-event', 'menu-item-999' . $event->ID );
 
 						if ( $event->ID == $current_object_id ) {
 
