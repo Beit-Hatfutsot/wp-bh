@@ -4,7 +4,7 @@
  *
  * @author 		Beit Hatfutsot
  * @package 	bh/functions/acf
- * @version     2.1
+ * @version     2.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -1802,6 +1802,32 @@ acf_add_local_field_group(array (
 			'maxlength' => '',
 			'readonly' => 0,
 			'disabled' => 0,
+		),
+		array (
+			'key' => 'field_5a37c0019fcfc',
+			'label' => 'Category Type',
+			'name' => 'acf-event_category_type',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array (
+				'exhibition' => 'Exhibition',
+				'event' => 'Event',
+			),
+			'default_value' => array (
+			),
+			'allow_null' => 1,
+			'multiple' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'return_format' => 'value',
+			'placeholder' => '',
 		),
 	),
 	'location' => array (
@@ -4915,6 +4941,29 @@ acf_add_local_field_group(array (
 			'endpoint' => 0,
 		),
 		array (
+			'key' => 'field_5a37cb63c1223',
+			'label' => 'Exhibitions Page',
+			'name' => 'acf-options_exhibitions_page',
+			'type' => 'post_object',
+			'instructions' => 'Used to display relevant event categories in the website menus. This field can be specified for only one language, the rest of the languages ​​will be updated automatically',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array (
+				0 => 'page',
+			),
+			'taxonomy' => array (
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'return_format' => 'object',
+			'ui' => 1,
+		),
+		array (
 			'key' => 'field_53b03b1ebef28',
 			'label' => 'Events Page',
 			'name' => 'acf-options_events_page',
@@ -6382,8 +6431,8 @@ For more information please contact us at racheli@bh.org.il',
 			'key' => 'field_5a154ed3a0fb7',
 			'label' => 'Send donation certificate tasks to',
 			'name' => 'certificate_tasks_recipient',
-			'type' => 'email',
-			'instructions' => '',
+			'type' => 'text',
+			'instructions' => 'You can enter multiple email addresses, separated with a comma (,)',
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array (
@@ -6395,6 +6444,7 @@ For more information please contact us at racheli@bh.org.il',
 			'placeholder' => '',
 			'prepend' => '',
 			'append' => '',
+			'maxlength' => '',
 		),
 	),
 	'location' => array (

@@ -4,7 +4,7 @@
  *
  * @author		Beit Hatfutsot
  * @package		bh/functions
- * @version		2.6.0
+ * @version		2.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -64,13 +64,32 @@ function BH_set_header_globals() {
 	 */
 	if ( $args[ 'theme_location' ] == 'main-menu' ) {
 
-		$blog_page		= get_field( 'acf-options_blog_page', 'option' );
-		$blog_page_id	= $blog_page ? $blog_page->ID : '';
-		$events_page	= get_field( 'acf-options_events_page', 'option' );
-		$events_page_id	= $events_page ? $events_page->ID : '';
+		$blog_page				= get_field( 'acf-options_blog_page', 'option' );
+		$blog_page_id			= $blog_page ? $blog_page->ID : '';
+		$exhibitions_page		= get_field( 'acf-options_exhibitions_page', 'option' );
+		$exhibitions_page_id	= $exhibitions_page ? $exhibitions_page->ID : '';
+		$events_page			= get_field( 'acf-options_events_page', 'option' );
+		$events_page_id			= $events_page ? $events_page->ID : '';
 
-		$args[ 'add_blog_list_under' ]		= $blog_page_id;
-		$args[ 'add_events_list_under' ]	= $events_page_id;
+		$args[ 'add_events_list_under' ] = array();	// Array of arrays of event types and associated page IDs
+
+		if ( $blog_page_id ) {
+			$args[ 'add_blog_list_under' ] = $blog_page_id;
+		}
+
+		if ( $exhibitions_page_id ) {
+			$args[ 'add_events_list_under' ][] = array(
+				'type'	=> 'exhibition',
+				'id'	=> $exhibitions_page_id
+			);
+		}
+
+		if ( $events_page_id ) {
+			$args[ 'add_events_list_under' ][] = array(
+				'type'	=> 'event',
+				'id'	=> $events_page_id
+			);
+		}
 
 	}
 	$globals[ 'menu' ] = wp_nav_menu( $args );

@@ -4,17 +4,17 @@
  *
  * @author 		Beit Hatfutsot
  * @package 	bh/views/main
- * @version     2.4
+ * @version     2.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// Check for ACF existence
-if ( ! function_exists('get_field') )
-	return;
+if ( function_exists( 'get_field' ) ) {
 
-// Layout parameters
-$slider = get_field('acf-options_exhibitions_and_events_slider', 'option');
+	// Layout parameters
+	$slider = get_field( 'acf-options_exhibitions_and_events_slider', 'option' );
+
+}
 
 if ( ! $slider )
 	return;
@@ -22,9 +22,10 @@ if ( ! $slider )
 /**
  * Variables
  */
-global $events;
-$events		= array();
-$wpml_lang	= function_exists('icl_object_id') ? ICL_LANGUAGE_CODE : '';
+global $globals;
+
+$globals[ 'events' ]	= array();
+$wpml_lang				= function_exists( 'icl_object_id' ) ? ICL_LANGUAGE_CODE : '';
 
 foreach ( $slider as $s ) {
 
@@ -32,18 +33,18 @@ foreach ( $slider as $s ) {
 	$item = array();
 
 	// Get slide parameters
-	$type = $s['type'];
+	$type = $s[ 'type' ];
 
 	switch ( $type ) {
 
 		// Event
 		case 'event' :
 
-			$event = $s['event'];
+			$event = $s[ 'event' ];
 
 			if ( $event ) {
-				$item['type']	= 'event';
-				$item['event']	= $event;
+				$item[ 'type' ]		= 'event';
+				$item[ 'event' ]	= $event;
 			}
 
 			break;
@@ -52,13 +53,13 @@ foreach ( $slider as $s ) {
 		case 'custom' :
 
 			// Get custom slide parameters
-			$image		= $s['custom_image'];
-			$title		= $s['custom_title'];
-			$link		= $s['custom_link'];
-			$target		= $s['custom_link_target'];
+			$image		= $s[ 'custom_image' ];
+			$title		= $s[ 'custom_title' ];
+			$link		= $s[ 'custom_link' ];
+			$target		= $s[ 'custom_link_target' ];
 
-			$item['type']	= 'custom';
-			$item['event']	= array(
+			$item[ 'type' ]		= 'custom';
+			$item[ 'event' ]	= array(
 				'image' 	=> $image		? $image		: '',
 				'title' 	=> $title		? $title		: '',
 				'link'		=> $link		? $link			: '',
@@ -69,24 +70,28 @@ foreach ( $slider as $s ) {
 
 	}
 
-	if ( $item['event'] ) {
+	if ( $item[ 'event' ] ) {
 
 		if ( $wpml_lang == 'he' ) {
-			array_unshift($events, $item);
+			array_unshift( $globals[ 'events' ], $item );
 		}
 		else {
-			$events[] = $item;
+			$globals[ 'events' ][] = $item;
 		}
 
 	}
 }
 
-if ( $events ) {
+if ( $globals[ 'events' ] ) {
 
-	// Build event elements
-	get_template_part('views/main/slider/set-event-elements');
+	/**
+	 * Build event elements
+	 */
+	get_template_part( 'views/main/slider/set-event-elements' );
 
-	// Display events slider
-	get_template_part('views/main/slider/display-events-slider');
-	
+	/**
+	 * Display events slider
+	 */
+	get_template_part( 'views/main/slider/display-events-slider' );
+
 }

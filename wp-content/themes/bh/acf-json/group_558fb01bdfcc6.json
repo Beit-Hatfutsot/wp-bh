@@ -395,6 +395,28 @@
             "endpoint": 0
         },
         {
+            "key": "field_5a37cb63c1223",
+            "label": "Exhibitions Page",
+            "name": "acf-options_exhibitions_page",
+            "type": "post_object",
+            "instructions": "Used to display relevant event categories in the website menus. This field can be specified for only one language, the rest of the languages ​​will be updated automatically",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
             "key": "field_53b03b1ebef28",
             "label": "Events Page",
             "name": "acf-options_events_page",
@@ -479,5 +501,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505211400
+    "modified": 1513702060
 }

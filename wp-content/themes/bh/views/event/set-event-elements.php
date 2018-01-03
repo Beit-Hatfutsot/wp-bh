@@ -4,7 +4,7 @@
  *
  * @author 		Beit Hatfutsot
  * @package 	bh/views/event
- * @version     2.2
+ * @version     2.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -12,11 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * Variables
  */
-global $sticky_events_ids, $events, $sorted_events, $lang;
+global $globals;
+global $sorted_events, $lang;
 
-$locale			= $wpdb->get_var("SELECT default_locale FROM {$wpdb->prefix}icl_languages WHERE code='{$lang}'");
-$today			= date_i18n('Ymd');
-$filtered_date	= ( isset( $_POST['event_date'] ) && $_POST['event_date'] ) ? date_create_from_format( 'd/m/Y', $_POST['event_date'] )->format('Ymd') : '';
+$locale			= $wpdb->get_var( "SELECT default_locale FROM {$wpdb->prefix}icl_languages WHERE code='{$lang}'" );
+$today			= date_i18n( 'Ymd' );
+$filtered_date	= ( isset( $_POST[ 'event_date' ] ) && $_POST[ 'event_date' ] ) ? date_create_from_format( 'd/m/Y', $_POST[ 'event_date' ] )->format( 'Ymd' ) : '';
 
 // Set $sorted_events - array of event elements seperated into sticky, current, future and past events
 $sorted_events = array(
@@ -26,14 +27,20 @@ $sorted_events = array(
 	'past'		=> array()
 );
 
-if ( $events ) {
+// Check if ACF exists
+if ( ! function_exists( 'get_field' ) )
+	// return
+	return;
+
+if ( $globals[ 'events' ] ) {
 
 	// Fill in $sorted_events array
-	foreach ( $events as $event ) {
-		$start_date		= get_field( 'acf-event_start_date',	$event->ID );
-		$end_date		= get_field( 'acf-event_end_date',		$event->ID );
+	foreach ( $globals[ 'events' ] as $event ) {
 
-		if ( $sticky_events_ids && in_array( $event->ID, $sticky_events_ids ) ) {
+		$start_date	= get_field( 'acf-event_start_date',	$event->ID );
+		$end_date	= get_field( 'acf-event_end_date',		$event->ID );
+
+		if ( $globals[ 'sticky_events_ids' ] && in_array( $event->ID, $globals[ 'sticky_events_ids' ] ) ) {
 			// Sticky event
 			$when = 'sticky';
 		}
@@ -66,7 +73,8 @@ if ( $events ) {
 		);
 
 		// Insert event into $sorted_events arrays accordingly
-		$sorted_events[$when][] = BH_set_event_element( $event_data );
+		$sorted_events[ $when ][] = BH_set_event_element( $event_data );
+
 	}
 
 }

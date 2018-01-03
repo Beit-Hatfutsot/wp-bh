@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BH Website 1.0\n"
-"POT-Creation-Date: 2017-11-20 09:48+0200\n"
-"PO-Revision-Date: 2017-11-20 09:49+0200\n"
+"POT-Creation-Date: 2017-12-19 18:08+0200\n"
+"PO-Revision-Date: 2017-12-19 18:09+0200\n"
 "Last-Translator: Nir Goldberg <nir@htmline.com>\n"
 "Language-Team: BH online <nirg@bh.org.il>\n"
 "Language: he_IL\n"
@@ -30,11 +30,19 @@ msgstr "חיפוש בחנות..."
 msgid "Search in site..."
 msgstr "חיפוש באתר..."
 
-#: views/event/events-filters.php:22
+#: views/event/events-filters.php:83
+msgid "All Exhibitions"
+msgstr "כל התערוכות"
+
+#: views/event/events-filters.php:88
+msgid "All Events"
+msgstr "כל האירועים"
+
+#: views/event/events-filters.php:93
 msgid "All Categories"
 msgstr "כל הקטגוריות"
 
-#: views/event/events-filters.php:36
+#: views/event/events-filters.php:125
 msgid "Start from"
 msgstr "החל מתאריך"
 
@@ -169,11 +177,11 @@ msgstr "קראתי ואני מסכים/מה עם "
 msgid "terms & conditions"
 msgstr "תנאי השימוש"
 
-#: views/donate/form-details.php:118 views/donate/form-amount.php:96
+#: views/donate/form-details.php:118 views/donate/form-amount.php:97
 msgid "Continue"
 msgstr "המשך"
 
-#: views/donate/lobby.php:29
+#: views/donate/lobby.php:30
 msgid "Donate"
 msgstr "תרומה"
 
@@ -267,77 +275,52 @@ msgid ""
 "will be automatically updated."
 msgstr "גרסת הדפסה של התעודה תישלח אליך, שמך והתאריך יתווספו באופן אוטומטי."
 
-#: views/donate/process-options.php:5
+#: views/donate/form-amount.php:96
+msgid "Please select a donation amount, or enter a custom sum."
+msgstr ""
+
+#: views/donate/process-options.php:6
 msgctxt "donation-tabs-default"
 msgid "Online"
 msgstr "אונליין"
 
-#: views/donate/process-options.php:6
+#: views/donate/process-options.php:7
 msgctxt "donation-tabs-default"
 msgid "By Check"
 msgstr "צ'ק"
 
-#: views/donate/process-options.php:7
+#: views/donate/process-options.php:8
 msgctxt "donation-tabs-default"
 msgid "Bank Transfer"
 msgstr "העברה בנקאית"
 
-#: views/donate/process-options.php:8
+#: views/donate/process-options.php:9
 msgctxt "donation-tabs-default"
 msgid "By Phone"
 msgstr "טלפון"
 
-#: views/donate/process-options.php:12
+#: views/donate/process-options.php:13
 msgctxt "donation-tabs-mobile"
 msgid "Check"
 msgstr "צ'ק"
 
-#: views/donate/process-options.php:13
+#: views/donate/process-options.php:14
 msgctxt "donation-tabs-mobile"
 msgid "Bank"
 msgstr "העברה"
 
-#: views/donate/process-options.php:14
+#: views/donate/process-options.php:15
 msgctxt "donation-tabs-mobile"
 msgid "Phone"
 msgstr "טלפון"
 
-#: views/donate/process-options.php:35
+#: views/donate/process-options.php:36
 msgid "Your gift is tax deductible in Israel."
 msgstr "התרומה מוכרת לצרכי מס בישראל."
 
-#: views/donate/process-options.php:36
+#: views/donate/process-options.php:38
 msgid "Make a tax deductible gift in the United States instead"
 msgstr "למעבר לביצוע תרומה מוכרת לצרכי מס בארה\"ב"
-
-#: views/donate/process-options.php:51
-msgid "Please make check payable to Beit Hatfutsot and send to:"
-msgstr "אנא כתבו צ'ק לפקודת בית התפוצות ושלחו אלינו לכתובת:"
-
-#: views/donate/process-options.php:58
-#, php-format
-msgid ""
-"P.O.B %1$s Tel-Aviv<br/>%2$s Israel<br/>For more information please contact "
-"us at %3$s"
-msgstr ""
-"ת.ד. %1$s תל-אביב<br/>%2$s ישראל<br/>למידע נוסף ניתן ליצור איתנו קשר: %3$s"
-
-#: views/donate/process-options.php:66
-msgid "If you wish to make a bank transfer from within Israel:"
-msgstr "אם ברצונך לבצע העברה בנקאית מישראל:"
-
-#: views/donate/process-options.php:72
-#, php-format
-msgid "Bank Mizrahi-Tefahot<br/>Branch: %1$s<br/>Account: %2$s"
-msgstr "בנק מזרחי-טפחות<br/>סניף: %1$s<br/>חשבון: %2$s"
-
-#: views/donate/process-options.php:77
-msgid "For more information please contact us at"
-msgstr "למידע נוסף אנא צרו עמנו קשר:"
-
-#: views/donate/process-options.php:82
-msgid "Please call us on this number:"
-msgstr "אנא התקשרו למספר הזה:"
 
 #: views/donate/process-flow.php:17
 msgid "Details"
@@ -1011,6 +994,27 @@ msgstr "אנא שלחו את הבקשה באמצעות כרטיס אשראי א�
 #: functions/pelecard/payment-result.php:186
 msgid "General Error."
 msgstr "שגיאה כללית."
+
+#~ msgid "Please make check payable to Beit Hatfutsot and send to:"
+#~ msgstr "אנא כתבו צ'ק לפקודת בית התפוצות ושלחו אלינו לכתובת:"
+
+#~ msgid ""
+#~ "P.O.B %1$s Tel-Aviv<br/>%2$s Israel<br/>For more information please "
+#~ "contact us at %3$s"
+#~ msgstr ""
+#~ "ת.ד. %1$s תל-אביב<br/>%2$s ישראל<br/>למידע נוסף ניתן ליצור איתנו קשר: %3$s"
+
+#~ msgid "If you wish to make a bank transfer from within Israel:"
+#~ msgstr "אם ברצונך לבצע העברה בנקאית מישראל:"
+
+#~ msgid "Bank Mizrahi-Tefahot<br/>Branch: %1$s<br/>Account: %2$s"
+#~ msgstr "בנק מזרחי-טפחות<br/>סניף: %1$s<br/>חשבון: %2$s"
+
+#~ msgid "For more information please contact us at"
+#~ msgstr "למידע נוסף אנא צרו עמנו קשר:"
+
+#~ msgid "Please call us on this number:"
+#~ msgstr "אנא התקשרו למספר הזה:"
 
 #~ msgid "ENews"
 #~ msgstr "ניוזלטר"

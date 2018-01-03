@@ -4,7 +4,7 @@
  *
  * @author		Beit Hatfutsot
  * @package		bh/functions
- * @version		2.6.0
+ * @version		2.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -154,51 +154,95 @@ add_filter( 'wp_nav_menu_objects', 'BH_submenu_limit', 10, 2 );
  *
  * @param	$current_object_id (int) Current object ID. if set the current menu item will be marked
  * @param	$show_events (bool) If TRUE get child events for each event category
+ * @param	$category_type (string) Category type (exhibition/event)
  * @return	(string) HTML LIs structure
  */
-function BH_get_event_categories_menu( $current_object_id, $show_events ) {
+function BH_get_event_categories_menu( $category_type, $current_object_id, $show_events ) {
 
 	/**
 	 * Variables
 	 */
 	$output	= '';
 
+	//Get event categories
 	$args	= array(
-		'orderby' => 'term_order'
+		'taxonomy'	=> 'event_category',
+		'orderby'	=> 'term_order'
 	);
 
-	if ( function_exists( 'BH_get_cached_terms' ) )
-		$categories = BH_get_cached_terms( 'event_category', $args );
-	else
-		$categories = get_terms( 'event_category', $args );
+	if ( $category_type ) {
 
-	foreach ( $categories as $cat ) {
-		
-		if ( function_exists( 'BH_get_cached_event_category_events' ) )
-			$events = BH_get_cached_event_category_events( $cat );
-		else
-			$events = BH_get_event_category_events( $cat->term_id );
+		$args[ 'meta_query' ] = array(
+			array(
+				'key'		=> 'acf-event_category_type',
+				'value'		=> $category_type,
+				'compare'	=> '='
+			)
+		);
 
-		if ( $show_events && $events ) {
+	}
+	$categories = get_terms( $args );
 
-			$events_list		= '';		// Events LIs
-			$current_category	= false;	// Indicates whether the current category is a parent menu item
+	if ( $categories ) {
 
-			foreach ( $events as $event ) {
+		foreach ( $categories as $cat ) {
 
-				if ( $event->ID == $current_object_id ) $current_category = true;
-				$events_list .= '<li class="menu-item menu-item-type-post_type menu-item-object-event menu-item-999' . $event->ID . ' ' . ( ( $event->ID == $current_object_id ) ? 'current-menu-item current_page_item' : '' ) . '"><a href="' . get_permalink( $event->ID ) . '" item="999' . $event->ID . '">' . $event->post_title . '</a></li>';
+			$category_classes = array( 'menu-item', 'menu-item-type-taxonomy', 'menu-item-object-event_category', 'menu-item-999' . $cat->term_id );
 
+			if ( $cat->term_id == $current_object_id ) {
+				$category_classes[] = 'current-menu-item';
+				$category_classes[] = 'current_page_item';
+			}
+			elseif ( is_singular( 'event' ) && has_term( $cat->term_id, 'event_category' ) ) {
+				$category_classes[]	= 'current-menu-ancestor';
+				$category_classes[]	= 'current-menu-parent';
 			}
 
-			$output .=
-				'<li class="menu-item menu-item-type-taxonomy menu-item-object-event_category menu-item-has-children menu-item-999' . $cat->term_id . ' ' . ( ($cat->term_id == $current_object_id || $current_category) ? 'current-menu-item current_page_item' : '' ) . '"><a href="' . get_term_link( $cat ) . '" item="999' . $cat->term_id . '">' . $cat->name . '</a>' .
-					'<ul class="sub-menu">' . $events_list . '</ul>' .
-				'</li>';
-			
-		} elseif ( $events ) {
+			// Get current and future events
+			$events = BH_get_event_category_events( $cat->term_id );
 
-			$output .= '<li class="menu-item menu-item-type-taxonomy menu-item-object-event_category menu-item-999' . $cat->term_id . ' ' . ( ($cat->term_id == $current_object_id) ? 'current-menu-item current_page_item' : '' ) . '"><a href="' . get_term_link( $cat ) . '" item="999' . $cat->term_id . '">' . $cat->name . '</a></li>';
+			if ( $events ) {
+
+				if ( $show_events ) {
+
+					$events_list		= '';		// Events LIs
+					$current_category	= false;	// Indicates whether the current category is a parent menu item
+					$category_classes[]	= 'menu-item-has-children';
+
+					foreach ( $events as $event ) {
+
+						$event_classes = array( 'menu-item', 'menu-item-type-post_type', 'menu-item-object-event', 'menu-item-999' . $event->ID );
+
+						if ( $event->ID == $current_object_id ) {
+
+							$event_classes[]	= 'current-menu-item';
+							$event_classes[]	= 'current_page_item';
+							
+							if ( ! in_array( 'current-menu-ancestor', $category_classes ) ) {
+
+								$category_classes[]	= 'current-menu-ancestor';
+								$category_classes[]	= 'current-menu-parent';
+
+							}
+
+						}
+
+						$events_list .=
+							'<li class="' . implode( ' ', $event_classes ) . '">
+								<a href="' . get_permalink( $event->ID ) . '" item="999' . $event->ID . '">' . $event->post_title . '</a>
+							</li>';
+
+					}
+
+				}
+
+				$output .=
+					'<li class="' . implode( ' ', $category_classes ) . '">
+						<a href="' . get_term_link( $cat ) . '" item="999' . $cat->term_id . '">' . $cat->name . '</a>' .
+						( ( $show_events && $events_list ) ? '<ul class="sub-menu">' . $events_list . '</ul>' : '' ) .
+					'</li>';
+
+			}
 
 		}
 
@@ -293,62 +337,96 @@ function BH_add_event_categories_submenu( $items, $args ) {
 		// return
 		return $items;
 
-	/**
-	 * Variables
-	 */
-	$parent_item		= '';
-	$parent_item_key	= '';
-	$categories_list	= array();
+	foreach ( $args->add_events_list_under as $events_page ) {
 
-	// Get parent item and parent item key
-	foreach ( $items as $key => $item ) {
+		/**
+		 * Variables
+		 */
+		$categories_type	= $events_page[ 'type' ];
+		$page_id			= $events_page[ 'id' ];
 
-		if ( $item->object_id == $args->add_events_list_under ) {
-			$parent_item = $item;
-			$parent_item_key = $key;
+		foreach ( $items as $key => $item ) {
 
-			break;
+			if ( $item->object_id == $page_id ) {
+				BH_add_event_categories_submenu_items( $items, $key, $categories_type );
+
+				break;
+			}
+
 		}
 
 	}
 
+	// return
+	return $items;
+
+}
+add_filter( 'wp_nav_menu_objects', 'BH_add_event_categories_submenu', 10, 2 );
+
+/**
+ * BH_add_event_categories_submenu_items
+ *
+ * This function retrieves array of item objects containing event categories associated with a specific category type
+ * and positioned as the direct children of $items[ $parent_item_key ]
+ *
+ * @param	$items (array) The menu items, sorted by each menu item's menu order
+ * @param	$parent_item_key (int) Parent menu item key within $items
+ * @param	$categories_type (string) The categories type associated with the relevant event categories
+ * @return	N/A
+ */
+function BH_add_event_categories_submenu_items( &$items, $parent_item_key, $categories_type ) {
+
 	if ( ! $parent_item_key )
 		// return
-		return $items;
+		return;
 
-	// Add menu-item-has-children indicator
-	if ( ! in_array( 'menu-item-has-children', $items[ $parent_item_key ]->classes ) )
-		$items[ $parent_item_key ]->classes[] = 'menu-item-has-children';
+	/**
+	 * Variables
+	 */
+	$categories_list = array();
 
 	// Get event categories
-	$category_args = array(
-		'orderby' => 'term_order'
+	$args = array(
+		'taxonomy'	=> 'event_category',
+		'orderby'	=> 'term_order'
 	);
 
-	if ( function_exists( 'BH_get_cached_terms' ) )
-		$categories = BH_get_cached_terms( 'event_category', $category_args );
-	else
-		$categories = get_terms( 'event_category', $category_args );
+	if ( $categories_type ) {
+		$args[ 'meta_query' ] = array(
+			array(
+				'key'		=> 'acf-event_category_type',
+				'value'		=> $categories_type,
+				'compare'	=> '='
+			)
+		);
+	}
+	$categories = get_terms( $args );
+
+	if ( ! $categories )
+		// return
+		return;
 
 	// Build categories list
 	$index = 0;
 
 	foreach ( $categories as $cat ) {
 
-		if ( function_exists( 'BH_get_cached_event_category_events' ) )
-			$events_exist = BH_get_cached_event_category_events( $cat );
-		else
-			$events_exist = BH_get_event_category_events( $cat->term_id );
+		$events_exist = BH_get_event_category_events( $cat->term_id );
 
 		if ( $events_exist ) {
+
+			// Add menu-item-has-children indicator
+			if ( ! in_array( 'menu-item-has-children', $items[ $parent_item_key ]->classes ) ) {
+				$items[ $parent_item_key ]->classes[] = 'menu-item-has-children';
+			}
 
 			$menu_item = new stdClass();
 
 			$menu_item->ID					= '999' . $cat->term_id;
 			$menu_item->post_status			= 'publish';
-			$menu_item->post_parent			= $parent_item->object_id;
+			$menu_item->post_parent			= $items[ $parent_item_key ]->object_id;
 			$menu_item->post_type			= 'nav_menu_item';
-			$menu_item->menu_item_parent	= $parent_item->ID;
+			$menu_item->menu_item_parent	= $items[ $parent_item_key ]->ID;
 			$menu_item->object_id			= $cat->term_id;
 			$menu_item->object				= 'event_category';
 			$menu_item->type				= 'taxonomy';
@@ -361,25 +439,21 @@ function BH_add_event_categories_submenu( $items, $args ) {
 			if ( is_tax( 'event_category', $cat->term_id ) ) {
 
 				// Modify parent item classes
-				$items[ $parent_item_key ]->classes[]	= 'current-menu-ancestor';
-				$items[ $parent_item_key ]->classes[]	= 'current-menu-parent';
+				$items[ $parent_item_key ]->classes[] = 'current-menu-ancestor';
+				$items[ $parent_item_key ]->classes[] = 'current-menu-parent';
 				
 				// Add classes to current item
-				$menu_item->classes[]					= 'current-menu-item';
+				$menu_item->classes[] = 'current-menu-item';
 
-			} elseif ( is_singular( 'event' ) ) {
+			} elseif ( is_singular( 'event' ) && has_term( $cat->term_id, 'event_category' ) ) {
 
 				// Modify parent item classes
 				if ( ! in_array( 'current-menu-ancestor', $items[ $parent_item_key ]->classes ) )
-					$items[ $parent_item_key ]->classes[]	= 'current-menu-ancestor';
+					$items[ $parent_item_key ]->classes[] = 'current-menu-ancestor';
 
-				if ( has_term( $cat->term_id, 'event_category' ) ) {
-
-					// Add classes to current item
-					$menu_item->classes[]				= 'current-menu-ancestor';
-					$menu_item->classes[]				= 'current-menu-parent';
-
-				}
+				// Add classes to current item
+				$menu_item->classes[] = 'current-menu-ancestor';
+				$menu_item->classes[] = 'current-menu-parent';
 
 			}
 
@@ -390,14 +464,10 @@ function BH_add_event_categories_submenu( $items, $args ) {
 	}
 
 	// Merge categories list into $items
-	if ( $parent_item_key && $categories_list )
+	if ( $categories_list )
 		array_splice( $items, $parent_item_key, 0, $categories_list );
 
-	// return
-	return $items;
-
 }
-add_filter( 'wp_nav_menu_objects', 'BH_add_event_categories_submenu', 10, 2 );
 
 /**
  * BH_add_blog_categories_submenu

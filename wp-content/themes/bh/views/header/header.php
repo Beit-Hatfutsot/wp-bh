@@ -4,7 +4,7 @@
  *
  * @author		Beit Hatfutsot
  * @package		bh/views/header
- * @version		2.6.0
+ * @version		2.6.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -101,13 +101,6 @@ if ( ! $bh_sites )
 
 			<?php
 				/**
-				 * Display the featured page
-				 */
-				get_template_part( 'views/header/header-featured-page' );
-			?>
-
-			<?php
-				/**
 				 * Display the logo
 				 */
 				get_template_part( 'views/components/logo' );
@@ -124,6 +117,13 @@ if ( ! $bh_sites )
 				<?php include( locate_template( 'views/header/header-elements.php' ) ); ?>
 
 			</div><!-- .header-elements -->
+
+			<?php
+				/**
+				 * Display the featured page
+				 */
+				get_template_part( 'views/header/header-featured-page' );
+			?>
 
 		</div>
 	</div><!-- .header-mid -->
