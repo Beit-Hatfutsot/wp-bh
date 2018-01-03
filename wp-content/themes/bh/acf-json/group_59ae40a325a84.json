@@ -448,8 +448,8 @@
             "key": "field_5a154ed3a0fb7",
             "label": "Send donation certificate tasks to",
             "name": "certificate_tasks_recipient",
-            "type": "email",
-            "instructions": "",
+            "type": "text",
+            "instructions": "You can enter multiple email addresses, separated with a comma (,)",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -460,7 +460,8 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -472,7 +473,7 @@
             }
         ]
     ],
-    "menu_order": 18,
+    "menu_order": 16,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -480,5 +481,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1511794156
+    "modified": 1513514097
 }
