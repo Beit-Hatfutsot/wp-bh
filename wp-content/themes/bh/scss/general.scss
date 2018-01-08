@@ -1354,6 +1354,12 @@ body > header {
 	color: #333333;
 	font-size: 16px;
 
+	label.required:after {
+		content: "*";
+		margin-left: 5px;
+		color: $red-color2;
+	}
+
 	p {
 		position: relative;
 		display: inline-block;
@@ -1383,6 +1389,10 @@ body > header {
   		margin: 0;
   	}
 
+	input[type="file"] {
+		width: 100%;
+	}
+
   	.wpcf7-form-control-wrap {
   		display: inline-block;
   	}
@@ -1410,6 +1420,10 @@ body > header {
           left: 55px; 
   	  	}
   	  }
+	}
+
+	ol {
+		list-style: decimal;
 	}
 
     .newsletter {
@@ -1442,6 +1456,10 @@ body > header {
           top: -5px;
   	  	}
   	  }
+	}
+
+	.accept-declaration {
+		margin-left: 1em;
 	}
 
 	.message {
