@@ -24,7 +24,7 @@
         var $amountAlert = $('#error-msg--amount'),
             $continueButton = $('#cont-to-details');
 
-        if ( $donationAmount > 5 ) {
+        if ( $donationAmount >= 5 && $donationAmount <= 40000 ) {
             $amountAlert.hide();
             $continueButton.attr('disabled', false);
         } else {

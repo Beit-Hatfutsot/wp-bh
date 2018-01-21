@@ -1,26 +1,271 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BH Website 1.0\n"
-"POT-Creation-Date: 2017-12-19 18:08+0200\n"
-"PO-Revision-Date: 2017-12-19 18:09+0200\n"
-"Last-Translator: Nir Goldberg <nir@htmline.com>\n"
+"POT-Creation-Date: 2018-01-21 22:44+0200\n"
+"PO-Revision-Date: 2018-01-21 22:47+0200\n"
+"Last-Translator: Itay Banner <itay@ibanner.co.il>\n"
 "Language-Team: BH online <nirg@bh.org.il>\n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_html__;esc_html_e;"
 "esc_html_x:1,2c\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: .git\n"
 "X-Poedit-SearchPathExcluded-1: css\n"
 "X-Poedit-SearchPathExcluded-2: js\n"
 "X-Poedit-SearchPathExcluded-3: scss\n"
 "X-Poedit-SearchPathExcluded-4: node_modules\n"
-"X-Poedit-SearchPath-0: .\n"
+
+#: functions/donations.php:157
+msgid "Certificate of Appreciation example"
+msgstr "תעודת הוקרה לדוגמה"
+
+#: functions/donations.php:158
+msgid "In Loving Memory Certificate example"
+msgstr "תעודת תרומה לזכר אדם"
+
+#: functions/donations.php:159
+msgid "Thank You Certificate example"
+msgstr "תעודת \"תודתנו\" - לדוגמה"
+
+#: functions/donations.php:229
+msgid "Certificate of Appreciation"
+msgstr "תעודת הוקרה"
+
+#: functions/donations.php:230
+msgid "In Loving memory of"
+msgstr "תרומה לזכר אדם"
+
+#: functions/donations.php:231
+msgid "Thank You"
+msgstr "תודתנו"
+
+#: functions/menus.php:18
+msgid "Main Menu"
+msgstr ""
+
+#: functions/menus.php:19
+msgid "Education Menu"
+msgstr ""
+
+#: functions/menus.php:20
+msgid "Shop Menu"
+msgstr ""
+
+#: functions/pelecard/payment-result.php:152
+msgid "Thank you for your request!"
+msgstr "תודה רבה על פנייתכם!"
+
+#: functions/pelecard/payment-result.php:153
+msgid "An invoice for your payment will be sent to your email address shortly."
+msgstr "חשבונית תישלח בהקדם לכתובת המייל שציינתם."
+
+#: functions/pelecard/payment-result.php:158
+msgid "Payment failed"
+msgstr "התשלום נכשל"
+
+#: functions/pelecard/payment-result.php:164
+#: functions/pelecard/payment-result.php:172
+#: functions/pelecard/payment-result.php:179
+#: functions/pelecard/payment-result.php:186
+msgid "Error #"
+msgstr "שגיאה מספר "
+
+#: functions/pelecard/payment-result.php:164
+msgid "Wrong ID or CVV."
+msgstr "מספר ת.ז. או CVV שגוי."
+
+#: functions/pelecard/payment-result.php:165
+#: functions/pelecard/payment-result.php:173
+msgid "Please correct the errors and submit the request again."
+msgstr "אנא תקנו את השגיאות ושלחו שוב את הבקשה."
+
+#: functions/pelecard/payment-result.php:172
+msgid "Wrong credit card number."
+msgstr "מספר כרטיס אשראי שגוי."
+
+#: functions/pelecard/payment-result.php:179
+msgid "Unsupported credit card."
+msgstr "כרטיס אשראי לא נתמך."
+
+#: functions/pelecard/payment-result.php:180
+msgid "Please submit the request again using a different credit card."
+msgstr "אנא שלחו את הבקשה באמצעות כרטיס אשראי אחר."
+
+#: functions/pelecard/payment-result.php:186
+msgid "General Error."
+msgstr "שגיאה כללית."
+
+#: functions/pelecard/pelecard-api.php:46
+msgid "Transaction ID"
+msgstr "מזהה עסקה"
+
+#: functions/scripts-n-styles.php:150 views/donate/form-amount.php:78
+msgid "Bar Mitzvah boy Mordechai ben Ester"
+msgstr "חתן בר המצווה מרדכי בן אסתר"
+
+#: functions/scripts-n-styles.php:151
+msgid "Our beloved grandmother Bracha Cohen"
+msgstr "סבתנו היקרה ברכה כהן ז\"ל"
+
+#: functions/scripts-n-styles.php:152
+msgid "To Barak Aharoni with appreciation of your good work"
+msgstr "לברק אהרוני על פועלו"
+
+#: functions/template.php:337
+msgid "Newsletter"
+msgstr "ניוזלטר"
+
+#: functions/template.php:598
+msgid "Load more"
+msgstr "תמונות נוספות"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:189
+msgid "Your Email:"
+msgstr "כתובת מייל:"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:190
+msgid "Email Address"
+msgstr "כתובת מייל"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:191
+msgid "Email address is missing or incorrect"
+msgstr "כתובת מייל שגויה או חסרה"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:195
+msgid "Choose Language:"
+msgstr "בחרו שפה:"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:204
+msgid "Please check at least one newsletter name"
+msgstr "יש לבחור לפחות שפה אחת"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:206
+msgid "Register"
+msgstr "הרשמה"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:207
+msgid "No thanks"
+msgstr "לא תודה"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:215
+msgid "General error, please try again later"
+msgstr "שגיאה כללית, אנא נסו שוב מאוחר יותר"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:216
+msgid "Registration has been failed, please try again later"
+msgstr "הרישום נכשל, אנא נסו שנית מאוחר יותר"
+
+#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:217
+msgid "Registration was successful, thank you!"
+msgstr "הרישום בוצע בהצלחה, תודה רבה!"
+
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:97
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:175
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:311
+msgid "Thumbnail"
+msgstr ""
+
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:101
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:180
+msgid "Upload/Add image"
+msgstr ""
+
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:102
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:181
+msgid "Remove image"
+msgstr ""
+
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:125
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:200
+msgid "Choose an image"
+msgstr ""
+
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:127
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:202
+msgid "Use image"
+msgstr ""
+
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:256
+msgid ""
+"Product occasions for your store can be managed here. To see more occasions "
+"listed click the \"screen options\" link at the top of the page."
+msgstr ""
+
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:266
+msgid ""
+"Product artists for your store can be managed here. To see more artists "
+"listed click the \"screen options\" link at the top of the page."
+msgstr ""
+
+#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:279
+msgid "Image"
+msgstr ""
+
+#: functions/woocommerce/widgets/woocommerce-recently-viewed.php:18
+msgid "RECENTLY<br />VIEWED"
+msgstr "נצפו<br />לאחרונה"
+
+#: functions/woocommerce/woocommerce-functions.php:165
+msgid "Home"
+msgstr "דף הבית"
+
+#: functions/woocommerce/woocommerce-functions.php:547
+msgid "Show product filters"
+msgstr "הצג מסנני מוצרים"
+
+#: functions/woocommerce/woocommerce-functions.php:547
+msgid "Hide product filters"
+msgstr "הסתר מסנני מוצרים"
+
+#: functions/woocommerce/woocommerce-functions.php:578
+msgid "Filter products"
+msgstr "סנן מוצרים"
+
+#: functions/woocommerce/woocommerce-functions.php:770
+msgid ""
+"<b>IMPORTANT NOTIFICATION:</b> Due to the Israeli postal office being unable "
+"to provide our customers up to date order tracking and delivery within "
+"guaranteed time range, until further notice we no longer offer regular "
+"shipping. We apologise for any inconvenience to our customers."
+msgstr ""
+"<b>הודעה חשובה:</b> לאור חוסר היכולת של דואר ישראל לספק ללקוחותינו משלוחים "
+"בטווח הזמן המובטח והקושי במעקב אחר חבילות וקבלת מענה לפניות, אנו נאלצים "
+"להפסיק להציע משלוח רשום רגיל. עם לקוחותינו הסליחה."
+
+#: functions/woocommerce/woocommerce-functions.php:790
+msgid "Checkout: Please fill your billing address and shipping address"
+msgstr "קופה: אנא הזינו פרטים למשלוח חשבונית וכתובת למשלוח"
+
+#: functions/woocommerce/woocommerce-functions.php:804
+msgid "Checkout: Please fill your payment details"
+msgstr "קופה: אנא הזינו פרטי אמצעי תשלום"
+
+#: functions/woocommerce/woocommerce-functions.php:819
+msgid "Thank you. Your order has been received"
+msgstr "תודה רבה. הזמנתכם התקבלה בהצלחה"
+
+#: functions/woocommerce/woocommerce-functions.php:833
+msgid "Secured Billing: Please choose your preferred billing method"
+msgstr "אמצעי חיוב מאובטח: אנא בחרו את האמצעי המועדף עליכם"
+
+#: functions/woocommerce/woocommerce-functions.php:1232
+msgid "Most Popular"
+msgstr "הפופולרי ביותר"
+
+#: functions/woocommerce/woocommerce-functions.php:1233
+msgid "Price: Low to High"
+msgstr "מחיר: נמוך לגבוה"
+
+#: functions/woocommerce/woocommerce-functions.php:1234
+msgid "Price: High to Low"
+msgstr "מחיר: גבוה לנמוך"
 
 #: searchform.php:24
 msgid "Search in shop..."
@@ -30,71 +275,128 @@ msgstr "חיפוש בחנות..."
 msgid "Search in site..."
 msgstr "חיפוש באתר..."
 
-#: views/event/events-filters.php:83
-msgid "All Exhibitions"
-msgstr "כל התערוכות"
+#: views/components/meta-author.php:43 views/components/meta-single.php:26
+#: views/woocommerce/single-product/single-product-section1-title.php:22
+msgid "By "
+msgstr "על ידי "
 
-#: views/event/events-filters.php:88
-msgid "All Events"
-msgstr "כל האירועים"
+#: views/components/meta-single.php:34
+msgid "Comments"
+msgstr "תגובות"
 
-#: views/event/events-filters.php:93
-msgid "All Categories"
-msgstr "כל הקטגוריות"
+#: views/components/not-found.php:3
+msgid "No Records Found"
+msgstr "לא נמצאו תוצאות"
 
-#: views/event/events-filters.php:125
-msgid "Start from"
-msgstr "החל מתאריך"
+#: views/components/not-found.php:4
+msgid "Return to"
+msgstr "חזרה"
 
-#: views/event/series.php:47
-msgid "Purchase"
-msgstr "לרכישה"
+#: views/components/not-found.php:4
+msgid "homepage"
+msgstr "לדף הבית"
 
-#: views/sidebar/sidebar-blog.php:140
-msgid "Recent Posts"
-msgstr "פוסטים אחרונים"
-
-#: views/sidebar/sidebar-blog.php:157
-msgid "Archives"
-msgstr "ארכיון"
-
-#: views/sidebar/sidebar-shop-wswu-banner.php:24
-#: views/woocommerce/single-product/single-product-section2-banner.php:28
-msgid ""
-"<strong>Why shop with us?</strong> There are lots of reasons. For instance, "
-msgstr "<strong>למה לקנות אצלנו?</strong> יש הרבה סיבות. למשל, "
-
-#: views/sidebar/sidebar-shop-wswu-banner.php:27
-#: views/woocommerce/single-product/single-product-section2-banner.php:31
-msgid "And there are more"
-msgstr "ויש עוד סיבות"
-
-#: views/donate/process-top.php:4
-msgctxt "donation-quote"
-msgid "Deeds of giving are the very foundations of the world"
-msgstr "לזכור את העבר, לחיות את ההווה, להאמין בעתיד"
-
-#: views/donate/process-top.php:5
-msgctxt "donation-quote"
-msgid "Mishna, Pirkei Avot 1:2"
-msgstr "אבא קובנר"
-
-#: views/donate/process-top.php:16
-msgid "Back to support page"
-msgstr "בחזרה לעמוד התרומות הראשי"
-
-#: views/donate/process-top.php:23
-msgid "Thank You for Your Support"
-msgstr "תודה על תרומתך"
-
-#: views/donate/process-top.php:36
-msgid "Donate/Payment Method"
-msgstr "תרומה / שיטת תשלום"
-
-#: views/donate/form-details.php:2 views/donate/form-amount.php:11
+#: views/donate/form-amount.php:11 views/donate/form-details.php:2
 #: views/donate/process-flow.php:16
 msgid "Amount"
 msgstr "סכום"
+
+#: views/donate/form-amount.php:15
+msgid "How much would you like to give? (In NIS)"
+msgstr "כמה ברצונך לתרום?"
+
+#: views/donate/form-amount.php:19
+msgid "Donate 100 Shekels"
+msgstr "לתרום 100 ש\"ח"
+
+#: views/donate/form-amount.php:19 views/donate/form-amount.php:23
+#: views/donate/form-amount.php:27 views/donate/form-amount.php:31
+msgid "NIS"
+msgstr "ש\"ח"
+
+#: views/donate/form-amount.php:19
+msgid "will help expand our Jewish identity outreach program to IDF soldiers"
+msgstr "יעזרו בהרחבת פעילות \"זהות יהודית\" לחיילי צה\"ל"
+
+#: views/donate/form-amount.php:23
+msgid "Donate 200 Shekels"
+msgstr "לתרום 200 ש\"ח"
+
+#: views/donate/form-amount.php:23
+msgid ""
+"will help expand our rich database of Jewish family trees, names and places"
+msgstr ""
+"יעזרו בהעשרת מאגרי המידע שלנו בעיקר בנושא עצי משפחה, שמות משפחה ומקומות"
+
+#: views/donate/form-amount.php:27
+msgid "Donate 500 Shekels"
+msgstr "לתרום 500 ש\"ח"
+
+#: views/donate/form-amount.php:27
+msgid "will go towards developing educational materials for school groups"
+msgstr "יעזרו בפיתוח חומרים חינוכיים עבור כיתות ביה\"ס"
+
+#: views/donate/form-amount.php:31
+msgid "Donate 1000 Shekels"
+msgstr "לתרום 1000 ש\"ח"
+
+#: views/donate/form-amount.php:31
+msgid "will help bring a group of visitors with special needs to Beit Hatfusot"
+msgstr "יעזרו בהבאת קבוצה של מבקרים בעלי צרכים מיוחדים"
+
+#: views/donate/form-amount.php:36
+msgid "I would like this to be a regular annual donation"
+msgstr "אני רוצה שתרומתי תהיה שנתית"
+
+#: views/donate/form-amount.php:40
+msgid "A gift of over 100,000 NIS will be recognized on"
+msgstr "תרומה מעל 100,000 ש\"ח תכניס אתכם אל"
+
+#: views/donate/form-amount.php:40
+msgid "Beit Hatfutsot's central Donor's Wall"
+msgstr "רשימת התורמים בקיר בית התפוצות"
+
+#: views/donate/form-amount.php:45
+msgid "Tribute Gift"
+msgstr "הוקרה"
+
+#: views/donate/form-amount.php:49
+msgid "Print your certificate in honor, memory or support of your loved one"
+msgstr ""
+"שלחו אלי תעודה עבור תרומה לכבוד/לזכר אדם אהוב, או כהוקרת תודה (להדפסה ביתית)"
+
+#: views/donate/form-amount.php:54
+msgid "Tribute Type"
+msgstr "סוג התעודה"
+
+#: views/donate/form-amount.php:65
+msgid "Certificate Language"
+msgstr "שפת התעודה"
+
+#: views/donate/form-amount.php:77
+msgid "Your Text"
+msgstr "הטקסט שלך"
+
+#: views/donate/form-amount.php:77
+msgid "(Up to 50 characters)"
+msgstr "(עד 50 תווים)"
+
+#: views/donate/form-amount.php:89
+msgid ""
+"A Print version of the certificate will be sent to you, your name and date "
+"will be automatically updated."
+msgstr "גרסת הדפסה של התעודה תישלח אליך, שמך והתאריך יתווספו באופן אוטומטי."
+
+#: views/donate/form-amount.php:96
+msgid ""
+"Please select a donation amount, or enter a custom sum between 5 - 40,000 "
+"NIS."
+msgstr ""
+"יש לבחור את אחד מהסכומים לתרומה, או להזין סכום חופשי בין 5 ל- 40,000 ש\"ח"
+
+#: views/donate/form-amount.php:97 views/donate/form-details.php:118
+msgid "Continue"
+msgstr "המשך"
 
 #: views/donate/form-details.php:6
 msgid "Your Details"
@@ -177,107 +479,53 @@ msgstr "קראתי ואני מסכים/מה עם "
 msgid "terms & conditions"
 msgstr "תנאי השימוש"
 
-#: views/donate/form-details.php:118 views/donate/form-amount.php:97
-msgid "Continue"
-msgstr "המשך"
-
 #: views/donate/lobby.php:30
 msgid "Donate"
 msgstr "תרומה"
 
-#: views/donate/form-amount.php:15
-msgid "How much would you like to give? (In NIS)"
-msgstr "כמה ברצונך לתרום?"
+#: views/donate/process-bottom.php:5
+msgid "Financial Information"
+msgstr "מידע פיננסי"
 
-#: views/donate/form-amount.php:19
-msgid "Donate 100 Shekels"
-msgstr "לתרום 100 ש\"ח"
+#: views/donate/process-bottom.php:10
+msgid "Proper Management Approval Document"
+msgstr "אישור ניהול תקין"
 
-#: views/donate/form-amount.php:19 views/donate/form-amount.php:23
-#: views/donate/form-amount.php:27 views/donate/form-amount.php:31
-msgid "NIS"
-msgstr "ש\"ח"
+#: views/donate/process-bottom.php:11
+msgid "IRS public institution & article 46 Approval"
+msgstr "אישור מס הכנסה למוסד ציבורי (סעיף 46)"
 
-#: views/donate/form-amount.php:19
-msgid "will help expand our Jewish identity outreach program to IDF soldiers"
-msgstr "יעזרו בהרחבת פעילות \"זהות יהודית\" לחיילי צה\"ל"
+#: views/donate/process-bottom.php:12
+msgid "Annual Report"
+msgstr "דו\"ח שנתי"
 
-#: views/donate/form-amount.php:23
-msgid "Donate 200 Shekels"
-msgstr "לתרום 200 ש\"ח"
+#: views/donate/process-bottom.php:22
+msgid "Click to download the document"
+msgstr "לחץ להורדת המסמך"
 
-#: views/donate/form-amount.php:23
-msgid ""
-"will help expand our rich database of Jewish family trees, names and places"
-msgstr ""
-"יעזרו בהעשרת מאגרי המידע שלנו בעיקר בנושא עצי משפחה, שמות משפחה ומקומות"
+#: views/donate/process-bottom.php:22
+msgid "File Unavailable"
+msgstr "קובץ לא זמין"
 
-#: views/donate/form-amount.php:27
-msgid "Donate 500 Shekels"
-msgstr "לתרום 500 ש\"ח"
+#: views/donate/process-bottom.php:24
+msgid "(PDF)"
+msgstr "(PDF)"
 
-#: views/donate/form-amount.php:27
-msgid "will go towards developing educational materials for school groups"
-msgstr "יעזרו בפיתוח חומרים חינוכיים עבור כיתות ביה\"ס"
+#: views/donate/process-flow.php:17
+msgid "Details"
+msgstr "פרטים"
 
-#: views/donate/form-amount.php:31
-msgid "Donate 1000 Shekels"
-msgstr "לתרום 1000 ש\"ח"
+#: views/donate/process-flow.php:18
+msgid "Payment"
+msgstr "תשלום"
 
-#: views/donate/form-amount.php:31
-msgid "will help bring a group of visitors with special needs to Beit Hatfusot"
-msgstr "יעזרו בהבאת קבוצה של מבקרים בעלי צרכים מיוחדים"
+#: views/donate/process-flow.php:19
+msgid "Complete"
+msgstr "אישור"
 
-#: views/donate/form-amount.php:36
-msgid "I would like this to be a regular annual donation"
-msgstr "אני רוצה שתרומתי תהיה שנתית"
-
-#: views/donate/form-amount.php:40
-msgid "A gift of over 100,000 NIS will be recognized on"
-msgstr "תרומה מעל 100,000 ש\"ח תכניס אתכם אל"
-
-#: views/donate/form-amount.php:40
-msgid "Beit Hatfutsot's central Donor's Wall"
-msgstr "רשימת התורמים בקיר בית התפוצות"
-
-#: views/donate/form-amount.php:45
-msgid "Tribute Gift"
-msgstr "הוקרה"
-
-#: views/donate/form-amount.php:49
-msgid "Print your certificate in honor, memory or support of your loved one"
-msgstr ""
-"שלחו אלי תעודה עבור תרומה לכבוד/לזכר אדם אהוב, או כהוקרת תודה (להדפסה ביתית)"
-
-#: views/donate/form-amount.php:54
-msgid "Tribute Type"
-msgstr "סוג התעודה"
-
-#: views/donate/form-amount.php:65
-msgid "Certificate Language"
-msgstr "שפת התעודה"
-
-#: views/donate/form-amount.php:77
-msgid "Your Text"
-msgstr "הטקסט שלך"
-
-#: views/donate/form-amount.php:77
-msgid "(Up to 50 characters)"
-msgstr "(עד 50 תווים)"
-
-#: views/donate/form-amount.php:78 functions/scripts-n-styles.php:150
-msgid "Bar Mitzvah boy Mordechai ben Ester"
-msgstr "חתן בר המצווה מרדכי בן אסתר"
-
-#: views/donate/form-amount.php:89
-msgid ""
-"A Print version of the certificate will be sent to you, your name and date "
-"will be automatically updated."
-msgstr "גרסת הדפסה של התעודה תישלח אליך, שמך והתאריך יתווספו באופן אוטומטי."
-
-#: views/donate/form-amount.php:96
-msgid "Please select a donation amount, or enter a custom sum."
-msgstr ""
+#: views/donate/process-flow.php:37
+msgid "&gt;"
+msgstr "&gt;"
 
 #: views/donate/process-options.php:6
 msgctxt "donation-tabs-default"
@@ -322,59 +570,59 @@ msgstr "התרומה מוכרת לצרכי מס בישראל."
 msgid "Make a tax deductible gift in the United States instead"
 msgstr "למעבר לביצוע תרומה מוכרת לצרכי מס בארה\"ב"
 
-#: views/donate/process-flow.php:17
-msgid "Details"
-msgstr "פרטים"
+#: views/donate/process-top.php:4
+msgctxt "donation-quote"
+msgid "Deeds of giving are the very foundations of the world"
+msgstr "לזכור את העבר, לחיות את ההווה, להאמין בעתיד"
 
-#: views/donate/process-flow.php:18
-msgid "Payment"
-msgstr "תשלום"
+#: views/donate/process-top.php:5
+msgctxt "donation-quote"
+msgid "Mishna, Pirkei Avot 1:2"
+msgstr "אבא קובנר"
 
-#: views/donate/process-flow.php:19
-msgid "Complete"
-msgstr "אישור"
+#: views/donate/process-top.php:16
+msgid "Back to support page"
+msgstr "בחזרה לעמוד התרומות הראשי"
 
-#: views/donate/process-flow.php:37
-msgid "&gt;"
-msgstr "&gt;"
+#: views/donate/process-top.php:23
+msgid "Thank You for Your Support"
+msgstr "תודה על תרומתך"
 
-#: views/donate/process-bottom.php:5
-msgid "Financial Information"
-msgstr "מידע פיננסי"
+#: views/donate/process-top.php:36
+msgid "Donate/Payment Method"
+msgstr "תרומה / שיטת תשלום"
 
-#: views/donate/process-bottom.php:10
-msgid "Proper Management Approval Document"
-msgstr "אישור ניהול תקין"
+#: views/event/events-filters.php:86
+msgid "All Exhibitions"
+msgstr "כל התערוכות"
 
-#: views/donate/process-bottom.php:11
-msgid "IRS public institution & article 46 Approval"
-msgstr "אישור מס הכנסה למוסד ציבורי (סעיף 46)"
+#: views/event/events-filters.php:91
+msgid "All Events"
+msgstr "כל האירועים"
 
-#: views/donate/process-bottom.php:12
-msgid "Annual Report"
-msgstr "דו\"ח שנתי"
+#: views/event/events-filters.php:96
+msgid "All Categories"
+msgstr "כל הקטגוריות"
 
-#: views/donate/process-bottom.php:22
-msgid "Click to download the document"
-msgstr "לחץ להורדת המסמך"
+#: views/event/events-filters.php:123
+msgid "Start from"
+msgstr "החל מתאריך"
 
-#: views/donate/process-bottom.php:22
-msgid "File Unavailable"
-msgstr "קובץ לא זמין"
+#: views/event/series.php:47
+msgid "Purchase"
+msgstr "לרכישה"
 
-#: views/donate/process-bottom.php:24
-msgid "(PDF)"
-msgstr "(PDF)"
+#: views/footer/footer-links.php:60
+msgid "Learn more"
+msgstr "קראו עוד"
 
-#: views/page/page.php:51
-msgid "Password:"
+#: views/footer/footer-menu.php:33
+msgid "Language/שפה"
 msgstr ""
 
-#: views/page/page.php:58
-msgid ""
-"This content is password protected. To view it please enter your password "
-"below:"
-msgstr ""
+#: views/main/slider/display-events-slider.php:38
+msgid "All events"
+msgstr "כל האירועים"
 
 #: views/microfilm/microfilm-view.php:9
 msgid "Select a microfilm"
@@ -396,8 +644,7 @@ msgstr "בכדי להוסיף מיקרופילם לרשימה"
 msgid "Town"
 msgstr "עיר"
 
-#: views/microfilm/microfilm-view.php:20
-#: views/microfilm/microfilm-view.php:145
+#: views/microfilm/microfilm-view.php:20 views/microfilm/microfilm-view.php:145
 msgid "Province"
 msgstr "פרובינציה"
 
@@ -519,38 +766,34 @@ msgstr "אירעה תקלה טכנית. אנא נסו שוב מאוחר יותר
 msgid "Form submited succesfuly. Thank you."
 msgstr "הטופס נשלח בהצלחה. תודה."
 
-#: views/footer/footer-menu.php:33
-msgid "Language/שפה"
+#: views/page/page.php:51
+msgid "Password:"
 msgstr ""
 
-#: views/footer/footer-links.php:60
-msgid "Learn more"
-msgstr "קראו עוד"
+#: views/page/page.php:58
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below:"
+msgstr ""
 
-#: views/components/meta-single.php:26 views/components/meta-author.php:43
-#: views/woocommerce/single-product/single-product-section1-title.php:22
-msgid "By "
-msgstr "על ידי "
+#: views/sidebar/sidebar-blog.php:140
+msgid "Recent Posts"
+msgstr "פוסטים אחרונים"
 
-#: views/components/meta-single.php:34
-msgid "Comments"
-msgstr "תגובות"
+#: views/sidebar/sidebar-blog.php:157
+msgid "Archives"
+msgstr "ארכיון"
 
-#: views/components/not-found.php:3
-msgid "No Records Found"
-msgstr "לא נמצאו תוצאות"
+#: views/sidebar/sidebar-shop-wswu-banner.php:24
+#: views/woocommerce/single-product/single-product-section2-banner.php:28
+msgid ""
+"<strong>Why shop with us?</strong> There are lots of reasons. For instance, "
+msgstr "<strong>למה לקנות אצלנו?</strong> יש הרבה סיבות. למשל, "
 
-#: views/components/not-found.php:4
-msgid "Return to"
-msgstr "חזרה"
-
-#: views/components/not-found.php:4
-msgid "homepage"
-msgstr "לדף הבית"
-
-#: views/woocommerce/featured-product-item.php:77
-msgid "Click for more details"
-msgstr "לחצו לפרטים נוספים"
+#: views/sidebar/sidebar-shop-wswu-banner.php:27
+#: views/woocommerce/single-product/single-product-section2-banner.php:31
+msgid "And there are more"
+msgstr "ויש עוד סיבות"
 
 #: views/woocommerce/archive/archive-product-taxonomy-term.php:73
 msgid "Sort by"
@@ -564,6 +807,10 @@ msgstr "תוצאות חיפוש"
 msgid "Monthly Recommended Products"
 msgstr "המוצרים המומלצים החודש"
 
+#: views/woocommerce/featured-product-item.php:77
+msgid "Click for more details"
+msgstr "לחצו לפרטים נוספים"
+
 #: views/woocommerce/single-product/single-product-section1-add-to-cart.php:34
 msgid "QTY"
 msgstr "כמות"
@@ -571,6 +818,10 @@ msgstr "כמות"
 #: views/woocommerce/single-product/single-product-section1-add-to-cart.php:50
 msgid "Add to cart"
 msgstr "הוסיפו לסל"
+
+#: views/woocommerce/single-product/single-product-section1-content.php:25
+msgid "Overview"
+msgstr "פרטים נוספים"
 
 #: views/woocommerce/single-product/single-product-section1-meta.php:25
 msgid "Technical Details"
@@ -597,58 +848,28 @@ msgid ""
 "International shipment is available, shipping cost is based on shipping "
 "location and product dimensions."
 msgstr ""
-"אנו מציעים משלוחים לכל העולם, עלות המשלוח מחושבת עפ\"י אופן המשלוח (מהיר/"
-"רגיל), יעד ומשקל."
+"אנו מציעים משלוחים לכל העולם, עלות המשלוח מחושבת עפ\"י אופן המשלוח "
+"(מהיר/רגיל), יעד ומשקל."
 
 #: views/woocommerce/single-product/single-product-section3-related.php:57
 msgid "You might also like"
 msgstr "מוצרים נוספים שיעניינו אתכם"
 
-#: views/woocommerce/single-product/single-product-section1-content.php:25
-msgid "Overview"
-msgstr "פרטים נוספים"
-
-#: views/main/slider/display-events-slider.php:38
-msgid "All events"
-msgstr "כל האירועים"
-
-#: woocommerce/cart/mini-cart.php:59
-#, php-format
-msgid "Quantity: %s"
-msgstr "כמות: %s"
-
-#: woocommerce/cart/mini-cart.php:79
-msgid "No products in the cart."
-msgstr "לא נמצאו מוצרים בעגלה."
-
-#: woocommerce/cart/mini-cart.php:89 woocommerce/checkout/review-order.php:85
-msgid "Subtotal"
-msgstr "סכום ביניים"
-
-#: woocommerce/cart/mini-cart.php:99
-msgid "View Cart"
-msgstr "הצג סל קניות"
-
-#: woocommerce/cart/mini-cart.php:100
-msgid "Checkout"
-msgstr "לתשלום"
-
-#: woocommerce/cart/cart.php:27
-#: woocommerce/emails/customer-processing-order.php:62
+#: woocommerce/cart/cart.php:27 woocommerce/checkout/review-order.php:23
 #: woocommerce/emails/customer-completed-order.php:62
-#: woocommerce/checkout/review-order.php:23
+#: woocommerce/emails/customer-processing-order.php:62
 msgid "Product"
 msgstr "מוצר"
 
 #: woocommerce/cart/cart.php:28
-#: woocommerce/emails/customer-processing-order.php:64
 #: woocommerce/emails/customer-completed-order.php:64
+#: woocommerce/emails/customer-processing-order.php:64
 msgid "Price"
 msgstr "מחיר"
 
 #: woocommerce/cart/cart.php:29
-#: woocommerce/emails/customer-processing-order.php:63
 #: woocommerce/emails/customer-completed-order.php:63
+#: woocommerce/emails/customer-processing-order.php:63
 msgid "Quantity"
 msgstr "כמות"
 
@@ -681,36 +902,26 @@ msgstr ""
 msgid "Update Cart"
 msgstr ""
 
-#: woocommerce/emails/email-addresses.php:20
-msgid "Billing address"
-msgstr "כתובת חיוב"
-
-#: woocommerce/emails/email-addresses.php:30
-msgid "Shipping address"
-msgstr "כתובת משלוח"
-
-#: woocommerce/emails/customer-processing-order.php:53
-msgid ""
-"Your order has been received and is now being processed. Your order details "
-"are shown below for your reference:"
-msgstr "הזמנתכם התקבלה ומטופלת כעת. פרטי ההזמנה מופיעים להלן:"
-
-#: woocommerce/emails/customer-processing-order.php:57
-#: woocommerce/emails/customer-completed-order.php:57
+#: woocommerce/cart/mini-cart.php:59
 #, php-format
-msgid "Order #%s"
-msgstr "הזמנה מספר %s"
+msgid "Quantity: %s"
+msgstr "כמות: %s"
 
-#: woocommerce/emails/customer-processing-order.php:92
-#: woocommerce/emails/customer-completed-order.php:92
-msgid "For further questions or assistance please contact us:"
-msgstr "לשאלות או לסיוע נוסף אנא צרו עמנו קשר:"
+#: woocommerce/cart/mini-cart.php:79
+msgid "No products in the cart."
+msgstr "לא נמצאו מוצרים בעגלה."
 
-#: woocommerce/emails/customer-completed-order.php:53
-msgid ""
-"Your order was shipped. Your order details are shown below for your "
-"reference:"
-msgstr "הזמנתכם נשלחה. פרטי ההזמנה מופיעים להלן:"
+#: woocommerce/cart/mini-cart.php:89 woocommerce/checkout/review-order.php:85
+msgid "Subtotal"
+msgstr "סכום ביניים"
+
+#: woocommerce/cart/mini-cart.php:99
+msgid "View Cart"
+msgstr "הצג סל קניות"
+
+#: woocommerce/cart/mini-cart.php:100
+msgid "Checkout"
+msgstr "לתשלום"
 
 #: woocommerce/checkout/thankyou.php:18
 msgid ""
@@ -754,246 +965,36 @@ msgstr ""
 msgid "Payment Method:"
 msgstr ""
 
-#: functions/donations.php:157
-msgid "Certificate of Appreciation example"
-msgstr "תעודת הוקרה לדוגמה"
-
-#: functions/donations.php:158
-msgid "In Loving Memory Certificate example"
-msgstr "תעודת תרומה לזכר אדם"
-
-#: functions/donations.php:159
-msgid "Thank You Certificate example"
-msgstr "תעודת \"תודתנו\" - לדוגמה"
-
-#: functions/donations.php:229
-msgid "Certificate of Appreciation"
-msgstr "תעודת הוקרה"
-
-#: functions/donations.php:230
-msgid "In Loving memory of"
-msgstr "תרומה לזכר אדם"
-
-#: functions/donations.php:231
-msgid "Thank You"
-msgstr "תודתנו"
-
-#: functions/scripts-n-styles.php:151
-msgid "Our beloved grandmother Bracha Cohen"
-msgstr "סבתנו היקרה ברכה כהן ז\"ל"
-
-#: functions/scripts-n-styles.php:152
-msgid "To Barak Aharoni with appreciation of your good work"
-msgstr "לברק אהרוני על פועלו"
-
-#: functions/template.php:318
-msgid "Newsletter"
-msgstr "ניוזלטר"
-
-#: functions/template.php:579
-msgid "Load more"
-msgstr "תמונות נוספות"
-
-#: functions/menus.php:18
-msgid "Main Menu"
-msgstr ""
-
-#: functions/menus.php:19
-msgid "Education Menu"
-msgstr ""
-
-#: functions/menus.php:20
-msgid "Shop Menu"
-msgstr ""
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:189
-msgid "Your Email:"
-msgstr "כתובת מייל:"
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:190
-msgid "Email Address"
-msgstr "כתובת מייל"
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:191
-msgid "Email address is missing or incorrect"
-msgstr "כתובת מייל שגויה או חסרה"
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:195
-msgid "Choose Language:"
-msgstr "בחרו שפה:"
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:204
-msgid "Please check at least one newsletter name"
-msgstr "יש לבחור לפחות שפה אחת"
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:206
-msgid "Register"
-msgstr "הרשמה"
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:207
-msgid "No thanks"
-msgstr "לא תודה"
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:215
-msgid "General error, please try again later"
-msgstr "שגיאה כללית, אנא נסו שוב מאוחר יותר"
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:216
-msgid "Registration has been failed, please try again later"
-msgstr "הרישום נכשל, אנא נסו שנית מאוחר יותר"
-
-#: functions/widgets/active-trail-newsletter/active-trail-newsletter.php:217
-msgid "Registration was successful, thank you!"
-msgstr "הרישום בוצע בהצלחה, תודה רבה!"
-
-#: functions/woocommerce/woocommerce-functions.php:165
-msgid "Home"
-msgstr "דף הבית"
-
-#: functions/woocommerce/woocommerce-functions.php:547
-msgid "Show product filters"
-msgstr "הצג מסנני מוצרים"
-
-#: functions/woocommerce/woocommerce-functions.php:547
-msgid "Hide product filters"
-msgstr "הסתר מסנני מוצרים"
-
-#: functions/woocommerce/woocommerce-functions.php:578
-msgid "Filter products"
-msgstr "סנן מוצרים"
-
-#: functions/woocommerce/woocommerce-functions.php:770
+#: woocommerce/emails/customer-completed-order.php:53
 msgid ""
-"<b>IMPORTANT NOTIFICATION:</b> Due to the Israeli postal office being unable "
-"to provide our customers up to date order tracking and delivery within "
-"guaranteed time range, until further notice we no longer offer regular "
-"shipping. We apologise for any inconvenience to our customers."
-msgstr ""
-"<b>הודעה חשובה:</b> לאור חוסר היכולת של דואר ישראל לספק ללקוחותינו משלוחים "
-"בטווח הזמן המובטח והקושי במעקב אחר חבילות וקבלת מענה לפניות, אנו נאלצים "
-"להפסיק להציע משלוח רשום רגיל. עם לקוחותינו הסליחה."
+"Your order was shipped. Your order details are shown below for your "
+"reference:"
+msgstr "הזמנתכם נשלחה. פרטי ההזמנה מופיעים להלן:"
 
-#: functions/woocommerce/woocommerce-functions.php:790
-msgid "Checkout: Please fill your billing address and shipping address"
-msgstr "קופה: אנא הזינו פרטים למשלוח חשבונית וכתובת למשלוח"
+#: woocommerce/emails/customer-completed-order.php:57
+#: woocommerce/emails/customer-processing-order.php:57
+#, php-format
+msgid "Order #%s"
+msgstr "הזמנה מספר %s"
 
-#: functions/woocommerce/woocommerce-functions.php:804
-msgid "Checkout: Please fill your payment details"
-msgstr "קופה: אנא הזינו פרטי אמצעי תשלום"
+#: woocommerce/emails/customer-completed-order.php:92
+#: woocommerce/emails/customer-processing-order.php:92
+msgid "For further questions or assistance please contact us:"
+msgstr "לשאלות או לסיוע נוסף אנא צרו עמנו קשר:"
 
-#: functions/woocommerce/woocommerce-functions.php:819
-msgid "Thank you. Your order has been received"
-msgstr "תודה רבה. הזמנתכם התקבלה בהצלחה"
-
-#: functions/woocommerce/woocommerce-functions.php:833
-msgid "Secured Billing: Please choose your preferred billing method"
-msgstr "אמצעי חיוב מאובטח: אנא בחרו את האמצעי המועדף עליכם"
-
-#: functions/woocommerce/woocommerce-functions.php:1232
-msgid "Most Popular"
-msgstr "הפופולרי ביותר"
-
-#: functions/woocommerce/woocommerce-functions.php:1233
-msgid "Price: Low to High"
-msgstr "מחיר: נמוך לגבוה"
-
-#: functions/woocommerce/woocommerce-functions.php:1234
-msgid "Price: High to Low"
-msgstr "מחיר: גבוה לנמוך"
-
-#: functions/woocommerce/widgets/woocommerce-recently-viewed.php:18
-msgid "RECENTLY<br />VIEWED"
-msgstr "נצפו<br />לאחרונה"
-
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:97
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:175
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:311
-msgid "Thumbnail"
-msgstr ""
-
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:101
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:180
-msgid "Upload/Add image"
-msgstr ""
-
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:102
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:181
-msgid "Remove image"
-msgstr ""
-
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:125
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:200
-msgid "Choose an image"
-msgstr ""
-
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:127
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:202
-msgid "Use image"
-msgstr ""
-
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:256
+#: woocommerce/emails/customer-processing-order.php:53
 msgid ""
-"Product occasions for your store can be managed here. To see more occasions "
-"listed click the \"screen options\" link at the top of the page."
-msgstr ""
+"Your order has been received and is now being processed. Your order details "
+"are shown below for your reference:"
+msgstr "הזמנתכם התקבלה ומטופלת כעת. פרטי ההזמנה מופיעים להלן:"
 
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:266
-msgid ""
-"Product artists for your store can be managed here. To see more artists "
-"listed click the \"screen options\" link at the top of the page."
-msgstr ""
+#: woocommerce/emails/email-addresses.php:20
+msgid "Billing address"
+msgstr "כתובת חיוב"
 
-#: functions/woocommerce/classes/class-bh-wc-admin-taxonomies.php:279
-msgid "Image"
-msgstr ""
-
-#: functions/pelecard/pelecard-api.php:46
-msgid "Transaction ID"
-msgstr "מזהה עסקה"
-
-#: functions/pelecard/payment-result.php:152
-msgid "Thank you for your request!"
-msgstr "תודה רבה על פנייתכם!"
-
-#: functions/pelecard/payment-result.php:153
-msgid "An invoice for your payment will be sent to your email address shortly."
-msgstr "חשבונית תישלח בהקדם לכתובת המייל שציינתם."
-
-#: functions/pelecard/payment-result.php:158
-msgid "Payment failed"
-msgstr "התשלום נכשל"
-
-#: functions/pelecard/payment-result.php:164
-#: functions/pelecard/payment-result.php:172
-#: functions/pelecard/payment-result.php:179
-#: functions/pelecard/payment-result.php:186
-msgid "Error #"
-msgstr "שגיאה מספר "
-
-#: functions/pelecard/payment-result.php:164
-msgid "Wrong ID or CVV."
-msgstr "מספר ת.ז. או CVV שגוי."
-
-#: functions/pelecard/payment-result.php:165
-#: functions/pelecard/payment-result.php:173
-msgid "Please correct the errors and submit the request again."
-msgstr "אנא תקנו את השגיאות ושלחו שוב את הבקשה."
-
-#: functions/pelecard/payment-result.php:172
-msgid "Wrong credit card number."
-msgstr "מספר כרטיס אשראי שגוי."
-
-#: functions/pelecard/payment-result.php:179
-msgid "Unsupported credit card."
-msgstr "כרטיס אשראי לא נתמך."
-
-#: functions/pelecard/payment-result.php:180
-msgid "Please submit the request again using a different credit card."
-msgstr "אנא שלחו את הבקשה באמצעות כרטיס אשראי אחר."
-
-#: functions/pelecard/payment-result.php:186
-msgid "General Error."
-msgstr "שגיאה כללית."
+#: woocommerce/emails/email-addresses.php:30
+msgid "Shipping address"
+msgstr "כתובת משלוח"
 
 #~ msgid "Please make check payable to Beit Hatfutsot and send to:"
 #~ msgstr "אנא כתבו צ'ק לפקודת בית התפוצות ושלחו אלינו לכתובת:"

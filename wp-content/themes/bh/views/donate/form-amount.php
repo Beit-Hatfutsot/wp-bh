@@ -12,7 +12,7 @@ $default_alt            = $certificate_examples['appreciation']['alt'];
 
     <div class="radio other">
         <input type="radio" name="donationAmount" id="custom-amount-radio" value="other" class="cs-hotspot"><label for="custom-donation-radio" class="cs-hotspot">
-            <input type="number" class="form-control" name="customDonationAmount" id="custom-amount-field" min="5" placeholder="<?php esc_html_e('How much would you like to give? (In NIS)', 'BH'); ?>">
+            <input type="number" class="form-control" name="customDonationAmount" id="custom-amount-field" min="5" max="40000" placeholder="<?php esc_html_e('How much would you like to give? (In NIS)', 'BH'); ?>">
         </label>
     </div>
     <div class="radio">
@@ -93,6 +93,6 @@ $default_alt            = $certificate_examples['appreciation']['alt'];
 </fieldset>
 
 <div class="form-group flow-amount col-sm-offset-2 col-sm-8">
-    <p id="error-msg--amount" class="error-msg error-msg--amount"><?php esc_html_e('Please select a donation amount, or enter a custom sum.', 'BH'); ?></p>
+    <p id="error-msg--amount" class="error-msg error-msg--amount"><?php esc_html_e('Please select a donation amount, or enter a custom sum between 5 - 40,000 NIS.', 'BH'); ?></p>
     <button type="button" id="cont-to-details" class="btn orange-btn" disabled><?php esc_html_e('Continue', 'BH'); ?></button>
 </div>
