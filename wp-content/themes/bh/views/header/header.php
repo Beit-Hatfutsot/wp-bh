@@ -22,6 +22,9 @@ $wpml_lang		= $globals[ 'wpml_lang' ];
 if ( ! $bh_sites )
 	return;
 
+// Reset $wpml_lang in case of russian
+$wpml_lang = $wpml_lang == 'ru' ? 'en' : $wpml_lang;
+
 ?>
 
 <header>
