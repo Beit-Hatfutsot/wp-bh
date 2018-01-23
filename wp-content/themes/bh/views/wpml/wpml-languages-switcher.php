@@ -18,7 +18,8 @@ if ( ! function_exists( 'icl_get_languages' ) )
 /**
  * Variables
  */
-$languages = icl_get_languages( 'skip_missing=0&orderby=code' );
+global $globals;
+$languages = icl_get_languages( 'skip_missing=0&orderby=custom' );
 
 if ( empty( $languages ) )
 	return;
@@ -27,7 +28,12 @@ if ( empty( $languages ) )
 
 <ul class="wpml-languages-switcher">
 
-	<?php foreach ( $languages as $l ) { ?>
+	<?php foreach ( $languages as $l ) {
+
+		if ( ( is_woocommerce() || $globals[ 'shop_page' ] ) && $l[ 'language_code' ] == 'ru' )
+			continue;
+
+		?>
 
 		<li <?php echo $l[ 'active' ] ? 'class="active"' : ''; ?>>
 			<a <?php echo ! $l[ 'active' ] ? 'href="' . $l[ 'url' ] . '"' : ''; ?>>

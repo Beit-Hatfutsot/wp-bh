@@ -35,11 +35,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 if( function_exists('acf_add_local_field_group') ):
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb009e8606',
 	'title' => 'Main Template',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_533d351f8e073',
 			'label' => 'Main Template Layouts',
 			'name' => 'acf-main_template_layouts',
@@ -47,7 +47,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Add "Featured Links" layout in order to display Contact Details box',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -55,14 +55,14 @@ acf_add_local_field_group(array (
 			'button_label' => 'Add Layout',
 			'min' => '',
 			'max' => '',
-			'layouts' => array (
-				array (
+			'layouts' => array(
+				array(
 					'key' => '561e5930bdc61',
 					'name' => 'strip',
 					'label' => 'Strip',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_561e5983bdc68',
 							'label' => 'Image',
 							'name' => 'image',
@@ -70,7 +70,7 @@ acf_add_local_field_group(array (
 							'instructions' => 'Image dimensions: 1140x114px',
 							'required' => 1,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -86,7 +86,7 @@ acf_add_local_field_group(array (
 							'max_size' => '',
 							'mime_types' => '',
 						),
-						array (
+						array(
 							'key' => 'field_561e5a38bdc69',
 							'label' => 'Link',
 							'name' => 'link',
@@ -94,7 +94,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -111,23 +111,23 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
-				array (
+				array(
 					'key' => '56675b47ef0ad',
 					'name' => 'banner',
 					'label' => 'Banner',
 					'display' => 'row',
-					'sub_fields' => array (
+					'sub_fields' => array(
 					),
 					'min' => 0,
 					'max' => 1,
 				),
-				array (
+				array(
 					'key' => '56675b40ef0aa',
 					'name' => 'slider',
 					'label' => 'Slider',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_56675b40ef0ab',
 							'label' => 'Layout Title',
 							'name' => 'layout_title',
@@ -135,7 +135,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -148,7 +148,7 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 							'disabled' => 0,
 						),
-						array (
+						array(
 							'key' => 'field_56675b40ef0ac',
 							'label' => 'Sort Title',
 							'name' => 'sort_title',
@@ -156,7 +156,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -173,13 +173,13 @@ acf_add_local_field_group(array (
 					'min' => 0,
 					'max' => 1,
 				),
-				array (
+				array(
 					'key' => '56675ac3ea0f0',
 					'name' => 'featured_links',
 					'label' => 'Featured Links',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_56675c4befa6a',
 							'label' => 'Links',
 							'name' => 'links',
@@ -187,7 +187,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -197,8 +197,8 @@ acf_add_local_field_group(array (
 							'max' => 0,
 							'layout' => 'table',
 							'button_label' => 'Add Featured Link',
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_56675c4cefa6c',
 									'label' => 'Title',
 									'name' => 'title',
@@ -206,7 +206,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => '',
 										'class' => '',
 										'id' => '',
@@ -219,7 +219,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_56675c4cefa6e',
 									'label' => 'Description',
 									'name' => 'description',
@@ -227,7 +227,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => '',
 										'class' => '',
 										'id' => '',
@@ -240,7 +240,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_56675c4cefa70',
 									'label' => 'Image',
 									'name' => 'image',
@@ -248,7 +248,7 @@ acf_add_local_field_group(array (
 									'instructions' => 'Image dimensions: 790x200px',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => '',
 										'class' => '',
 										'id' => '',
@@ -264,7 +264,7 @@ acf_add_local_field_group(array (
 									'max_size' => '',
 									'mime_types' => '',
 								),
-								array (
+								array(
 									'key' => 'field_56675c4cefa72',
 									'label' => 'Internal Link',
 									'name' => 'internal_link',
@@ -272,23 +272,23 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => '',
 										'class' => '',
 										'id' => '',
 									),
-									'post_type' => array (
+									'post_type' => array(
 										0 => 'post',
 										1 => 'page',
 										2 => 'event',
 									),
-									'taxonomy' => array (
+									'taxonomy' => array(
 									),
 									'allow_null' => 1,
 									'multiple' => 0,
 									'allow_archives' => 1,
 								),
-								array (
+								array(
 									'key' => 'field_56675c4cefa74',
 									'label' => 'External Link',
 									'name' => 'external_link',
@@ -296,7 +296,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => '',
 										'class' => '',
 										'id' => '',
@@ -318,9 +318,9 @@ acf_add_local_field_group(array (
 			),
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'page_template',
 				'operator' => '==',
 				'value' => 'page-templates/main.php',
@@ -332,18 +332,18 @@ acf_add_local_field_group(array (
 	'style' => 'default',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
-	'hide_on_screen' => array (
+	'hide_on_screen' => array(
 		0 => 'the_content',
 	),
 	'active' => 1,
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb00b75caa',
 	'title' => 'Content Page Template',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_53943c488056c',
 			'label' => 'Content Page Template Layouts',
 			'name' => 'acf-content_page_template_layouts',
@@ -351,7 +351,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -359,14 +359,14 @@ acf_add_local_field_group(array (
 			'button_label' => 'Add Layout',
 			'min' => '',
 			'max' => '',
-			'layouts' => array (
-				array (
+			'layouts' => array(
+				array(
 					'key' => '558fb00b983f2',
 					'name' => 'content_row',
 					'label' => 'Content Row',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_53943ccb8056d',
 							'label' => 'Content Columns',
 							'name' => 'content_columns',
@@ -374,7 +374,7 @@ acf_add_local_field_group(array (
 							'instructions' => 'Total columns width must be equal or less than 1. You may define 3 columns at the most',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -385,8 +385,8 @@ acf_add_local_field_group(array (
 							'button_label' => 'Add Column',
 							'min' => 0,
 							'max' => 0,
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_53943da18056e',
 									'label' => 'Width',
 									'name' => 'width',
@@ -394,18 +394,18 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 1,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 15,
 										'class' => '',
 										'id' => '',
 									),
-									'choices' => array (
+									'choices' => array(
 										4 => '1/3',
 										6 => '1/2',
 										8 => '2/3',
 										12 => 1,
 									),
-									'default_value' => array (
+									'default_value' => array(
 										0 => 12,
 									),
 									'allow_null' => 0,
@@ -417,7 +417,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'return_format' => 'value',
 								),
-								array (
+								array(
 									'key' => 'field_53943e138056f',
 									'label' => 'Title',
 									'name' => 'title',
@@ -425,7 +425,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 25,
 										'class' => '',
 										'id' => '',
@@ -439,7 +439,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_53943e2c80570',
 									'label' => 'Content',
 									'name' => 'content',
@@ -447,7 +447,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 60,
 										'class' => '',
 										'id' => '',
@@ -465,13 +465,13 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
-				array (
+				array(
 					'key' => '558fb00bdba14',
 					'name' => 'faqs',
 					'label' => 'FAQs',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_53956ec637d62',
 							'label' => 'FAQs List',
 							'name' => 'faqs_list',
@@ -479,7 +479,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -489,8 +489,8 @@ acf_add_local_field_group(array (
 							'layout' => 'table',
 							'button_label' => 'Add Question',
 							'collapsed' => '',
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_5395729d37d63',
 									'label' => 'Question',
 									'name' => 'question',
@@ -498,7 +498,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 1,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 40,
 										'class' => '',
 										'id' => '',
@@ -512,7 +512,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_539572ce37d64',
 									'label' => 'Answer',
 									'name' => 'answer',
@@ -520,7 +520,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 1,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 60,
 										'class' => '',
 										'id' => '',
@@ -537,13 +537,13 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
-				array (
+				array(
 					'key' => '558fb00c1ef54',
 					'name' => 'excerpts',
 					'label' => 'Excerpts',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_53958586c08a7',
 							'label' => 'Excerpts List',
 							'name' => 'excerpts_list',
@@ -551,7 +551,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -562,8 +562,8 @@ acf_add_local_field_group(array (
 							'button_label' => 'Add Excerpt',
 							'min' => 0,
 							'max' => 0,
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_5395867ac08aa',
 									'label' => 'Image',
 									'name' => 'image',
@@ -571,7 +571,7 @@ acf_add_local_field_group(array (
 									'instructions' => 'Image Dimensions: 190x190px',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -587,7 +587,7 @@ acf_add_local_field_group(array (
 									'max_size' => 0,
 									'mime_types' => '',
 								),
-								array (
+								array(
 									'key' => 'field_539585e7c08a8',
 									'label' => 'Title',
 									'name' => 'title',
@@ -595,7 +595,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -609,7 +609,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_53958614c08a9',
 									'label' => 'Excerpt',
 									'name' => 'excerpt',
@@ -617,7 +617,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 60,
 										'class' => '',
 										'id' => '',
@@ -635,13 +635,13 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
-				array (
+				array(
 					'key' => '558fb00c60c13',
 					'name' => 'contacts',
 					'label' => 'Contacts',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_5395a439a3d85',
 							'label' => 'Contacts List',
 							'name' => 'contacts_list',
@@ -649,7 +649,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -659,8 +659,8 @@ acf_add_local_field_group(array (
 							'layout' => 'table',
 							'button_label' => 'Add Contact',
 							'collapsed' => '',
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_5395a45ea3d86',
 									'label' => 'Role',
 									'name' => 'role',
@@ -668,7 +668,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 1,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => '20',
 										'class' => '',
 										'id' => '',
@@ -679,7 +679,7 @@ acf_add_local_field_group(array (
 									'prepend' => '',
 									'append' => '',
 								),
-								array (
+								array(
 									'key' => 'field_5395a481a3d87',
 									'label' => 'Name',
 									'name' => 'name',
@@ -687,7 +687,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 1,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -701,7 +701,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_5395a48da3d88',
 									'label' => 'Phone',
 									'name' => 'phone',
@@ -709,7 +709,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -723,7 +723,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_5395a4a5a3d89',
 									'label' => 'Email',
 									'name' => 'email',
@@ -731,7 +731,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -741,7 +741,7 @@ acf_add_local_field_group(array (
 									'prepend' => '',
 									'append' => '',
 								),
-								array (
+								array(
 									'key' => 'field_53ac17812145b',
 									'label' => 'Address',
 									'name' => 'address',
@@ -749,7 +749,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -770,7 +770,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_5396e9c1c8292',
 			'label' => 'Content Page Template Widgets Area',
 			'name' => 'acf-content_page_template_widgets_area',
@@ -778,7 +778,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -786,14 +786,14 @@ acf_add_local_field_group(array (
 			'button_label' => 'Add Widget',
 			'min' => '',
 			'max' => '',
-			'layouts' => array (
-				array (
+			'layouts' => array(
+				array(
 					'key' => '558fb00ce4eca',
 					'name' => 'languages',
 					'label' => 'Languages',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_5396eaafc8293',
 							'label' => 'Languages List',
 							'name' => 'languages_list',
@@ -801,7 +801,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -812,8 +812,8 @@ acf_add_local_field_group(array (
 							'button_label' => 'Add Language',
 							'min' => 0,
 							'max' => 0,
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_5396eb1ec8294',
 									'label' => 'Country Code',
 									'name' => 'country_code',
@@ -821,7 +821,7 @@ acf_add_local_field_group(array (
 									'instructions' => '2 digit country code',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 25,
 										'class' => '',
 										'id' => '',
@@ -835,7 +835,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_53984a460d256',
 									'label' => 'Language Name',
 									'name' => 'language_name',
@@ -843,7 +843,7 @@ acf_add_local_field_group(array (
 									'instructions' => 'Will be displayed as a tooltip for language flag',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 25,
 										'class' => '',
 										'id' => '',
@@ -857,7 +857,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_5396ed92c8295',
 									'label' => 'Page',
 									'name' => 'page',
@@ -865,18 +865,18 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 50,
 										'class' => '',
 										'id' => '',
 									),
-									'post_type' => array (
+									'post_type' => array(
 										0 => 'page',
 										1 => 'event',
 									),
 									'allow_null' => 0,
 									'multiple' => 0,
-									'taxonomy' => array (
+									'taxonomy' => array(
 									),
 									'allow_archives' => 1,
 								),
@@ -887,13 +887,13 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '1',
 				),
-				array (
+				array(
 					'key' => '558fb00d2eecf',
 					'name' => 'content_box',
 					'label' => 'Content Box',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_5396f7774d3c3',
 							'label' => 'Content Box',
 							'name' => 'content_box',
@@ -901,7 +901,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -916,13 +916,13 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
-				array (
+				array(
 					'key' => '558fb00d41f86',
 					'name' => 'contacts',
 					'label' => 'Contacts',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_5396f7b64d3c5',
 							'label' => 'Contacts List',
 							'name' => 'contacts_list',
@@ -930,7 +930,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -941,8 +941,8 @@ acf_add_local_field_group(array (
 							'button_label' => 'Add Contact',
 							'min' => 0,
 							'max' => 0,
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_5396f8e04d3c6',
 									'label' => 'Role',
 									'name' => 'role',
@@ -950,7 +950,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 1,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -964,7 +964,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_5396f8eb4d3c7',
 									'label' => 'Name',
 									'name' => 'name',
@@ -972,7 +972,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 1,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -986,7 +986,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_5396f90f4d3c8',
 									'label' => 'Phone',
 									'name' => 'phone',
@@ -994,7 +994,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -1008,7 +1008,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_5396f9194d3c9',
 									'label' => 'Email',
 									'name' => 'email',
@@ -1016,7 +1016,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -1026,7 +1026,7 @@ acf_add_local_field_group(array (
 									'prepend' => '',
 									'append' => '',
 								),
-								array (
+								array(
 									'key' => 'field_53ac1a26f2061',
 									'label' => 'Address',
 									'name' => 'address',
@@ -1034,7 +1034,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
@@ -1056,7 +1056,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_55a4f3c001fe2',
 			'label' => 'Content Page Password Protected Content',
 			'name' => 'acf-content_page_password_protected_content',
@@ -1064,7 +1064,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Content to be displayed before password form',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1076,16 +1076,16 @@ acf_add_local_field_group(array (
 			'delay' => 0,
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'page_template',
 				'operator' => '==',
 				'value' => 'default',
 			),
 		),
-		array (
-			array (
+		array(
+			array(
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'event',
@@ -1097,18 +1097,18 @@ acf_add_local_field_group(array (
 	'style' => 'default',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
-	'hide_on_screen' => array (
+	'hide_on_screen' => array(
 		0 => 'the_content',
 	),
 	'active' => 1,
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb01015e70',
 	'title' => 'Page Attributes',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_54b6b18685fc4',
 			'label' => 'Shop Page',
 			'name' => 'acf-shop_page',
@@ -1116,7 +1116,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Check this field in order to	display shop header and full page width (without sidebar)',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1128,23 +1128,23 @@ acf_add_local_field_group(array (
 			'ui_off_text' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'post',
 			),
 		),
-		array (
-			array (
+		array(
+			array(
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'event',
 			),
 		),
-		array (
-			array (
+		array(
+			array(
 				'param' => 'page_template',
 				'operator' => '==',
 				'value' => 'default',
@@ -1161,11 +1161,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb01060046',
 	'title' => 'Featured Image',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_539454cc7ac70',
 			'label' => 'Featured Image',
 			'name' => 'acf-featured_image',
@@ -1173,7 +1173,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Image dimensions: 940x200px',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1190,23 +1190,23 @@ acf_add_local_field_group(array (
 			'mime_types' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'page_template',
 				'operator' => '==',
 				'value' => 'default',
 			),
 		),
-		array (
-			array (
+		array(
+			array(
 				'param' => 'page_template',
 				'operator' => '==',
 				'value' => 'page-templates/shop-about.php',
 			),
 		),
-		array (
-			array (
+		array(
+			array(
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'post',
@@ -1223,11 +1223,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb01091e63',
 	'title' => 'Event Attributes',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_533b07ca1cdbd',
 			'label' => 'General',
 			'name' => '',
@@ -1235,7 +1235,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1243,7 +1243,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53380bf11cedd',
 			'label' => 'Start Date',
 			'name' => 'acf-event_start_date',
@@ -1251,7 +1251,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1260,7 +1260,7 @@ acf_add_local_field_group(array (
 			'return_format' => 'Ymd',
 			'display_format' => 'd/m/Y',
 		),
-		array (
+		array(
 			'key' => 'field_53380c601cede',
 			'label' => 'End Date',
 			'name' => 'acf-event_end_date',
@@ -1268,7 +1268,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'For series of events, End Date must be equal or greater than the last event in the series',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1277,7 +1277,7 @@ acf_add_local_field_group(array (
 			'return_format' => 'Ymd',
 			'display_format' => 'd/m/Y',
 		),
-		array (
+		array(
 			'key' => 'field_53380c8e1cedf',
 			'label' => 'Description',
 			'name' => 'acf-event_description',
@@ -1285,7 +1285,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Maximum of 140 characters',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1298,7 +1298,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5404097f180a2',
 			'label' => 'Landing Mode',
 			'name' => 'acf-event_landing_mode',
@@ -1306,7 +1306,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1317,23 +1317,23 @@ acf_add_local_field_group(array (
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 		),
-		array (
+		array(
 			'key' => 'field_53b55de7c5420',
 			'label' => 'Payed Event',
 			'name' => 'acf-event_payed_event',
 			'type' => 'true_false',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
+			'conditional_logic' => array(
+				array(
+					array(
 						'field' => 'field_5404097f180a2',
 						'operator' => '!=',
 						'value' => '1',
 					),
 				),
 			),
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1344,7 +1344,7 @@ acf_add_local_field_group(array (
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 		),
-		array (
+		array(
 			'key' => 'field_533b087a1cdc0',
 			'label' => 'Images',
 			'name' => '',
@@ -1352,7 +1352,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1360,7 +1360,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_533b083f1cdbf',
 			'label' => 'Main Image',
 			'name' => 'acf-event_main_image',
@@ -1369,7 +1369,7 @@ acf_add_local_field_group(array (
 Image dimensions: 1140x527px',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1385,7 +1385,7 @@ Image dimensions: 1140x527px',
 			'max_size' => 0,
 			'mime_types' => '',
 		),
-		array (
+		array(
 			'key' => 'field_533b08891cdc1',
 			'label' => 'Slider Image',
 			'name' => 'acf-event_slider_image',
@@ -1394,7 +1394,7 @@ Image dimensions: 1140x527px',
 Image dimensions: 380x380px',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1410,23 +1410,23 @@ Image dimensions: 380x380px',
 			'max_size' => 0,
 			'mime_types' => '',
 		),
-		array (
+		array(
 			'key' => 'field_533b09b41cdc2',
 			'label' => 'Series of Events',
 			'name' => '',
 			'type' => 'tab',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
+			'conditional_logic' => array(
+				array(
+					array(
 						'field' => 'field_5404097f180a2',
 						'operator' => '!=',
 						'value' => '1',
 					),
 				),
 			),
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1434,23 +1434,23 @@ Image dimensions: 380x380px',
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53af3c943fc6b',
 			'label' => 'Series Price',
 			'name' => 'acf-event_series_price',
 			'type' => 'number',
 			'instructions' => 'Numbers only without currency sign',
 			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
+			'conditional_logic' => array(
+				array(
+					array(
 						'field' => 'field_53b55de7c5420',
 						'operator' => '==',
 						'value' => '1',
 					),
 				),
 			),
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1465,7 +1465,7 @@ Image dimensions: 380x380px',
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53380d601cee2',
 			'label' => 'Series of Events',
 			'name' => 'acf-event_series_of_events',
@@ -1473,7 +1473,7 @@ Image dimensions: 380x380px',
 			'instructions' => 'Events have to be sorted from earlier to last event',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1484,8 +1484,8 @@ Image dimensions: 380x380px',
 			'button_label' => 'Add Event in Series',
 			'min' => 0,
 			'max' => 0,
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_53380e971cee3',
 					'label' => 'Title',
 					'name' => 'title',
@@ -1493,7 +1493,7 @@ Image dimensions: 380x380px',
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 20,
 						'class' => '',
 						'id' => '',
@@ -1507,7 +1507,7 @@ Image dimensions: 380x380px',
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_53380eec1cee5',
 					'label' => 'Content',
 					'name' => 'content',
@@ -1515,7 +1515,7 @@ Image dimensions: 380x380px',
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 30,
 						'class' => '',
 						'id' => '',
@@ -1528,7 +1528,7 @@ Image dimensions: 380x380px',
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_53380ed11cee4',
 					'label' => 'Date',
 					'name' => 'date',
@@ -1536,7 +1536,7 @@ Image dimensions: 380x380px',
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 20,
 						'class' => '',
 						'id' => '',
@@ -1545,23 +1545,23 @@ Image dimensions: 380x380px',
 					'return_format' => 'Ymd',
 					'display_format' => 'd/m/Y',
 				),
-				array (
+				array(
 					'key' => 'field_53aadc67b6f9e',
 					'label' => 'Price',
 					'name' => 'price',
 					'type' => 'number',
 					'instructions' => 'Numbers only without currency sign',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_53b55de7c5420',
 								'operator' => '==',
 								'value' => '1',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 10,
 						'class' => '',
 						'id' => '',
@@ -1576,23 +1576,23 @@ Image dimensions: 380x380px',
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_53940bd94dca5',
 					'label' => 'Ticket Net Link',
 					'name' => 'ticket_net_link',
 					'type' => 'text',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_53b55de7c5420',
 								'operator' => '==',
 								'value' => '1',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 20,
 						'class' => '',
 						'id' => '',
@@ -1609,7 +1609,7 @@ Image dimensions: 380x380px',
 			),
 			'collapsed' => '',
 		),
-		array (
+		array(
 			'key' => 'field_533b07e11cdbe',
 			'label' => 'External References',
 			'name' => '',
@@ -1617,7 +1617,7 @@ Image dimensions: 380x380px',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1625,23 +1625,23 @@ Image dimensions: 380x380px',
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53380d371cee1',
 			'label' => 'Ticket Net Link',
 			'name' => 'acf-event_ticket_net_link',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
+			'conditional_logic' => array(
+				array(
+					array(
 						'field' => 'field_53b55de7c5420',
 						'operator' => '==',
 						'value' => '1',
 					),
 				),
 			),
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1655,28 +1655,28 @@ Image dimensions: 380x380px',
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_533b09ef1cdc3',
 			'label' => 'Registration Form',
 			'name' => 'acf-event_registration_form',
 			'type' => 'true_false',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
+			'conditional_logic' => array(
+				array(
+					array(
 						'field' => 'field_5404097f180a2',
 						'operator' => '!=',
 						'value' => '1',
 					),
-					array (
+					array(
 						'field' => 'field_53b55de7c5420',
 						'operator' => '!=',
 						'value' => '1',
 					),
 				),
 			),
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1687,23 +1687,23 @@ Image dimensions: 380x380px',
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 		),
-		array (
+		array(
 			'key' => 'field_540409c2180a3',
 			'label' => 'Landing Mode',
 			'name' => '',
 			'type' => 'tab',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
+			'conditional_logic' => array(
+				array(
+					array(
 						'field' => 'field_5404097f180a2',
 						'operator' => '==',
 						'value' => '1',
 					),
 				),
 			),
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1711,7 +1711,7 @@ Image dimensions: 380x380px',
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_540409e8180a4',
 			'label' => 'Background Image',
 			'name' => 'acf-event_background_image',
@@ -1719,7 +1719,7 @@ Image dimensions: 380x380px',
 			'instructions' => 'Image Width (px): 940',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1736,9 +1736,9 @@ Image dimensions: 380x380px',
 			'mime_types' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'event',
@@ -1755,11 +1755,11 @@ Image dimensions: 380x380px',
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb013e3d55',
 	'title' => 'Event Category Attributes',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_534a4d24617b3',
 			'label' => 'Singular Name',
 			'name' => 'acf-event_category_singular_name',
@@ -1767,7 +1767,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1781,7 +1781,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_534aad1f04025',
 			'label' => 'Next Event in Series Title',
 			'name' => 'acf-event_category_next_event',
@@ -1789,7 +1789,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1803,7 +1803,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5a37c0019fcfc',
 			'label' => 'Category Type',
 			'name' => 'acf-event_category_type',
@@ -1811,16 +1811,16 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'choices' => array (
+			'choices' => array(
 				'exhibition' => 'Exhibition',
 				'event' => 'Event',
 			),
-			'default_value' => array (
+			'default_value' => array(
 			),
 			'allow_null' => 1,
 			'multiple' => 0,
@@ -1830,9 +1830,9 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'taxonomy',
 				'operator' => '==',
 				'value' => 'event_category',
@@ -1849,11 +1849,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_58bd2f69b1030',
 	'title' => 'Gallery Attributes',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_58a068c9d242d',
 			'label' => 'Images',
 			'name' => 'images',
@@ -1861,7 +1861,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1879,9 +1879,9 @@ acf_add_local_field_group(array (
 			'insert' => 'append',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'gallery',
@@ -1898,11 +1898,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb01441692',
 	'title' => 'Product Category Attributes',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_564480553512d',
 			'label' => 'Menu Icon',
 			'name' => 'acf-product-category-menu_icon',
@@ -1910,7 +1910,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1926,7 +1926,7 @@ acf_add_local_field_group(array (
 			'max_size' => '',
 			'mime_types' => '',
 		),
-		array (
+		array(
 			'key' => 'field_5644809c3512e',
 			'label' => 'Shop Homepage Menu Icon',
 			'name' => 'acf-product-category-shop_homepage_menu_icon',
@@ -1934,7 +1934,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -1951,23 +1951,23 @@ acf_add_local_field_group(array (
 			'mime_types' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'taxonomy',
 				'operator' => '==',
 				'value' => 'product_cat',
 			),
 		),
-		array (
-			array (
+		array(
+			array(
 				'param' => 'taxonomy',
 				'operator' => '==',
 				'value' => 'occasion',
 			),
 		),
-		array (
-			array (
+		array(
+			array(
 				'param' => 'taxonomy',
 				'operator' => '==',
 				'value' => 'artist',
@@ -1984,11 +1984,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb014733f7',
 	'title' => 'Product Badge Attributes',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_548ca7e03b90e',
 			'label' => 'Badge Image',
 			'name' => 'acf-product-badge_image',
@@ -1996,7 +1996,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -2012,7 +2012,7 @@ acf_add_local_field_group(array (
 			'max_size' => 0,
 			'mime_types' => '',
 		),
-		array (
+		array(
 			'key' => 'field_56cff1c48adec',
 			'label' => 'Badge Color',
 			'name' => 'acf-product-badge_color',
@@ -2020,14 +2020,14 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
 			'default_value' => '',
 		),
-		array (
+		array(
 			'key' => 'field_56cff2e08aded',
 			'label' => 'Badge Checked Color',
 			'name' => 'acf-product-badge_checked_color',
@@ -2035,7 +2035,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -2043,9 +2043,9 @@ acf_add_local_field_group(array (
 			'default_value' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'taxonomy',
 				'operator' => '==',
 				'value' => 'badge',
@@ -2062,11 +2062,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb0149e7dd',
 	'title' => 'Shop - About',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_551d2938892a0',
 			'label' => 'Team Pre Text',
 			'name' => 'acf-shop_about_team_pre_text',
@@ -2074,7 +2074,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -2085,7 +2085,7 @@ acf_add_local_field_group(array (
 			'tabs' => 'all',
 			'delay' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_551d179f7531a',
 			'label' => 'Team Members',
 			'name' => 'acf-shop_about_team_members',
@@ -2093,7 +2093,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -2104,8 +2104,8 @@ acf_add_local_field_group(array (
 			'button_label' => 'Add Team Member',
 			'min' => 0,
 			'max' => 0,
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_551d1d54d76f4',
 					'label' => 'Image',
 					'name' => 'image',
@@ -2113,7 +2113,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 30,
 						'class' => '',
 						'id' => '',
@@ -2129,7 +2129,7 @@ acf_add_local_field_group(array (
 					'max_size' => 0,
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_551d1d2cd76f3',
 					'label' => 'Name',
 					'name' => 'name',
@@ -2137,7 +2137,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 20,
 						'class' => '',
 						'id' => '',
@@ -2151,7 +2151,7 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_551d1d70d76f5',
 					'label' => 'Description',
 					'name' => 'description',
@@ -2159,7 +2159,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 50,
 						'class' => '',
 						'id' => '',
@@ -2176,9 +2176,9 @@ acf_add_local_field_group(array (
 			'collapsed' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'page_template',
 				'operator' => '==',
 				'value' => 'page-templates/shop-about.php',
@@ -2195,11 +2195,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb0150cde1',
 	'title' => 'Shop - Why Shop With Us',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_55192487997b9',
 			'label' => 'Shop WSWU Template Layouts',
 			'name' => 'acf-shop_wswu_template_layouts',
@@ -2207,7 +2207,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -2215,14 +2215,14 @@ acf_add_local_field_group(array (
 			'button_label' => 'Add Layout',
 			'min' => '',
 			'max' => '',
-			'layouts' => array (
-				array (
+			'layouts' => array(
+				array(
 					'key' => '558fb0152f727',
 					'name' => 'banners',
 					'label' => 'Banners',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_551925ba7a0d4',
 							'label' => 'banners',
 							'name' => 'banners',
@@ -2230,7 +2230,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -2241,8 +2241,8 @@ acf_add_local_field_group(array (
 							'button_label' => 'Add Image',
 							'min' => 0,
 							'max' => 0,
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_551926747a0d6',
 									'label' => 'Image Size',
 									'name' => 'image_size',
@@ -2250,16 +2250,16 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 20,
 										'class' => '',
 										'id' => '',
 									),
-									'choices' => array (
+									'choices' => array(
 										'small' => 'Small (424x220px)',
 										'big' => 'Big (704x220px )',
 									),
-									'default_value' => array (
+									'default_value' => array(
 										'' => '',
 									),
 									'allow_null' => 0,
@@ -2271,7 +2271,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'return_format' => 'value',
 								),
-								array (
+								array(
 									'key' => 'field_551925f67a0d5',
 									'label' => 'Image',
 									'name' => 'image',
@@ -2279,7 +2279,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 30,
 										'class' => '',
 										'id' => '',
@@ -2295,7 +2295,7 @@ acf_add_local_field_group(array (
 									'max_size' => 0,
 									'mime_types' => '',
 								),
-								array (
+								array(
 									'key' => 'field_551929dc7a0d7',
 									'label' => 'Text',
 									'name' => 'text',
@@ -2303,7 +2303,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 50,
 										'class' => '',
 										'id' => '',
@@ -2324,13 +2324,13 @@ acf_add_local_field_group(array (
 					'min' => '0',
 					'max' => '1',
 				),
-				array (
+				array(
 					'key' => '558fb015706da',
 					'name' => 'content',
 					'label' => 'Content',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_533d36598e076',
 							'label' => 'Title',
 							'name' => 'title',
@@ -2338,7 +2338,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -2352,7 +2352,7 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 							'disabled' => 0,
 						),
-						array (
+						array(
 							'key' => 'field_533d368b8e077',
 							'label' => 'Columns',
 							'name' => 'columns',
@@ -2360,7 +2360,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -2371,8 +2371,8 @@ acf_add_local_field_group(array (
 							'button_label' => 'Add Column',
 							'min' => 0,
 							'max' => 0,
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_55192b127a0d8',
 									'label' => 'Icon',
 									'name' => 'icon',
@@ -2380,7 +2380,7 @@ acf_add_local_field_group(array (
 									'instructions' => 'Image dimensions: 65x65px',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 35,
 										'class' => '',
 										'id' => '',
@@ -2396,7 +2396,7 @@ acf_add_local_field_group(array (
 									'max_size' => 0,
 									'mime_types' => '',
 								),
-								array (
+								array(
 									'key' => 'field_55192c6a6d5ad',
 									'label' => 'Content',
 									'name' => 'content',
@@ -2404,7 +2404,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 65,
 										'class' => '',
 										'id' => '',
@@ -2422,13 +2422,13 @@ acf_add_local_field_group(array (
 					'min' => '0',
 					'max' => '1',
 				),
-				array (
+				array(
 					'key' => '558fb015b2e74',
 					'name' => 'video',
 					'label' => 'Video',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_533d374f8e079',
 							'label' => 'Video Link',
 							'name' => 'video_link',
@@ -2436,7 +2436,7 @@ acf_add_local_field_group(array (
 							'instructions' => 'Full embedded link',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -2457,9 +2457,9 @@ acf_add_local_field_group(array (
 			),
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'page_template',
 				'operator' => '==',
 				'value' => 'page-templates/shop-why-shop-with-us.php',
@@ -2471,18 +2471,18 @@ acf_add_local_field_group(array (
 	'style' => 'default',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
-	'hide_on_screen' => array (
+	'hide_on_screen' => array(
 		0 => 'the_content',
 	),
 	'active' => 1,
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_55dad953b55af',
 	'title' => 'Header/Footer Options',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_5a1197cbd1b07',
 			'label' => 'Sites',
 			'name' => '',
@@ -2490,7 +2490,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -2498,7 +2498,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5a089231f419f',
 			'label' => 'Sites',
 			'name' => 'acf-options_sites',
@@ -2506,7 +2506,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -2516,8 +2516,8 @@ acf_add_local_field_group(array (
 			'max' => 4,
 			'layout' => 'row',
 			'button_label' => 'Add Site',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_5a08a8ae90c95',
 					'label' => 'Type',
 					'name' => 'type',
@@ -2525,17 +2525,17 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						'main' => 'Main',
 						'shop' => 'Shop',
 						'dbs' => 'Open Databases',
 					),
-					'default_value' => array (
+					'default_value' => array(
 						0 => 'main',
 					),
 					'allow_null' => 0,
@@ -2545,7 +2545,7 @@ acf_add_local_field_group(array (
 					'return_format' => 'value',
 					'placeholder' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5a09ad943f626',
 					'label' => 'Dark Color',
 					'name' => 'dark_color',
@@ -2553,53 +2553,53 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
 					'default_value' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5a09adb23f628',
 					'label' => 'Light Color',
 					'name' => 'light_color',
 					'type' => 'color_picker',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5a08a8ae90c95',
 								'operator' => '!=',
 								'value' => 'dbs',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
 					'default_value' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5a089277f41a0',
 					'label' => 'Link',
 					'name' => 'link',
 					'type' => 'text',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5a08a8ae90c95',
 								'operator' => '!=',
 								'value' => 'shop',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -2610,7 +2610,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5a0992fa20172',
 					'label' => 'Title',
 					'name' => 'title',
@@ -2618,7 +2618,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -2629,7 +2629,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5a089477f41a4',
 					'label' => 'Title Hover',
 					'name' => 'title_hover',
@@ -2637,7 +2637,7 @@ acf_add_local_field_group(array (
 					'instructions' => 'Bold part will be wrapped with <code>&lt;strong&gt;&lt;/strong&gt;</code> tag',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -2648,23 +2648,23 @@ acf_add_local_field_group(array (
 					'rows' => 2,
 					'new_lines' => 'br',
 				),
-				array (
+				array(
 					'key' => 'field_55debcd790e6c',
 					'label' => 'Header Links',
 					'name' => 'header_links',
 					'type' => 'repeater',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5a08a8ae90c95',
 								'operator' => '!=',
 								'value' => 'dbs',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -2674,8 +2674,8 @@ acf_add_local_field_group(array (
 					'max' => 0,
 					'layout' => 'table',
 					'button_label' => 'Add Header Link',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_55debef890e6f',
 							'label' => 'Button Text',
 							'name' => 'button_text',
@@ -2683,7 +2683,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 1,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '50',
 								'class' => '',
 								'id' => '',
@@ -2694,7 +2694,7 @@ acf_add_local_field_group(array (
 							'append' => '',
 							'maxlength' => '',
 						),
-						array (
+						array(
 							'key' => 'field_55debeb590e6e',
 							'label' => 'Link',
 							'name' => 'link',
@@ -2702,7 +2702,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 1,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '50',
 								'class' => '',
 								'id' => '',
@@ -2715,54 +2715,54 @@ acf_add_local_field_group(array (
 						),
 					),
 				),
-				array (
+				array(
 					'key' => 'field_5a08942bf41a3',
 					'label' => 'Featured Page',
 					'name' => 'featured_page',
 					'type' => 'post_object',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5a08a8ae90c95',
 								'operator' => '!=',
 								'value' => 'dbs',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'post_type' => array (
+					'post_type' => array(
 						0 => 'page',
 					),
-					'taxonomy' => array (
+					'taxonomy' => array(
 					),
 					'allow_null' => 0,
 					'multiple' => 0,
 					'return_format' => 'object',
 					'ui' => 1,
 				),
-				array (
+				array(
 					'key' => 'field_5613737f33b57',
 					'label' => 'Social Links',
 					'name' => 'social_links',
 					'type' => 'repeater',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5a08a8ae90c95',
 								'operator' => '!=',
 								'value' => 'dbs',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -2772,8 +2772,8 @@ acf_add_local_field_group(array (
 					'max' => 0,
 					'layout' => 'table',
 					'button_label' => 'Add Social Link',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_5613740233b58',
 							'label' => 'Icon',
 							'name' => 'icon',
@@ -2781,7 +2781,7 @@ acf_add_local_field_group(array (
 							'instructions' => '"Font Awesome" icon class name',
 							'required' => 1,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '50',
 								'class' => '',
 								'id' => '',
@@ -2792,7 +2792,7 @@ acf_add_local_field_group(array (
 							'append' => '',
 							'maxlength' => '',
 						),
-						array (
+						array(
 							'key' => 'field_5613745333b59',
 							'label' => 'Link',
 							'name' => 'link',
@@ -2800,7 +2800,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 1,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '50',
 								'class' => '',
 								'id' => '',
@@ -2813,23 +2813,23 @@ acf_add_local_field_group(array (
 						),
 					),
 				),
-				array (
+				array(
 					'key' => 'field_55ffdc897f1f4',
 					'label' => 'Footer Links',
 					'name' => 'footer_links',
 					'type' => 'repeater',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5a08a8ae90c95',
 								'operator' => '!=',
 								'value' => 'dbs',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -2839,8 +2839,8 @@ acf_add_local_field_group(array (
 					'max' => 3,
 					'layout' => 'table',
 					'button_label' => 'Add Footer Link',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_55ffdc897f1f5',
 							'label' => 'Title',
 							'name' => 'title',
@@ -2848,7 +2848,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 1,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '25',
 								'class' => '',
 								'id' => '',
@@ -2859,7 +2859,7 @@ acf_add_local_field_group(array (
 							'append' => '',
 							'maxlength' => '',
 						),
-						array (
+						array(
 							'key' => 'field_55ffdc897f1f6',
 							'label' => 'Big Icon',
 							'name' => 'big_icon',
@@ -2867,7 +2867,7 @@ acf_add_local_field_group(array (
 							'instructions' => 'For use in desktop resolution. Choose icon class from _sprites.scss',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '25',
 								'class' => '',
 								'id' => '',
@@ -2878,7 +2878,7 @@ acf_add_local_field_group(array (
 							'append' => '',
 							'maxlength' => '',
 						),
-						array (
+						array(
 							'key' => 'field_55fff856c3c56',
 							'label' => 'Small Icon',
 							'name' => 'small_icon',
@@ -2886,7 +2886,7 @@ acf_add_local_field_group(array (
 							'instructions' => 'For use in mobile resolution. Choose icon class from _sprites.scss',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '25',
 								'class' => '',
 								'id' => '',
@@ -2897,7 +2897,7 @@ acf_add_local_field_group(array (
 							'append' => '',
 							'maxlength' => '',
 						),
-						array (
+						array(
 							'key' => 'field_55ffdc897f1f7',
 							'label' => 'Link',
 							'name' => 'link',
@@ -2905,7 +2905,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 1,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '25',
 								'class' => '',
 								'id' => '',
@@ -2918,23 +2918,23 @@ acf_add_local_field_group(array (
 						),
 					),
 				),
-				array (
+				array(
 					'key' => 'field_5a08b84f89860',
 					'label' => 'Menu Theme Location',
 					'name' => 'menu_theme_location',
 					'type' => 'text',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5a08a8ae90c95',
 								'operator' => '!=',
 								'value' => 'dbs',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -2947,7 +2947,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_5a1197eed1b08',
 			'label' => 'Languages Switcher',
 			'name' => '',
@@ -2955,7 +2955,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -2963,7 +2963,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5a119805d1b09',
 			'label' => 'Untranslated Languages',
 			'name' => 'acf-options_untranslated_languages',
@@ -2971,7 +2971,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -2981,8 +2981,8 @@ acf_add_local_field_group(array (
 			'max' => 0,
 			'layout' => 'table',
 			'button_label' => 'Add Language',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_5a11984ad1b0a',
 					'label' => 'Language Code',
 					'name' => 'language_code',
@@ -2990,7 +2990,7 @@ acf_add_local_field_group(array (
 					'instructions' => '2 letters represent language code, e.g. es, ru, ar, etc.',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -3001,7 +3001,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => 2,
 				),
-				array (
+				array(
 					'key' => 'field_5a1198cad1b0c',
 					'label' => 'Page',
 					'name' => 'page',
@@ -3009,17 +3009,17 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'post_type' => array (
+					'post_type' => array(
 						0 => 'post',
 						1 => 'page',
 						2 => 'event',
 					),
-					'taxonomy' => array (
+					'taxonomy' => array(
 					),
 					'allow_null' => 0,
 					'multiple' => 0,
@@ -3029,12 +3029,12 @@ acf_add_local_field_group(array (
 			),
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'options_page',
 				'operator' => '==',
-				'value' => 'acf-options-headerfooter',
+				'value' => 'acf-options-header-footer',
 			),
 		),
 	),
@@ -3048,11 +3048,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb015d1324',
 	'title' => 'Contact Details Options',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_53567d4044fc6',
 			'label' => 'Contact Details',
 			'name' => '',
@@ -3060,7 +3060,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3068,7 +3068,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53564d254e01f',
 			'label' => 'Contact Details',
 			'name' => 'acf-options_contact_details',
@@ -3076,7 +3076,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3084,14 +3084,14 @@ acf_add_local_field_group(array (
 			'button_label' => 'Add Contact Detail',
 			'min' => '',
 			'max' => '',
-			'layouts' => array (
-				array (
+			'layouts' => array(
+				array(
 					'key' => '558fb01604e18',
 					'name' => 'text_box',
 					'label' => 'Text Box',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_53566b52033cb',
 							'label' => 'Type',
 							'name' => 'type',
@@ -3099,16 +3099,16 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
 							),
-							'choices' => array (
+							'choices' => array(
 								'main' => 'Main Text Box',
 								'sub' => 'Sub Text Box',
 							),
-							'default_value' => array (
+							'default_value' => array(
 								'sub' => 'sub',
 							),
 							'allow_null' => 0,
@@ -3120,7 +3120,7 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 							'return_format' => 'value',
 						),
-						array (
+						array(
 							'key' => 'field_558fb09d76d67',
 							'label' => 'Title',
 							'name' => 'title',
@@ -3128,7 +3128,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3141,7 +3141,7 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 							'disabled' => 0,
 						),
-						array (
+						array(
 							'key' => 'field_558fb0b576d68',
 							'label' => 'Content',
 							'name' => 'content',
@@ -3149,7 +3149,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3160,23 +3160,23 @@ acf_add_local_field_group(array (
 							'media_upload' => 0,
 							'delay' => 0,
 						),
-						array (
+						array(
 							'key' => 'field_5368819f56c6a',
 							'label' => 'Small Resolution New Column',
 							'name' => 'sm_new_col',
 							'type' => 'true_false',
 							'instructions' => '',
 							'required' => 0,
-							'conditional_logic' => array (
-								array (
-									array (
+							'conditional_logic' => array(
+								array(
+									array(
 										'field' => 'field_53566b52033cb',
 										'operator' => '==',
 										'value' => 'sub',
 									),
 								),
 							),
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3187,23 +3187,23 @@ acf_add_local_field_group(array (
 							'ui_on_text' => '',
 							'ui_off_text' => '',
 						),
-						array (
+						array(
 							'key' => 'field_536883cb56c6b',
 							'label' => 'Small Resolution Cell Height',
 							'name' => 'sm_cell_height',
 							'type' => 'number',
 							'instructions' => '',
 							'required' => 0,
-							'conditional_logic' => array (
-								array (
-									array (
+							'conditional_logic' => array(
+								array(
+									array(
 										'field' => 'field_53566b52033cb',
 										'operator' => '==',
 										'value' => 'sub',
 									),
 								),
 							),
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3222,13 +3222,13 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
-				array (
+				array(
 					'key' => '558fb0167604e',
 					'name' => 'map',
 					'label' => 'Map',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_53566af3033ca',
 							'label' => 'Map Image',
 							'name' => 'map_image',
@@ -3236,7 +3236,7 @@ acf_add_local_field_group(array (
 							'instructions' => 'Image dimensions: 720x120px',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3252,7 +3252,7 @@ acf_add_local_field_group(array (
 							'max_size' => 0,
 							'mime_types' => '',
 						),
-						array (
+						array(
 							'key' => 'field_53567194033cc',
 							'label' => 'Google Maps Link',
 							'name' => 'google_maps_link',
@@ -3260,7 +3260,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3274,7 +3274,7 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 							'disabled' => 0,
 						),
-						array (
+						array(
 							'key' => 'field_5368854d65237',
 							'label' => 'Small Resolution New Column',
 							'name' => 'sm_new_col',
@@ -3282,7 +3282,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3297,13 +3297,13 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
-				array (
+				array(
 					'key' => '558fb016a8391',
 					'name' => 'single_link',
 					'label' => 'Single Link',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_535671de033ce',
 							'label' => 'Icon',
 							'name' => 'icon',
@@ -3311,7 +3311,7 @@ acf_add_local_field_group(array (
 							'instructions' => 'Image dimensions: 40x40px',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3327,7 +3327,7 @@ acf_add_local_field_group(array (
 							'max_size' => 0,
 							'mime_types' => '',
 						),
-						array (
+						array(
 							'key' => 'field_53567207033cf',
 							'label' => 'Link',
 							'name' => 'link',
@@ -3335,7 +3335,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3349,7 +3349,7 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 							'disabled' => 0,
 						),
-						array (
+						array(
 							'key' => 'field_558fb0cc76d69',
 							'label' => 'Text',
 							'name' => 'text',
@@ -3357,7 +3357,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3370,7 +3370,7 @@ acf_add_local_field_group(array (
 							'readonly' => 0,
 							'disabled' => 0,
 						),
-						array (
+						array(
 							'key' => 'field_5356796c888a9',
 							'label' => 'Show only in Mobile',
 							'name' => 'show_in_mobile',
@@ -3378,7 +3378,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3389,7 +3389,7 @@ acf_add_local_field_group(array (
 							'ui_on_text' => '',
 							'ui_off_text' => '',
 						),
-						array (
+						array(
 							'key' => 'field_5368857f65238',
 							'label' => 'Small Resolution New Column',
 							'name' => 'sm_new_col',
@@ -3397,7 +3397,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3412,13 +3412,13 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
-				array (
+				array(
 					'key' => '558fb01714d31',
 					'name' => 'multiple_links',
 					'label' => 'Multiple Links',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_5356728b033d2',
 							'label' => 'Links',
 							'name' => 'links',
@@ -3426,7 +3426,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3437,8 +3437,8 @@ acf_add_local_field_group(array (
 							'button_label' => 'Add Link',
 							'min' => 0,
 							'max' => 0,
-							'sub_fields' => array (
-								array (
+							'sub_fields' => array(
+								array(
 									'key' => 'field_535672ba033d3',
 									'label' => 'Icon',
 									'name' => 'icon',
@@ -3446,7 +3446,7 @@ acf_add_local_field_group(array (
 									'instructions' => '"Font Awesome" icon class name',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 30,
 										'class' => '',
 										'id' => '',
@@ -3459,7 +3459,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_558fb37fdfefa',
 									'label' => 'Link',
 									'name' => 'link',
@@ -3467,7 +3467,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 40,
 										'class' => '',
 										'id' => '',
@@ -3480,7 +3480,7 @@ acf_add_local_field_group(array (
 									'readonly' => 0,
 									'disabled' => 0,
 								),
-								array (
+								array(
 									'key' => 'field_53593b7dde807',
 									'label' => 'Color',
 									'name' => 'color',
@@ -3488,7 +3488,7 @@ acf_add_local_field_group(array (
 									'instructions' => '',
 									'required' => 0,
 									'conditional_logic' => 0,
-									'wrapper' => array (
+									'wrapper' => array(
 										'width' => 30,
 										'class' => '',
 										'id' => '',
@@ -3498,7 +3498,7 @@ acf_add_local_field_group(array (
 							),
 							'collapsed' => '',
 						),
-						array (
+						array(
 							'key' => 'field_536885e46523a',
 							'label' => 'Small Resolution New Column',
 							'name' => 'sm_new_col',
@@ -3506,7 +3506,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3517,7 +3517,7 @@ acf_add_local_field_group(array (
 							'ui_on_text' => '',
 							'ui_off_text' => '',
 						),
-						array (
+						array(
 							'key' => 'field_536886046523b',
 							'label' => 'Small Resolution Cell Height',
 							'name' => 'sm_cell_height',
@@ -3525,7 +3525,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3544,13 +3544,13 @@ acf_add_local_field_group(array (
 					'min' => '',
 					'max' => '',
 				),
-				array (
+				array(
 					'key' => '558fb0178aa01',
 					'name' => 'opening_hours_message',
 					'label' => 'Opening Hours Message',
 					'display' => 'row',
-					'sub_fields' => array (
-						array (
+					'sub_fields' => array(
+						array(
 							'key' => 'field_535682fab4d1e',
 							'label' => 'Hide',
 							'name' => 'hide',
@@ -3558,7 +3558,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3569,7 +3569,7 @@ acf_add_local_field_group(array (
 							'ui_on_text' => '',
 							'ui_off_text' => '',
 						),
-						array (
+						array(
 							'key' => 'field_5368863e6523c',
 							'label' => 'Small Resolution New Column',
 							'name' => 'sm_new_col',
@@ -3577,7 +3577,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3588,7 +3588,7 @@ acf_add_local_field_group(array (
 							'ui_on_text' => '',
 							'ui_off_text' => '',
 						),
-						array (
+						array(
 							'key' => 'field_536886576523d',
 							'label' => 'Small Resolution Cell Height',
 							'name' => 'sm_cell_height',
@@ -3596,7 +3596,7 @@ acf_add_local_field_group(array (
 							'instructions' => '',
 							'required' => 0,
 							'conditional_logic' => 0,
-							'wrapper' => array (
+							'wrapper' => array(
 								'width' => '',
 								'class' => '',
 								'id' => '',
@@ -3617,7 +3617,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_53567d5044fc7',
 			'label' => 'Opening Hours',
 			'name' => '',
@@ -3625,7 +3625,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3633,7 +3633,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53567d6544fc8',
 			'label' => 'Opening Hours',
 			'name' => 'acf-options_opening_hours',
@@ -3641,7 +3641,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Define all week days from Sunday to Saturday in ascending order',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3651,8 +3651,8 @@ acf_add_local_field_group(array (
 			'max' => 7,
 			'layout' => 'table',
 			'button_label' => 'Add Day',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_53567e3b44fc9',
 					'label' => 'Day',
 					'name' => 'day',
@@ -3660,12 +3660,12 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 34,
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						0 => 'Sunday',
 						1 => 'Monday',
 						2 => 'Tuesday',
@@ -3674,7 +3674,7 @@ acf_add_local_field_group(array (
 						5 => 'Friday',
 						6 => 'Saturday',
 					),
-					'default_value' => array (
+					'default_value' => array(
 					),
 					'allow_null' => 0,
 					'multiple' => 0,
@@ -3685,7 +3685,7 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'return_format' => 'value',
 				),
-				array (
+				array(
 					'key' => 'field_53567f0f44fca',
 					'label' => 'Open',
 					'name' => 'open',
@@ -3693,12 +3693,12 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 33,
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						'0800' => '08:00',
 						'0830' => '08:30',
 						'0900' => '09:00',
@@ -3731,7 +3731,7 @@ acf_add_local_field_group(array (
 						2230 => '22:30',
 						2300 => '23:00',
 					),
-					'default_value' => array (
+					'default_value' => array(
 						0 => 900,
 					),
 					'allow_null' => 0,
@@ -3743,7 +3743,7 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'return_format' => 'value',
 				),
-				array (
+				array(
 					'key' => 'field_53567f7f44fcb',
 					'label' => 'Close',
 					'name' => 'close',
@@ -3751,12 +3751,12 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 33,
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						'0800' => '08:00',
 						'0830' => '08:30',
 						'0900' => '09:00',
@@ -3789,7 +3789,7 @@ acf_add_local_field_group(array (
 						2230 => '22:30',
 						2300 => '23:00',
 					),
-					'default_value' => array (
+					'default_value' => array(
 						0 => 1700,
 					),
 					'allow_null' => 0,
@@ -3803,7 +3803,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_558fb0e276d6a',
 			'label' => 'Open Message',
 			'name' => 'acf-options_open_message',
@@ -3811,7 +3811,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Use "%s" string as a placeholder for Closing Hour',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3824,7 +3824,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb0f176d6b',
 			'label' => 'Close Message',
 			'name' => 'acf-options_close_message',
@@ -3832,7 +3832,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Use "%s" strings as placeholders for next Day and Opening Hour (in that order)',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3845,7 +3845,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb0fe76d6c',
 			'label' => 'Opening Today Message',
 			'name' => 'acf-options_opening_today_message',
@@ -3853,7 +3853,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Use "%s" string as a placeholder for today\'s Opening Hour',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3866,7 +3866,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb11076d6d',
 			'label' => '"tomorrow" String',
 			'name' => 'acf-options_tomorrow_str',
@@ -3874,7 +3874,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3887,7 +3887,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb11f76d6e',
 			'label' => '"on day" String',
 			'name' => 'acf-options_on_day_str',
@@ -3895,7 +3895,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3909,9 +3909,9 @@ acf_add_local_field_group(array (
 			'disabled' => 0,
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'acf-options-contact-details',
@@ -3928,11 +3928,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_58062306798a8',
 	'title' => 'Main Banner Options',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_58062452fb08a',
 			'label' => 'Slides',
 			'name' => 'acf-options_main_banner_slides',
@@ -3940,7 +3940,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -3950,8 +3950,8 @@ acf_add_local_field_group(array (
 			'max' => 5,
 			'layout' => 'row',
 			'button_label' => 'Add Slide',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_580624b5fb08b',
 					'label' => 'Type',
 					'name' => 'type',
@@ -3959,18 +3959,18 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
 					'multiple' => 0,
 					'allow_null' => 0,
-					'choices' => array (
+					'choices' => array(
 						'event' => 'Event',
 						'custom' => 'Custom',
 					),
-					'default_value' => array (
+					'default_value' => array(
 						0 => 'event',
 					),
 					'ui' => 0,
@@ -3978,54 +3978,54 @@ acf_add_local_field_group(array (
 					'placeholder' => '',
 					'return_format' => 'value',
 				),
-				array (
+				array(
 					'key' => 'field_58062521fb08c',
 					'label' => 'Event',
 					'name' => 'event',
 					'type' => 'post_object',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_580624b5fb08b',
 								'operator' => '==',
 								'value' => 'event',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'post_type' => array (
+					'post_type' => array(
 						0 => 'event',
 					),
-					'taxonomy' => array (
+					'taxonomy' => array(
 					),
 					'allow_null' => 0,
 					'multiple' => 0,
 					'return_format' => 'object',
 					'ui' => 1,
 				),
-				array (
+				array(
 					'key' => 'field_580632e260250',
 					'label' => 'Image',
 					'name' => 'custom_image',
 					'type' => 'image',
 					'instructions' => 'Image dimensions: 1140x527px',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_580624b5fb08b',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -4041,23 +4041,23 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5806335e60251',
 					'label' => 'Title',
 					'name' => 'custom_title',
 					'type' => 'text',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_580624b5fb08b',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -4070,23 +4070,23 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_5806338560252',
 					'label' => 'Sub Title #1',
 					'name' => 'custom_sub_title1',
 					'type' => 'text',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_580624b5fb08b',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -4099,23 +4099,23 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_580633c660253',
 					'label' => 'Sub Title #2',
 					'name' => 'custom_sub_title2',
 					'type' => 'text',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_580624b5fb08b',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -4128,23 +4128,23 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_580633f560254',
 					'label' => 'Description',
 					'name' => 'custom_desc',
 					'type' => 'textarea',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_580624b5fb08b',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -4157,23 +4157,23 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_5806343960255',
 					'label' => 'Link',
 					'name' => 'custom_link',
 					'type' => 'text',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_580624b5fb08b',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -4186,34 +4186,34 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'disabled' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_5808662ecf197',
 					'label' => 'Link Target',
 					'name' => 'custom_link_target',
 					'type' => 'select',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_580624b5fb08b',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
 					'multiple' => 0,
 					'allow_null' => 0,
-					'choices' => array (
+					'choices' => array(
 						'self' => 'Same window',
 						'blank' => 'New window',
 					),
-					'default_value' => array (
+					'default_value' => array(
 						0 => 'self',
 					),
 					'ui' => 0,
@@ -4224,9 +4224,9 @@ acf_add_local_field_group(array (
 			),
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'acf-options-main-banner',
@@ -4243,11 +4243,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_5873429963ebc',
 	'title' => 'Exhibitions and Events Options',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_587383346deaf',
 			'label' => 'Slider',
 			'name' => '',
@@ -4255,7 +4255,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4263,7 +4263,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_587342997bcc6',
 			'label' => 'Slider',
 			'name' => 'acf-options_exhibitions_and_events_slider',
@@ -4271,7 +4271,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4281,8 +4281,8 @@ acf_add_local_field_group(array (
 			'layout' => 'row',
 			'button_label' => 'Add Event',
 			'collapsed' => '',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_5873840c6deb0',
 					'label' => 'Type',
 					'name' => 'type',
@@ -4290,18 +4290,18 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
 					'multiple' => 0,
 					'allow_null' => 0,
-					'choices' => array (
+					'choices' => array(
 						'event' => 'Event',
 						'custom' => 'Custom',
 					),
-					'default_value' => array (
+					'default_value' => array(
 						0 => 'event',
 					),
 					'ui' => 0,
@@ -4309,54 +4309,54 @@ acf_add_local_field_group(array (
 					'placeholder' => '',
 					'return_format' => 'value',
 				),
-				array (
+				array(
 					'key' => 'field_587342998bf2d',
 					'label' => 'Event',
 					'name' => 'event',
 					'type' => 'post_object',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5873840c6deb0',
 								'operator' => '==',
 								'value' => 'event',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'post_type' => array (
+					'post_type' => array(
 						0 => 'event',
 					),
-					'taxonomy' => array (
+					'taxonomy' => array(
 					),
 					'allow_null' => 0,
 					'multiple' => 0,
 					'return_format' => 'object',
 					'ui' => 1,
 				),
-				array (
+				array(
 					'key' => 'field_587384896deb1',
 					'label' => 'Image',
 					'name' => 'custom_image',
 					'type' => 'image',
 					'instructions' => 'Image dimensions: 380x380px',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5873840c6deb0',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -4372,23 +4372,23 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5873852b6deb2',
 					'label' => 'Title',
 					'name' => 'custom_title',
 					'type' => 'text',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5873840c6deb0',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -4399,23 +4399,23 @@ acf_add_local_field_group(array (
 					'prepend' => '',
 					'append' => '',
 				),
-				array (
+				array(
 					'key' => 'field_587385646deb3',
 					'label' => 'Link',
 					'name' => 'custom_link',
 					'type' => 'text',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5873840c6deb0',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -4426,34 +4426,34 @@ acf_add_local_field_group(array (
 					'prepend' => '',
 					'append' => '',
 				),
-				array (
+				array(
 					'key' => 'field_5873858c6deb4',
 					'label' => 'Link Target',
 					'name' => 'custom_link_target',
 					'type' => 'select',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_5873840c6deb0',
 								'operator' => '==',
 								'value' => 'custom',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
 					'multiple' => 0,
 					'allow_null' => 0,
-					'choices' => array (
+					'choices' => array(
 						'self' => 'Same window',
 						'blank' => 'New window',
 					),
-					'default_value' => array (
+					'default_value' => array(
 						0 => 'self',
 					),
 					'ui' => 0,
@@ -4463,7 +4463,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_58777d6619665',
 			'label' => 'Events Page',
 			'name' => '',
@@ -4471,7 +4471,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4479,7 +4479,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_58777d8419666',
 			'label' => 'Sticky Events',
 			'name' => 'acf-options_exhibitions_and_events_sticky_events',
@@ -4487,7 +4487,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4497,8 +4497,8 @@ acf_add_local_field_group(array (
 			'layout' => 'row',
 			'button_label' => 'Add Event',
 			'collapsed' => '',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_58777de019667',
 					'label' => 'Event',
 					'name' => 'event',
@@ -4506,15 +4506,15 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'post_type' => array (
+					'post_type' => array(
 						0 => 'event',
 					),
-					'taxonomy' => array (
+					'taxonomy' => array(
 					),
 					'allow_null' => 0,
 					'multiple' => 0,
@@ -4524,9 +4524,9 @@ acf_add_local_field_group(array (
 			),
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'acf-options-exhibitions-and-events',
@@ -4543,11 +4543,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb01bdfcc6',
 	'title' => 'General Options',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_53564aea2839b',
 			'label' => 'Strings',
 			'name' => '',
@@ -4555,7 +4555,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4563,7 +4563,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb8c71759f',
 			'label' => 'Event End Date Prepend',
 			'name' => 'acf-options_event_end_date_prepend',
@@ -4571,7 +4571,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'e.g. "Till" for event ends by January 1st will be referenced as: "Till Jan 01"',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4584,7 +4584,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb8dd175a0',
 			'label' => 'Series of Events Prepend',
 			'name' => 'acf-options_series_of_events_prepend',
@@ -4592,7 +4592,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'e.g. "Series of" for "Lectures" events will be referenced as: "Series of Lectures"',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4605,7 +4605,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb933175a2',
 			'label' => 'Future Events List Title',
 			'name' => 'acf-options_future_events_list_title',
@@ -4613,7 +4613,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4626,7 +4626,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53b522849070b',
 			'label' => 'Event Buttons',
 			'name' => '',
@@ -4634,7 +4634,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4642,7 +4642,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb947175a3',
 			'label' => 'Order Tickets',
 			'name' => 'acf-options_event_btn_order_tickets',
@@ -4650,7 +4650,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4663,7 +4663,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb957175a4',
 			'label' => 'Purchase Series',
 			'name' => 'acf-options_event_btn_purchase_series',
@@ -4671,7 +4671,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4684,7 +4684,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb966175a5',
 			'label' => 'Reservation',
 			'name' => 'acf-options_event_btn_reservation',
@@ -4692,7 +4692,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4705,7 +4705,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53b595827e509',
 			'label' => 'Reservation Form Page',
 			'name' => 'acf-options_events_reservation_form_page',
@@ -4713,22 +4713,22 @@ acf_add_local_field_group(array (
 			'instructions' => 'This field can be specified for only one language, the rest of the languages will be updated automatically',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'object',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_558fb97b175a6',
 			'label' => 'Free Admittance',
 			'name' => 'acf-options_event_btn_free_admittance',
@@ -4736,7 +4736,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4749,7 +4749,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb98f175a7',
 			'label' => 'Read More',
 			'name' => 'acf-options_event_btn_read_more',
@@ -4757,7 +4757,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4770,7 +4770,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5565d05ffebac',
 			'label' => 'Microfilm Payment Form',
 			'name' => '',
@@ -4778,7 +4778,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4786,7 +4786,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5565d092febad',
 			'label' => 'Transaction ID Prefix',
 			'name' => 'acf-options_microfilm_transaction_id_prefix',
@@ -4794,7 +4794,7 @@ acf_add_local_field_group(array (
 			'instructions' => '3 digits prefix',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4808,7 +4808,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5565d0c8febae',
 			'label' => 'Price',
 			'name' => 'acf-options_microfilm_price',
@@ -4816,7 +4816,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4831,7 +4831,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53b39fb2566d4',
 			'label' => '404 Page',
 			'name' => '',
@@ -4839,7 +4839,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4847,7 +4847,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb9a0175a8',
 			'label' => '404 Top Message',
 			'name' => 'acf-options_404_top_message',
@@ -4855,7 +4855,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4868,7 +4868,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fb9b0175a9',
 			'label' => '404 Bottom Message',
 			'name' => 'acf-options_404_bottom_message',
@@ -4876,7 +4876,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4887,7 +4887,7 @@ acf_add_local_field_group(array (
 			'media_upload' => 0,
 			'delay' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_55d20cb51c76c',
 			'label' => 'Google Analytics',
 			'name' => '',
@@ -4895,7 +4895,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4903,7 +4903,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_55d20cd91c76d',
 			'label' => 'Tracking Code',
 			'name' => 'acf-options_tracking_code',
@@ -4911,7 +4911,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4924,7 +4924,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_53b39fc7566d5',
 			'label' => 'Misc',
 			'name' => '',
@@ -4932,7 +4932,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -4940,7 +4940,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5a37cb63c1223',
 			'label' => 'Exhibitions Page',
 			'name' => 'acf-options_exhibitions_page',
@@ -4948,22 +4948,22 @@ acf_add_local_field_group(array (
 			'instructions' => 'Used to display relevant event categories in the website menus. This field can be specified for only one language, the rest of the languages ​​will be updated automatically',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'object',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_53b03b1ebef28',
 			'label' => 'Events Page',
 			'name' => 'acf-options_events_page',
@@ -4971,22 +4971,22 @@ acf_add_local_field_group(array (
 			'instructions' => 'Used to display relevant event categories in the website menus. This field can be specified for only one language, the rest of the languages ​​will be updated automatically',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'object',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_53da4777d159f',
 			'label' => 'Blog Page',
 			'name' => 'acf-options_blog_page',
@@ -4994,22 +4994,22 @@ acf_add_local_field_group(array (
 			'instructions' => 'Used to display Blog link in Blog\'s archive page. This field can be specified for only one language, the rest of the languages ​​will be updated automatically',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'object',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_53e0e8376d77e',
 			'label' => 'Event Categories to include in Past Events page',
 			'name' => 'acf-options_event_categories',
@@ -5017,7 +5017,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5033,9 +5033,9 @@ acf_add_local_field_group(array (
 			'save_terms' => 0,
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'acf-options-general',
@@ -5052,11 +5052,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_558fb0207b635',
 	'title' => 'Shop Options',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_54ad4405241f8',
 			'label' => 'Homepage Banners',
 			'name' => '',
@@ -5064,7 +5064,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5072,7 +5072,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_54b23b3e25fe3',
 			'label' => 'Banners',
 			'name' => 'acf-options-shop_banners',
@@ -5085,7 +5085,7 @@ acf_add_local_field_group(array (
 <div>Image #04: 399x633px</div>',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5094,8 +5094,8 @@ acf_add_local_field_group(array (
 			'max' => 0,
 			'layout' => 'row',
 			'button_label' => 'Add Banner',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_558fd6c414fc8',
 					'label' => 'Image',
 					'name' => 'image',
@@ -5103,7 +5103,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 25,
 						'class' => '',
 						'id' => '',
@@ -5119,7 +5119,7 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_558fd6dd14fc9',
 					'label' => 'Link Type',
 					'name' => 'link_type',
@@ -5127,12 +5127,12 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 25,
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						'no' => 'No Link',
 						'page' => 'Page/Product',
 						'category' => 'Product Category',
@@ -5140,7 +5140,7 @@ acf_add_local_field_group(array (
 						'artist' => 'Artist',
 						'ext' => 'External Link',
 					),
-					'default_value' => array (
+					'default_value' => array(
 						'no' => 'no',
 					),
 					'allow_null' => 0,
@@ -5152,55 +5152,55 @@ acf_add_local_field_group(array (
 					'readonly' => 0,
 					'return_format' => 'value',
 				),
-				array (
+				array(
 					'key' => 'field_558fd6f214fca',
 					'label' => 'Page/Product Link',
 					'name' => 'page_product_link',
 					'type' => 'post_object',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_558fd6dd14fc9',
 								'operator' => '==',
 								'value' => 'page',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 25,
 						'class' => '',
 						'id' => '',
 					),
-					'post_type' => array (
+					'post_type' => array(
 						0 => 'page',
 						1 => 'product',
 					),
-					'taxonomy' => array (
+					'taxonomy' => array(
 					),
 					'allow_null' => 1,
 					'multiple' => 0,
 					'return_format' => 'object',
 					'ui' => 1,
 				),
-				array (
+				array(
 					'key' => 'field_558fd70c14fcb',
 					'label' => 'Product Category Link',
 					'name' => 'product_category_link',
 					'type' => 'taxonomy',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_558fd6dd14fc9',
 								'operator' => '==',
 								'value' => 'category',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 25,
 						'class' => '',
 						'id' => '',
@@ -5214,23 +5214,23 @@ acf_add_local_field_group(array (
 					'return_format' => 'object',
 					'multiple' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_558fd71e14fcc',
 					'label' => 'Product Occasion Link',
 					'name' => 'product_occasion_link',
 					'type' => 'taxonomy',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_558fd6dd14fc9',
 								'operator' => '==',
 								'value' => 'occasion',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 25,
 						'class' => '',
 						'id' => '',
@@ -5244,23 +5244,23 @@ acf_add_local_field_group(array (
 					'return_format' => 'object',
 					'multiple' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_558fd72e14fcd',
 					'label' => 'Product Artist Link',
 					'name' => 'product_artist_link',
 					'type' => 'taxonomy',
 					'instructions' => '',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_558fd6dd14fc9',
 								'operator' => '==',
 								'value' => 'artist',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 25,
 						'class' => '',
 						'id' => '',
@@ -5274,23 +5274,23 @@ acf_add_local_field_group(array (
 					'return_format' => 'object',
 					'multiple' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_558fd73c14fce',
 					'label' => 'External Link',
 					'name' => 'external_link',
 					'type' => 'text',
 					'instructions' => 'Will be opened in a new tab',
 					'required' => 0,
-					'conditional_logic' => array (
-						array (
-							array (
+					'conditional_logic' => array(
+						array(
+							array(
 								'field' => 'field_558fd6dd14fc9',
 								'operator' => '==',
 								'value' => 'ext',
 							),
 						),
 					),
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => 25,
 						'class' => '',
 						'id' => '',
@@ -5306,7 +5306,7 @@ acf_add_local_field_group(array (
 			),
 			'collapsed' => '',
 		),
-		array (
+		array(
 			'key' => 'field_56447e801dda7',
 			'label' => 'Homepage Categories Menu',
 			'name' => '',
@@ -5314,7 +5314,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5322,7 +5322,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_56447eab1dda8',
 			'label' => 'Include Categories',
 			'name' => 'acf-options_shop_include_categories',
@@ -5330,7 +5330,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5344,7 +5344,7 @@ acf_add_local_field_group(array (
 			'return_format' => 'object',
 			'multiple' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5644b659d9492',
 			'label' => 'Show Manual Item',
 			'name' => 'acf-options_shop_show_manual_item',
@@ -5352,7 +5352,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5363,23 +5363,23 @@ acf_add_local_field_group(array (
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 		),
-		array (
+		array(
 			'key' => 'field_5644b6eed9493',
 			'label' => 'Manual Item Title',
 			'name' => 'acf-options_shop_manual_item_title',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 1,
-			'conditional_logic' => array (
-				array (
-					array (
+			'conditional_logic' => array(
+				array(
+					array(
 						'field' => 'field_5644b659d9492',
 						'operator' => '==',
 						'value' => '1',
 					),
 				),
 			),
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5392,23 +5392,23 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5644b715d9494',
 			'label' => 'Manual Item Subtext',
 			'name' => 'acf-options_shop_manual_item_subtext',
 			'type' => 'text',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => array (
-				array (
-					array (
+			'conditional_logic' => array(
+				array(
+					array(
 						'field' => 'field_5644b659d9492',
 						'operator' => '==',
 						'value' => '1',
 					),
 				),
 			),
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5421,38 +5421,38 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5644b767d9495',
 			'label' => 'Manual Item Link',
 			'name' => 'acf-options_shop_manual_item_link',
 			'type' => 'post_object',
 			'instructions' => '',
 			'required' => 1,
-			'conditional_logic' => array (
-				array (
-					array (
+			'conditional_logic' => array(
+				array(
+					array(
 						'field' => 'field_5644b659d9492',
 						'operator' => '==',
 						'value' => '1',
 					),
 				),
 			),
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'id',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_56f3d8cdae6bd',
 			'label' => 'Homepage Featured Products',
 			'name' => '',
@@ -5460,7 +5460,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5468,7 +5468,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_56f3d99f37bdf',
 			'label' => 'Featured Products',
 			'name' => 'acf-options_shop_featured_products',
@@ -5476,28 +5476,28 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'product',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
-			'filters' => array (
+			'filters' => array(
 				0 => 'search',
 				1 => 'taxonomy',
 			),
-			'elements' => array (
+			'elements' => array(
 				0 => 'featured_image',
 			),
 			'min' => '',
 			'max' => '',
 			'return_format' => 'object',
 		),
-		array (
+		array(
 			'key' => 'field_54ae437133895',
 			'label' => 'Homepage Sliders',
 			'name' => '',
@@ -5505,7 +5505,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5513,7 +5513,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_54ae444447ed3',
 			'label' => 'Sliders',
 			'name' => 'acf-options-shop_sliders',
@@ -5521,7 +5521,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5532,8 +5532,8 @@ acf_add_local_field_group(array (
 			'button_label' => 'Add Slider',
 			'min' => 0,
 			'max' => 0,
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_558fd75714fcf',
 					'label' => 'Title',
 					'name' => 'title',
@@ -5541,7 +5541,7 @@ acf_add_local_field_group(array (
 					'instructions' => 'You may declare Category/Occasion name as link',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -5552,7 +5552,7 @@ acf_add_local_field_group(array (
 					'media_upload' => 0,
 					'delay' => 0,
 				),
-				array (
+				array(
 					'key' => 'field_54ae451047ed5',
 					'label' => 'Products',
 					'name' => 'products',
@@ -5560,30 +5560,30 @@ acf_add_local_field_group(array (
 					'instructions' => 'This field can be specified for only one language, the rest of the languages will be updated automatically',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
 					'return_format' => 'object',
-					'post_type' => array (
+					'post_type' => array(
 						0 => 'product',
 					),
-					'taxonomy' => array (
+					'taxonomy' => array(
 					),
-					'filters' => array (
+					'filters' => array(
 						0 => 'search',
 					),
 					'max' => '',
 					'min' => 0,
-					'elements' => array (
+					'elements' => array(
 						0 => 'featured_image',
 					),
 				),
 			),
 			'collapsed' => '',
 		),
-		array (
+		array(
 			'key' => 'field_548d4f4a0945d',
 			'label' => 'Experience',
 			'name' => '',
@@ -5591,7 +5591,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5599,7 +5599,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_56d2cb8c7c10c',
 			'label' => 'Reasons',
 			'name' => 'acf-options_experience_reasons',
@@ -5607,7 +5607,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5617,8 +5617,8 @@ acf_add_local_field_group(array (
 			'max' => 0,
 			'layout' => 'table',
 			'button_label' => 'Add Reason',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_56d2cc047c10d',
 					'label' => 'Reason',
 					'name' => 'reason',
@@ -5626,7 +5626,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -5641,7 +5641,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_551bfb72256c3',
 			'label' => 'Experience Page',
 			'name' => 'acf-options_experience_page',
@@ -5649,22 +5649,22 @@ acf_add_local_field_group(array (
 			'instructions' => 'This field can be specified for only one language, the rest of the languages will be updated automatically',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'object',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_5533a5d3f26dd',
 			'label' => 'Emails',
 			'name' => '',
@@ -5672,7 +5672,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5680,7 +5680,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5533a61404e06',
 			'label' => 'Customer Processing Order Title',
 			'name' => 'acf-email_customer_processing_order_title',
@@ -5688,7 +5688,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Image dimensions: 600x100px',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5704,7 +5704,7 @@ acf_add_local_field_group(array (
 			'max_size' => 0,
 			'mime_types' => '',
 		),
-		array (
+		array(
 			'key' => 'field_5533f7277cc2a',
 			'label' => 'Customer Completed Order Title',
 			'name' => 'acf-email_customer_completed_order_title',
@@ -5712,7 +5712,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Image dimensions: 600x100px',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5728,7 +5728,7 @@ acf_add_local_field_group(array (
 			'max_size' => 0,
 			'mime_types' => '',
 		),
-		array (
+		array(
 			'key' => 'field_56667ef86eb5a',
 			'label' => 'Pelecard',
 			'name' => '',
@@ -5736,7 +5736,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5744,7 +5744,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_56667f106eb5b',
 			'label' => 'User',
 			'name' => 'acf-options_pelecard_user',
@@ -5752,7 +5752,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5765,7 +5765,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_56667f4f6eb5c',
 			'label' => 'Password',
 			'name' => 'acf-options_pelecard_password',
@@ -5773,7 +5773,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5786,7 +5786,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_56667f846eb5d',
 			'label' => 'Terminal',
 			'name' => 'acf-options_pelecard_terminal',
@@ -5794,7 +5794,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5807,7 +5807,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5565d2376c4db',
 			'label' => 'iCount',
 			'name' => '',
@@ -5815,7 +5815,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5823,7 +5823,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5565d2446c4dc',
 			'label' => 'API URL',
 			'name' => 'acf-options_icount_api_url',
@@ -5831,7 +5831,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5845,7 +5845,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5565d26b6c4dd',
 			'label' => 'Company ID',
 			'name' => 'acf-options_icount_company_id',
@@ -5853,7 +5853,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5867,7 +5867,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5565d28d6c4de',
 			'label' => 'User',
 			'name' => 'acf-options_icount_user',
@@ -5875,7 +5875,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5889,7 +5889,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5565d2a76c4df',
 			'label' => 'Password',
 			'name' => 'acf-options_icount_password',
@@ -5897,7 +5897,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5911,7 +5911,7 @@ acf_add_local_field_group(array (
 			'readonly' => 0,
 			'disabled' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_553667710b0f6',
 			'label' => 'Misc',
 			'name' => '',
@@ -5919,7 +5919,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5927,7 +5927,7 @@ acf_add_local_field_group(array (
 			'placement' => 'left',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_558fd81814fd7',
 			'label' => 'Product Image Disclaimer',
 			'name' => 'acf-options_product_image_disclaimer',
@@ -5935,7 +5935,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5947,9 +5947,9 @@ acf_add_local_field_group(array (
 			'delay' => 0,
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'acf-options-shop',
@@ -5966,11 +5966,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_59ae40a325a84',
 	'title' => 'Donations Settings',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_59ae40d4afe94',
 			'label' => 'Donation Pages',
 			'name' => '',
@@ -5978,7 +5978,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -5986,7 +5986,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae4207d4d92',
 			'label' => 'Donations Main Page',
 			'name' => 'acf-options_donations_main_page',
@@ -5994,22 +5994,22 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'id',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_59ae434f9b281',
 			'label' => 'Donation Options Page',
 			'name' => 'acf-options_donations_options_page',
@@ -6017,22 +6017,22 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'id',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_59ae43a59b282',
 			'label' => 'Donations iframe Page',
 			'name' => 'acf-options_donations_iframe_page',
@@ -6040,22 +6040,22 @@ acf_add_local_field_group(array (
 			'instructions' => 'This page will hold the iframe for the billing form',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'id',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_59ae43e6521cb',
 			'label' => 'Donations Thank-You Page',
 			'name' => 'acf-options_donations_thankyou_page',
@@ -6063,22 +6063,22 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'post_type' => array (
+			'post_type' => array(
 				0 => 'page',
 			),
-			'taxonomy' => array (
+			'taxonomy' => array(
 			),
 			'allow_null' => 0,
 			'multiple' => 0,
 			'return_format' => 'id',
 			'ui' => 1,
 		),
-		array (
+		array(
 			'key' => 'field_59ae40edafe95',
 			'label' => 'Internal Links',
 			'name' => '',
@@ -6086,7 +6086,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6094,7 +6094,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae446f9b804',
 			'label' => 'Main Page Links',
 			'name' => 'donate_main_page_links',
@@ -6102,7 +6102,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Set the content for the 4 boxes under the hero section',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6112,8 +6112,8 @@ acf_add_local_field_group(array (
 			'max' => 4,
 			'layout' => 'table',
 			'button_label' => '',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_59ae44ba9b805',
 					'label' => 'Target Page',
 					'name' => 'target_page',
@@ -6121,22 +6121,22 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'post_type' => array (
+					'post_type' => array(
 						0 => 'page',
 					),
-					'taxonomy' => array (
+					'taxonomy' => array(
 					),
 					'allow_null' => 1,
 					'multiple' => 0,
 					'return_format' => 'id',
 					'ui' => 1,
 				),
-				array (
+				array(
 					'key' => 'field_59ae45077ec1d',
 					'label' => 'Link Title',
 					'name' => 'link_title',
@@ -6144,7 +6144,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -6155,7 +6155,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => '',
 				),
-				array (
+				array(
 					'key' => 'field_59ae45597ec1e',
 					'label' => 'Link Subtitle',
 					'name' => 'link_subtitle',
@@ -6163,7 +6163,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -6174,7 +6174,7 @@ acf_add_local_field_group(array (
 					'append' => '',
 					'maxlength' => '',
 				),
-				array (
+				array(
 					'key' => 'field_59ae459b7ec1f',
 					'label' => 'Image',
 					'name' => 'image',
@@ -6182,7 +6182,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 1,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -6200,7 +6200,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_59ae40f5afe96',
 			'label' => 'Visuals',
 			'name' => '',
@@ -6208,7 +6208,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6216,7 +6216,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae46fa6bd8a',
 			'label' => 'Hero Image - Desktop',
 			'name' => 'hero_img_desktop',
@@ -6224,7 +6224,7 @@ acf_add_local_field_group(array (
 			'instructions' => '1170*352',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '50',
 				'class' => '',
 				'id' => '',
@@ -6240,7 +6240,7 @@ acf_add_local_field_group(array (
 			'max_size' => '',
 			'mime_types' => '',
 		),
-		array (
+		array(
 			'key' => 'field_59ae477f6bd8b',
 			'label' => 'Hero Image - Mobile',
 			'name' => 'hero_img_mobile',
@@ -6248,7 +6248,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'This image should be cropped from the desktop image, as the "Alt" text is displayed from the desktop version.',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '50',
 				'class' => '',
 				'id' => '',
@@ -6264,7 +6264,7 @@ acf_add_local_field_group(array (
 			'max_size' => '',
 			'mime_types' => '',
 		),
-		array (
+		array(
 			'key' => 'field_59ae4101afe97',
 			'label' => 'Billing Forms',
 			'name' => '',
@@ -6272,7 +6272,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6280,7 +6280,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae4861db6c3',
 			'label' => 'One Time Donation Form URL',
 			'name' => 'acf-options_one-time_d_form',
@@ -6288,7 +6288,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6296,7 +6296,7 @@ acf_add_local_field_group(array (
 			'default_value' => '',
 			'placeholder' => '',
 		),
-		array (
+		array(
 			'key' => 'field_59ae488cdb6c4',
 			'label' => 'Annual Donation Form URL',
 			'name' => 'acf-options_annual_d_form',
@@ -6304,7 +6304,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6312,7 +6312,7 @@ acf_add_local_field_group(array (
 			'default_value' => '',
 			'placeholder' => '',
 		),
-		array (
+		array(
 			'key' => 'field_5a083b2c79fe1',
 			'label' => 'AFBH Donation Form URL',
 			'name' => 'acf-options_afbh_d_form',
@@ -6320,7 +6320,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'Enter here the URL for the AFBH Click&Pledge donation form (for US donations)',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6328,7 +6328,7 @@ acf_add_local_field_group(array (
 			'default_value' => 'https://co.clickandpledge.com/sp/d1/default.aspx?wid=39977',
 			'placeholder' => '',
 		),
-		array (
+		array(
 			'key' => 'field_59ca3917a8d97',
 			'label' => 'Texts',
 			'name' => '',
@@ -6336,7 +6336,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6344,7 +6344,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ca3945a8d98',
 			'label' => 'Donate by Check',
 			'name' => 'donate_by_check',
@@ -6352,7 +6352,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6367,7 +6367,7 @@ For more information please contact us at racheli@bh.org.il',
 			'media_upload' => 1,
 			'delay' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ca59bbca0cf',
 			'label' => 'Donate by bank transfer',
 			'name' => 'donate_by_bank_transfer',
@@ -6375,7 +6375,7 @@ For more information please contact us at racheli@bh.org.il',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6392,7 +6392,7 @@ For more information please contact us at racheli@bh.org.il',
 			'media_upload' => 1,
 			'delay' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ca59e0ca0d0',
 			'label' => 'Donate by phone',
 			'name' => 'donate_by_phone',
@@ -6400,7 +6400,7 @@ For more information please contact us at racheli@bh.org.il',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6411,7 +6411,7 @@ For more information please contact us at racheli@bh.org.il',
 			'media_upload' => 1,
 			'delay' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5a154ebfa0fb6',
 			'label' => 'Contacts',
 			'name' => '',
@@ -6419,7 +6419,7 @@ For more information please contact us at racheli@bh.org.il',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6427,7 +6427,7 @@ For more information please contact us at racheli@bh.org.il',
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_5a154ed3a0fb7',
 			'label' => 'Send donation certificate tasks to',
 			'name' => 'certificate_tasks_recipient',
@@ -6435,7 +6435,7 @@ For more information please contact us at racheli@bh.org.il',
 			'instructions' => 'You can enter multiple email addresses, separated with a comma (,)',
 			'required' => 1,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6447,9 +6447,9 @@ For more information please contact us at racheli@bh.org.il',
 			'maxlength' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'acf-options-donations',
@@ -6466,11 +6466,11 @@ For more information please contact us at racheli@bh.org.il',
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_59ae495877b72',
 	'title' => 'Financial Documents',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_59ae49d6b11b8',
 			'label' => 'Proper Management Approval',
 			'name' => '',
@@ -6478,7 +6478,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6486,7 +6486,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae4a3d4683e',
 			'label' => 'Proper Management Approval File',
 			'name' => 'proper_management_approval',
@@ -6494,7 +6494,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'PDF Only. Please make sure the filename looks nice',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6505,7 +6505,7 @@ acf_add_local_field_group(array (
 			'max_size' => '',
 			'mime_types' => 'pdf',
 		),
-		array (
+		array(
 			'key' => 'field_59ae4ae2c7caa',
 			'label' => 'Issued on',
 			'name' => 'proper_management_approval_year',
@@ -6513,12 +6513,12 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'choices' => array (
+			'choices' => array(
 				2015 => '2015',
 				2016 => '2016',
 				2017 => '2017',
@@ -6536,7 +6536,7 @@ acf_add_local_field_group(array (
 				2029 => '2029',
 				2030 => '2030',
 			),
-			'default_value' => array (
+			'default_value' => array(
 			),
 			'allow_null' => 1,
 			'multiple' => 0,
@@ -6545,7 +6545,7 @@ acf_add_local_field_group(array (
 			'return_format' => 'value',
 			'placeholder' => '',
 		),
-		array (
+		array(
 			'key' => 'field_59ae49e4b11b9',
 			'label' => 'IRS article 46',
 			'name' => '',
@@ -6553,7 +6553,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6561,7 +6561,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae4a7eb9dea',
 			'label' => 'IRS article 46 Approval',
 			'name' => 'article46_approval',
@@ -6569,7 +6569,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'PDF Only. Please make sure the filename looks nice',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6580,7 +6580,7 @@ acf_add_local_field_group(array (
 			'max_size' => '',
 			'mime_types' => 'pdf',
 		),
-		array (
+		array(
 			'key' => 'field_59ae4cab947a5',
 			'label' => 'Issued on',
 			'name' => 'article46_year',
@@ -6588,12 +6588,12 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'choices' => array (
+			'choices' => array(
 				2015 => '2015',
 				2016 => '2016',
 				2017 => '2017',
@@ -6611,7 +6611,7 @@ acf_add_local_field_group(array (
 				2029 => '2029',
 				2030 => '2030',
 			),
-			'default_value' => array (
+			'default_value' => array(
 			),
 			'allow_null' => 1,
 			'multiple' => 0,
@@ -6620,7 +6620,7 @@ acf_add_local_field_group(array (
 			'return_format' => 'value',
 			'placeholder' => '',
 		),
-		array (
+		array(
 			'key' => 'field_59ae49feb11ba',
 			'label' => 'BH Annual Report',
 			'name' => '',
@@ -6628,7 +6628,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6636,7 +6636,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae4aaeb9deb',
 			'label' => 'BH Annual Report',
 			'name' => 'annual_report',
@@ -6644,7 +6644,7 @@ acf_add_local_field_group(array (
 			'instructions' => 'PDF Only. Please make sure the filename looks nice',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6655,7 +6655,7 @@ acf_add_local_field_group(array (
 			'max_size' => '',
 			'mime_types' => 'pdf',
 		),
-		array (
+		array(
 			'key' => 'field_59ae4ce6947a6',
 			'label' => 'Report Year',
 			'name' => 'annual_report_year',
@@ -6663,12 +6663,12 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
 			),
-			'choices' => array (
+			'choices' => array(
 				2015 => '2015',
 				2016 => '2016',
 				2017 => '2017',
@@ -6686,7 +6686,7 @@ acf_add_local_field_group(array (
 				2029 => '2029',
 				2030 => '2030',
 			),
-			'default_value' => array (
+			'default_value' => array(
 			),
 			'allow_null' => 1,
 			'multiple' => 0,
@@ -6696,9 +6696,9 @@ acf_add_local_field_group(array (
 			'placeholder' => '',
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'acf-options-donations',
@@ -6715,11 +6715,11 @@ acf_add_local_field_group(array (
 	'description' => '',
 ));
 
-acf_add_local_field_group(array (
+acf_add_local_field_group(array(
 	'key' => 'group_59ae4d96bef3f',
 	'title' => 'Donation Certificates',
-	'fields' => array (
-		array (
+	'fields' => array(
+		array(
 			'key' => 'field_59ae4dd5a6155',
 			'label' => 'Appreciation',
 			'name' => '',
@@ -6727,7 +6727,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6735,7 +6735,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae4e1e0df26',
 			'label' => 'Certificate of Appreciation',
 			'name' => 'appreciation',
@@ -6743,7 +6743,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6753,8 +6753,8 @@ acf_add_local_field_group(array (
 			'max' => 0,
 			'layout' => 'table',
 			'button_label' => '',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_59ae4e630df27',
 					'label' => 'Language',
 					'name' => 'language',
@@ -6762,16 +6762,16 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						'he' => 'Hebrew',
 						'en' => 'English',
 					),
-					'default_value' => array (
+					'default_value' => array(
 					),
 					'allow_null' => 1,
 					'multiple' => 0,
@@ -6780,7 +6780,7 @@ acf_add_local_field_group(array (
 					'return_format' => 'value',
 					'placeholder' => '',
 				),
-				array (
+				array(
 					'key' => 'field_59ae4ebadfab2',
 					'label' => 'Template File',
 					'name' => 'template',
@@ -6788,7 +6788,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -6804,7 +6804,7 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_59ae4ededfab3',
 					'label' => 'Example',
 					'name' => 'example',
@@ -6812,7 +6812,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -6830,7 +6830,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_59ae4ddfa6156',
 			'label' => 'Memory',
 			'name' => '',
@@ -6838,7 +6838,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6846,7 +6846,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae501403dfa',
 			'label' => 'In Loving Memory',
 			'name' => 'memory',
@@ -6854,7 +6854,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6864,8 +6864,8 @@ acf_add_local_field_group(array (
 			'max' => 0,
 			'layout' => 'table',
 			'button_label' => '',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_59ae501403dfb',
 					'label' => 'Language',
 					'name' => 'language',
@@ -6873,16 +6873,16 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						'he' => 'Hebrew',
 						'en' => 'English',
 					),
-					'default_value' => array (
+					'default_value' => array(
 					),
 					'allow_null' => 1,
 					'multiple' => 0,
@@ -6891,7 +6891,7 @@ acf_add_local_field_group(array (
 					'return_format' => 'value',
 					'placeholder' => '',
 				),
-				array (
+				array(
 					'key' => 'field_59ae501403dfc',
 					'label' => 'Template File',
 					'name' => 'template',
@@ -6899,7 +6899,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -6915,7 +6915,7 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_59ae501403dfd',
 					'label' => 'Example',
 					'name' => 'example',
@@ -6923,7 +6923,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -6941,7 +6941,7 @@ acf_add_local_field_group(array (
 				),
 			),
 		),
-		array (
+		array(
 			'key' => 'field_59ae4e04a6157',
 			'label' => 'Thanks',
 			'name' => '',
@@ -6949,7 +6949,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6957,7 +6957,7 @@ acf_add_local_field_group(array (
 			'placement' => 'top',
 			'endpoint' => 0,
 		),
-		array (
+		array(
 			'key' => 'field_59ae50734de9a',
 			'label' => 'Thank You',
 			'name' => 'thankyou',
@@ -6965,7 +6965,7 @@ acf_add_local_field_group(array (
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-			'wrapper' => array (
+			'wrapper' => array(
 				'width' => '',
 				'class' => '',
 				'id' => '',
@@ -6975,8 +6975,8 @@ acf_add_local_field_group(array (
 			'max' => 0,
 			'layout' => 'table',
 			'button_label' => '',
-			'sub_fields' => array (
-				array (
+			'sub_fields' => array(
+				array(
 					'key' => 'field_59ae50734de9b',
 					'label' => 'Language',
 					'name' => 'language',
@@ -6984,16 +6984,16 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
+					'choices' => array(
 						'he' => 'Hebrew',
 						'en' => 'English',
 					),
-					'default_value' => array (
+					'default_value' => array(
 					),
 					'allow_null' => 1,
 					'multiple' => 0,
@@ -7002,7 +7002,7 @@ acf_add_local_field_group(array (
 					'return_format' => 'value',
 					'placeholder' => '',
 				),
-				array (
+				array(
 					'key' => 'field_59ae50734de9c',
 					'label' => 'Template File',
 					'name' => 'template',
@@ -7010,7 +7010,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -7026,7 +7026,7 @@ acf_add_local_field_group(array (
 					'max_size' => '',
 					'mime_types' => '',
 				),
-				array (
+				array(
 					'key' => 'field_59ae50734de9d',
 					'label' => 'Example',
 					'name' => 'example',
@@ -7034,7 +7034,7 @@ acf_add_local_field_group(array (
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'wrapper' => array (
+					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
@@ -7053,9 +7053,9 @@ acf_add_local_field_group(array (
 			),
 		),
 	),
-	'location' => array (
-		array (
-			array (
+	'location' => array(
+		array(
+			array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'acf-options-donations',
