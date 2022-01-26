@@ -43,7 +43,7 @@
 			h3 {
 				font-size: 20px;
 				font-weight: bold;
-				color: $font-color;
+				color: $font-invert-color;
 			}
 
 			.awpf-loader {
@@ -63,7 +63,7 @@
 				height: 0;
 				border-top: 7.5px solid transparent;
 				border-bottom: 7.5px solid transparent;
-				border-left: 13px solid $gray-color1;
+				border-left: 13px solid $white;
 			}
 
 			& + .awpf-filter-content {
@@ -78,7 +78,7 @@
 			&.collapsed {
 				&:before {
 					top: 12px;
-					border-top: 13px solid $gray-color1;
+					border-top: 13px solid $white;
 					border-right: 7.5px solid transparent;
 					border-bottom: 0;
 					border-left: 7.5px solid transparent;
@@ -268,7 +268,7 @@
 			.ui-slider {
 				margin: 0 auto 10px;
 				height: 23px;
-				background: $gray-color2;
+				background: $white;
 				border: 0;
 				border-radius: 23px;
 				@include calc(width, "100% - 45px");
@@ -280,7 +280,7 @@
 					top: 0;
 					width: 23px;
 					height: 23px;
-					background: $gray-color2;
+					background: $white;
 				}
 
 				&:before {
@@ -305,7 +305,7 @@
 
 				.ui-slider-range {
 					height: 23px;
-					background: $orange-color1;
+					background: $gray-color2;
 				}
 
 				.ui-slider-handle {
@@ -313,15 +313,15 @@
 					width: 23px;
 					height: 23px;
 					@include border-radius(50%);
-					background: $orange-color2;
+					background: $blue-color2;
 					border: 0;
 
 					&.ui-state-active {
-						background: $orange-color3;
+						background: $blue-color1;
 					}
 
 					&.ui-state-hover {
-						background: $orange-color3;
+						background: $blue-color2;
 					}
 				}
 			}
@@ -375,7 +375,7 @@
 							background-color: $gray-color4;
 
 							&:before {
-								background-color: $orange-color2;
+								background-color: $blue-color2;
 							}
 						}
 
@@ -389,7 +389,7 @@
 						display: none;
 						
 						&:checked + label:before {
-							background-color: $orange-color2;
+							background-color: $blue-color2;
 						}
 
 						&:checked + label:after {
